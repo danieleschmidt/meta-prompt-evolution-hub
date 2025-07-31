@@ -205,3 +205,72 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# AI/ML specific patterns
+*.pkl
+*.pickle
+*.joblib
+*.model
+models/
+checkpoints/
+wandb/
+mlruns/
+ray_results/
+tensorboard_logs/
+.neptune/
+.comet/
+
+# Data files (be cautious with data)
+data/
+datasets/
+*.parquet
+*.h5
+*.hdf5
+
+# Distributed computing
+dask-worker-space/
+
+# Security - sensitive files
+config/secrets/
+*.pem
+*.key
+private_key.*
+secrets.json
+.secrets/
+credentials.json
+service-account.json
+
+# Docker
+.dockerignore
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+dump.rdb
+
+# Logs
+logs/
+*.log
+
+# Backup files
+*.bak
+*.backup
+
+# MacOS specific
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows specific
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~

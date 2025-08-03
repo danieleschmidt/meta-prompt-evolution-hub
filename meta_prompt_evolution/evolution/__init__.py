@@ -1,15 +1,25 @@
 """Evolution module for genetic algorithms and prompt optimization."""
 
-from .hub import EvolutionHub
-from .population import PromptPopulation
-from .algorithms import NSGA2, CMA_ES, MAP_Elites, NoveltySearch, QualityDiversity
+# Core components that work without dependencies
+from .population import PromptPopulation, Prompt
 
 __all__ = [
-    "EvolutionHub",
     "PromptPopulation",
-    "NSGA2", 
-    "CMA_ES",
-    "MAP_Elites",
-    "NoveltySearch",
-    "QualityDiversity",
+    "Prompt",
 ]
+
+# Try to import components requiring dependencies
+try:
+    from .hub import EvolutionHub
+    from .algorithms import NSGA2, MAPElites, CMAES
+    
+    __all__.extend([
+        "EvolutionHub",
+        "NSGA2", 
+        "CMAES",
+        "MAPElites",
+    ])
+    
+except ImportError:
+    # Algorithms require numpy and other dependencies
+    pass

@@ -278,9 +278,10 @@ class NSGA2(EvolutionAlgorithm):
             'solve': ['resolve', 'address', 'fix']
         }
         
-        return random.choice(synonyms.get(word.lower(), [word]))\n    
+        return random.choice(synonyms.get(word.lower(), [word]))
+    
     def selection(self, population: PromptPopulation, k: int) -> List[Prompt]:
-        \"\"\"Select k prompts using NSGA-II selection criteria.\"\"\"
+        """Select k prompts using NSGA-II selection criteria."""
         selected = []
         for _ in range(k):
             selected.append(self._tournament_selection(population, self.config.tournament_size))

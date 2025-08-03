@@ -10,15 +10,28 @@ __version__ = "0.1.0"
 __author__ = "Daniel Schmidt"
 __email__ = "daniel@example.com"
 
-from .evolution.hub import EvolutionHub
-from .evolution.population import PromptPopulation
-from .deployment.ab_testing import ABTestOrchestrator
-from .evaluation.evaluator import DistributedEvaluator, AsyncEvaluator
+# Core components that work without heavy dependencies
+from .evolution.population import PromptPopulation, Prompt
 
-__all__ = [
-    "EvolutionHub",
-    "PromptPopulation", 
-    "ABTestOrchestrator",
-    "DistributedEvaluator",
-    "AsyncEvaluator",
-]
+# Try to import components that require dependencies
+try:
+    from .evolution.hub import EvolutionHub
+    from .deployment.ab_testing import ABTestOrchestrator
+    from .evaluation.evaluator import DistributedEvaluator
+    
+    __all__ = [
+        "Prompt",
+        "PromptPopulation",
+        "EvolutionHub", 
+        "ABTestOrchestrator",
+        "DistributedEvaluator",
+    ]
+    
+except ImportError as e:
+    print(f"Warning: Full feature set requires additional dependencies: {e}")
+    print("Install with: pip install numpy typer rich scikit-learn")
+    
+    __all__ = [
+        "Prompt",
+        "PromptPopulation",
+    ]

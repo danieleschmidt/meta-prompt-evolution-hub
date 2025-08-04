@@ -1,0 +1,91 @@
+pipeline {
+    agent any
+    
+    environment {
+        DOCKER_REGISTRY = 'your-registry.com'
+        IMAGE_NAME = 'meta-prompt-evolution-hub'
+        KUBECONFIG = credentials('kubeconfig')
+    }
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+        
+        stage('Quality Gates') {
+            steps {
+                sh 'python -m pip install --upgrade pip'
+                sh 'pip install -r requirements.txt'
+                sh 'pip install -e ".[dev,test]"'
+                sh 'python quality_gates.py'
+            }
+            post {
+                always {
+                    publishHTML([
+                        allowMissing: false,
+                        alwaysLinkToLastBuild: true,
+                        keepAll: true,
+                        reportDir: 'quality_reports',
+                        reportFiles: '*.json',
+                        reportName: 'Quality Report'
+                    ])
+                }
+            }
+        }
+        
+        stage('Build Image') {
+            steps {
+                script {
+                    def image = docker.build("${DOCKER_REGISTRY}/${IMAGE_NAME}:${BUILD_NUMBER}", "-f deployment/Dockerfile .")
+                    docker.withRegistry("https://${DOCKER_REGISTRY}", 'docker-registry-credentials') {
+                        image.push()
+                        image.push('latest')
+                    }
+                }
+            }
+        }
+        
+        stage('Deploy to Staging') {
+            steps {
+                sh 'kubectl apply -f deployment/kubernetes/ -n staging'
+                sh 'kubectl rollout status deployment/meta-prompt-evolution-hub -n staging'
+            }
+        }
+        
+        stage('Integration Tests') {
+            steps {
+                sh 'python -m pytest tests/integration/ -v'
+            }
+        }
+        
+        stage('Deploy to Production') {
+            when {
+                branch 'main'
+            }
+            steps {
+                input message: 'Deploy to Production?', ok: 'Deploy'
+                sh 'kubectl apply -f deployment/kubernetes/ -n production'
+                sh 'kubectl rollout status deployment/meta-prompt-evolution-hub -n production'
+            }
+        }
+    }
+    
+    post {
+        success {
+            slackSend(
+                channel: '#deployments',
+                color: 'good',
+                message: "✅ Deployment successful: ${env.JOB_NAME} - ${env.BUILD_NUMBER}"
+            )
+        }
+        failure {
+            slackSend(
+                channel: '#deployments',
+                color: 'danger',
+                message: "❌ Deployment failed: ${env.JOB_NAME} - ${env.BUILD_NUMBER}"
+            )
+        }
+    }
+}

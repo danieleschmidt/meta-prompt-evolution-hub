@@ -1,0 +1,13 @@
+apiVersion: v2
+appVersion: 1.0.0
+description: Helm chart for Meta-Prompt-Evolution-Hub
+keywords:
+- ai
+- machine-learning
+- evolution
+- optimization
+maintainers:
+- email: team@example.com
+  name: Meta-Prompt-Evolution Team
+name: meta-prompt-evolution-hub
+version: 1.0.0

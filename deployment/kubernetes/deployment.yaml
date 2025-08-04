@@ -1,0 +1,73 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: meta-prompt-evolution-hub
+    version: v1.0.0
+  name: meta-prompt-evolution-hub
+  namespace: production
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: meta-prompt-evolution-hub
+  template:
+    metadata:
+      labels:
+        app: meta-prompt-evolution-hub
+        version: v1.0.0
+    spec:
+      containers:
+      - env:
+        - name: LOG_LEVEL
+          value: INFO
+        - name: ENVIRONMENT
+          value: production
+        - name: PORT
+          value: '8080'
+        image: meta-prompt-evolution-hub:latest
+        imagePullPolicy: Always
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
+        name: meta-prompt-evolution-hub
+        ports:
+        - containerPort: 8080
+          name: http
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 5
+          timeoutSeconds: 3
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 2Gi
+          requests:
+            cpu: 500m
+            memory: 1Gi
+        volumeMounts:
+        - mountPath: /app/data
+          name: data-volume
+        - mountPath: /app/cache
+          name: cache-volume
+      securityContext:
+        fsGroup: 1000
+        runAsNonRoot: true
+        runAsUser: 1000
+      serviceAccountName: meta-prompt-evolution-hub
+      volumes:
+      - name: data-volume
+        persistentVolumeClaim:
+          claimName: meta-prompt-evolution-data
+      - emptyDir:
+          sizeLimit: 1Gi
+        name: cache-volume

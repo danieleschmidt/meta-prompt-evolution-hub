@@ -622,9 +622,9 @@ We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 ```bibtex
 @software{meta_prompt_evolution_hub,
   title={Meta-Prompt-Evolution-Hub: Evolutionary Prompt Optimization at Scale},
-  author={Your Name},
+  author={Daniel Schmidt},
   year={2025},
-  url={https://github.com/yourusername/meta-prompt-evolution-hub}
+  url={https://github.com/danieleschmidt/meta-prompt-evolution-hub}
 }
 ```
 

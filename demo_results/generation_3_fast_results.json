@@ -1,0 +1,228 @@
+{
+  "scalability_metrics": {
+    "total_evaluations": 1144,
+    "population_size": 80,
+    "generations": 20,
+    "parallel_workers": 6,
+    "cache_hit_rate": 0.33916083916083917,
+    "total_time": 0.0954129695892334,
+    "evaluations_per_second": 11989.98422253374
+  },
+  "cache_statistics": {
+    "hits": 388,
+    "misses": 756,
+    "hit_rate": 0.33916083916083917,
+    "current_size": 756,
+    "max_size": 5000
+  },
+  "evolution_history": [
+    {
+      "generation": 1,
+      "best_fitness": 1.0,
+      "avg_fitness": 0.8527173913043479,
+      "diversity": 0.42044614232639427,
+      "execution_time": 0.010332584381103516
+    },
+    {
+      "generation": 2,
+      "best_fitness": 1.0,
+      "avg_fitness": 0.9360869565217392,
+      "diversity": 0.2087338851624567,
+      "execution_time": 0.004502773284912109
+    },
+    {
+      "generation": 3,
+      "best_fitness": 1.0,
+      "avg_fitness": 0.9746467391304348,
+      "diversity": 0.1917713239141809,
+      "execution_time": 0.004614114761352539
+    },
+    {
+      "generation": 4,
+      "best_fitness": 1.0,
+      "avg_fitness": 0.9571467391304347,
+      "diversity": 0.21533942248227966,
+      "execution_time": 0.004645586013793945
+    },
+    {
+      "generation": 5,
+      "best_fitness": 1.0,
+      "avg_fitness": 0.9796467391304347,
+      "diversity": 0.3027956170813314,
+      "execution_time": 0.0034637451171875
+    },
+    {
+      "generation": 6,
+      "best_fitness": 1.0,
+      "avg_fitness": 0.9556929347826086,
+      "diversity": 0.3182698254126824,
+      "execution_time": 0.0035409927368164062
+    },
+    {
+      "generation": 7,
+      "best_fitness": 1.0,
+      "avg_fitness": 0.9572961956521739,
+      "diversity": 0.29532990818705107,
+      "execution_time": 0.005711555480957031
+    },
+    {
+      "generation": 8,
+      "best_fitness": 1.0,
+      "avg_fitness": 0.9645923913043479,
+      "diversity": 0.23131202131202125,
+      "execution_time": 0.003950357437133789
+    },
+    {
+      "generation": 9,
+      "best_fitness": 1.0,
+      "avg_fitness": 0.9643478260869566,
+      "diversity": 0.2559438180866751,
+      "execution_time": 0.00374603271484375
+    },
+    {
+      "generation": 10,
+      "best_fitness": 1.0,
+      "avg_fitness": 0.9733967391304347,
+      "diversity": 0.1490925740925741,
+      "execution_time": 0.0044269561767578125
+    },
+    {
+      "generation": 11,
+      "best_fitness": 1.0,
+      "avg_fitness": 0.9622961956521738,
+      "diversity": 0.17690048047190896,
+      "execution_time": 0.003896474838256836
+    },
+    {
+      "generation": 12,
+      "best_fitness": 1.0,
+      "avg_fitness": 0.9852445652173912,
+      "diversity": 0.1694940773512203,
+      "execution_time": 0.0036821365356445312
+    },
+    {
+      "generation": 13,
+      "best_fitness": 1.0,
+      "avg_fitness": 0.976195652173913,
+      "diversity": 0.22833452262023685,
+      "execution_time": 0.004793882369995117
+    },
+    {
+      "generation": 14,
+      "best_fitness": 1.0,
+      "avg_fitness": 0.9729483695652175,
+      "diversity": 0.2147854526425956,
+      "execution_time": 0.0037965774536132812
+    },
+    {
+      "generation": 15,
+      "best_fitness": 1.0,
+      "avg_fitness": 0.9663994565217392,
+      "diversity": 0.1504602540316826,
+      "execution_time": 0.003287076950073242
+    },
+    {
+      "generation": 16,
+      "best_fitness": 1.0,
+      "avg_fitness": 0.9687907608695653,
+      "diversity": 0.1705128205128205,
+      "execution_time": 0.0033740997314453125
+    },
+    {
+      "generation": 17,
+      "best_fitness": 1.0,
+      "avg_fitness": 0.974945652173913,
+      "diversity": 0.25786515072229366,
+      "execution_time": 0.0036308765411376953
+    },
+    {
+      "generation": 18,
+      "best_fitness": 1.0,
+      "avg_fitness": 0.9765489130434784,
+      "diversity": 0.32432448503877076,
+      "execution_time": 0.0034210681915283203
+    },
+    {
+      "generation": 19,
+      "best_fitness": 1.0,
+      "avg_fitness": 0.9488451086956522,
+      "diversity": 0.23472622615479755,
+      "execution_time": 0.004115104675292969
+    },
+    {
+      "generation": 20,
+      "best_fitness": 1.0,
+      "avg_fitness": 0.9735461956521739,
+      "diversity": 0.18134722420436705,
+      "execution_time": 0.0026717185974121094
+    }
+  ],
+  "top_prompts": [
+    {
+      "rank": 1,
+      "text": "You are an expert assistant. Please provide comprehensive help with: {task}",
+      "fitness": 1.0,
+      "generation": 19
+    },
+    {
+      "rank": 2,
+      "text": "You are an expert assistant. Please provide comprehensive help with: {task}",
+      "fitness": 1.0,
+      "generation": 19
+    },
+    {
+      "rank": 3,
+      "text": "You are an expert assistant. Please provide comprehensive help with: {task}",
+      "fitness": 1.0,
+      "generation": 19
+    },
+    {
+      "rank": 4,
+      "text": "You are an expert assistant. Please provide comprehensive systematically help with: {task}",
+      "fitness": 1.0,
+      "generation": 19
+    },
+    {
+      "rank": 5,
+      "text": "You are an expert assistant. Please provide comprehensive help with: {task}",
+      "fitness": 1.0,
+      "generation": 19
+    },
+    {
+      "rank": 6,
+      "text": "You are an expert assistant. Please provide comprehensive help with: {task}",
+      "fitness": 1.0,
+      "generation": 19
+    },
+    {
+      "rank": 7,
+      "text": "You are an expert assistant. Please provide comprehensive help with: {task} systematically",
+      "fitness": 1.0,
+      "generation": 19
+    },
+    {
+      "rank": 8,
+      "text": "You are an expert assistant. Please provide comprehensive help with: {task}",
+      "fitness": 1.0,
+      "generation": 19
+    },
+    {
+      "rank": 9,
+      "text": "You systematically are an expert assistant. Please provide comprehensive help with: {task}",
+      "fitness": 1.0,
+      "generation": 19
+    },
+    {
+      "rank": 10,
+      "text": "You are an expert assistant. Please provide comprehensive help with: {task}",
+      "fitness": 1.0,
+      "generation": 19
+    }
+  ],
+  "optimization_features": {
+    "caching_enabled": true,
+    "parallel_evaluation": true,
+    "distributed_workers": true,
+    "performance_profiling": true
+  }
+}

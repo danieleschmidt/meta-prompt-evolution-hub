@@ -1,0 +1,302 @@
+{
+  "quality_gate_summary": {
+    "timestamp": "2025-08-04T05:24:46.919676+00:00",
+    "total_execution_time": 0.4421348571777344,
+    "overall_status": "FAILED"
+  },
+  "unit_tests": {
+    "total_tests": 6,
+    "passed": 5,
+    "failed": 1,
+    "success_rate": 0.8333333333333334,
+    "results": [
+      {
+        "test_name": "Basic Functionality",
+        "passed": true,
+        "execution_time": 0.152571439743042,
+        "error_message": null,
+        "details": {
+          "prompts_created": 1,
+          "population_size": 3
+        }
+      },
+      {
+        "test_name": "Population Management",
+        "passed": true,
+        "execution_time": 3.8623809814453125e-05,
+        "error_message": null,
+        "details": {
+          "population_size": 5,
+          "top_k_size": 3
+        }
+      },
+      {
+        "test_name": "Fitness Evaluation",
+        "passed": true,
+        "execution_time": 0.0072479248046875,
+        "error_message": null,
+        "details": {
+          "fitness_score": 1.0
+        }
+      },
+      {
+        "test_name": "Evolution Algorithms",
+        "passed": false,
+        "execution_time": 1.3589859008789062e-05,
+        "error_message": "'SimpleEvolutionEngine' object has no attribute '_create_initial_population'",
+        "details": {}
+      },
+      {
+        "test_name": "Data Persistence",
+        "passed": true,
+        "execution_time": 0.005845785140991211,
+        "error_message": null,
+        "details": {
+          "serialization": "JSON",
+          "items_persisted": 3
+        }
+      },
+      {
+        "test_name": "Error Handling",
+        "passed": true,
+        "execution_time": 0.016588926315307617,
+        "error_message": null,
+        "details": {
+          "validation_errors_caught": 2
+        }
+      }
+    ]
+  },
+  "integration_tests": {
+    "total_tests": 4,
+    "passed": 2,
+    "failed": 2,
+    "success_rate": 0.5,
+    "results": [
+      {
+        "test_name": "End-to-End Evolution",
+        "passed": false,
+        "execution_time": 1.5497207641601562e-05,
+        "error_message": "'SimpleEvolutionEngine' object has no attribute '_create_initial_population'"
+      },
+      {
+        "test_name": "CLI Functionality",
+        "passed": false,
+        "execution_time": 0.16440677642822266,
+        "error_message": "attempted relative import with no known parent package"
+      },
+      {
+        "test_name": "API Endpoints",
+        "passed": true,
+        "execution_time": 5.245208740234375e-06,
+        "error_message": null
+      },
+      {
+        "test_name": "Distributed Processing",
+        "passed": true,
+        "execution_time": 0.00918436050415039,
+        "error_message": null
+      }
+    ]
+  },
+  "security_tests": {
+    "total_scans": 4,
+    "passed_scans": 3,
+    "failed_scans": 1,
+    "total_issues": 1,
+    "critical_issues": 1,
+    "high_issues": 0,
+    "security_passed": false,
+    "results": [
+      {
+        "scan_type": "Input Validation",
+        "passed": false,
+        "issues_found": 1,
+        "critical_issues": 1,
+        "high_issues": 0,
+        "details": [
+          {
+            "blocked_inputs": 3,
+            "total_inputs": 4
+          }
+        ]
+      },
+      {
+        "scan_type": "Injection Protection",
+        "passed": true,
+        "issues_found": 0,
+        "critical_issues": 0,
+        "high_issues": 0,
+        "details": [
+          {
+            "protection_mechanisms": [
+              "input_sanitization",
+              "parameterized_queries"
+            ]
+          }
+        ]
+      },
+      {
+        "scan_type": "Access Control",
+        "passed": true,
+        "issues_found": 0,
+        "critical_issues": 0,
+        "high_issues": 0,
+        "details": [
+          {
+            "access_controls": [
+              "authentication",
+              "authorization",
+              "rate_limiting"
+            ]
+          }
+        ]
+      },
+      {
+        "scan_type": "Data Sanitization",
+        "passed": true,
+        "issues_found": 0,
+        "critical_issues": 0,
+        "high_issues": 0,
+        "details": [
+          {
+            "sanitization_applied": true,
+            "escaped_characters": true
+          }
+        ]
+      }
+    ]
+  },
+  "performance_tests": {
+    "total_benchmarks": 5,
+    "passed": 5,
+    "failed": 0,
+    "success_rate": 1.0,
+    "results": [
+      {
+        "benchmark_name": "Evolution Speed",
+        "metric_name": "value",
+        "value": 0.006981611251831055,
+        "unit": "seconds",
+        "passed": true,
+        "threshold": 10.0,
+        "details": {
+          "evaluations_per_second": 10940.285684868037
+        }
+      },
+      {
+        "benchmark_name": "Memory Usage",
+        "metric_name": "value",
+        "value": 0.0,
+        "unit": "MB",
+        "passed": true,
+        "threshold": 500,
+        "details": {
+          "error": "No module named 'psutil'",
+          "psutil_available": false
+        }
+      },
+      {
+        "benchmark_name": "Scalability Factor",
+        "metric_name": "value",
+        "value": 0.529949901982139,
+        "unit": "ratio",
+        "passed": true,
+        "threshold": 2.0,
+        "details": {
+          "scalability_results": [
+            {
+              "population_size": 10,
+              "execution_time": 0.002189159393310547,
+              "evaluations_per_second": 11135.3203539823
+            },
+            {
+              "population_size": 20,
+              "execution_time": 0.004245758056640625,
+              "evaluations_per_second": 11417.602903646572
+            },
+            {
+              "population_size": 40,
+              "execution_time": 0.0046405792236328125,
+              "evaluations_per_second": 20840.183427358832
+            }
+          ]
+        }
+      },
+      {
+        "benchmark_name": "Cache Write Performance",
+        "metric_name": "value",
+        "value": 0.9632110595703125,
+        "unit": "ms/1000ops",
+        "passed": true,
+        "threshold": 100.0,
+        "details": {
+          "operations": 1000
+        }
+      },
+      {
+        "benchmark_name": "Cache Read Performance",
+        "metric_name": "value",
+        "value": 0.7078647613525391,
+        "unit": "ms/1000ops",
+        "passed": true,
+        "threshold": 50.0,
+        "details": {
+          "hit_rate": 1.0
+        }
+      }
+    ]
+  },
+  "code_quality": {
+    "total_checks": 4,
+    "passed_checks": 2,
+    "failed_checks": 2,
+    "overall_score": 0.5,
+    "quality_passed": false,
+    "checks": {
+      "formatting_check": {
+        "check_name": "Code Formatting",
+        "passed": false,
+        "details": {
+          "tool": "black",
+          "output": "",
+          "errors": "/usr/bin/python3: No module named black\n"
+        }
+      },
+      "linting_check": {
+        "check_name": "Linting",
+        "passed": false,
+        "details": {
+          "tool": "ruff",
+          "output": "",
+          "errors": "/usr/bin/python3: No module named ruff\n"
+        }
+      },
+      "complexity_check": {
+        "check_name": "Code Complexity",
+        "passed": true,
+        "details": {
+          "complexity_issues": 0
+        }
+      },
+      "documentation_check": {
+        "check_name": "Documentation",
+        "passed": true,
+        "details": {
+          "documented_modules": 14,
+          "total_modules": 14,
+          "coverage_ratio": 1.0
+        }
+      }
+    }
+  },
+  "thresholds": {
+    "test_coverage": 0.85,
+    "performance_regression": 0.1,
+    "security_critical": 0,
+    "security_high": 2,
+    "code_quality_score": 0.8,
+    "memory_usage_mb": 500,
+    "response_time_ms": 1000
+  }
+}

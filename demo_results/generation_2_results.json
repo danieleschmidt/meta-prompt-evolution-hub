@@ -1,0 +1,653 @@
+{
+  "evolution_history": [
+    {
+      "generation": 1,
+      "best_fitness": 0.9,
+      "average_fitness": 0.26999999999999996,
+      "diversity": 0.6435972636388988,
+      "execution_time": 0.004393577575683594,
+      "population_size": 30
+    },
+    {
+      "generation": 2,
+      "best_fitness": 1.0000000000000002,
+      "average_fitness": 0.28666666666666674,
+      "diversity": 0.5340510261656306,
+      "execution_time": 0.00510716438293457,
+      "population_size": 30
+    },
+    {
+      "generation": 3,
+      "best_fitness": 1.0000000000000002,
+      "average_fitness": 0.30000000000000004,
+      "diversity": 0.43469558219558224,
+      "execution_time": 0.004468202590942383,
+      "population_size": 30
+    },
+    {
+      "generation": 4,
+      "best_fitness": 1.0000000000000002,
+      "average_fitness": 0.30000000000000004,
+      "diversity": 0.44392077609116154,
+      "execution_time": 0.004638671875,
+      "population_size": 30
+    },
+    {
+      "generation": 5,
+      "best_fitness": 1.0000000000000002,
+      "average_fitness": 0.30000000000000004,
+      "diversity": 0.42023334621204855,
+      "execution_time": 0.004537820816040039,
+      "population_size": 30
+    },
+    {
+      "generation": 6,
+      "best_fitness": 1.0000000000000002,
+      "average_fitness": 0.30000000000000004,
+      "diversity": 0.4200537359867991,
+      "execution_time": 0.004433155059814453,
+      "population_size": 30
+    },
+    {
+      "generation": 7,
+      "best_fitness": 1.0000000000000002,
+      "average_fitness": 0.30000000000000004,
+      "diversity": 0.4615181792514452,
+      "execution_time": 0.004366397857666016,
+      "population_size": 30
+    },
+    {
+      "generation": 8,
+      "best_fitness": 1.0000000000000002,
+      "average_fitness": 0.30000000000000004,
+      "diversity": 0.4813985657494783,
+      "execution_time": 0.004355430603027344,
+      "population_size": 30
+    },
+    {
+      "generation": 9,
+      "best_fitness": 1.0000000000000002,
+      "average_fitness": 0.30000000000000004,
+      "diversity": 0.4243341012154401,
+      "execution_time": 0.005246162414550781,
+      "population_size": 30
+    },
+    {
+      "generation": 10,
+      "best_fitness": 1.0000000000000002,
+      "average_fitness": 0.30000000000000004,
+      "diversity": 0.39829729038146927,
+      "execution_time": 0.004545450210571289,
+      "population_size": 30
+    },
+    {
+      "generation": 11,
+      "best_fitness": 1.0000000000000002,
+      "average_fitness": 0.30000000000000004,
+      "diversity": 0.4099761057063292,
+      "execution_time": 0.004485368728637695,
+      "population_size": 30
+    },
+    {
+      "generation": 12,
+      "best_fitness": 1.0000000000000002,
+      "average_fitness": 0.30000000000000004,
+      "diversity": 0.43329498088118784,
+      "execution_time": 0.004621982574462891,
+      "population_size": 30
+    },
+    {
+      "generation": 13,
+      "best_fitness": 1.0000000000000002,
+      "average_fitness": 0.30000000000000004,
+      "diversity": 0.3942780303987207,
+      "execution_time": 0.004376411437988281,
+      "population_size": 30
+    },
+    {
+      "generation": 14,
+      "best_fitness": 1.0000000000000002,
+      "average_fitness": 0.30000000000000004,
+      "diversity": 0.45817286330978013,
+      "execution_time": 0.004494905471801758,
+      "population_size": 30
+    },
+    {
+      "generation": 15,
+      "best_fitness": 1.0000000000000002,
+      "average_fitness": 0.9933333333333336,
+      "diversity": 0.45817286330978013,
+      "execution_time": 0.003343820571899414,
+      "population_size": 30
+    }
+  ],
+  "final_population": [
+    {
+      "id": "67d8b43c",
+      "text": "Let me carefully analyze assistant. Please help with: {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 1,
+      "parent_ids": [
+        "014fee48",
+        "e4c83ba2"
+      ],
+      "mutations_applied": [
+        "crossover"
+      ]
+    },
+    {
+      "id": "0828216e",
+      "text": "I&#x27;ll provide comprehensive assistance assistant. Please carefully help with: {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 2,
+      "parent_ids": [
+        "9b9bd2a9",
+        "00b109fe"
+      ],
+      "mutations_applied": [
+        "crossover"
+      ]
+    },
+    {
+      "id": "7bc2608d",
+      "text": "I&#x27;ll provide comprehensive assistance with assistant. Please help with: {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 2,
+      "parent_ids": [
+        "9b9bd2a9",
+        "30d098d1"
+      ],
+      "mutations_applied": [
+        "crossover"
+      ]
+    },
+    {
+      "id": "236a7921",
+      "text": "I&#x27;ll provide comprehensive carefully analyze and help you with: {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 2,
+      "parent_ids": [
+        "1eaccb27",
+        "d06ea432"
+      ],
+      "mutations_applied": [
+        "crossover"
+      ]
+    },
+    {
+      "id": "457f7488",
+      "text": "I&#x27;ll provide comprehensive analyze and help you with: precisely {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 2,
+      "parent_ids": [
+        "d640ccfe",
+        "795dcabf"
+      ],
+      "mutations_applied": [
+        "crossover"
+      ]
+    },
+    {
+      "id": "d5a00cdb",
+      "text": "Let me carefully carefully analyze assistant. Please help with: {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 2,
+      "parent_ids": [
+        "67d8b43c"
+      ],
+      "mutations_applied": [
+        "add_modifier"
+      ]
+    },
+    {
+      "id": "0f1d1641",
+      "text": "I&#x27;ll provide comprehensive carefully analyze and help precisely you with: {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 3,
+      "parent_ids": [
+        "236a7921"
+      ],
+      "mutations_applied": [
+        "add_modifier"
+      ]
+    },
+    {
+      "id": "aefd1fef",
+      "text": "I&#x27;ll provide comprehensive analyze and help you with: precisely {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 3,
+      "parent_ids": [
+        "457f7488"
+      ],
+      "mutations_applied": [
+        "add_modifier"
+      ]
+    },
+    {
+      "id": "a91efece",
+      "text": "I&#x27;ll provide comprehensive assistance assistant. Please carefully help with: {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 3,
+      "parent_ids": [
+        "0828216e"
+      ],
+      "mutations_applied": [
+        "add_modifier"
+      ]
+    },
+    {
+      "id": "e35d11f8",
+      "text": "I&#x27;ll provide comprehensive carefully analyze and thoroughly help you with: {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 3,
+      "parent_ids": [
+        "236a7921"
+      ],
+      "mutations_applied": [
+        "add_modifier"
+      ]
+    },
+    {
+      "id": "14934eb6",
+      "text": "precisely I&#x27;ll provide comprehensive carefully analyze and help precisely you with: {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 4,
+      "parent_ids": [
+        "0f1d1641"
+      ],
+      "mutations_applied": [
+        "add_modifier"
+      ]
+    },
+    {
+      "id": "54fce95b",
+      "text": "I&#x27;ll provide comprehensive carefully analyze and help you with: {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 3,
+      "parent_ids": [
+        "236a7921"
+      ],
+      "mutations_applied": [
+        "add_modifier"
+      ]
+    },
+    {
+      "id": "7c1447ec",
+      "text": "I&#x27;ll provide comprehensive assistance assistant. Please carefully help clearly with: {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 3,
+      "parent_ids": [
+        "0828216e"
+      ],
+      "mutations_applied": [
+        "add_modifier"
+      ]
+    },
+    {
+      "id": "0ec7c66c",
+      "text": "effectively I&#x27;ll provide comprehensive assistance assistant. Please carefully help with: {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 4,
+      "parent_ids": [
+        "a91efece"
+      ],
+      "mutations_applied": [
+        "add_modifier"
+      ]
+    },
+    {
+      "id": "9e83ecea",
+      "text": "I&#x27;ll provide comprehensive assistance assistant. Please carefully effectively help with: {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 4,
+      "parent_ids": [
+        "1d901415"
+      ],
+      "mutations_applied": [
+        "add_modifier"
+      ]
+    },
+    {
+      "id": "94b31ab8",
+      "text": "I&#x27;ll provide comprehensive analyze and help you with: precisely {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 3,
+      "parent_ids": [
+        "457f7488",
+        "d5a00cdb"
+      ],
+      "mutations_applied": [
+        "crossover"
+      ]
+    },
+    {
+      "id": "27309195",
+      "text": "I&#x27;ll provide comprehensive assistance assistant. Please carefully help with: {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 4,
+      "parent_ids": [
+        "1d901415",
+        "0828216e"
+      ],
+      "mutations_applied": [
+        "crossover"
+      ]
+    },
+    {
+      "id": "36913e43",
+      "text": "Let me carefully analyze assistant. Please help with: precisely {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 4,
+      "parent_ids": [
+        "67d8b43c",
+        "aefd1fef"
+      ],
+      "mutations_applied": [
+        "crossover"
+      ]
+    },
+    {
+      "id": "e932a8ea",
+      "text": "I&#x27;ll provide comprehensive assistance and help you with: precisely {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 4,
+      "parent_ids": [
+        "1d901415",
+        "aefd1fef"
+      ],
+      "mutations_applied": [
+        "crossover"
+      ]
+    },
+    {
+      "id": "39dcb7c0",
+      "text": "I&#x27;ll provide comprehensive carefully analyze clearly and help with: {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 5,
+      "parent_ids": [
+        "5ee84005",
+        "0828216e"
+      ],
+      "mutations_applied": [
+        "crossover"
+      ]
+    },
+    {
+      "id": "2194ee6b",
+      "text": "I&#x27;ll provide comprehensive assistance with assistant. Please help with: {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 5,
+      "parent_ids": [
+        "7ce19125",
+        "7bc2608d"
+      ],
+      "mutations_applied": [
+        "crossover"
+      ]
+    },
+    {
+      "id": "c9e1e908",
+      "text": "I&#x27;ll provide carefully analyze assistant. Please help with: {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 5,
+      "parent_ids": [
+        "b693f0e0",
+        "67d8b43c"
+      ],
+      "mutations_applied": [
+        "crossover"
+      ]
+    },
+    {
+      "id": "e23ee792",
+      "text": "Let me carefully analyze assistant. Please carefully help thoroughly with: {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 5,
+      "parent_ids": [
+        "67d8b43c",
+        "7ce19125"
+      ],
+      "mutations_applied": [
+        "crossover"
+      ]
+    },
+    {
+      "id": "f48bde36",
+      "text": "Let me comprehensive carefully analyze clearly and help precisely you with: {task}",
+      "fitness": 0.9,
+      "generation": 5,
+      "parent_ids": [
+        "d5a00cdb",
+        "5ee84005"
+      ],
+      "mutations_applied": [
+        "crossover"
+      ]
+    },
+    {
+      "id": "9c43fcc9",
+      "text": "Let me carefully carefully analyze assistant. Please help with: {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 5,
+      "parent_ids": [
+        "30bd9fe3",
+        "d5a00cdb"
+      ],
+      "mutations_applied": [
+        "crossover"
+      ]
+    },
+    {
+      "id": "5dc882f3",
+      "text": "I&#x27;ll provide comprehensive carefully analyze and carefully help with: {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 3,
+      "parent_ids": [
+        "236a7921",
+        "0828216e"
+      ],
+      "mutations_applied": [
+        "crossover"
+      ]
+    },
+    {
+      "id": "d646e39b",
+      "text": "I&#x27;ll provide comprehensive carefully assistant. Please help with: {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 4,
+      "parent_ids": [
+        "0f1d1641",
+        "67d8b43c"
+      ],
+      "mutations_applied": [
+        "crossover"
+      ]
+    },
+    {
+      "id": "14fa93ad",
+      "text": "Let me comprehensive assistance with assistant. Please help with: {task}",
+      "fitness": 0.9,
+      "generation": 5,
+      "parent_ids": [
+        "30bd9fe3",
+        "7bc2608d"
+      ],
+      "mutations_applied": [
+        "crossover"
+      ]
+    },
+    {
+      "id": "28db7257",
+      "text": "I&#x27;ll provide comprehensive carefully analyze and help precisely you {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 4,
+      "parent_ids": [
+        "0f1d1641",
+        "0828216e"
+      ],
+      "mutations_applied": [
+        "crossover"
+      ]
+    },
+    {
+      "id": "f7da095c",
+      "text": "Let me carefully analyze assistant. Please carefully help with: {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 3,
+      "parent_ids": [
+        "67d8b43c",
+        "0828216e"
+      ],
+      "mutations_applied": [
+        "crossover"
+      ]
+    }
+  ],
+  "top_prompts": [
+    {
+      "id": "67d8b43c",
+      "text": "Let me carefully analyze assistant. Please help with: {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 1,
+      "parent_ids": [
+        "014fee48",
+        "e4c83ba2"
+      ],
+      "mutations_applied": [
+        "crossover"
+      ]
+    },
+    {
+      "id": "0828216e",
+      "text": "I&#x27;ll provide comprehensive assistance assistant. Please carefully help with: {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 2,
+      "parent_ids": [
+        "9b9bd2a9",
+        "00b109fe"
+      ],
+      "mutations_applied": [
+        "crossover"
+      ]
+    },
+    {
+      "id": "7bc2608d",
+      "text": "I&#x27;ll provide comprehensive assistance with assistant. Please help with: {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 2,
+      "parent_ids": [
+        "9b9bd2a9",
+        "30d098d1"
+      ],
+      "mutations_applied": [
+        "crossover"
+      ]
+    },
+    {
+      "id": "236a7921",
+      "text": "I&#x27;ll provide comprehensive carefully analyze and help you with: {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 2,
+      "parent_ids": [
+        "1eaccb27",
+        "d06ea432"
+      ],
+      "mutations_applied": [
+        "crossover"
+      ]
+    },
+    {
+      "id": "457f7488",
+      "text": "I&#x27;ll provide comprehensive analyze and help you with: precisely {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 2,
+      "parent_ids": [
+        "d640ccfe",
+        "795dcabf"
+      ],
+      "mutations_applied": [
+        "crossover"
+      ]
+    },
+    {
+      "id": "d5a00cdb",
+      "text": "Let me carefully carefully analyze assistant. Please help with: {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 2,
+      "parent_ids": [
+        "67d8b43c"
+      ],
+      "mutations_applied": [
+        "add_modifier"
+      ]
+    },
+    {
+      "id": "0f1d1641",
+      "text": "I&#x27;ll provide comprehensive carefully analyze and help precisely you with: {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 3,
+      "parent_ids": [
+        "236a7921"
+      ],
+      "mutations_applied": [
+        "add_modifier"
+      ]
+    },
+    {
+      "id": "aefd1fef",
+      "text": "I&#x27;ll provide comprehensive analyze and help you with: precisely {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 3,
+      "parent_ids": [
+        "457f7488"
+      ],
+      "mutations_applied": [
+        "add_modifier"
+      ]
+    },
+    {
+      "id": "a91efece",
+      "text": "I&#x27;ll provide comprehensive assistance assistant. Please carefully help with: {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 3,
+      "parent_ids": [
+        "0828216e"
+      ],
+      "mutations_applied": [
+        "add_modifier"
+      ]
+    },
+    {
+      "id": "e35d11f8",
+      "text": "I&#x27;ll provide comprehensive carefully analyze and thoroughly help you with: {task}",
+      "fitness": 1.0000000000000002,
+      "generation": 3,
+      "parent_ids": [
+        "236a7921"
+      ],
+      "mutations_applied": [
+        "add_modifier"
+      ]
+    }
+  ],
+  "health_summary": {
+    "status": "healthy",
+    "active_alerts": 0,
+    "average_error_rate": 0.0,
+    "average_response_time": 0.004426908493041992,
+    "total_operations": 3150,
+    "uptime_metrics": 15
+  },
+  "error_statistics": {},
+  "security_summary": {
+    "security_level": "high",
+    "validations_performed": true,
+    "sanitization_applied": true
+  },
+  "performance_metrics": {
+    "total_time": 0.11624836921691895,
+    "successful_operations": 450,
+    "failed_operations": 0,
+    "success_rate": 1.0
+  }
+}

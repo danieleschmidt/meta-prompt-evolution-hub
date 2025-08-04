@@ -1,0 +1,58 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "Meta-Prompt-Evolution-Hub Dashboard",
+    "tags": [
+      "meta-prompt-evolution",
+      "production"
+    ],
+    "timezone": "browser",
+    "panels": [
+      {
+        "title": "Request Rate",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "rate(http_requests_total[5m])",
+            "legendFormat": "{{method}} {{status}}"
+          }
+        ]
+      },
+      {
+        "title": "Response Time",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m]))",
+            "legendFormat": "95th percentile"
+          }
+        ]
+      },
+      {
+        "title": "Error Rate",
+        "type": "singlestat",
+        "targets": [
+          {
+            "expr": "rate(http_requests_total{status=~\"5..\"}[5m]) / rate(http_requests_total[5m]) * 100",
+            "legendFormat": "Error Rate %"
+          }
+        ]
+      },
+      {
+        "title": "Evolution Performance",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "rate(evolution_evaluations_total[5m])",
+            "legendFormat": "Evaluations/sec"
+          }
+        ]
+      }
+    ],
+    "time": {
+      "from": "now-1h",
+      "to": "now"
+    },
+    "refresh": "30s"
+  }
+}

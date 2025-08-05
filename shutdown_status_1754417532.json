@@ -1,0 +1,40 @@
+{
+  "evolution_stats": {},
+  "error_summary": {
+    "total_errors": 0,
+    "error_breakdown": {
+      "evaluation": 0,
+      "algorithm": 0,
+      "timeout": 0
+    },
+    "last_error_time": null,
+    "system_health": "healthy"
+  },
+  "performance_summary": {
+    "total_evolutions": 1,
+    "uptime_seconds": 1.4415440559387207,
+    "recent_performance": {
+      "average_generation_time": 1.4222121238708496,
+      "best_fitness_achieved": 0.3599742412567139,
+      "average_diversity": 0.7108519404572035
+    },
+    "algorithms_used": [
+      "scalable_nsga2"
+    ],
+    "total_evaluations": 40
+  },
+  "health_report": {
+    "status": "healthy",
+    "last_check": 1754417532.1756895,
+    "current_metrics": {
+      "cpu_usage": 2.5,
+      "memory_usage": 14.7,
+      "disk_usage": 16.9
+    },
+    "averages": {
+      "cpu_usage": 2.5,
+      "memory_usage": 14.7
+    },
+    "recommendations": []
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "export_time": 1754417242.2381246,
+  "evolution_metrics": [
+    {
+      "active_populations": 1,
+      "total_evaluations": 10,
+      "average_fitness": 0.35992433547973635,
+      "best_fitness": 0.35995121002197267,
+      "diversity_score": 0.45,
+      "generation_time": 1.6079423427581787,
+      "algorithm_type": "nsga2",
+      "timestamp": 1754417228.4039595
+    },
+    {
+      "active_populations": 1,
+      "total_evaluations": 24,
+      "average_fitness": 0.3599265659177625,
+      "best_fitness": 0.35994636948044234,
+      "diversity_score": 0.5357142857142857,
+      "generation_time": 13.831940174102783,
+      "algorithm_type": "nsga2",
+      "timestamp": 1754417242.2377617
+    }
+  ],
+  "performance_summary": {
+    "total_evolutions": 2,
+    "uptime_seconds": 17.44759964942932,
+    "recent_performance": {
+      "average_generation_time": 7.719941258430481,
+      "best_fitness_achieved": 0.35995121002197267,
+      "average_diversity": 0.4928571428571429
+    },
+    "algorithms_used": [
+      "nsga2"
+    ],
+    "total_evaluations": 34
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "scaling_metrics": {
+    "populations_processed": 1,
+    "cache_hits": 0,
+    "parallel_executions": 0,
+    "optimization_time_saved": 0.0,
+    "memory_optimizations": 1,
+    "async_operations": 0
+  },
+  "optimization_metrics": {
+    "optimization_metrics": {
+      "total_evaluations": 23,
+      "cached_evaluations": 0,
+      "parallel_batches": 2,
+      "memory_optimizations": 0,
+      "total_time": 1.4051868915557861
+    },
+    "cache_stats": {
+      "size": 13,
+      "max_size": 5000,
+      "hits": 12,
+      "misses": 12,
+      "evictions": 0,
+      "hit_rate": 0.5,
+      "total_size_bytes": 1726,
+      "average_size_bytes": 132.76923076923077,
+      "cache_type": "evaluation"
+    },
+    "memory_info": {
+      "memory_mb": 37.1015625,
+      "limit_mb": 1024.0,
+      "usage_percent": 3.623199462890625,
+      "gc_collections": 1
+    },
+    "efficiency_ratios": {
+      "cache_hit_rate": 0.5,
+      "parallel_batch_ratio": 2.0,
+      "avg_evaluation_time": 0.061095082241555916
+    }
+  },
+  "cache_performance": {
+    "evaluation_cache": {
+      "size": 13,
+      "max_size": 5000,
+      "hits": 12,
+      "misses": 12,
+      "evictions": 0,
+      "hit_rate": 0.5,
+      "total_size_bytes": 1726,
+      "average_size_bytes": 132.76923076923077,
+      "cache_type": "evaluation"
+    },
+    "distributed_cache": {
+      "total_size": 0,
+      "total_hits": 0,
+      "total_misses": 1,
+      "total_evictions": 0,
+      "shard_stats": [
+        {
+          "shard_id": 0,
+          "size": 0,
+          "max_size": 1000,
+          "hits": 0,
+          "misses": 1,
+          "evictions": 0,
+          "hit_rate": 0.0,
+          "total_size_bytes": 0,
+          "average_size_bytes": 0
+        },
+        {
+          "shard_id": 1,
+          "size": 0,
+          "max_size": 1000,
+          "hits": 0,
+          "misses": 0,
+          "evictions": 0,
+          "hit_rate": 0.0,
+          "total_size_bytes": 0,
+          "average_size_bytes": 0
+        },
+        {
+          "shard_id": 2,
+          "size": 0,
+          "max_size": 1000,
+          "hits": 0,
+          "misses": 0,
+          "evictions": 0,
+          "hit_rate": 0.0,
+          "total_size_bytes": 0,
+          "average_size_bytes": 0
+        },
+        {
+          "shard_id": 3,
+          "size": 0,
+          "max_size": 1000,
+          "hits": 0,
+          "misses": 0,
+          "evictions": 0,
+          "hit_rate": 0.0,
+          "total_size_bytes": 0,
+          "average_size_bytes": 0
+        }
+      ],
+      "overall_hit_rate": 0.0
+    }
+  },
+  "system_status": {
+    "evolution_stats": {},
+    "error_summary": {
+      "total_errors": 0,
+      "error_breakdown": {
+        "evaluation": 0,
+        "algorithm": 0,
+        "timeout": 0
+      },
+      "last_error_time": null,
+      "system_health": "healthy"
+    },
+    "performance_summary": {
+      "total_evolutions": 1,
+      "uptime_seconds": 1.4406275749206543,
+      "recent_performance": {
+        "average_generation_time": 1.4222121238708496,
+        "best_fitness_achieved": 0.3599742412567139,
+        "average_diversity": 0.7108519404572035
+      },
+      "algorithms_used": [
+        "scalable_nsga2"
+      ],
+      "total_evaluations": 40
+    },
+    "health_report": {
+      "status": "healthy",
+      "last_check": 1754417532.1756895,
+      "current_metrics": {
+        "cpu_usage": 2.5,
+        "memory_usage": 14.7,
+        "disk_usage": 16.9
+      },
+      "averages": {
+        "cpu_usage": 2.5,
+        "memory_usage": 14.7
+      },
+      "recommendations": []
+    }
+  }
+}

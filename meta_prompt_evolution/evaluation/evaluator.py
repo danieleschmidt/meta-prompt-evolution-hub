@@ -57,8 +57,18 @@ class MockLLMProvider:
     
     def generate(self, prompt: str, input_data: Any) -> str:
         """Generate response synchronously."""
-        time.sleep(self.latency_ms / 1000)
-        return asyncio.create_task(self.generate_async(prompt, input_data)).result()
+        self.call_count += 1
+        time.sleep(self.latency_ms / 1000)  # Simulate latency
+        
+        # Mock response based on prompt content
+        if "summarize" in prompt.lower():
+            return f"Summary of {input_data}: Key points include main concepts and conclusions."
+        elif "classify" in prompt.lower():
+            return random.choice(["Category A", "Category B", "Category C"])
+        elif "explain" in prompt.lower():
+            return f"Explanation: {input_data} can be understood through systematic analysis."
+        else:
+            return f"Response to '{input_data}' using prompt strategy from {prompt[:30]}..."
 
 
 class ComprehensiveFitnessFunction(FitnessFunction):

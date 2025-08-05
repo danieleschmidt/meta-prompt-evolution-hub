@@ -1,0 +1,28 @@
+{
+  "export_time": 1754417532.598506,
+  "evolution_metrics": [
+    {
+      "active_populations": 1,
+      "total_evaluations": 40,
+      "average_fitness": 0.35992948293685917,
+      "best_fitness": 0.3599742412567139,
+      "diversity_score": 0.7108519404572035,
+      "generation_time": 1.4222121238708496,
+      "algorithm_type": "scalable_nsga2",
+      "timestamp": 1754417532.596697
+    }
+  ],
+  "performance_summary": {
+    "total_evolutions": 1,
+    "uptime_seconds": 1.4413425922393799,
+    "recent_performance": {
+      "average_generation_time": 1.4222121238708496,
+      "best_fitness_achieved": 0.3599742412567139,
+      "average_diversity": 0.7108519404572035
+    },
+    "algorithms_used": [
+      "scalable_nsga2"
+    ],
+    "total_evaluations": 40
+  }
+}

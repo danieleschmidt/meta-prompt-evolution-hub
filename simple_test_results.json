@@ -1,0 +1,17 @@
+{
+  "summary": {
+    "total_tests": 1,
+    "passed_tests": 1,
+    "failed_tests": 0,
+    "success_rate": 1.0
+  },
+  "details": {
+    "Integration Test": {
+      "status": "PASS",
+      "duration": 2.1219253540039062e-05,
+      "error": null
+    }
+  },
+  "performance": {},
+  "timestamp": 1754603422.8807552
+}

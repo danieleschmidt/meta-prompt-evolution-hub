@@ -1,0 +1,33 @@
+{
+  "test_summary": {
+    "total_tests": 21,
+    "failures": 4,
+    "errors": 0,
+    "success_rate": 0.8095238095238095,
+    "timestamp": "20250807_222000"
+  },
+  "performance_benchmarks": {
+    "Simple (Gen 1)": {
+      "100": 9823.186097709495,
+      "500": 13141.038173296238,
+      "1000": 14796.132259509724
+    },
+    "Robust (Gen 2)": {
+      "100": 6044.275359186085,
+      "500": 6241.2637568672735,
+      "1000": 5664.602581434578
+    },
+    "Scalable (Gen 3)": {
+      "100": 18227.386901916474,
+      "500": 28505.532146255267,
+      "1000": 18093.090269090408
+    }
+  },
+  "test_failures": [
+    "(<unittest.case._SubTest testMethod=runTest>, 'Traceback (most recent call last):\\n  File \"/root/repo/test_sentiment_analyzer.py\", line 393, in test_cross_analyzer_consistency\\n    self.assertEqual(len(unique_sentiments), 1,\\nAssertionError: 2 != 1 : Analyzers disagreed on clear sentiment: [\\'negative\\', \\'negative\\', \\'neutral\\']\\n')",
+    "(<unittest.case._SubTest testMethod=runTest>, 'Traceback (most recent call last):\\n  File \"/root/repo/test_sentiment_analyzer.py\", line 476, in test_sql_injection_detection\\n    self.assertIn(\\'sql_injection\\', result.security_report.get(\\'malicious_patterns\\', []))\\nAssertionError: \\'sql_injection\\' not found in []\\n')",
+    "(<unittest.case._SubTest testMethod=runTest>, 'Traceback (most recent call last):\\n  File \"/root/repo/test_sentiment_analyzer.py\", line 476, in test_sql_injection_detection\\n    self.assertIn(\\'sql_injection\\', result.security_report.get(\\'malicious_patterns\\', []))\\nAssertionError: \\'sql_injection\\' not found in []\\n')",
+    "(<unittest.case._SubTest testMethod=runTest>, 'Traceback (most recent call last):\\n  File \"/root/repo/test_sentiment_analyzer.py\", line 476, in test_sql_injection_detection\\n    self.assertIn(\\'sql_injection\\', result.security_report.get(\\'malicious_patterns\\', []))\\nAssertionError: \\'sql_injection\\' not found in []\\n')"
+  ],
+  "test_errors": []
+}

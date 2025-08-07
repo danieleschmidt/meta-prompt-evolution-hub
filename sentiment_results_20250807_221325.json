@@ -1,0 +1,285 @@
+{
+  "batch_info": {
+    "batch_id": "4dba58dd",
+    "total_processed": 20,
+    "created_at": "2025-08-07T22:13:25.994577",
+    "processing_time": 0.002483844757080078,
+    "avg_processing_per_text": 0.000124,
+    "model_used": "rule_based_v1"
+  },
+  "results": [
+    {
+      "text": "I absolutely love this product! It's incredibly amazing and works perfectly every time.",
+      "sentiment": "positive",
+      "confidence": 0.95,
+      "scores": {
+        "positive": 0.95,
+        "negative": 0.05,
+        "neutral": 0.05
+      },
+      "timestamp": "2025-08-07T22:13:25.992541",
+      "model_used": "rule_based_v1",
+      "processing_time": 0.00019121170043945312
+    },
+    {
+      "text": "This is absolutely terrible. Worst purchase ever. Complete waste of money and time.",
+      "sentiment": "negative",
+      "confidence": 0.95,
+      "scores": {
+        "positive": 0.05,
+        "negative": 0.95,
+        "neutral": 0.05
+      },
+      "timestamp": "2025-08-07T22:13:25.992708",
+      "model_used": "rule_based_v1",
+      "processing_time": 5.173683166503906e-05
+    },
+    {
+      "text": "It's okay, nothing special but it does the job adequately.",
+      "sentiment": "neutral",
+      "confidence": 0.6,
+      "scores": {
+        "positive": 0.2,
+        "negative": 0.2,
+        "neutral": 0.6
+      },
+      "timestamp": "2025-08-07T22:13:25.992832",
+      "model_used": "rule_based_v1",
+      "processing_time": 4.482269287109375e-05
+    },
+    {
+      "text": "Not bad, could be better but I'm quite satisfied overall with the quality.",
+      "sentiment": "positive",
+      "confidence": 0.95,
+      "scores": {
+        "positive": 0.95,
+        "negative": 0.05,
+        "neutral": 0.05
+      },
+      "timestamp": "2025-08-07T22:13:25.992925",
+      "model_used": "rule_based_v1",
+      "processing_time": 4.935264587402344e-05
+    },
+    {
+      "text": "Outstanding quality! Really exceeded my expectations significantly.",
+      "sentiment": "positive",
+      "confidence": 0.95,
+      "scores": {
+        "positive": 0.95,
+        "negative": 0.05,
+        "neutral": 0.05
+      },
+      "timestamp": "2025-08-07T22:13:25.993040",
+      "model_used": "rule_based_v1",
+      "processing_time": 5.030632019042969e-05
+    },
+    {
+      "text": "Awful experience. Very disappointed and extremely frustrated with the service.",
+      "sentiment": "negative",
+      "confidence": 0.95,
+      "scores": {
+        "positive": 0.05,
+        "negative": 0.95,
+        "neutral": 0.05
+      },
+      "timestamp": "2025-08-07T22:13:25.993124",
+      "model_used": "rule_based_v1",
+      "processing_time": 4.100799560546875e-05
+    },
+    {
+      "text": "Pretty good value for money. Happy with the purchase and would recommend.",
+      "sentiment": "positive",
+      "confidence": 0.95,
+      "scores": {
+        "positive": 0.95,
+        "negative": 0.05,
+        "neutral": 0.05
+      },
+      "timestamp": "2025-08-07T22:13:25.993223",
+      "model_used": "rule_based_v1",
+      "processing_time": 4.506111145019531e-05
+    },
+    {
+      "text": "Meh. It's fine I guess. Nothing to write home about.",
+      "sentiment": "neutral",
+      "confidence": 0.6,
+      "scores": {
+        "positive": 0.2,
+        "negative": 0.2,
+        "neutral": 0.6
+      },
+      "timestamp": "2025-08-07T22:13:25.993320",
+      "model_used": "rule_based_v1",
+      "processing_time": 4.124641418457031e-05
+    },
+    {
+      "text": "Exceptional service! Will definitely recommend to others without hesitation.",
+      "sentiment": "neutral",
+      "confidence": 0.6,
+      "scores": {
+        "positive": 0.2,
+        "negative": 0.2,
+        "neutral": 0.6
+      },
+      "timestamp": "2025-08-07T22:13:25.993421",
+      "model_used": "rule_based_v1",
+      "processing_time": 4.506111145019531e-05
+    },
+    {
+      "text": "This product is completely broken and totally useless. Don't buy it!",
+      "sentiment": "negative",
+      "confidence": 0.95,
+      "scores": {
+        "positive": 0.05,
+        "negative": 0.95,
+        "neutral": 0.05
+      },
+      "timestamp": "2025-08-07T22:13:25.993530",
+      "model_used": "rule_based_v1",
+      "processing_time": 4.76837158203125e-05
+    },
+    {
+      "text": "I don't hate it, but I don't love it either.",
+      "sentiment": "neutral",
+      "confidence": 0.6000000000000001,
+      "scores": {
+        "positive": 0.19999999999999996,
+        "negative": 0.19999999999999996,
+        "neutral": 0.6000000000000001
+      },
+      "timestamp": "2025-08-07T22:13:25.993630",
+      "model_used": "rule_based_v1",
+      "processing_time": 4.4345855712890625e-05
+    },
+    {
+      "text": "NOT good, but not terrible.",
+      "sentiment": "neutral",
+      "confidence": 0.6,
+      "scores": {
+        "positive": 0.2,
+        "negative": 0.2,
+        "neutral": 0.6
+      },
+      "timestamp": "2025-08-07T22:13:25.993805",
+      "model_used": "rule_based_v1",
+      "processing_time": 3.24249267578125e-05
+    },
+    {
+      "text": "This isn't bad at all! Actually quite good.",
+      "sentiment": "positive",
+      "confidence": 0.95,
+      "scores": {
+        "positive": 0.95,
+        "negative": 0.05,
+        "neutral": 0.05
+      },
+      "timestamp": "2025-08-07T22:13:25.993883",
+      "model_used": "rule_based_v1",
+      "processing_time": 3.504753112792969e-05
+    },
+    {
+      "text": "I can't say I'm not satisfied with this purchase.",
+      "sentiment": "negative",
+      "confidence": 0.95,
+      "scores": {
+        "positive": 0.05,
+        "negative": 0.95,
+        "neutral": 0.05
+      },
+      "timestamp": "2025-08-07T22:13:25.993986",
+      "model_used": "rule_based_v1",
+      "processing_time": 5.14984130859375e-05
+    },
+    {
+      "text": "???",
+      "sentiment": "neutral",
+      "confidence": 0.9,
+      "scores": {
+        "positive": 0.04999999999999999,
+        "negative": 0.04999999999999999,
+        "neutral": 0.9
+      },
+      "timestamp": "2025-08-07T22:13:25.994060",
+      "model_used": "rule_based_v1",
+      "processing_time": 1.6927719116210938e-05
+    },
+    {
+      "text": "WOW! AMAZING!!!! BEST EVER!!!!",
+      "sentiment": "positive",
+      "confidence": 0.95,
+      "scores": {
+        "positive": 0.95,
+        "negative": 0.05,
+        "neutral": 0.05
+      },
+      "timestamp": "2025-08-07T22:13:25.994137",
+      "model_used": "rule_based_v1",
+      "processing_time": 2.6226043701171875e-05
+    },
+    {
+      "text": "why is this so complicated? nothing works properly...",
+      "sentiment": "neutral",
+      "confidence": 0.7,
+      "scores": {
+        "positive": 0.15000000000000002,
+        "negative": 0.15000000000000002,
+        "neutral": 0.7
+      },
+      "timestamp": "2025-08-07T22:13:25.994219",
+      "model_used": "rule_based_v1",
+      "processing_time": 3.2901763916015625e-05
+    },
+    {
+      "text": "Excellent! No complaints whatsoever. Highly recommended!",
+      "sentiment": "neutral",
+      "confidence": 0.6,
+      "scores": {
+        "positive": 0.2,
+        "negative": 0.2,
+        "neutral": 0.6
+      },
+      "timestamp": "2025-08-07T22:13:25.994325",
+      "model_used": "rule_based_v1",
+      "processing_time": 5.555152893066406e-05
+    },
+    {
+      "text": "Could be worse, I suppose. At least it arrived on time.",
+      "sentiment": "neutral",
+      "confidence": 0.6,
+      "scores": {
+        "positive": 0.2,
+        "negative": 0.2,
+        "neutral": 0.6
+      },
+      "timestamp": "2025-08-07T22:13:25.994425",
+      "model_used": "rule_based_v1",
+      "processing_time": 4.100799560546875e-05
+    },
+    {
+      "text": "Surprisingly decent for the price. Better than expected.",
+      "sentiment": "positive",
+      "confidence": 0.95,
+      "scores": {
+        "positive": 0.95,
+        "negative": 0.05,
+        "neutral": 0.05
+      },
+      "timestamp": "2025-08-07T22:13:25.994526",
+      "model_used": "rule_based_v1",
+      "processing_time": 3.3855438232421875e-05
+    }
+  ],
+  "analytics": {
+    "sentiment_distribution": {
+      "positive": 0.35,
+      "negative": 0.2,
+      "neutral": 0.45
+    },
+    "confidence_stats": {
+      "mean_confidence": 0.812,
+      "min_confidence": 0.6,
+      "max_confidence": 0.95,
+      "high_confidence_ratio": 0.6
+    }
+  }
+}

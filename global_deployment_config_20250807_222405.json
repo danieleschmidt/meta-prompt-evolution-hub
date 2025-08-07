@@ -1,0 +1,170 @@
+{
+  "deployment_config": {
+    "regions": {
+      "us-east-1": {
+        "region_code": "us-east-1",
+        "region_name": "US East (Virginia)",
+        "primary_language": "en",
+        "supported_languages": [
+          "en",
+          "es"
+        ],
+        "data_residency_required": false,
+        "compliance": {
+          "region": "us",
+          "gdpr_enabled": false,
+          "ccpa_enabled": true,
+          "pdpa_enabled": false,
+          "data_retention_days": 1095,
+          "anonymization_required": true,
+          "audit_logging_level": "standard",
+          "encryption_key_rotation_days": 90
+        },
+        "cdn_endpoints": [
+          "https://cdn-us-east.sentiment-analyzer.com"
+        ],
+        "api_base_url": "https://api-us-east.sentiment-analyzer.com",
+        "backup_regions": [
+          "us-west-2"
+        ]
+      },
+      "eu-west-1": {
+        "region_code": "eu-west-1",
+        "region_name": "EU West (Ireland)",
+        "primary_language": "en",
+        "supported_languages": [
+          "en",
+          "fr",
+          "de",
+          "es"
+        ],
+        "data_residency_required": true,
+        "compliance": {
+          "region": "eu",
+          "gdpr_enabled": true,
+          "ccpa_enabled": false,
+          "pdpa_enabled": false,
+          "data_retention_days": 730,
+          "anonymization_required": true,
+          "audit_logging_level": "detailed",
+          "encryption_key_rotation_days": 90
+        },
+        "cdn_endpoints": [
+          "https://cdn-eu-west.sentiment-analyzer.com"
+        ],
+        "api_base_url": "https://api-eu-west.sentiment-analyzer.com",
+        "backup_regions": [
+          "eu-central-1"
+        ]
+      },
+      "ap-southeast-1": {
+        "region_code": "ap-southeast-1",
+        "region_name": "Asia Pacific (Singapore)",
+        "primary_language": "en",
+        "supported_languages": [
+          "en",
+          "zh",
+          "ja"
+        ],
+        "data_residency_required": true,
+        "compliance": {
+          "region": "sg",
+          "gdpr_enabled": false,
+          "ccpa_enabled": false,
+          "pdpa_enabled": true,
+          "data_retention_days": 365,
+          "anonymization_required": true,
+          "audit_logging_level": "detailed",
+          "encryption_key_rotation_days": 60
+        },
+        "cdn_endpoints": [
+          "https://cdn-ap-southeast.sentiment-analyzer.com"
+        ],
+        "api_base_url": "https://api-ap-southeast.sentiment-analyzer.com",
+        "backup_regions": [
+          "ap-northeast-1"
+        ]
+      }
+    },
+    "total_regions": 3,
+    "export_timestamp": "2025-08-07T22:24:05.485377+00:00"
+  },
+  "i18n_config": {
+    "supported_languages": {
+      "en": "English",
+      "es": "Espa\u00f1ol",
+      "fr": "Fran\u00e7ais",
+      "de": "Deutsch",
+      "ja": "\u65e5\u672c\u8a9e",
+      "zh": "\u4e2d\u6587",
+      "pt": "Portugu\u00eas",
+      "ru": "\u0420\u0443\u0441\u0441\u043a\u0438\u0439",
+      "ar": "\u0627\u0644\u0639\u0631\u0628\u064a\u0629",
+      "hi": "\u0939\u093f\u0928\u094d\u0926\u0940"
+    },
+    "total_languages": 10,
+    "lexicon_coverage": {
+      "en": 18,
+      "es": 18,
+      "fr": 18,
+      "de": 18,
+      "ja": 15,
+      "zh": 15,
+      "pt": 18,
+      "ru": 18,
+      "ar": 18,
+      "hi": 18
+    }
+  },
+  "compliance_config": {
+    "regions": {
+      "eu": {
+        "region": "eu",
+        "gdpr_enabled": true,
+        "ccpa_enabled": false,
+        "pdpa_enabled": false,
+        "data_retention_days": 730,
+        "anonymization_required": true,
+        "audit_logging_level": "detailed",
+        "encryption_key_rotation_days": 90
+      },
+      "us": {
+        "region": "us",
+        "gdpr_enabled": false,
+        "ccpa_enabled": true,
+        "pdpa_enabled": false,
+        "data_retention_days": 1095,
+        "anonymization_required": true,
+        "audit_logging_level": "standard",
+        "encryption_key_rotation_days": 90
+      },
+      "sg": {
+        "region": "sg",
+        "gdpr_enabled": false,
+        "ccpa_enabled": false,
+        "pdpa_enabled": true,
+        "data_retention_days": 365,
+        "anonymization_required": true,
+        "audit_logging_level": "detailed",
+        "encryption_key_rotation_days": 60
+      },
+      "global": {
+        "region": "global",
+        "gdpr_enabled": true,
+        "ccpa_enabled": true,
+        "pdpa_enabled": true,
+        "data_retention_days": 365,
+        "anonymization_required": true,
+        "audit_logging_level": "detailed",
+        "encryption_key_rotation_days": 60
+      }
+    },
+    "global_standards": {
+      "gdpr_enabled": true,
+      "ccpa_enabled": true,
+      "pdpa_enabled": true,
+      "anonymization_required": true,
+      "audit_logging": true
+    }
+  }
+}

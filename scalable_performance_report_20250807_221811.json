@@ -1,0 +1,93 @@
+{
+  "performance_report": {
+    "processing_stats": {
+      "cache_hits": 2000,
+      "cache_misses": 16000,
+      "total_analyses": 18000,
+      "concurrent_analyses": 0,
+      "peak_concurrent": 16
+    },
+    "cache_performance": {
+      "hit_rate": 0.1111111111111111,
+      "total_requests": 18000,
+      "size": 8000,
+      "max_size": 10000,
+      "utilization": 0.8
+    },
+    "profiler_stats": {
+      "sentiment_analysis": {
+        "count": 8000,
+        "avg_time": 3.191465139389038e-05,
+        "min_time": 9.5367431640625e-06,
+        "max_time": 0.016996145248413086,
+        "total_time": 0.25531721115112305
+      }
+    },
+    "system_info": {
+      "max_workers": 16,
+      "cpu_count": 2,
+      "model_name": "scalable_optimized_v3"
+    },
+    "memory_usage": {
+      "cache_size": 8000,
+      "lexicon_size": 60
+    }
+  },
+  "test_results": {
+    "parallel_batch": {
+      "total_texts": 5000,
+      "successful_analyses": 5000,
+      "failed_analyses": 0,
+      "cache_hit_rate": 0.0,
+      "processing_time": 0.7237489223480225,
+      "throughput": 6908.473153616243,
+      "avg_processing_time": 3.5028409957885744e-05,
+      "batch_size": 500,
+      "max_workers": 16,
+      "timestamp": "2025-08-07T22:18:10.753919"
+    },
+    "async_batch": {
+      "total_texts": 3000,
+      "successful_analyses": 3000,
+      "failed_analyses": 0,
+      "cache_hit_rate": 0.0,
+      "processing_time": 0.3989074230194092,
+      "throughput": 7520.541927478829,
+      "avg_processing_time": 2.6725053787231446e-05,
+      "concurrency_limit": 200,
+      "timestamp": "2025-08-07T22:18:11.159226"
+    },
+    "cache_test": {
+      "total_texts": 2000,
+      "successful_analyses": 2000,
+      "failed_analyses": 0,
+      "cache_hit_rate": 1.0,
+      "processing_time": 0.07380843162536621,
+      "throughput": 27097.175159492854,
+      "avg_processing_time": 6.809830665588379e-06,
+      "batch_size": 125,
+      "max_workers": 16,
+      "timestamp": "2025-08-07T22:18:11.234321"
+    }
+  },
+  "optimization_report": {
+    "optimizations_applied": [
+      "Consider increasing cache size or TTL",
+      "Consider increasing max_workers for better performance"
+    ],
+    "cache_hit_rate": "11.1%",
+    "cache_utilization": "80.0%",
+    "peak_concurrency": "16",
+    "timestamp": "2025-08-07T22:18:11.236735"
+  },
+  "test_configuration": {
+    "dataset_size": 20000,
+    "test_sizes": [
+      5000,
+      3000,
+      2000
+    ],
+    "max_workers": 16,
+    "cache_size": 10000
+  }
+}

@@ -1,0 +1,360 @@
+{
+  "batch_summary": {
+    "batch_id": "c8ce4328",
+    "total_texts": 15,
+    "successful_analyses": 14,
+    "failed_analyses": 1,
+    "security_events": 4,
+    "processing_time": 0.005038738250732422,
+    "avg_processing_time": 0.00033591588338216147,
+    "throughput": 2976.935743351945,
+    "errors": [
+      {
+        "index": 9,
+        "error": "Text too short",
+        "text_preview": ""
+      }
+    ],
+    "performance_alerts": [],
+    "timestamp": "2025-08-07T22:15:48.378967"
+  },
+  "results": [
+    {
+      "result_id": "bc85e285-0f87-468b-943a-50682379fbd2",
+      "text_hash": "97d49f6af5b22a7e",
+      "sentiment": "positive",
+      "confidence": 0.95,
+      "scores": {
+        "positive": 0.95,
+        "negative": 0.05,
+        "neutral": 0.05
+      },
+      "timestamp": "2025-08-07T22:15:48.374210",
+      "model_used": "robust_rule_based_v2",
+      "processing_time": 0.00010347366333007812,
+      "validation_passed": true,
+      "security_report": {
+        "pii_detected": [],
+        "malicious_patterns": [],
+        "sanitization_applied": false,
+        "risk_level": "low"
+      }
+    },
+    {
+      "result_id": "8e81bd2c-3081-4b3b-be9c-24a9bd670ee0",
+      "text_hash": "60c64a2c477fecea",
+      "sentiment": "negative",
+      "confidence": 0.95,
+      "scores": {
+        "positive": 0.05,
+        "negative": 0.95,
+        "neutral": 0.05
+      },
+      "timestamp": "2025-08-07T22:15:48.374468",
+      "model_used": "robust_rule_based_v2",
+      "processing_time": 6.103515625e-05,
+      "validation_passed": true,
+      "security_report": {
+        "pii_detected": [],
+        "malicious_patterns": [],
+        "sanitization_applied": false,
+        "risk_level": "low"
+      }
+    },
+    {
+      "result_id": "ce750cbd-450b-49d4-83d2-46356d6a4920",
+      "text_hash": "e9573ec8f50ba483",
+      "sentiment": "neutral",
+      "confidence": 0.6,
+      "scores": {
+        "positive": 0.2,
+        "negative": 0.2,
+        "neutral": 0.6
+      },
+      "timestamp": "2025-08-07T22:15:48.374667",
+      "model_used": "robust_rule_based_v2",
+      "processing_time": 5.054473876953125e-05,
+      "validation_passed": true,
+      "security_report": {
+        "pii_detected": [],
+        "malicious_patterns": [],
+        "sanitization_applied": false,
+        "risk_level": "low"
+      }
+    },
+    {
+      "result_id": "2b872af8-9403-4700-9304-f02df555aba4",
+      "text_hash": "b9a8ee4e65ffc2e9",
+      "sentiment": "neutral",
+      "confidence": 0.6,
+      "scores": {
+        "positive": 0.2,
+        "negative": 0.2,
+        "neutral": 0.6
+      },
+      "timestamp": "2025-08-07T22:15:48.375151",
+      "model_used": "robust_rule_based_v2",
+      "processing_time": 0.00032782554626464844,
+      "validation_passed": true,
+      "security_report": {
+        "pii_detected": [
+          {
+            "type": "email",
+            "count": 1
+          },
+          {
+            "type": "phone",
+            "count": 1
+          }
+        ],
+        "malicious_patterns": [],
+        "sanitization_applied": true,
+        "risk_level": "medium"
+      }
+    },
+    {
+      "result_id": "0c94c345-979c-4ce3-af88-d099ca802f2b",
+      "text_hash": "6105c755be4da487",
+      "sentiment": "neutral",
+      "confidence": 0.6,
+      "scores": {
+        "positive": 0.2,
+        "negative": 0.2,
+        "neutral": 0.6
+      },
+      "timestamp": "2025-08-07T22:15:48.375570",
+      "model_used": "robust_rule_based_v2",
+      "processing_time": 0.00016808509826660156,
+      "validation_passed": true,
+      "security_report": {
+        "pii_detected": [],
+        "malicious_patterns": [
+          "sql_injection",
+          "command_injection"
+        ],
+        "sanitization_applied": false,
+        "risk_level": "high"
+      }
+    },
+    {
+      "result_id": "9ddb9fc4-1dd1-4541-abd4-faf8ea4910e1",
+      "text_hash": "097ae1ec2dae5546",
+      "sentiment": "neutral",
+      "confidence": 0.6,
+      "scores": {
+        "positive": 0.2,
+        "negative": 0.2,
+        "neutral": 0.6
+      },
+      "timestamp": "2025-08-07T22:15:48.375842",
+      "model_used": "robust_rule_based_v2",
+      "processing_time": 0.00015974044799804688,
+      "validation_passed": true,
+      "security_report": {
+        "pii_detected": [],
+        "malicious_patterns": [
+          "xss",
+          "command_injection"
+        ],
+        "sanitization_applied": false,
+        "risk_level": "high"
+      }
+    },
+    {
+      "result_id": "5174ad6a-f86d-4122-af3f-73068014dbec",
+      "text_hash": "e19555e6ffa80287",
+      "sentiment": "positive",
+      "confidence": 0.95,
+      "scores": {
+        "positive": 0.95,
+        "negative": 0.05,
+        "neutral": 0.05
+      },
+      "timestamp": "2025-08-07T22:15:48.376032",
+      "model_used": "robust_rule_based_v2",
+      "processing_time": 6.29425048828125e-05,
+      "validation_passed": true,
+      "security_report": {
+        "pii_detected": [],
+        "malicious_patterns": [],
+        "sanitization_applied": false,
+        "risk_level": "low"
+      }
+    },
+    {
+      "result_id": "ba43f960-3939-4fe1-bc04-32428b60db56",
+      "text_hash": "095c31a18e821c70",
+      "sentiment": "negative",
+      "confidence": 0.95,
+      "scores": {
+        "positive": 0.05,
+        "negative": 0.95,
+        "neutral": 0.05
+      },
+      "timestamp": "2025-08-07T22:15:48.376218",
+      "model_used": "robust_rule_based_v2",
+      "processing_time": 5.435943603515625e-05,
+      "validation_passed": true,
+      "security_report": {
+        "pii_detected": [],
+        "malicious_patterns": [],
+        "sanitization_applied": false,
+        "risk_level": "low"
+      }
+    },
+    {
+      "result_id": "548f6227-5f50-4945-85ee-f059cc471893",
+      "text_hash": "cc24e7c65ca64de2",
+      "sentiment": "positive",
+      "confidence": 0.95,
+      "scores": {
+        "positive": 0.95,
+        "negative": 0.05,
+        "neutral": 0.05
+      },
+      "timestamp": "2025-08-07T22:15:48.376385",
+      "model_used": "robust_rule_based_v2",
+      "processing_time": 4.172325134277344e-05,
+      "validation_passed": true,
+      "security_report": {
+        "pii_detected": [],
+        "malicious_patterns": [],
+        "sanitization_applied": false,
+        "risk_level": "low"
+      }
+    },
+    {
+      "result_id": "054fa0a2-97e2-42d2-8ea4-4769155ab39b",
+      "text_hash": "dbe2ebf6a987d573",
+      "sentiment": "neutral",
+      "confidence": 0.0,
+      "scores": {
+        "positive": 0.33,
+        "negative": 0.33,
+        "neutral": 0.34
+      },
+      "timestamp": "2025-08-07T22:15:48.376786",
+      "model_used": "robust_rule_based_v2",
+      "processing_time": 0.00028514862060546875,
+      "validation_passed": false,
+      "security_report": {
+        "error": "Text too short"
+      },
+      "error_details": "Text too short"
+    },
+    {
+      "result_id": "627d783e-58f5-4562-9286-61e58d588797",
+      "text_hash": "27dd1f61b867b6a0",
+      "sentiment": "neutral",
+      "confidence": 0.6,
+      "scores": {
+        "positive": 0.2,
+        "negative": 0.2,
+        "neutral": 0.6
+      },
+      "timestamp": "2025-08-07T22:15:48.378084",
+      "model_used": "robust_rule_based_v2",
+      "processing_time": 0.001245737075805664,
+      "validation_passed": true,
+      "security_report": {
+        "pii_detected": [],
+        "malicious_patterns": [],
+        "sanitization_applied": true,
+        "risk_level": "low"
+      }
+    },
+    {
+      "result_id": "13bc0466-8f91-4fb5-ac64-7c69fdb4960b",
+      "text_hash": "a03b221c6c6eae71",
+      "sentiment": "neutral",
+      "confidence": 0.8999999999999999,
+      "scores": {
+        "positive": 0.050000000000000044,
+        "negative": 0.050000000000000044,
+        "neutral": 0.8999999999999999
+      },
+      "timestamp": "2025-08-07T22:15:48.378314",
+      "model_used": "robust_rule_based_v2",
+      "processing_time": 2.8133392333984375e-05,
+      "validation_passed": true,
+      "security_report": {
+        "pii_detected": [],
+        "malicious_patterns": [],
+        "sanitization_applied": false,
+        "risk_level": "low"
+      }
+    },
+    {
+      "result_id": "4b25ddd2-06eb-40b6-946e-3a200811dee7",
+      "text_hash": "3c5fd21a9c745897",
+      "sentiment": "neutral",
+      "confidence": 0.6,
+      "scores": {
+        "positive": 0.2,
+        "negative": 0.2,
+        "neutral": 0.6
+      },
+      "timestamp": "2025-08-07T22:15:48.378475",
+      "model_used": "robust_rule_based_v2",
+      "processing_time": 4.982948303222656e-05,
+      "validation_passed": true,
+      "security_report": {
+        "pii_detected": [],
+        "malicious_patterns": [],
+        "sanitization_applied": false,
+        "risk_level": "low"
+      }
+    },
+    {
+      "result_id": "92a5450a-5da5-4905-8669-310e31395f20",
+      "text_hash": "583db927bc3290f3",
+      "sentiment": "negative",
+      "confidence": 0.95,
+      "scores": {
+        "positive": 0.05,
+        "negative": 0.95,
+        "neutral": 0.05
+      },
+      "timestamp": "2025-08-07T22:15:48.378641",
+      "model_used": "robust_rule_based_v2",
+      "processing_time": 4.9114227294921875e-05,
+      "validation_passed": true,
+      "security_report": {
+        "pii_detected": [],
+        "malicious_patterns": [],
+        "sanitization_applied": false,
+        "risk_level": "low"
+      }
+    },
+    {
+      "result_id": "f45bf086-5674-4a5b-8775-143f8b8b996a",
+      "text_hash": "50110bf074dcf61e",
+      "sentiment": "neutral",
+      "confidence": 0.6,
+      "scores": {
+        "positive": 0.2,
+        "negative": 0.2,
+        "neutral": 0.6
+      },
+      "timestamp": "2025-08-07T22:15:48.378822",
+      "model_used": "robust_rule_based_v2",
+      "processing_time": 4.172325134277344e-05,
+      "validation_passed": true,
+      "security_report": {
+        "pii_detected": [],
+        "malicious_patterns": [],
+        "sanitization_applied": false,
+        "risk_level": "low"
+      }
+    }
+  ],
+  "security_summary": {
+    "total_security_events": 4,
+    "pii_detections": 1,
+    "threat_detections": 2
+  },
+  "performance_metrics": {
+    "circuit_breaker_state": "closed",
+    "failure_count": 0
+  }
+}

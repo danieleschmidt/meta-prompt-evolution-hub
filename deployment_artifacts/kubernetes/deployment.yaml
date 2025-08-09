@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: meta-prompt-evolution-hub-deployment
+  namespace: production
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: meta-prompt-evolution-hub
+  template:
+    metadata:
+      labels:
+        app: meta-prompt-evolution-hub
+    spec:
+      containers:
+      - image: meta-prompt-evolution-hub:1.0.0
+        livenessProbe:
+          httpGet:
+            path: /health/live
+            port: 8080
+          initialDelaySeconds: 30
+        name: meta-prompt-evolution-hub
+        ports:
+        - containerPort: 8080
+        readinessProbe:
+          httpGet:
+            path: /health/ready
+            port: 8080
+          initialDelaySeconds: 10
+        resources:
+          limits:
+            cpu: 2000m
+            memory: 4Gi
+          requests:
+            cpu: 500m
+            memory: 1Gi

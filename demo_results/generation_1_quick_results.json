@@ -1,0 +1,20 @@
+{
+  "generation": 1,
+  "status": "WORKING",
+  "test_type": "QUICK_TEST",
+  "components_tested": [
+    "Basic Evolution",
+    "Population Management",
+    "Multi-metric Evaluation",
+    "NSGA-II Algorithm",
+    "Fitness Functions"
+  ],
+  "best_fitness": 0.39420135225568503,
+  "evaluation_metrics": {
+    "accuracy": 0.0,
+    "similarity": 0.3,
+    "latency": 0.28490381240844725,
+    "fitness": 0.5849038124084472,
+    "evaluation_time": 0.05038022994995117
+  }
+}

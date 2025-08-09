@@ -1,0 +1,10 @@
+{
+  "app": {
+    "name": "Meta Prompt Evolution Hub"
+  },
+  "messages": {
+    "welcome": "Welcome to Meta Prompt Evolution Hub",
+    "loading": "Loading...",
+    "error": "An error occurred"
+  }
+}

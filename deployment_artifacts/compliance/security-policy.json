@@ -1,0 +1,10 @@
+{
+  "encryption": {
+    "at_rest": "AES-256",
+    "in_transit": "TLS-1.3"
+  },
+  "access_controls": {
+    "rbac_enabled": true,
+    "mfa_required": true
+  }
+}

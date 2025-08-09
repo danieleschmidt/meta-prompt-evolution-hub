@@ -1,0 +1,10 @@
+{
+  "app": {
+    "name": "Centro de Evoluci\u00f3n de Meta Prompts"
+  },
+  "messages": {
+    "welcome": "Bienvenido al Centro de Evoluci\u00f3n de Meta Prompts",
+    "loading": "Cargando...",
+    "error": "Ocurri\u00f3 un error"
+  }
+}

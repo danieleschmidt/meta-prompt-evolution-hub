@@ -13,23 +13,22 @@ __email__ = "daniel@example.com"
 # Core components that work without heavy dependencies
 from .evolution.population import PromptPopulation, Prompt
 
-# Try to import components that require dependencies
+# Always import core components
 try:
     from .evolution.hub import EvolutionHub
-    from .deployment.ab_testing import ABTestOrchestrator
+    from .deployment.ab_testing import ABTestOrchestrator  
     from .evaluation.evaluator import DistributedEvaluator
     
     __all__ = [
         "Prompt",
-        "PromptPopulation",
-        "EvolutionHub", 
+        "PromptPopulation", 
+        "EvolutionHub",
         "ABTestOrchestrator",
         "DistributedEvaluator",
     ]
     
 except ImportError as e:
-    print(f"Warning: Full feature set requires additional dependencies: {e}")
-    print("Install with: pip install numpy typer rich scikit-learn")
+    print(f"Warning: Some features may be limited: {e}")
     
     __all__ = [
         "Prompt",

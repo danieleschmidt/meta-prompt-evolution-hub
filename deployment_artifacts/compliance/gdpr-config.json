@@ -1,0 +1,12 @@
+{
+  "gdpr_compliance": {
+    "enabled": true,
+    "data_retention_days": 365,
+    "user_rights": {
+      "access": true,
+      "rectification": true,
+      "erasure": true,
+      "portability": true
+    }
+  }
+}

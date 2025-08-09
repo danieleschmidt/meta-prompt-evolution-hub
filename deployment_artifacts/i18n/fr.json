@@ -1,0 +1,10 @@
+{
+  "app": {
+    "name": "Centre d'\u00c9volution Meta Prompt"
+  },
+  "messages": {
+    "welcome": "Bienvenue au Centre d'\u00c9volution Meta Prompt",
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite"
+  }
+}

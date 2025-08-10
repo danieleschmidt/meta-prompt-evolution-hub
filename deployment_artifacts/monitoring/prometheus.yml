@@ -1,8 +1,17 @@
-global:
-  scrape_interval: 15s
-
-scrape_configs:
-  - job_name: 'meta-prompt-evolution-hub'
-    static_configs:
-      - targets: ['meta-prompt-evolution-hub-service:8080']
-    metrics_path: /metrics
+{
+  "global": {
+    "scrape_interval": "15s"
+  },
+  "scrape_configs": [
+    {
+      "job_name": "meta-prompt-hub",
+      "static_configs": [
+        {
+          "targets": [
+            "meta-prompt-hub-service:9090"
+          ]
+        }
+      ]
+    }
+  ]
+}

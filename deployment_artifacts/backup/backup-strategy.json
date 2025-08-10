@@ -1,0 +1,7 @@
+{
+  "version": "1.0",
+  "backup_frequency": "daily",
+  "retention": "30 days",
+  "rto": "1 hour",
+  "rpo": "24 hours"
+}

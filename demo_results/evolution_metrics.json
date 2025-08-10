@@ -1,0 +1,477 @@
+[
+  {
+    "generation": 1,
+    "best_fitness": 0.0,
+    "diversity": 0.8012261371799267,
+    "execution_time": 0.03894543647766113,
+    "population_size": 50,
+    "cache_stats": {
+      "hit_ratio": 0.5066666666666667,
+      "total_requests": 75,
+      "memory_cache_size": 35,
+      "disk_cache_files": 35,
+      "hits": 38,
+      "misses": 37,
+      "evictions": 0,
+      "disk_reads": 0,
+      "disk_writes": 37
+    },
+    "throughput": 1283.8474676918745
+  },
+  {
+    "generation": 2,
+    "best_fitness": 0.0,
+    "diversity": 0.8159697682484877,
+    "execution_time": 0.025488853454589844,
+    "population_size": 50,
+    "cache_stats": {
+      "hit_ratio": 0.45217391304347826,
+      "total_requests": 115,
+      "memory_cache_size": 61,
+      "disk_cache_files": 61,
+      "hits": 52,
+      "misses": 63,
+      "evictions": 0,
+      "disk_reads": 0,
+      "disk_writes": 63
+    },
+    "throughput": 1961.6417854603958
+  },
+  {
+    "generation": 3,
+    "best_fitness": 0.0,
+    "diversity": 0.7952853867763701,
+    "execution_time": 0.02575206756591797,
+    "population_size": 50,
+    "cache_stats": {
+      "hit_ratio": 0.45161290322580644,
+      "total_requests": 155,
+      "memory_cache_size": 82,
+      "disk_cache_files": 82,
+      "hits": 70,
+      "misses": 85,
+      "evictions": 0,
+      "disk_reads": 0,
+      "disk_writes": 85
+    },
+    "throughput": 1941.5916749990743
+  },
+  {
+    "generation": 4,
+    "best_fitness": 0.0,
+    "diversity": 0.8004426075405148,
+    "execution_time": 0.02716970443725586,
+    "population_size": 50,
+    "cache_stats": {
+      "hit_ratio": 0.4564102564102564,
+      "total_requests": 195,
+      "memory_cache_size": 103,
+      "disk_cache_files": 103,
+      "hits": 89,
+      "misses": 106,
+      "evictions": 0,
+      "disk_reads": 0,
+      "disk_writes": 106
+    },
+    "throughput": 1840.2850172870708
+  },
+  {
+    "generation": 5,
+    "best_fitness": 0.0,
+    "diversity": 0.7824611456090408,
+    "execution_time": 0.029245853424072266,
+    "population_size": 50,
+    "cache_stats": {
+      "hit_ratio": 0.4553191489361702,
+      "total_requests": 235,
+      "memory_cache_size": 125,
+      "disk_cache_files": 125,
+      "hits": 107,
+      "misses": 128,
+      "evictions": 0,
+      "disk_reads": 0,
+      "disk_writes": 128
+    },
+    "throughput": 1709.6440741525769
+  },
+  {
+    "generation": 6,
+    "best_fitness": 0.0,
+    "diversity": 0.7809251972785344,
+    "execution_time": 0.02823662757873535,
+    "population_size": 50,
+    "cache_stats": {
+      "hit_ratio": 0.4581818181818182,
+      "total_requests": 275,
+      "memory_cache_size": 146,
+      "disk_cache_files": 146,
+      "hits": 126,
+      "misses": 149,
+      "evictions": 0,
+      "disk_reads": 0,
+      "disk_writes": 149
+    },
+    "throughput": 1770.7497065851578
+  },
+  {
+    "generation": 7,
+    "best_fitness": 0.0,
+    "diversity": 0.7551384070647347,
+    "execution_time": 0.031181812286376953,
+    "population_size": 50,
+    "cache_stats": {
+      "hit_ratio": 0.4603174603174603,
+      "total_requests": 315,
+      "memory_cache_size": 167,
+      "disk_cache_files": 167,
+      "hits": 145,
+      "misses": 170,
+      "evictions": 0,
+      "disk_reads": 0,
+      "disk_writes": 170
+    },
+    "throughput": 1603.4988454421728
+  },
+  {
+    "generation": 8,
+    "best_fitness": 0.0,
+    "diversity": 0.7461897660231592,
+    "execution_time": 0.03948569297790527,
+    "population_size": 50,
+    "cache_stats": {
+      "hit_ratio": 0.447887323943662,
+      "total_requests": 355,
+      "memory_cache_size": 193,
+      "disk_cache_files": 193,
+      "hits": 159,
+      "misses": 196,
+      "evictions": 0,
+      "disk_reads": 0,
+      "disk_writes": 196
+    },
+    "throughput": 1266.2814358602784
+  },
+  {
+    "generation": 9,
+    "best_fitness": 0.0,
+    "diversity": 0.7505526744681074,
+    "execution_time": 0.036772966384887695,
+    "population_size": 50,
+    "cache_stats": {
+      "hit_ratio": 0.44556962025316454,
+      "total_requests": 395,
+      "memory_cache_size": 216,
+      "disk_cache_files": 216,
+      "hits": 176,
+      "misses": 219,
+      "evictions": 0,
+      "disk_reads": 0,
+      "disk_writes": 219
+    },
+    "throughput": 1359.6944961325753
+  },
+  {
+    "generation": 10,
+    "best_fitness": 0.0,
+    "diversity": 0.7454765689584852,
+    "execution_time": 0.0379643440246582,
+    "population_size": 50,
+    "cache_stats": {
+      "hit_ratio": 0.4459770114942529,
+      "total_requests": 435,
+      "memory_cache_size": 238,
+      "disk_cache_files": 238,
+      "hits": 194,
+      "misses": 241,
+      "evictions": 0,
+      "disk_reads": 0,
+      "disk_writes": 241
+    },
+    "throughput": 1317.0252584247082
+  },
+  {
+    "generation": 11,
+    "best_fitness": 0.0,
+    "diversity": 0.7259674710446227,
+    "execution_time": 0.03734254837036133,
+    "population_size": 50,
+    "cache_stats": {
+      "hit_ratio": 0.44842105263157894,
+      "total_requests": 475,
+      "memory_cache_size": 259,
+      "disk_cache_files": 259,
+      "hits": 213,
+      "misses": 262,
+      "evictions": 0,
+      "disk_reads": 0,
+      "disk_writes": 262
+    },
+    "throughput": 1338.9552181630124
+  },
+  {
+    "generation": 12,
+    "best_fitness": 0.0,
+    "diversity": 0.7385252524525893,
+    "execution_time": 0.03444099426269531,
+    "population_size": 50,
+    "cache_stats": {
+      "hit_ratio": 0.4563106796116505,
+      "total_requests": 515,
+      "memory_cache_size": 277,
+      "disk_cache_files": 277,
+      "hits": 235,
+      "misses": 280,
+      "evictions": 0,
+      "disk_reads": 0,
+      "disk_writes": 280
+    },
+    "throughput": 1451.7583208727917
+  },
+  {
+    "generation": 13,
+    "best_fitness": 0.0,
+    "diversity": 0.7519659435977651,
+    "execution_time": 0.03498482704162598,
+    "population_size": 50,
+    "cache_stats": {
+      "hit_ratio": 0.46306306306306305,
+      "total_requests": 555,
+      "memory_cache_size": 295,
+      "disk_cache_files": 295,
+      "hits": 257,
+      "misses": 298,
+      "evictions": 0,
+      "disk_reads": 0,
+      "disk_writes": 298
+    },
+    "throughput": 1429.191001587875
+  },
+  {
+    "generation": 14,
+    "best_fitness": 0.0,
+    "diversity": 0.7234779157634388,
+    "execution_time": 0.04966259002685547,
+    "population_size": 50,
+    "cache_stats": {
+      "hit_ratio": 0.4588235294117647,
+      "total_requests": 595,
+      "memory_cache_size": 318,
+      "disk_cache_files": 318,
+      "hits": 273,
+      "misses": 322,
+      "evictions": 0,
+      "disk_reads": 0,
+      "disk_writes": 322
+    },
+    "throughput": 1006.7940470475276
+  },
+  {
+    "generation": 15,
+    "best_fitness": 0.0,
+    "diversity": 0.7218786266872617,
+    "execution_time": 0.05711483955383301,
+    "population_size": 50,
+    "cache_stats": {
+      "hit_ratio": 0.4582677165354331,
+      "total_requests": 635,
+      "memory_cache_size": 340,
+      "disk_cache_files": 340,
+      "hits": 291,
+      "misses": 344,
+      "evictions": 0,
+      "disk_reads": 0,
+      "disk_writes": 344
+    },
+    "throughput": 875.4292297866479
+  },
+  {
+    "generation": 16,
+    "best_fitness": 0.0,
+    "diversity": 0.7548605751943549,
+    "execution_time": 0.042824745178222656,
+    "population_size": 50,
+    "cache_stats": {
+      "hit_ratio": 0.4622222222222222,
+      "total_requests": 675,
+      "memory_cache_size": 359,
+      "disk_cache_files": 359,
+      "hits": 312,
+      "misses": 363,
+      "evictions": 0,
+      "disk_reads": 0,
+      "disk_writes": 363
+    },
+    "throughput": 1167.549270682552
+  },
+  {
+    "generation": 17,
+    "best_fitness": 0.0,
+    "diversity": 0.7716866465228116,
+    "execution_time": 0.04340171813964844,
+    "population_size": 50,
+    "cache_stats": {
+      "hit_ratio": 0.46573426573426574,
+      "total_requests": 715,
+      "memory_cache_size": 378,
+      "disk_cache_files": 378,
+      "hits": 333,
+      "misses": 382,
+      "evictions": 0,
+      "disk_reads": 0,
+      "disk_writes": 382
+    },
+    "throughput": 1152.0281256866622
+  },
+  {
+    "generation": 18,
+    "best_fitness": 0.0,
+    "diversity": 0.766918759199097,
+    "execution_time": 0.0467071533203125,
+    "population_size": 50,
+    "cache_stats": {
+      "hit_ratio": 0.47019867549668876,
+      "total_requests": 755,
+      "memory_cache_size": 396,
+      "disk_cache_files": 396,
+      "hits": 355,
+      "misses": 400,
+      "evictions": 0,
+      "disk_reads": 0,
+      "disk_writes": 400
+    },
+    "throughput": 1070.499836654688
+  },
+  {
+    "generation": 19,
+    "best_fitness": 0.0,
+    "diversity": 0.7684350870811173,
+    "execution_time": 0.041672706604003906,
+    "population_size": 50,
+    "cache_stats": {
+      "hit_ratio": 0.47547169811320755,
+      "total_requests": 795,
+      "memory_cache_size": 412,
+      "disk_cache_files": 412,
+      "hits": 378,
+      "misses": 417,
+      "evictions": 0,
+      "disk_reads": 0,
+      "disk_writes": 417
+    },
+    "throughput": 1199.8260750165916
+  },
+  {
+    "generation": 20,
+    "best_fitness": 0.0,
+    "diversity": 0.7812927043138411,
+    "execution_time": 0.05006599426269531,
+    "population_size": 50,
+    "cache_stats": {
+      "hit_ratio": 0.47664670658682634,
+      "total_requests": 835,
+      "memory_cache_size": 432,
+      "disk_cache_files": 432,
+      "hits": 398,
+      "misses": 437,
+      "evictions": 0,
+      "disk_reads": 0,
+      "disk_writes": 437
+    },
+    "throughput": 998.6818545468399
+  },
+  {
+    "generation": 21,
+    "best_fitness": 0.0,
+    "diversity": 0.7630844251880262,
+    "execution_time": 0.06420087814331055,
+    "population_size": 50,
+    "cache_stats": {
+      "hit_ratio": 0.4742857142857143,
+      "total_requests": 875,
+      "memory_cache_size": 455,
+      "disk_cache_files": 455,
+      "hits": 415,
+      "misses": 460,
+      "evictions": 0,
+      "disk_reads": 0,
+      "disk_writes": 460
+    },
+    "throughput": 778.805546684096
+  },
+  {
+    "generation": 22,
+    "best_fitness": 0.0,
+    "diversity": 0.7343979533634277,
+    "execution_time": 0.03867363929748535,
+    "population_size": 50,
+    "cache_stats": {
+      "hit_ratio": 0.4808743169398907,
+      "total_requests": 915,
+      "memory_cache_size": 470,
+      "disk_cache_files": 470,
+      "hits": 440,
+      "misses": 475,
+      "evictions": 0,
+      "disk_reads": 0,
+      "disk_writes": 475
+    },
+    "throughput": 1292.8703092923326
+  },
+  {
+    "generation": 23,
+    "best_fitness": 0.0,
+    "diversity": 0.7428970719429718,
+    "execution_time": 0.05251669883728027,
+    "population_size": 50,
+    "cache_stats": {
+      "hit_ratio": 0.4816753926701571,
+      "total_requests": 955,
+      "memory_cache_size": 490,
+      "disk_cache_files": 490,
+      "hits": 460,
+      "misses": 495,
+      "evictions": 0,
+      "disk_reads": 0,
+      "disk_writes": 495
+    },
+    "throughput": 952.0781219497801
+  },
+  {
+    "generation": 24,
+    "best_fitness": 0.0,
+    "diversity": 0.729789647785007,
+    "execution_time": 0.03962588310241699,
+    "population_size": 50,
+    "cache_stats": {
+      "hit_ratio": 0.4884422110552764,
+      "total_requests": 995,
+      "memory_cache_size": 504,
+      "disk_cache_files": 504,
+      "hits": 486,
+      "misses": 509,
+      "evictions": 0,
+      "disk_reads": 0,
+      "disk_writes": 509
+    },
+    "throughput": 1261.801531861639
+  },
+  {
+    "generation": 25,
+    "best_fitness": 0.0,
+    "diversity": 0.729789647785007,
+    "execution_time": 0.05103898048400879,
+    "population_size": 50,
+    "cache_stats": {
+      "hit_ratio": 0.49082125603864735,
+      "total_requests": 1035,
+      "memory_cache_size": 522,
+      "disk_cache_files": 522,
+      "hits": 508,
+      "misses": 527,
+      "evictions": 0,
+      "disk_reads": 0,
+      "disk_writes": 527
+    },
+    "throughput": 979.6433926744616
+  }
+]

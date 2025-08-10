@@ -1,160 +1,160 @@
 {
   "execution_summary": {
-    "total_time": 0.03239798545837402,
+    "total_time": 0.022551536560058594,
     "generations": 12,
     "population_size": 25,
     "final_population_size": 25
   },
   "fitness_statistics": {
-    "best_fitness": 1.0000000000000002,
-    "average_fitness": 0.9980000000000002,
-    "fitness_improvement": 0.050000000000000155,
-    "final_diversity": 0.08480952380952375
+    "best_fitness": 1.0,
+    "average_fitness": 1.0,
+    "fitness_improvement": 0.0,
+    "final_diversity": 0.16229731379731419
   },
   "top_prompts": [
     {
       "rank": 1,
-      "text": "I'll provide comprehensive assistance carefully assistant. Please help with: {task}",
-      "fitness": 1.0000000000000002,
-      "accuracy": 1.0000000000000002,
+      "text": "I'll provide comprehensive expert assistant. Please help with: {task}",
+      "fitness": 1.0,
+      "accuracy": 1.0,
       "clarity": 1.0
     },
     {
       "rank": 2,
-      "text": "I'll provide comprehensive assistance carefully assistant. Please help with: {task}",
-      "fitness": 1.0000000000000002,
-      "accuracy": 1.0000000000000002,
+      "text": "I'll provide comprehensive assistance with your Please help with: {task}",
+      "fitness": 1.0,
+      "accuracy": 1.0,
       "clarity": 1.0
     },
     {
       "rank": 3,
-      "text": "I'll provide comprehensive assistance carefully assistant. Please help with: {task}",
-      "fitness": 1.0000000000000002,
-      "accuracy": 1.0000000000000002,
+      "text": "I'll provide comprehensive expert assistant. Please help with: {task}",
+      "fitness": 1.0,
+      "accuracy": 1.0,
       "clarity": 1.0
     },
     {
       "rank": 4,
-      "text": "I'll provide comprehensive assistance carefully assistant. Please help with: {task}",
-      "fitness": 1.0000000000000002,
-      "accuracy": 1.0000000000000002,
+      "text": "I'll provide comprehensive expert assistant. precisely Please help with: {task}",
+      "fitness": 1.0,
+      "accuracy": 1.0,
       "clarity": 1.0
     },
     {
       "rank": 5,
-      "text": "I'll provide comprehensive assistance carefully assistant. Please help with: {task}",
-      "fitness": 1.0000000000000002,
-      "accuracy": 1.0000000000000002,
+      "text": "I'll comprehensive provide expert assistant. Please help with: {task}",
+      "fitness": 1.0,
+      "accuracy": 1.0,
       "clarity": 1.0
     },
     {
       "rank": 6,
-      "text": "I'll provide comprehensive assistance carefully assistant. Please help with: {task}",
-      "fitness": 1.0000000000000002,
-      "accuracy": 1.0000000000000002,
+      "text": "I'll provide comprehensive expert assistant. Please help with: {task}",
+      "fitness": 1.0,
+      "accuracy": 1.0,
       "clarity": 1.0
     },
     {
       "rank": 7,
-      "text": "I'll provide comprehensive assistance carefully assistant. Please help with: {task}",
-      "fitness": 1.0000000000000002,
-      "accuracy": 1.0000000000000002,
+      "text": "I'll provide comprehensive expert assistant. Please help with: {task}",
+      "fitness": 1.0,
+      "accuracy": 1.0,
       "clarity": 1.0
     },
     {
       "rank": 8,
-      "text": "I'll provide comprehensive assistance carefully assistant. Please help with: {task}",
-      "fitness": 1.0000000000000002,
-      "accuracy": 1.0000000000000002,
+      "text": "I'll comprehensive provide expert assistant. Please with: help {task}",
+      "fitness": 1.0,
+      "accuracy": 1.0,
       "clarity": 1.0
     },
     {
       "rank": 9,
-      "text": "I'll provide comprehensive assistance carefully assistant. help Please with: {task}",
-      "fitness": 1.0000000000000002,
-      "accuracy": 1.0000000000000002,
+      "text": "I'll provide comprehensive expert assistant. help Please with: {task}",
+      "fitness": 1.0,
+      "accuracy": 1.0,
       "clarity": 1.0
     },
     {
       "rank": 10,
-      "text": "I'll provide assistance comprehensive carefully assistant. Please help with: {task}",
-      "fitness": 1.0000000000000002,
-      "accuracy": 1.0000000000000002,
+      "text": "I'll comprehensive clearly provide expert assistant. Please help with: {task}",
+      "fitness": 1.0,
+      "accuracy": 1.0,
       "clarity": 1.0
     }
   ],
   "evolution_progress": [
     {
       "generation": 1,
-      "best_fitness": 0.8999999999999999,
-      "diversity": 0.2679999858529272,
-      "execution_time": 0.0012123584747314453
+      "best_fitness": 0.85,
+      "diversity": 0.21103702847433486,
+      "execution_time": 0.0010001659393310547
     },
     {
       "generation": 2,
-      "best_fitness": 1.0000000000000002,
-      "diversity": 0.29989610389610344,
-      "execution_time": 0.0008084774017333984
+      "best_fitness": 1.0,
+      "diversity": 0.33017310508835257,
+      "execution_time": 0.0008218288421630859
     },
     {
       "generation": 3,
-      "best_fitness": 1.0000000000000002,
-      "diversity": 0.0774132730015083,
-      "execution_time": 0.0007565021514892578
+      "best_fitness": 1.0,
+      "diversity": 0.4135948022565666,
+      "execution_time": 0.0007600784301757812
     },
     {
       "generation": 4,
-      "best_fitness": 1.0000000000000002,
-      "diversity": 0.0773165723165722,
-      "execution_time": 0.0007772445678710938
+      "best_fitness": 1.0,
+      "diversity": 0.1640730380730383,
+      "execution_time": 0.0008330345153808594
     },
     {
       "generation": 5,
-      "best_fitness": 1.0000000000000002,
-      "diversity": 0.021666666666666654,
-      "execution_time": 0.0008137226104736328
+      "best_fitness": 1.0,
+      "diversity": 0.11927972027972052,
+      "execution_time": 0.0007364749908447266
     },
     {
       "generation": 6,
-      "best_fitness": 1.0000000000000002,
-      "diversity": 0.06211038961038965,
-      "execution_time": 0.0008807182312011719
+      "best_fitness": 1.0,
+      "diversity": 0.17621393421393455,
+      "execution_time": 0.0007724761962890625
     },
     {
       "generation": 7,
-      "best_fitness": 1.0000000000000002,
-      "diversity": 0.11709022513434278,
-      "execution_time": 0.0016107559204101562
+      "best_fitness": 1.0,
+      "diversity": 0.1941188811188813,
+      "execution_time": 0.0007100105285644531
     },
     {
       "generation": 8,
-      "best_fitness": 1.0000000000000002,
-      "diversity": 0.11457465736877485,
-      "execution_time": 0.0019130706787109375
+      "best_fitness": 1.0,
+      "diversity": 0.1644330484330486,
+      "execution_time": 0.0007574558258056641
     },
     {
       "generation": 9,
-      "best_fitness": 1.0000000000000002,
-      "diversity": 0.1902141945744889,
-      "execution_time": 0.001462697982788086
+      "best_fitness": 1.0,
+      "diversity": 0.15145441595441636,
+      "execution_time": 0.0007424354553222656
     },
     {
       "generation": 10,
-      "best_fitness": 1.0000000000000002,
-      "diversity": 0.17554028678293396,
-      "execution_time": 0.0009415149688720703
+      "best_fitness": 1.0,
+      "diversity": 0.12706811706811738,
+      "execution_time": 0.0007715225219726562
     },
     {
       "generation": 11,
-      "best_fitness": 1.0000000000000002,
-      "diversity": 0.08480952380952375,
-      "execution_time": 0.0008761882781982422
+      "best_fitness": 1.0,
+      "diversity": 0.16229731379731419,
+      "execution_time": 0.0007200241088867188
     },
     {
       "generation": 12,
-      "best_fitness": 1.0000000000000002,
-      "diversity": 0.08480952380952375,
-      "execution_time": 0.0006668567657470703
+      "best_fitness": 1.0,
+      "diversity": 0.16229731379731419,
+      "execution_time": 0.0004680156707763672
     }
   ],
   "system_capabilities": {

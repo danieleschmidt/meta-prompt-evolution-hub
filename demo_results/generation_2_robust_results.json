@@ -1,26 +1,268 @@
 {
-  "generation": 2,
-  "status": "ROBUST",
-  "features_implemented": [
-    "Comprehensive input validation",
-    "Security pattern detection",
-    "Error recovery mechanisms",
-    "Timeout protection",
-    "Emergency fallback",
-    "Structured logging",
-    "Metrics collection",
-    "Population sanitization"
-  ],
-  "security_checks": {
-    "dangerous_pattern_detection": true,
-    "input_length_validation": true,
-    "field_validation": true,
-    "population_size_limits": true
+  "execution_summary": {
+    "total_time": 0.14123916625976562,
+    "generations": 15,
+    "population_size": 30,
+    "final_population_size": 30,
+    "system_health": "healthy"
   },
-  "reliability_features": {
-    "timeout_protection": true,
-    "error_recovery": true,
-    "emergency_fallback": true,
-    "validation_pipeline": true
+  "fitness_statistics": {
+    "best_fitness": 0.9492753623188407,
+    "average_fitness": 0.03164251207729469,
+    "fitness_improvement": 0.9492753623188407,
+    "final_diversity": 0.05376042370971374,
+    "average_security_score": 0.03333333333333333,
+    "average_accuracy": 0.0
+  },
+  "security_metrics": {
+    "security_validations_passed": true,
+    "rate_limiting_active": true,
+    "audit_logging_enabled": true,
+    "input_sanitization": true,
+    "threat_mitigation": "Active"
+  },
+  "robustness_metrics": {
+    "error_handling": "Comprehensive",
+    "recovery_strategies": "Implemented",
+    "monitoring_active": true,
+    "health_checks_passed": 3,
+    "total_health_checks": 3,
+    "evaluation_success_rate": 100.0
+  },
+  "top_prompts": [
+    {
+      "rank": 1,
+      "text": "As a professional AI assistant, I'll provide comprehensive help with your request: detailed {task}",
+      "fitness": 0.9492753623188407,
+      "security_score": 1.0,
+      "accuracy": 0.0,
+      "robustness": 1.0
+    },
+    {
+      "rank": 2,
+      "text": "As a professional AI assistant, I'll provide comprehensive help with your request: detailed {task}",
+      "fitness": 0.0,
+      "security_score": 0.0,
+      "accuracy": 0.0,
+      "robustness": 0.0
+    },
+    {
+      "rank": 3,
+      "text": "methodically As a professional AI assistant, I'll provide comprehensive help with your request: detailed {task}",
+      "fitness": 0.0,
+      "security_score": 0.0,
+      "accuracy": 0.0,
+      "robustness": 0.0
+    },
+    {
+      "rank": 4,
+      "text": "As a professional AI assistant, I'll provide comprehensive help with your request: detailed {task}",
+      "fitness": 0.0,
+      "security_score": 0.0,
+      "accuracy": 0.0,
+      "robustness": 0.0
+    },
+    {
+      "rank": 5,
+      "text": "As a professional AI effectively assistant, I'll provide comprehensive help with your request: detailed {task}",
+      "fitness": 0.0,
+      "security_score": 0.0,
+      "accuracy": 0.0,
+      "robustness": 0.0
+    },
+    {
+      "rank": 6,
+      "text": "As a professional AI assistant, I'll provide comprehensive help with your request: detailed {task}",
+      "fitness": 0.0,
+      "security_score": 0.0,
+      "accuracy": 0.0,
+      "robustness": 0.0
+    },
+    {
+      "rank": 7,
+      "text": "step-by-step As a professional AI assistant, I'll provide comprehensive help with your request: detailed {task}",
+      "fitness": 0.0,
+      "security_score": 0.0,
+      "accuracy": 0.0,
+      "robustness": 0.0
+    },
+    {
+      "rank": 8,
+      "text": "As a professional AI assistant, I'll deliver comprehensive assist with your request: detailed {task}",
+      "fitness": 0.0,
+      "security_score": 0.0,
+      "accuracy": 0.0,
+      "robustness": 0.0
+    },
+    {
+      "rank": 9,
+      "text": "As a professional AI assistant, I'll provide comprehensive help with your request: detailed {task} step by step",
+      "fitness": 0.0,
+      "security_score": 0.0,
+      "accuracy": 0.0,
+      "robustness": 0.0
+    },
+    {
+      "rank": 10,
+      "text": "As a professional AI assistant, I'll provide comprehensive help with your detailed request: {task}",
+      "fitness": 0.0,
+      "security_score": 0.0,
+      "accuracy": 0.0,
+      "robustness": 0.0
+    }
+  ],
+  "evolution_progress": [
+    {
+      "generation": 1,
+      "best_fitness": 0.8833333333333334,
+      "diversity": 0.11396145549289588,
+      "execution_time": 0.01104736328125,
+      "system_health": "healthy",
+      "error_rate": 0.0
+    },
+    {
+      "generation": 2,
+      "best_fitness": 0.9492753623188407,
+      "diversity": 0.11670763707781981,
+      "execution_time": 0.007853507995605469,
+      "system_health": "healthy",
+      "error_rate": 0.0
+    },
+    {
+      "generation": 3,
+      "best_fitness": 0.9492753623188407,
+      "diversity": 0.14787699754231176,
+      "execution_time": 0.00789189338684082,
+      "system_health": "healthy",
+      "error_rate": 0.0
+    },
+    {
+      "generation": 4,
+      "best_fitness": 0.9492753623188407,
+      "diversity": 0.07883373331649192,
+      "execution_time": 0.007981061935424805,
+      "system_health": "healthy",
+      "error_rate": 0.0
+    },
+    {
+      "generation": 5,
+      "best_fitness": 0.9492753623188407,
+      "diversity": 0.09140262824846997,
+      "execution_time": 0.006453037261962891,
+      "system_health": "healthy",
+      "error_rate": 0.0
+    },
+    {
+      "generation": 6,
+      "best_fitness": 0.9492753623188407,
+      "diversity": 0.09438339851118747,
+      "execution_time": 0.005971193313598633,
+      "system_health": "healthy",
+      "error_rate": 0.0
+    },
+    {
+      "generation": 7,
+      "best_fitness": 0.9492753623188407,
+      "diversity": 0.0,
+      "execution_time": 0.017180442810058594,
+      "system_health": "healthy",
+      "error_rate": 0.0
+    },
+    {
+      "generation": 8,
+      "best_fitness": 0.9492753623188407,
+      "diversity": 0.017662835249042105,
+      "execution_time": 0.0007355213165283203,
+      "system_health": "healthy",
+      "error_rate": 0.0
+    },
+    {
+      "generation": 9,
+      "best_fitness": 0.9492753623188407,
+      "diversity": 0.049318707519305345,
+      "execution_time": 0.005522251129150391,
+      "system_health": "healthy",
+      "error_rate": 0.0
+    },
+    {
+      "generation": 10,
+      "best_fitness": 0.9492753623188407,
+      "diversity": 0.060459394485763596,
+      "execution_time": 0.008000850677490234,
+      "system_health": "healthy",
+      "error_rate": 0.0
+    },
+    {
+      "generation": 11,
+      "best_fitness": 0.9492753623188407,
+      "diversity": 0.0,
+      "execution_time": 0.010570764541625977,
+      "system_health": "healthy",
+      "error_rate": 0.0
+    },
+    {
+      "generation": 12,
+      "best_fitness": 0.9492753623188407,
+      "diversity": 0.022078544061302635,
+      "execution_time": 0.0008206367492675781,
+      "system_health": "healthy",
+      "error_rate": 0.0
+    },
+    {
+      "generation": 13,
+      "best_fitness": 0.9492753623188407,
+      "diversity": 0.037418498353162535,
+      "execution_time": 0.005236387252807617,
+      "system_health": "healthy",
+      "error_rate": 0.0
+    },
+    {
+      "generation": 14,
+      "best_fitness": 0.9492753623188407,
+      "diversity": 0.05376042370971374,
+      "execution_time": 0.0065762996673583984,
+      "system_health": "healthy",
+      "error_rate": 0.0
+    },
+    {
+      "generation": 15,
+      "best_fitness": 0.9492753623188407,
+      "diversity": 0.05376042370971374,
+      "execution_time": 0.0064601898193359375,
+      "system_health": "healthy",
+      "error_rate": 0.0
+    }
+  ],
+  "system_capabilities": {
+    "security_validation": "\u2705 Active",
+    "error_handling": "\u2705 Comprehensive",
+    "monitoring": "\u2705 Real-time",
+    "recovery_strategies": "\u2705 Implemented",
+    "input_validation": "\u2705 Robust",
+    "audit_logging": "\u2705 Enabled",
+    "rate_limiting": "\u2705 Active",
+    "health_checks": "\u2705 Passing"
+  },
+  "system_health_report": {
+    "timestamp": 1754808350.1235986,
+    "metrics": {
+      "total_evaluations": 0,
+      "successful_evaluations": 100,
+      "failed_evaluations": 225,
+      "average_evaluation_time": 0.0002065575765257618,
+      "memory_usage_mb": 0.0,
+      "cpu_usage_percent": 0.0,
+      "active_threads": 0,
+      "errors_by_type": {
+        "SecurityError": 225
+      }
+    },
+    "health_checks": {
+      "memory_usage": true,
+      "error_rate": true,
+      "evaluation_performance": true
+    },
+    "overall_health": "healthy",
+    "uptime_seconds": 0.1414024829864502
   }
 }

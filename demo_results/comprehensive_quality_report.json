@@ -1,8 +1,8 @@
 {
-  "timestamp": 1754808803.728816,
+  "timestamp": 1755052845.8126948,
   "test_results": {
     "overall_status": "PASS",
-    "execution_time": 1.1044793128967285,
+    "execution_time": 1.1042802333831787,
     "summary": {
       "total_tests": 17,
       "passed": 17,
@@ -15,11 +15,11 @@
       "Unit Tests": {
         "status": "PASS",
         "tests": [
-          "TestResult(test_name='Prompt Population Tests', status='PASS', execution_time=0.009837627410888672, error_message=None, details={'prompts_tested': 4}, timestamp=1754808802.6342108)",
-          "TestResult(test_name='Fitness Function Tests', status='PASS', execution_time=0.025415658950805664, error_message=None, details={'test_cases': 2, 'scores': {'fitness': 0.75, 'accuracy': 0.8, 'clarity': 0.7}}, timestamp=1754808802.6596372)",
-          "TestResult(test_name='Evolution Algorithm Tests', status='PASS', execution_time=3.0040740966796875e-05, error_message=None, details={'original_population_size': 3, 'mutation_tested': True, 'crossover_tested': True}, timestamp=1754808802.659676)",
-          "TestResult(test_name='Caching System Tests', status='PASS', execution_time=2.1457672119140625e-06, error_message=None, details={'cache_size': 1, 'hit_test': 'PASS', 'miss_test': 'PASS'}, timestamp=1754808802.6596942)",
-          "TestResult(test_name='Security Validation Tests', status='PASS', execution_time=1.1682510375976562e-05, error_message=None, details={'pattern_detection': 'PASS', 'length_validation': 'PASS', 'safe_prompts_tested': 1, 'malicious_prompts_tested': 1}, timestamp=1754808802.6597092)"
+          "TestResult(test_name='Prompt Population Tests', status='PASS', execution_time=0.012436389923095703, error_message=None, details={'prompts_tested': 4}, timestamp=1755052844.7214658)",
+          "TestResult(test_name='Fitness Function Tests', status='PASS', execution_time=0.04687619209289551, error_message=None, details={'test_cases': 2, 'scores': {'fitness': 0.75, 'accuracy': 0.8, 'clarity': 0.7}}, timestamp=1755052844.768354)",
+          "TestResult(test_name='Evolution Algorithm Tests', status='PASS', execution_time=3.2901763916015625e-05, error_message=None, details={'original_population_size': 3, 'mutation_tested': True, 'crossover_tested': True}, timestamp=1755052844.7683961)",
+          "TestResult(test_name='Caching System Tests', status='PASS', execution_time=2.1457672119140625e-06, error_message=None, details={'cache_size': 1, 'hit_test': 'PASS', 'miss_test': 'PASS'}, timestamp=1755052844.7684033)",
+          "TestResult(test_name='Security Validation Tests', status='PASS', execution_time=1.0728836059570312e-05, error_message=None, details={'pattern_detection': 'PASS', 'length_validation': 'PASS', 'safe_prompts_tested': 1, 'malicious_prompts_tested': 1}, timestamp=1755052844.7684176)"
         ],
         "summary": {
           "total": 5,
@@ -31,9 +31,9 @@
       "Integration Tests": {
         "status": "PASS",
         "tests": [
-          "TestResult(test_name='End-to-End Evolution Pipeline', status='PASS', execution_time=0.03483271598815918, error_message=None, details={'initial_population_size': 3, 'final_population_size': 4, 'generations_simulated': 1, 'test_cases': 1}, timestamp=1754808802.6599507)",
-          "TestResult(test_name='Multi-Component Integration', status='PASS', execution_time=1.0728836059570312e-05, error_message=None, details={'components_tested': ['population_creation', 'evaluation_caching', 'security_validation'], 'integration_points': 3}, timestamp=1754808802.659968)",
-          "TestResult(test_name='Error Recovery Integration', status='PASS', execution_time=1.5735626220703125e-05, error_message=None, details={'recovery_scenarios': ['empty_population_recovery', 'invalid_score_recovery', 'evaluation_error_recovery'], 'successful_recoveries': 3, 'total_scenarios': 3}, timestamp=1754808802.6599886)"
+          "TestResult(test_name='End-to-End Evolution Pipeline', status='PASS', execution_time=0.0588529109954834, error_message=None, details={'initial_population_size': 3, 'final_population_size': 4, 'generations_simulated': 1, 'test_cases': 1}, timestamp=1755052844.768686)",
+          "TestResult(test_name='Multi-Component Integration', status='PASS', execution_time=1.0728836059570312e-05, error_message=None, details={'components_tested': ['population_creation', 'evaluation_caching', 'security_validation'], 'integration_points': 3}, timestamp=1755052844.768704)",
+          "TestResult(test_name='Error Recovery Integration', status='PASS', execution_time=1.621246337890625e-05, error_message=None, details={'recovery_scenarios': ['empty_population_recovery', 'invalid_score_recovery', 'evaluation_error_recovery'], 'successful_recoveries': 3, 'total_scenarios': 3}, timestamp=1755052844.7687247)"
         ],
         "summary": {
           "total": 3,
@@ -45,10 +45,10 @@
       "Performance Tests": {
         "status": "PASS",
         "tests": [
-          "TestResult(test_name='Throughput Performance', status='PASS', execution_time=0.009719610214233398, error_message=None, details={'prompts_processed': 100, 'processing_time': 0.00017213821411132812, 'throughput_pps': 580928.5318559557, 'threshold_pps': 50, 'performance_ratio': 11618.570637119114}, timestamp=1754808802.6352077)",
-          "TestResult(test_name='Memory Usage', status='PASS', execution_time=0.01795363426208496, error_message=None, details={'initial_objects': 18355, 'peak_objects': 19357, 'final_objects': 18359, 'memory_growth': 1002, 'memory_cleanup': 998, 'cleanup_ratio': 0.9960079840319361}, timestamp=1754808802.653188)",
-          "TestResult(test_name='Cache Performance', status='PASS', execution_time=7.700920104980469e-05, error_message=None, details={'cache_hits': 50, 'cache_misses': 50, 'hit_ratio': 0.5, 'threshold_ratio': 0.4, 'cache_size': 50}, timestamp=1754808802.6532776)",
-          "TestResult(test_name='Scaling Performance', status='PASS', execution_time=0.0007503032684326172, error_message=None, details={'scaling_results': [{'population_size': 10, 'processing_time': 3.24249267578125e-05, 'throughput': 308404.70588235295}, {'population_size': 50, 'processing_time': 0.000141143798828125, 'throughput': 354248.64864864864}, {'population_size': 100, 'processing_time': 0.00018167495727539062, 'throughput': 550433.5958005249}, {'population_size': 200, 'processing_time': 0.0003795623779296875, 'throughput': 526922.6130653266}], 'min_throughput': 308404.70588235295, 'max_throughput': 550433.5958005249, 'scaling_factor': 1.784776902887139}, timestamp=1754808802.6540368)"
+          "TestResult(test_name='Throughput Performance', status='PASS', execution_time=0.01208949089050293, error_message=None, details={'prompts_processed': 100, 'processing_time': 0.00026798248291015625, 'throughput_pps': 373158.71886121, 'threshold_pps': 50, 'performance_ratio': 7463.1743772242}, timestamp=1755052844.7226954)",
+          "TestResult(test_name='Memory Usage', status='PASS', execution_time=0.036078691482543945, error_message=None, details={'initial_objects': 18356, 'peak_objects': 19360, 'final_objects': 18459, 'memory_growth': 1004, 'memory_cleanup': 901, 'cleanup_ratio': 0.897410358565737}, timestamp=1755052844.758807)",
+          "TestResult(test_name='Cache Performance', status='PASS', execution_time=0.0001049041748046875, error_message=None, details={'cache_hits': 50, 'cache_misses': 50, 'hit_ratio': 0.5, 'threshold_ratio': 0.4, 'cache_size': 50}, timestamp=1755052844.7589295)",
+          "TestResult(test_name='Scaling Performance', status='PASS', execution_time=0.0007596015930175781, error_message=None, details={'scaling_results': [{'population_size': 10, 'processing_time': 3.7670135498046875e-05, 'throughput': 265462.2784810127}, {'population_size': 50, 'processing_time': 9.894371032714844e-05, 'throughput': 505337.8313253012}, {'population_size': 100, 'processing_time': 0.00016951560974121094, 'throughput': 589916.1744022503}, {'population_size': 200, 'processing_time': 0.00043463706970214844, 'throughput': 460154.0318156884}], 'min_throughput': 265462.2784810127, 'max_throughput': 589916.1744022503, 'scaling_factor': 2.222222222222222}, timestamp=1755052844.7596974)"
         ],
         "summary": {
           "total": 4,
@@ -60,9 +60,9 @@
       "Security Tests": {
         "status": "PASS",
         "tests": [
-          "TestResult(test_name='Input Validation Security', status='PASS', execution_time=4.00543212890625e-05, error_message=None, details={'security_tests': 9, 'correct_detections': 9, 'detection_accuracy': 1.0, 'test_breakdown': {'sql_injection': 3, 'command_injection': 3, 'xss': 3}}, timestamp=1754808802.626166)",
-          "TestResult(test_name='Rate Limiting', status='PASS', execution_time=1.1006488800048828, error_message=None, details={'allowed_requests': 5, 'denied_requests': 2, 'rate_limit': 5, 'window_seconds': 1, 'reset_test': 'PASS'}, timestamp=1754808803.7268355)",
-          "TestResult(test_name='Injection Prevention', status='PASS', execution_time=0.0002899169921875, error_message=None, details={'prevention_tests': [{'technique': 'input_sanitization', 'effective': True, 'original_length': 29, 'sanitized_length': 23}, {'technique': 'length_validation', 'effective': True, 'input_length': 200, 'max_allowed': 100}, {'technique': 'pattern_blocking', 'effective': True, 'input': 'eval(user_input)'}], 'effective_techniques': 3, 'total_techniques': 3, 'effectiveness_ratio': 1.0}, timestamp=1754808803.7271416)"
+          "TestResult(test_name='Input Validation Security', status='PASS', execution_time=4.9114227294921875e-05, error_message=None, details={'security_tests': 9, 'correct_detections': 9, 'detection_accuracy': 1.0, 'test_breakdown': {'sql_injection': 3, 'command_injection': 3, 'xss': 3}}, timestamp=1755052844.71117)",
+          "TestResult(test_name='Rate Limiting', status='PASS', execution_time=1.10032320022583, error_message=None, details={'allowed_requests': 5, 'denied_requests': 2, 'rate_limit': 5, 'window_seconds': 1, 'reset_test': 'PASS'}, timestamp=1755052845.8115122)",
+          "TestResult(test_name='Injection Prevention', status='PASS', execution_time=0.0002243518829345703, error_message=None, details={'prevention_tests': [{'technique': 'input_sanitization', 'effective': True, 'original_length': 29, 'sanitized_length': 23}, {'technique': 'length_validation', 'effective': True, 'input_length': 200, 'max_allowed': 100}, {'technique': 'pattern_blocking', 'effective': True, 'input': 'eval(user_input)'}], 'effective_techniques': 3, 'total_techniques': 3, 'effectiveness_ratio': 1.0}, timestamp=1755052845.8117502)"
         ],
         "summary": {
           "total": 3,
@@ -74,8 +74,8 @@
       "Load Tests": {
         "status": "PASS",
         "tests": [
-          "TestResult(test_name='Concurrent Load', status='PASS', execution_time=0.058946847915649414, error_message=None, details={'concurrent_users': 10, 'requests_per_user': 5, 'total_requests': 50, 'successful_requests': 50, 'avg_response_time': 0.01015909194946289, 'max_response_time': 0.010408639907836914, 'thresholds': {'max_avg_response_time': 0.1, 'max_max_response_time': 0.5}}, timestamp=1754808802.7135923)",
-          "TestResult(test_name='Large Population Load', status='PASS', execution_time=0.020399808883666992, error_message=None, details={'population_sizes_tested': [100, 500, 1000, 2000], 'largest_population': 2000, 'max_processing_time': 0.012319803237915039, 'threshold_time': 5.0, 'load_results': [{'population_size': 100, 'processing_time': 0.0005371570587158203, 'top_k_size': 50, 'memory_estimate': 100000}, {'population_size': 500, 'processing_time': 0.002415895462036133, 'top_k_size': 50, 'memory_estimate': 500000}, {'population_size': 1000, 'processing_time': 0.005081892013549805, 'top_k_size': 50, 'memory_estimate': 1000000}, {'population_size': 2000, 'processing_time': 0.012319803237915039, 'top_k_size': 50, 'memory_estimate': 2000000}]}, timestamp=1754808802.7341049)"
+          "TestResult(test_name='Concurrent Load', status='PASS', execution_time=0.06228971481323242, error_message=None, details={'concurrent_users': 10, 'requests_per_user': 5, 'total_requests': 50, 'successful_requests': 50, 'avg_response_time': 0.010136189460754395, 'max_response_time': 0.010296344757080078, 'thresholds': {'max_avg_response_time': 0.1, 'max_max_response_time': 0.5}}, timestamp=1755052844.8226204)",
+          "TestResult(test_name='Large Population Load', status='PASS', execution_time=0.012637853622436523, error_message=None, details={'population_sizes_tested': [100, 500, 1000, 2000], 'largest_population': 2000, 'max_processing_time': 0.007872581481933594, 'threshold_time': 5.0, 'load_results': [{'population_size': 100, 'processing_time': 0.00025081634521484375, 'top_k_size': 50, 'memory_estimate': 100000}, {'population_size': 500, 'processing_time': 0.0013077259063720703, 'top_k_size': 50, 'memory_estimate': 500000}, {'population_size': 1000, 'processing_time': 0.0031745433807373047, 'top_k_size': 50, 'memory_estimate': 1000000}, {'population_size': 2000, 'processing_time': 0.007872581481933594, 'top_k_size': 50, 'memory_estimate': 2000000}]}, timestamp=1755052844.835344)"
         ],
         "summary": {
           "total": 2,
@@ -108,7 +108,7 @@
           "coverage_percentage": 100.0
         },
         "recommendations": [],
-        "timestamp": 1754808803.728147
+        "timestamp": 1755052845.8124115
       },
       {
         "gate_name": "Performance Standards",
@@ -125,7 +125,7 @@
           "bottlenecks_identified": false
         },
         "recommendations": [],
-        "timestamp": 1754808803.7281566
+        "timestamp": 1755052845.8124206
       },
       {
         "gate_name": "Security Compliance",
@@ -142,7 +142,7 @@
           "vulnerabilities_found": false
         },
         "recommendations": [],
-        "timestamp": 1754808803.7281618
+        "timestamp": 1755052845.8124254
       },
       {
         "gate_name": "Error Rate",
@@ -156,7 +156,7 @@
           "success_rate": 100.0
         },
         "recommendations": [],
-        "timestamp": 1754808803.7281675
+        "timestamp": 1755052845.81243
       },
       {
         "gate_name": "Code Quality",
@@ -170,7 +170,7 @@
           }
         },
         "recommendations": [],
-        "timestamp": 1754808803.7281723
+        "timestamp": 1755052845.8124347
       }
     ],
     "recommendations": [],

@@ -1,10 +1,19 @@
 {
   "app": {
-    "name": "Centre d'\u00c9volution Meta Prompt"
+    "name": "Centre d'\u00c9volution Meta Prompt",
+    "description": "Optimisation \u00e9volutive des prompts \u00e0 grande \u00e9chelle"
   },
   "messages": {
     "welcome": "Bienvenue au Centre d'\u00c9volution Meta Prompt",
+    "error": "Une erreur s'est produite",
+    "success": "Op\u00e9ration termin\u00e9e avec succ\u00e8s",
     "loading": "Chargement...",
-    "error": "Une erreur s'est produite"
+    "retry": "R\u00e9essayer"
+  },
+  "navigation": {
+    "dashboard": "Tableau de bord",
+    "evolution": "\u00c9volution",
+    "prompts": "Prompts",
+    "settings": "Param\u00e8tres"
   }
 }

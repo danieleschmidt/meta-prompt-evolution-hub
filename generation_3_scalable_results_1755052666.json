@@ -1,0 +1,570 @@
+{
+  "generation_3_scalable": {
+    "config": {
+      "population_size": 80,
+      "mutation_rate": 0.12,
+      "num_workers": 2,
+      "enable_async": true
+    },
+    "final_population": [
+      {
+        "rank": 1,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 2,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 3,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 4,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 5,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 6,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": 6105338344735235431
+      },
+      {
+        "rank": 7,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 8,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 9,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 10,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 11,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain concept step by me details you describe the assist systematically and clearly",
+        "generation": 17,
+        "hash": -4785293496158186541
+      },
+      {
+        "rank": 12,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 13,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": 6105338344735235431
+      },
+      {
+        "rank": 14,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 15,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 16,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 17,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 18,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 19,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 20,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 21,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 22,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 23,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 24,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 25,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 26,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 27,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 28,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 29,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 30,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 31,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 32,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 33,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 34,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 35,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 36,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 37,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist and clearly",
+        "generation": 17,
+        "hash": -9115901616782375309
+      },
+      {
+        "rank": 38,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 39,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": 6105338344735235431
+      },
+      {
+        "rank": 40,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 41,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 42,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 43,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 44,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": 6105338344735235431
+      },
+      {
+        "rank": 45,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 46,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 47,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 48,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 49,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      },
+      {
+        "rank": 50,
+        "fitness": 0.7999999999999999,
+        "text": "Please explain the concept step by me details you describe assist systematically and clearly",
+        "generation": 17,
+        "hash": -8805604081271402669
+      }
+    ],
+    "evolution_history": [
+      {
+        "generation": 1,
+        "population_size": 80,
+        "best_fitness": 0.66125,
+        "avg_fitness": 0.5843281250000001,
+        "diversity": 0.6875,
+        "execution_time": 0.004717350006103516,
+        "cache_hit_rate": 0.018518518518518517,
+        "stagnation_counter": 0
+      },
+      {
+        "generation": 2,
+        "population_size": 80,
+        "best_fitness": 0.77,
+        "avg_fitness": 0.6211982072767919,
+        "diversity": 0.525,
+        "execution_time": 0.0030395984649658203,
+        "cache_hit_rate": 0.015151515151515152,
+        "stagnation_counter": 0
+      },
+      {
+        "generation": 3,
+        "population_size": 80,
+        "best_fitness": 0.77,
+        "avg_fitness": 0.6362704712566845,
+        "diversity": 0.425,
+        "execution_time": 0.0030930042266845703,
+        "cache_hit_rate": 0.025974025974025976,
+        "stagnation_counter": 0
+      },
+      {
+        "generation": 4,
+        "population_size": 80,
+        "best_fitness": 0.77,
+        "avg_fitness": 0.6718079178303636,
+        "diversity": 0.475,
+        "execution_time": 0.0030181407928466797,
+        "cache_hit_rate": 0.028409090909090908,
+        "stagnation_counter": 0
+      },
+      {
+        "generation": 5,
+        "population_size": 80,
+        "best_fitness": 0.7899999999999999,
+        "avg_fitness": 0.6889007621796418,
+        "diversity": 0.5,
+        "execution_time": 0.002444744110107422,
+        "cache_hit_rate": 0.030303030303030304,
+        "stagnation_counter": 0
+      },
+      {
+        "generation": 6,
+        "population_size": 80,
+        "best_fitness": 0.7899999999999999,
+        "avg_fitness": 0.724845685870502,
+        "diversity": 0.4125,
+        "execution_time": 0.0028734207153320312,
+        "cache_hit_rate": 0.045454545454545456,
+        "stagnation_counter": 0
+      },
+      {
+        "generation": 7,
+        "population_size": 80,
+        "best_fitness": 0.7899999999999999,
+        "avg_fitness": 0.7225027919831091,
+        "diversity": 0.425,
+        "execution_time": 0.0025284290313720703,
+        "cache_hit_rate": 0.045454545454545456,
+        "stagnation_counter": 0
+      },
+      {
+        "generation": 8,
+        "population_size": 79,
+        "best_fitness": 0.7899999999999999,
+        "avg_fitness": 0.7293982355804377,
+        "diversity": 0.34177215189873417,
+        "execution_time": 0.0026612281799316406,
+        "cache_hit_rate": 0.04924242424242424,
+        "stagnation_counter": 0
+      },
+      {
+        "generation": 9,
+        "population_size": 80,
+        "best_fitness": 0.7899999999999999,
+        "avg_fitness": 0.7428547825894866,
+        "diversity": 0.3,
+        "execution_time": 0.0027213096618652344,
+        "cache_hit_rate": 0.05244755244755245,
+        "stagnation_counter": 1
+      },
+      {
+        "generation": 10,
+        "population_size": 80,
+        "best_fitness": 0.7899999999999999,
+        "avg_fitness": 0.740119719078833,
+        "diversity": 0.325,
+        "execution_time": 0.002883434295654297,
+        "cache_hit_rate": 0.048701298701298704,
+        "stagnation_counter": 2
+      },
+      {
+        "generation": 11,
+        "population_size": 80,
+        "best_fitness": 0.7999999999999999,
+        "avg_fitness": 0.7463351256355424,
+        "diversity": 0.275,
+        "execution_time": 0.0026786327362060547,
+        "cache_hit_rate": 0.051515151515151514,
+        "stagnation_counter": 0
+      },
+      {
+        "generation": 12,
+        "population_size": 80,
+        "best_fitness": 0.7999999999999999,
+        "avg_fitness": 0.7487493007959533,
+        "diversity": 0.2625,
+        "execution_time": 0.0024025440216064453,
+        "cache_hit_rate": 0.06818181818181818,
+        "stagnation_counter": 0
+      },
+      {
+        "generation": 13,
+        "population_size": 80,
+        "best_fitness": 0.7999999999999999,
+        "avg_fitness": 0.7409595532428938,
+        "diversity": 0.3,
+        "execution_time": 0.00267791748046875,
+        "cache_hit_rate": 0.08021390374331551,
+        "stagnation_counter": 0
+      },
+      {
+        "generation": 14,
+        "population_size": 80,
+        "best_fitness": 0.7999999999999999,
+        "avg_fitness": 0.7549364588584789,
+        "diversity": 0.2625,
+        "execution_time": 0.0028285980224609375,
+        "cache_hit_rate": 0.09343434343434344,
+        "stagnation_counter": 0
+      },
+      {
+        "generation": 15,
+        "population_size": 80,
+        "best_fitness": 0.7999999999999999,
+        "avg_fitness": 0.7450090993817395,
+        "diversity": 0.3,
+        "execution_time": 0.0027866363525390625,
+        "cache_hit_rate": 0.10526315789473684,
+        "stagnation_counter": 1
+      },
+      {
+        "generation": 16,
+        "population_size": 80,
+        "best_fitness": 0.7999999999999999,
+        "avg_fitness": 0.7440526586542626,
+        "diversity": 0.3125,
+        "execution_time": 0.002724885940551758,
+        "cache_hit_rate": 0.10681818181818181,
+        "stagnation_counter": 2
+      }
+    ],
+    "performance_metrics": {
+      "total_runtime": 0.05952858924865723,
+      "checkpoints": [
+        [
+          "evolution_start",
+          0.0003094673156738281
+        ],
+        [
+          "population_initialized",
+          0.002360105514526367
+        ],
+        [
+          "evolution_complete",
+          0.059522390365600586
+        ]
+      ],
+      "metrics": {
+        "generation_time": {
+          "count": 16,
+          "mean": 0.002879992127418518,
+          "max": 0.004717350006103516,
+          "min": 0.0024025440216064453,
+          "std": 0.0005289422576701193
+        },
+        "best_fitness": {
+          "count": 16,
+          "mean": 0.7819531249999999,
+          "max": 0.7999999999999999,
+          "min": 0.66125,
+          "std": 0.03400051699974573
+        }
+      }
+    },
+    "cache_statistics": {
+      "hits": 72,
+      "misses": 490,
+      "hit_rate": 0.12811387900355872,
+      "size": 485
+    },
+    "scalability_metrics": {
+      "prompts_per_second": 22846.165467136067,
+      "evaluations_cached": 72,
+      "parallel_efficiency": 1.0,
+      "memory_efficiency": "optimized_with_hashing"
+    },
+    "timestamp": 1755052666.5655563
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "status": "initializing",
+  "components": {
+    "kubernetes": "generated",
+    "docker": "generated",
+    "terraform": "generated",
+    "monitoring": "generated",
+    "security": "generated",
+    "i18n": "generated",
+    "compliance": "generated",
+    "scripts": "generated"
+  }
+}

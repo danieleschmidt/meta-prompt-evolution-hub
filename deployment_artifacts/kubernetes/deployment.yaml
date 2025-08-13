@@ -2,40 +2,50 @@
   "apiVersion": "apps/v1",
   "kind": "Deployment",
   "metadata": {
-    "name": "meta-prompt-hub",
-    "namespace": "meta-prompt-hub",
+    "name": "meta-prompt-evolution-hub-deployment",
+    "namespace": "production",
     "labels": {
-      "app": "meta-prompt-hub",
-      "version": "1.0.0"
+      "app": "meta-prompt-evolution-hub",
+      "version": "1.0.0",
+      "environment": "production"
     }
   },
   "spec": {
     "replicas": 3,
     "selector": {
       "matchLabels": {
-        "app": "meta-prompt-hub"
+        "app": "meta-prompt-evolution-hub"
       }
     },
     "template": {
       "metadata": {
         "labels": {
-          "app": "meta-prompt-hub",
+          "app": "meta-prompt-evolution-hub",
           "version": "1.0.0"
         }
       },
       "spec": {
         "containers": [
           {
-            "name": "meta-prompt-hub",
-            "image": "meta-prompt-hub:1.0.0",
+            "name": "meta-prompt-evolution-hub",
+            "image": "meta-prompt-evolution-hub:1.0.0",
             "ports": [
               {
-                "containerPort": 8000,
-                "name": "http"
+                "containerPort": 8080
+              }
+            ],
+            "env": [
+              {
+                "name": "LOG_LEVEL",
+                "value": "INFO"
               },
               {
-                "containerPort": 9090,
-                "name": "metrics"
+                "name": "ENVIRONMENT",
+                "value": "production"
+              },
+              {
+                "name": "GDPR_COMPLIANT",
+                "value": "True"
               }
             ],
             "resources": {
@@ -48,16 +58,29 @@
                 "memory": "4Gi"
               }
             },
+            "readinessProbe": {
+              "httpGet": {
+                "path": "/health/ready",
+                "port": 8080
+              },
+              "initialDelaySeconds": 10,
+              "periodSeconds": 5
+            },
             "livenessProbe": {
               "httpGet": {
-                "path": "/health",
-                "port": 8000
+                "path": "/health/live",
+                "port": 8080
               },
               "initialDelaySeconds": 30,
-              "periodSeconds": 30
+              "periodSeconds": 10
             }
           }
-        ]
+        ],
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1001,
+          "fsGroup": 2001
+        }
       }
     }
   }

@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
 """
-PRODUCTION DEPLOYMENT: Complete Infrastructure & Configuration
-Multi-region deployment, I18n support, GDPR compliance, cross-platform compatibility,
-monitoring, security, and auto-scaling infrastructure.
+Production Deployment Complete System
+Final stage of autonomous SDLC - production-ready deployment with global infrastructure.
 """
 
 import json
-import yaml
 import os
 import time
 import logging
@@ -253,10 +251,10 @@ class ProductionDeploymentManager:
         }
         
         manifests = {
-            "deployment.yaml": yaml.dump(deployment, default_flow_style=False),
-            "service.yaml": yaml.dump(service, default_flow_style=False),
-            "hpa.yaml": yaml.dump(hpa, default_flow_style=False),
-            "ingress.yaml": yaml.dump(ingress, default_flow_style=False)
+            "deployment.yaml": json.dumps(deployment, indent=2),
+            "service.yaml": json.dumps(service, indent=2), 
+            "hpa.yaml": json.dumps(hpa, indent=2),
+            "ingress.yaml": json.dumps(ingress, indent=2)
         }
         
         self.deployment_status["components"]["kubernetes"] = "generated"
@@ -1011,7 +1009,7 @@ scrape_configs:
                         "type": "graph",
                         "targets": [
                             {
-                                "expr": f"rate({project_name}_http_requests_total{{status=~\"5..\"}}}[5m])",
+                                "expr": f"rate({project_name}_http_requests_total{{status=~\\\"5..\\\"}}[5m])",
                                 "legendFormat": "5xx errors/sec"
                             }
                         ],
@@ -1143,9 +1141,9 @@ scrape_configs:
         }
         
         security_files = {
-            "network-policy.yaml": yaml.dump(network_policy, default_flow_style=False),
-            "pod-security-policy.yaml": yaml.dump(pod_security_policy, default_flow_style=False),
-            "rbac-role.yaml": yaml.dump(rbac_role, default_flow_style=False)
+            "network-policy.yaml": json.dumps(network_policy, indent=2),
+            "pod-security-policy.yaml": json.dumps(pod_security_policy, indent=2),
+            "rbac-role.yaml": json.dumps(rbac_role, indent=2)
         }
         
         self.deployment_status["components"]["security"] = "generated"

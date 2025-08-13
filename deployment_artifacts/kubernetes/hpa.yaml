@@ -1,19 +1,29 @@
-apiVersion: autoscaling/v2
-kind: HorizontalPodAutoscaler
-metadata:
-  name: meta-prompt-evolution-hub-hpa
-  namespace: production
-spec:
-  maxReplicas: 50
-  metrics:
-  - resource:
-      name: cpu
-      target:
-        averageUtilization: 70
-        type: Utilization
-    type: Resource
-  minReplicas: 3
-  scaleTargetRef:
-    apiVersion: apps/v1
-    kind: Deployment
-    name: meta-prompt-evolution-hub-deployment
+{
+  "apiVersion": "autoscaling/v2",
+  "kind": "HorizontalPodAutoscaler",
+  "metadata": {
+    "name": "meta-prompt-evolution-hub-hpa",
+    "namespace": "production"
+  },
+  "spec": {
+    "scaleTargetRef": {
+      "apiVersion": "apps/v1",
+      "kind": "Deployment",
+      "name": "meta-prompt-evolution-hub-deployment"
+    },
+    "minReplicas": 3,
+    "maxReplicas": 50,
+    "metrics": [
+      {
+        "type": "Resource",
+        "resource": {
+          "name": "cpu",
+          "target": {
+            "type": "Utilization",
+            "averageUtilization": 70
+          }
+        }
+      }
+    ]
+  }
+}

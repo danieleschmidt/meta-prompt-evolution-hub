@@ -1,0 +1,19 @@
+{
+  "app": {
+    "name": "元提示进化中心",
+    "description": "大规模进化提示优化"
+  },
+  "messages": {
+    "welcome": "欢迎来到元提示进化中心",
+    "error": "发生错误",
+    "success": "操作成功完成",
+    "loading": "加载中...",
+    "retry": "重试"
+  },
+  "navigation": {
+    "dashboard": "仪表板",
+    "evolution": "进化",
+    "prompts": "提示",
+    "settings": "设置"
+  }
+}

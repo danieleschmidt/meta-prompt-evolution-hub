@@ -1,10 +1,19 @@
 {
   "app": {
-    "name": "Centro de Evoluci\u00f3n de Meta Prompts"
+    "name": "Centro de Evoluci\u00f3n de Meta Prompts",
+    "description": "Optimizaci\u00f3n evolutiva de prompts a escala"
   },
   "messages": {
     "welcome": "Bienvenido al Centro de Evoluci\u00f3n de Meta Prompts",
+    "error": "Ocurri\u00f3 un error",
+    "success": "Operaci\u00f3n completada exitosamente",
     "loading": "Cargando...",
-    "error": "Ocurri\u00f3 un error"
+    "retry": "Reintentar"
+  },
+  "navigation": {
+    "dashboard": "Panel",
+    "evolution": "Evoluci\u00f3n",
+    "prompts": "Prompts",
+    "settings": "Configuraci\u00f3n"
   }
 }

@@ -1,14 +1,25 @@
 version: '3.8'
+
 services:
   meta-prompt-evolution-hub:
     build: .
     ports:
       - "8080:8080"
+    environment:
+      - LOG_LEVEL=INFO
+      - ENVIRONMENT=development
+      - POSTGRES_URL=postgresql://user:pass@postgres:5432/metaprompt
+      - REDIS_URL=redis://redis:6379
     depends_on:
       - postgres
       - redis
     restart: unless-stopped
-    
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health/live"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
   postgres:
     image: postgres:15-alpine
     environment:
@@ -17,14 +28,38 @@ services:
       - POSTGRES_PASSWORD=pass
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
     restart: unless-stopped
 
   redis:
     image: redis:7-alpine
+    ports:
+      - "6379:6379"
     volumes:
       - redis_data:/data
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana/dashboards:/etc/grafana/provisioning/dashboards
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
     restart: unless-stopped
 
 volumes:
   postgres_data:
   redis_data:
+  grafana_data:

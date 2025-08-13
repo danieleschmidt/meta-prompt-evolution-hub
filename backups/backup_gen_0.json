@@ -1,0 +1,370 @@
+{
+  "generation": 0,
+  "timestamp": 1755052424.8017657,
+  "population": [
+    {
+      "id": "seed_0",
+      "text": "Help me understand this topic clearly and thoroughly",
+      "fitness": 0.55,
+      "generation": 0,
+      "metadata": {},
+      "validation_errors": [],
+      "checksum": "36fd1bd9a82675f59c4b05cbcbf12791",
+      "created_at": 1755052424.7992656
+    },
+    {
+      "id": "seed_1",
+      "text": "Please explain the concept step by step with examples",
+      "fitness": 0.6633333333333333,
+      "generation": 0,
+      "metadata": {},
+      "validation_errors": [],
+      "checksum": "24cbd9384a53f9586cfc9a0d92fab65f",
+      "created_at": 1755052424.799374
+    },
+    {
+      "id": "seed_2",
+      "text": "I need detailed assistance with comprehensive analysis",
+      "fitness": 0.4,
+      "generation": 0,
+      "metadata": {},
+      "validation_errors": [],
+      "checksum": "2ae48aa3f98d955c083513a807ed02dd",
+      "created_at": 1755052424.7994018
+    },
+    {
+      "id": "seed_3",
+      "text": "Could you describe the process in a structured way",
+      "fitness": 0.55,
+      "generation": 0,
+      "metadata": {},
+      "validation_errors": [],
+      "checksum": "d9e791f4393545f15d9ec744e774d84b",
+      "created_at": 1755052424.7994335
+    },
+    {
+      "id": "seed_4",
+      "text": "Can you help me analyze this information systematically",
+      "fitness": 0.6,
+      "generation": 0,
+      "metadata": {},
+      "validation_errors": [],
+      "checksum": "fbd06a844233f81dac537109d3e89734",
+      "created_at": 1755052424.799453
+    },
+    {
+      "id": "seed_5",
+      "text": "Please provide a clear and detailed explanation",
+      "fitness": 0.45000000000000007,
+      "generation": 0,
+      "metadata": {},
+      "validation_errors": [],
+      "checksum": "4efbf9a141c212fe06f8bece209184c6",
+      "created_at": 1755052424.799471
+    },
+    {
+      "id": "seed_6",
+      "text": "I would like you to explain this concept clearly",
+      "fitness": 0.55,
+      "generation": 0,
+      "metadata": {},
+      "validation_errors": [],
+      "checksum": "f77fb4a28f1209e9e9e5867851c9b793",
+      "created_at": 1755052424.7994883
+    },
+    {
+      "id": "seed_7",
+      "text": "Help me comprehend this subject with specific details",
+      "fitness": 0.55,
+      "generation": 0,
+      "metadata": {},
+      "validation_errors": [],
+      "checksum": "c527e2d9e835b284cc24e409537ba735",
+      "created_at": 1755052424.7995055
+    },
+    {
+      "id": "seed_8",
+      "text": "Could you assist me in understanding this thoroughly",
+      "fitness": 0.5,
+      "generation": 0,
+      "metadata": {},
+      "validation_errors": [],
+      "checksum": "1487c82accfb26cdf889ca2c3f62c3b9",
+      "created_at": 1755052424.7995217
+    },
+    {
+      "id": "seed_9",
+      "text": "Please break down this topic into manageable parts",
+      "fitness": 0.5,
+      "generation": 0,
+      "metadata": {},
+      "validation_errors": [],
+      "checksum": "906821098ac3d4a7feff40659e49bbf4",
+      "created_at": 1755052424.7995381
+    },
+    {
+      "id": "762b9b1c-033d-4ef4-a582-d7f1f7af10bd",
+      "text": "I need detailed with assistance comprehensive analysis",
+      "fitness": 0.4,
+      "generation": 0,
+      "metadata": {
+        "parent_id": "seed_2",
+        "mutation": "word_swap"
+      },
+      "validation_errors": [],
+      "checksum": "b20af37f62d48c29e98561151ed8f7f2",
+      "created_at": 1755052424.8007026
+    },
+    {
+      "id": "254e391f-a23c-4f7c-9eed-aaa5c7fb16c3",
+      "text": "I would like you to explain this concept clearly",
+      "fitness": 0.55,
+      "generation": 0,
+      "metadata": {
+        "parent_id": "seed_6",
+        "mutation": "word_substitute"
+      },
+      "validation_errors": [],
+      "checksum": "11f1d6261486de1fdef10319fd7637ed",
+      "created_at": 1755052424.8007743
+    },
+    {
+      "id": "e966ee71-bf81-4368-bc89-e194a344a0a8",
+      "text": "Please I need detailed assistance with comprehensive analysis",
+      "fitness": 0.55,
+      "generation": 0,
+      "metadata": {
+        "parent_id": "seed_2",
+        "mutation": "phrase_modify"
+      },
+      "validation_errors": [],
+      "checksum": "3aedf7bf81e180481217b1d78db5dcc8",
+      "created_at": 1755052424.8008235
+    },
+    {
+      "id": "936449ff-8c2f-4824-b5b5-f20236a8b2db",
+      "text": "Could you assist me in understanding this thoroughly",
+      "fitness": 0.5,
+      "generation": 0,
+      "metadata": {
+        "parent_id": "seed_8",
+        "mutation": "word_substitute"
+      },
+      "validation_errors": [],
+      "checksum": "eb2fbbe8759b88223168a1ab65d937ae",
+      "created_at": 1755052424.800864
+    },
+    {
+      "id": "c321dcc0-28a6-4744-a558-676f1b447980",
+      "text": "Could you describe assist me in understanding this thoroughly",
+      "fitness": 0.55,
+      "generation": 0,
+      "metadata": {
+        "parent_id": "936449ff-8c2f-4824-b5b5-f20236a8b2db",
+        "mutation": "word_insert"
+      },
+      "validation_errors": [],
+      "checksum": "db169d995f3c2bd3d6e2c26b97e7b56b",
+      "created_at": 1755052424.8008986
+    },
+    {
+      "id": "7dad4510-9849-4c25-9311-fa2e7287968b",
+      "text": "Please I need detailed assistance with comprehensive analysis",
+      "fitness": 0.55,
+      "generation": 0,
+      "metadata": {
+        "parent_id": "e966ee71-bf81-4368-bc89-e194a344a0a8",
+        "mutation": "phrase_modify"
+      },
+      "validation_errors": [],
+      "checksum": "3bdd77814d237c421c196d24ebbe6dee",
+      "created_at": 1755052424.8009298
+    },
+    {
+      "id": "1e698f55-7792-4e39-8e38-a3222071f8ed",
+      "text": "Can you help me analyze this information systematically",
+      "fitness": 0.6,
+      "generation": 0,
+      "metadata": {
+        "parent_id": "seed_4",
+        "mutation": "word_substitute"
+      },
+      "validation_errors": [],
+      "checksum": "45fc5f090140c647742c8be862d7370a",
+      "created_at": 1755052424.8009617
+    },
+    {
+      "id": "5e1f5d10-18c6-48f7-bfff-1f897a334c6d",
+      "text": "I would like you to explain this concept clearly",
+      "fitness": 0.55,
+      "generation": 0,
+      "metadata": {
+        "parent_id": "254e391f-a23c-4f7c-9eed-aaa5c7fb16c3",
+        "mutation": "word_substitute"
+      },
+      "validation_errors": [],
+      "checksum": "138395ea0d228a0fc3f0f054432115df",
+      "created_at": 1755052424.8009934
+    },
+    {
+      "id": "99230231-ce51-4e6e-bc21-6f3f2f655f4e",
+      "text": "Can you Help me understand this topic clearly and thoroughly",
+      "fitness": 0.6,
+      "generation": 0,
+      "metadata": {
+        "parent_id": "seed_0",
+        "mutation": "phrase_modify"
+      },
+      "validation_errors": [],
+      "checksum": "ad9ece7dd9a09b84e3681b08ac572ae0",
+      "created_at": 1755052424.8010232
+    },
+    {
+      "id": "21349d40-f261-419a-9210-62a0e987a630",
+      "text": "Please I need detailed assistance with comprehensive analysis help",
+      "fitness": 0.6,
+      "generation": 0,
+      "metadata": {
+        "parent_id": "7dad4510-9849-4c25-9311-fa2e7287968b",
+        "mutation": "word_insert"
+      },
+      "validation_errors": [],
+      "checksum": "6e2a4c49e5a659b44e25f9134d416a18",
+      "created_at": 1755052424.8011136
+    },
+    {
+      "id": "8dd65e1a-a78c-4a4d-8a50-fa1967d9eda5",
+      "text": "Can you Help me understand this topic clearly and",
+      "fitness": 0.6,
+      "generation": 0,
+      "metadata": {
+        "parent_id": "99230231-ce51-4e6e-bc21-6f3f2f655f4e",
+        "mutation": "word_delete"
+      },
+      "validation_errors": [],
+      "checksum": "9b6ede4f27ba4c9ee0c993f1e16e28fb",
+      "created_at": 1755052424.801155
+    },
+    {
+      "id": "d8129599-f4bf-4169-b37e-c30f35e14c81",
+      "text": "Please explain the step by step with examples",
+      "fitness": 0.66125,
+      "generation": 0,
+      "metadata": {
+        "parent_id": "seed_1",
+        "mutation": "word_delete"
+      },
+      "validation_errors": [],
+      "checksum": "b3e3584070c2ce82c4381e56174ae5b5",
+      "created_at": 1755052424.8011878
+    },
+    {
+      "id": "84b5bb72-1643-4dc0-bbdc-384846bafb61",
+      "text": "Could you describe the process in a structured",
+      "fitness": 0.55,
+      "generation": 0,
+      "metadata": {
+        "parent_id": "seed_3",
+        "mutation": "word_delete"
+      },
+      "validation_errors": [],
+      "checksum": "00c8bf6888cea5ab572322560cdceeea",
+      "created_at": 1755052424.801218
+    },
+    {
+      "id": "102fe467-0545-4359-b600-573e1616f0ae",
+      "text": "Please break down this topic into manageable parts",
+      "fitness": 0.5,
+      "generation": 0,
+      "metadata": {
+        "parent_id": "seed_9",
+        "mutation": "word_substitute"
+      },
+      "validation_errors": [],
+      "checksum": "421e7317b96aad7d7d9c8c8e91e38d10",
+      "created_at": 1755052424.8012488
+    },
+    {
+      "id": "a0ebe151-8bb9-46ce-ada5-b14a56ce1304",
+      "text": "I need detailed analyze with assistance comprehensive analysis",
+      "fitness": 0.55,
+      "generation": 0,
+      "metadata": {
+        "parent_id": "762b9b1c-033d-4ef4-a582-d7f1f7af10bd",
+        "mutation": "word_insert"
+      },
+      "validation_errors": [],
+      "checksum": "9078afd662b983f45d1669dbcf8d90ae",
+      "created_at": 1755052424.801304
+    },
+    {
+      "id": "424259c2-6adb-4ee9-9c8b-fcb1077c71ef",
+      "text": "I would please like you to explain this concept clearly",
+      "fitness": 0.6,
+      "generation": 0,
+      "metadata": {
+        "parent_id": "seed_6",
+        "mutation": "word_insert"
+      },
+      "validation_errors": [],
+      "checksum": "93736bea0ef83e8bbba8251d51b5dbb2",
+      "created_at": 1755052424.801349
+    },
+    {
+      "id": "b9cc957a-547c-49cf-96dc-6e2e03c8a09c",
+      "text": "I need you to Please explain the concept step by step with examples",
+      "fitness": 0.6684615384615384,
+      "generation": 0,
+      "metadata": {
+        "parent_id": "seed_1",
+        "mutation": "phrase_modify"
+      },
+      "validation_errors": [],
+      "checksum": "fd7721909f03ca4d8d5b8bdc4d464bbe",
+      "created_at": 1755052424.801443
+    },
+    {
+      "id": "45ea3f92-1698-46a6-80e6-7cd35ff61e54",
+      "text": "break down this topic into manageable parts",
+      "fitness": 0.35,
+      "generation": 0,
+      "metadata": {
+        "parent_id": "seed_9",
+        "mutation": "word_delete"
+      },
+      "validation_errors": [],
+      "checksum": "72533f1b5a8b5a51e7f44626ea5642fd",
+      "created_at": 1755052424.8014772
+    },
+    {
+      "id": "cae67da7-6cb7-4d99-9191-b4570d000c18",
+      "text": "break down this topic into manageable parts",
+      "fitness": 0.35,
+      "generation": 0,
+      "metadata": {
+        "parent_id": "45ea3f92-1698-46a6-80e6-7cd35ff61e54",
+        "mutation": "word_substitute"
+      },
+      "validation_errors": [],
+      "checksum": "401e5f3541f1bcc15af8581cc439d92b",
+      "created_at": 1755052424.8015163
+    },
+    {
+      "id": "faa42489-1b7c-4d7e-90f9-0becd6a53a1d",
+      "text": "I would like you to clarify this concept clearly",
+      "fitness": 0.5,
+      "generation": 0,
+      "metadata": {
+        "parent_id": "5e1f5d10-18c6-48f7-bfff-1f897a334c6d",
+        "mutation": "word_substitute"
+      },
+      "validation_errors": [],
+      "checksum": "4f109673522b3f002aa3eae68499dfaf",
+      "created_at": 1755052424.8015456
+    }
+  ],
+  "config": {
+    "population_size": 30,
+    "mutation_rate": 0.15
+  }
+}

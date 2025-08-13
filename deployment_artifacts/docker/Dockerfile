@@ -1,52 +1,55 @@
-# Multi-stage Docker build for Meta-Prompt-Evolution-Hub
-FROM python:3.11-slim as builder
+# Multi-stage production Dockerfile
+FROM python:3.12-slim as builder
 
-# Install build dependencies
+# Install system dependencies
 RUN apt-get update && apt-get install -y \
     build-essential \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
-# Create application user
-RUN groupadd -r appuser && useradd -r -g appuser appuser
-
-# Set up Python environment
+# Set work directory
 WORKDIR /app
-COPY requirements.txt .
-RUN pip install --no-cache-dir --user -r requirements.txt
+
+# Copy requirements and install dependencies
+COPY pyproject.toml ./
+RUN pip install --no-cache-dir -e .
 
 # Production stage
-FROM python:3.11-slim
+FROM python:3.12-slim
 
-# Install runtime dependencies
+# Create non-root user for security
+RUN groupadd -r appuser && useradd -r -g appuser appuser
+
+# Install runtime dependencies only
 RUN apt-get update && apt-get install -y \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
-# Create application user
-RUN groupadd -r appuser && useradd -r -g appuser appuser
-
-# Copy Python packages from builder
-COPY --from=builder /root/.local /home/appuser/.local
-
-# Set up application directory
+# Set work directory
 WORKDIR /app
-COPY --chown=appuser:appuser . .
 
-# Set environment variables
-ENV PATH="/home/appuser/.local/bin:$PATH"
-ENV PYTHONPATH="/app"
-ENV PYTHONUNBUFFERED=1
+# Copy from builder stage
+COPY --from=builder /usr/local/lib/python3.12/site-packages /usr/local/lib/python3.12/site-packages
+COPY --from=builder /usr/local/bin /usr/local/bin
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
-    CMD curl -f http://localhost:8000/health || exit 1
+# Copy application code
+COPY . .
 
-# Switch to non-root user
+# Change ownership to non-root user
+RUN chown -R appuser:appuser /app
 USER appuser
 
 # Expose port
-EXPOSE 8000
+EXPOSE 8080
 
-# Run application
-CMD ["python", "-m", "meta_prompt_evolution.cli.main", "--port", "8000"]
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:8080/health/live || exit 1
+
+# Set environment variables
+ENV PYTHONPATH=/app
+ENV LOG_LEVEL=INFO
+ENV ENVIRONMENT=production
+
+# Start application
+CMD ["python", "-m", "meta_prompt_evolution.cli", "server", "--host", "0.0.0.0", "--port", "8080"]

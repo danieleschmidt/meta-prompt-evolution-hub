@@ -1,0 +1,274 @@
+{
+  "evolution_config": {
+    "population_size": 15,
+    "mutation_rate": 0.15,
+    "generations": 8
+  },
+  "final_population": [
+    {
+      "id": "61572696-2ce7-4b4b-a1a2-4379d4a7509c",
+      "text": "Can you describe Please analyze analyze explain the explain the concept help",
+      "fitness": 0.644543972380968,
+      "generation": 7,
+      "metadata": {
+        "parent_id": "ae3342a4-ba4e-4080-b675-c39166ad0644",
+        "mutation": "word_insert"
+      }
+    },
+    {
+      "id": "562262f0-fdef-4a3f-9ce2-94f3755fda62",
+      "text": "Please analyze explain explain assist the concept help",
+      "fitness": 0.5944312520630428,
+      "generation": 8,
+      "metadata": {
+        "parent_id": "2cba8e83-6fbc-4a18-8233-51d71d3bfa04",
+        "mutation": "word_insert"
+      }
+    },
+    {
+      "id": "2cba8e83-6fbc-4a18-8233-51d71d3bfa04",
+      "text": "Please analyze explain explain the concept help",
+      "fitness": 0.5628568668960064,
+      "generation": 7,
+      "metadata": {
+        "parent_id": "f7fea81a-ecca-420a-8691-4eb3c8b743d9",
+        "mutation": "word_delete"
+      }
+    },
+    {
+      "id": "f7fea81a-ecca-420a-8691-4eb3c8b743d9",
+      "text": "Please analyze explain the explain the concept help",
+      "fitness": 0.5615145092773441,
+      "generation": 6,
+      "metadata": {
+        "parent_id": "809681ae-733f-4c3f-9796-e2f76caed42d",
+        "mutation": "word_delete"
+      }
+    },
+    {
+      "id": "60915910-e017-4f40-90b0-52f76ab79d9d",
+      "text": "Can you Please explain the concept Please analyze explain explain the concept help",
+      "fitness": 0.5091736483028624,
+      "generation": 8,
+      "metadata": {}
+    },
+    {
+      "id": "9a531589-6733-4747-8186-d9592a0a6575",
+      "text": "Can you Please analyze you Please the help assist the concept help",
+      "fitness": 0.5007772629486416,
+      "generation": 8,
+      "metadata": {
+        "parent_id": "81428769-7276-4dbb-b266-4fb8922b4eca",
+        "mutation": "phrase_modify"
+      }
+    },
+    {
+      "id": "125e5173-a21c-4816-b034-9456ed109b3c",
+      "text": "Can you Please analyze analyze explain the explain the concept help",
+      "fitness": 0.47650391019109983,
+      "generation": 8,
+      "metadata": {}
+    },
+    {
+      "id": "0c114a89-8ced-4caa-8901-e8449ce0d45e",
+      "text": "Please analyze explain the concept help",
+      "fitness": 0.4701856440332864,
+      "generation": 8,
+      "metadata": {}
+    },
+    {
+      "id": "0465814e-d746-4423-b216-2953d137e697",
+      "text": "Can you describe Please analyze analyze explain the",
+      "fitness": 0.46507571114570667,
+      "generation": 8,
+      "metadata": {}
+    },
+    {
+      "id": "b007b918-db88-4b34-9e86-f1d43a8d9944",
+      "text": "Please Please analyze explain explain the concept help",
+      "fitness": 0.4467498756365624,
+      "generation": 8,
+      "metadata": {}
+    },
+    {
+      "id": "07d1bf23-7ac5-4fcb-a949-733a429a2b04",
+      "text": "Can you describe Please analyze analyze you describe Please analyze analyze explain the explain the concept help",
+      "fitness": 0.43678744296230143,
+      "generation": 8,
+      "metadata": {}
+    },
+    {
+      "id": "27cb7de2-a988-4927-b848-fdd6d2e27174",
+      "text": "Can you Please analyze Please analyze explain the explain the concept help",
+      "fitness": 0.4223882921007588,
+      "generation": 8,
+      "metadata": {}
+    },
+    {
+      "id": "fac71dec-b676-438c-93ac-725fae9b53ef",
+      "text": "Can you Please analyze you Please analyze explain explain the concept help",
+      "fitness": 0.4176026808915941,
+      "generation": 8,
+      "metadata": {}
+    },
+    {
+      "id": "ffeea4e0-8b9c-4fba-89ff-971bfcf49118",
+      "text": "Please analyze explain the explain the concept help explain explain the concept help",
+      "fitness": 0.40460031244338074,
+      "generation": 8,
+      "metadata": {}
+    },
+    {
+      "id": "c9001704-b3b7-4a69-bafb-8d1c24daff6e",
+      "text": "Please analyze explain explain explain the help",
+      "fitness": 0.3988913030127879,
+      "generation": 8,
+      "metadata": {}
+    }
+  ],
+  "evolution_history": [
+    {
+      "generation": 1,
+      "best_fitness": 0.5682585242947713,
+      "avg_fitness": 0.3914650608616924,
+      "diversity": 0.57140589569161,
+      "time_seconds": 0.0006053447723388672
+    },
+    {
+      "generation": 2,
+      "best_fitness": 0.5682585242947713,
+      "avg_fitness": 0.4499123792280385,
+      "diversity": 0.30750566893424025,
+      "time_seconds": 0.0006046295166015625
+    },
+    {
+      "generation": 3,
+      "best_fitness": 0.5712757502113088,
+      "avg_fitness": 0.4907722090071506,
+      "diversity": 0.3301284958427815,
+      "time_seconds": 0.0006737709045410156
+    },
+    {
+      "generation": 4,
+      "best_fitness": 0.5443745551975764,
+      "avg_fitness": 0.3957276382670016,
+      "diversity": 0.3855668934240363,
+      "time_seconds": 0.0005829334259033203
+    },
+    {
+      "generation": 5,
+      "best_fitness": 0.6249685314054962,
+      "avg_fitness": 0.4776524858166495,
+      "diversity": 0.29074074074074074,
+      "time_seconds": 0.0006785392761230469
+    },
+    {
+      "generation": 6,
+      "best_fitness": 0.5615145092773441,
+      "avg_fitness": 0.46061767901044653,
+      "diversity": 0.34486772486772505,
+      "time_seconds": 0.0006816387176513672
+    },
+    {
+      "generation": 7,
+      "best_fitness": 0.644543972380968,
+      "avg_fitness": 0.4357681363614088,
+      "diversity": 0.35360544217687084,
+      "time_seconds": 0.0006563663482666016
+    },
+    {
+      "generation": 8,
+      "best_fitness": 0.644543972380968,
+      "avg_fitness": 0.4874721789524229,
+      "diversity": 0.25079365079365074,
+      "time_seconds": 0.0007116794586181641
+    }
+  ],
+  "best_prompts": [
+    {
+      "id": "61572696-2ce7-4b4b-a1a2-4379d4a7509c",
+      "text": "Can you describe Please analyze analyze explain the explain the concept help",
+      "fitness": 0.644543972380968,
+      "generation": 7,
+      "metadata": {
+        "parent_id": "ae3342a4-ba4e-4080-b675-c39166ad0644",
+        "mutation": "word_insert"
+      }
+    },
+    {
+      "id": "562262f0-fdef-4a3f-9ce2-94f3755fda62",
+      "text": "Please analyze explain explain assist the concept help",
+      "fitness": 0.5944312520630428,
+      "generation": 8,
+      "metadata": {
+        "parent_id": "2cba8e83-6fbc-4a18-8233-51d71d3bfa04",
+        "mutation": "word_insert"
+      }
+    },
+    {
+      "id": "2cba8e83-6fbc-4a18-8233-51d71d3bfa04",
+      "text": "Please analyze explain explain the concept help",
+      "fitness": 0.5628568668960064,
+      "generation": 7,
+      "metadata": {
+        "parent_id": "f7fea81a-ecca-420a-8691-4eb3c8b743d9",
+        "mutation": "word_delete"
+      }
+    },
+    {
+      "id": "f7fea81a-ecca-420a-8691-4eb3c8b743d9",
+      "text": "Please analyze explain the explain the concept help",
+      "fitness": 0.5615145092773441,
+      "generation": 6,
+      "metadata": {
+        "parent_id": "809681ae-733f-4c3f-9796-e2f76caed42d",
+        "mutation": "word_delete"
+      }
+    },
+    {
+      "id": "60915910-e017-4f40-90b0-52f76ab79d9d",
+      "text": "Can you Please explain the concept Please analyze explain explain the concept help",
+      "fitness": 0.5091736483028624,
+      "generation": 8,
+      "metadata": {}
+    },
+    {
+      "id": "9a531589-6733-4747-8186-d9592a0a6575",
+      "text": "Can you Please analyze you Please the help assist the concept help",
+      "fitness": 0.5007772629486416,
+      "generation": 8,
+      "metadata": {
+        "parent_id": "81428769-7276-4dbb-b266-4fb8922b4eca",
+        "mutation": "phrase_modify"
+      }
+    },
+    {
+      "id": "125e5173-a21c-4816-b034-9456ed109b3c",
+      "text": "Can you Please analyze analyze explain the explain the concept help",
+      "fitness": 0.47650391019109983,
+      "generation": 8,
+      "metadata": {}
+    },
+    {
+      "id": "0c114a89-8ced-4caa-8901-e8449ce0d45e",
+      "text": "Please analyze explain the concept help",
+      "fitness": 0.4701856440332864,
+      "generation": 8,
+      "metadata": {}
+    },
+    {
+      "id": "0465814e-d746-4423-b216-2953d137e697",
+      "text": "Can you describe Please analyze analyze explain the",
+      "fitness": 0.46507571114570667,
+      "generation": 8,
+      "metadata": {}
+    },
+    {
+      "id": "b007b918-db88-4b34-9e86-f1d43a8d9944",
+      "text": "Please Please analyze explain explain the concept help",
+      "fitness": 0.4467498756365624,
+      "generation": 8,
+      "metadata": {}
+    }
+  ]
+}

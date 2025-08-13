@@ -2,19 +2,20 @@
   "apiVersion": "v1",
   "kind": "Service",
   "metadata": {
-    "name": "meta-prompt-hub-service",
-    "namespace": "meta-prompt-hub"
+    "name": "meta-prompt-evolution-hub-service",
+    "namespace": "production"
   },
   "spec": {
     "selector": {
-      "app": "meta-prompt-hub"
+      "app": "meta-prompt-evolution-hub"
     },
     "ports": [
       {
-        "name": "http",
+        "protocol": "TCP",
         "port": 80,
-        "targetPort": 8000
+        "targetPort": 8080
       }
-    ]
+    ],
+    "type": "LoadBalancer"
   }
 }

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Comprehensive Quality Gates and Testing Suite for Meta-Prompt-Evolution-Hub
-Production-ready testing, validation, and quality assurance system.
+Comprehensive Quality Gates and Testing Suite
+Implements mandatory quality validation across all generations.
 """
 
 import time

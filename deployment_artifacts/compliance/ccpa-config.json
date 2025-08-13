@@ -1,0 +1,24 @@
+{
+  "ccpa_compliance": {
+    "enabled": true,
+    "do_not_sell_opt_out": true,
+    "consumer_rights": {
+      "know": true,
+      "delete": true,
+      "opt_out_sale": true,
+      "non_discrimination": true
+    },
+    "personal_information_categories": [
+      "identifiers",
+      "commercial_information",
+      "internet_activity",
+      "inferences"
+    ],
+    "business_purposes": [
+      "service_provision",
+      "security",
+      "debugging",
+      "quality_assurance"
+    ]
+  }
+}

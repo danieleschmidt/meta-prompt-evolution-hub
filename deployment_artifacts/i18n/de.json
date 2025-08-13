@@ -1,0 +1,19 @@
+{
+  "app": {
+    "name": "Meta Prompt Evolution Hub",
+    "description": "Evolution\u00e4re Prompt-Optimierung im gro\u00dfen Ma\u00dfstab"
+  },
+  "messages": {
+    "welcome": "Willkommen im Meta Prompt Evolution Hub",
+    "error": "Ein Fehler ist aufgetreten",
+    "success": "Vorgang erfolgreich abgeschlossen",
+    "loading": "Wird geladen...",
+    "retry": "Erneut versuchen"
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "evolution": "Evolution",
+    "prompts": "Prompts",
+    "settings": "Einstellungen"
+  }
+}

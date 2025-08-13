@@ -1,0 +1,178 @@
+{
+  "generation": 1,
+  "phase": "enhanced_simple",
+  "config": {
+    "population_size": 25,
+    "mutation_rate": 0.12,
+    "generations": 12,
+    "fitness_evaluator": "enhanced_fitness_evaluator"
+  },
+  "performance_metrics": {
+    "total_time_seconds": 0.022159337997436523,
+    "best_fitness": 0.475,
+    "average_fitness": 0.3599333333333333,
+    "fitness_variance": 0.01710766222222222
+  },
+  "top_prompts": [
+    {
+      "rank": 1,
+      "fitness": 0.475,
+      "text": "Please explain the concept step Could you help me topic analyze information",
+      "generation": 12,
+      "metadata": {}
+    },
+    {
+      "rank": 2,
+      "fitness": 0.475,
+      "text": "Please explain the concept step Could you help me topic analyze information",
+      "generation": 12,
+      "metadata": {}
+    },
+    {
+      "rank": 3,
+      "fitness": 0.475,
+      "text": "Please explain the concept step Could you help me topic analyze information",
+      "generation": 12,
+      "metadata": {}
+    },
+    {
+      "rank": 4,
+      "fitness": 0.475,
+      "text": "Please explain the concept step Could you help me topic analyze information",
+      "generation": 8,
+      "metadata": {
+        "parent_id": "e9916e5a-14bd-4567-92c0-292931c635bc",
+        "mutation": "word_substitute"
+      }
+    },
+    {
+      "rank": 5,
+      "fitness": 0.475,
+      "text": "Please explain the concept step Could you help me topic analyze information",
+      "generation": 12,
+      "metadata": {}
+    },
+    {
+      "rank": 6,
+      "fitness": 0.475,
+      "text": "Please explain the concept step Could you help me topic analyze information",
+      "generation": 12,
+      "metadata": {}
+    },
+    {
+      "rank": 7,
+      "fitness": 0.475,
+      "text": "Please explain the concept step Could you help me topic analyze information",
+      "generation": 12,
+      "metadata": {}
+    },
+    {
+      "rank": 8,
+      "fitness": 0.475,
+      "text": "Please explain the concept step Could you help me topic analyze information",
+      "generation": 12,
+      "metadata": {}
+    },
+    {
+      "rank": 9,
+      "fitness": 0.475,
+      "text": "Please explain the concept step Could you help me topic analyze information",
+      "generation": 12,
+      "metadata": {}
+    },
+    {
+      "rank": 10,
+      "fitness": 0.475,
+      "text": "Please explain the concept step Could you help me topic analyze information",
+      "generation": 12,
+      "metadata": {}
+    }
+  ],
+  "evolution_history": [
+    {
+      "generation": 1,
+      "best_fitness": 0.42166666666666663,
+      "avg_fitness": 0.23493333333333336,
+      "diversity": 0.7826082806082805,
+      "time_seconds": 0.0015037059783935547
+    },
+    {
+      "generation": 2,
+      "best_fitness": 0.42166666666666663,
+      "avg_fitness": 0.26966666666666667,
+      "diversity": 0.745622562622563,
+      "time_seconds": 0.0015611648559570312
+    },
+    {
+      "generation": 3,
+      "best_fitness": 0.4583333333333333,
+      "avg_fitness": 0.2919333333333333,
+      "diversity": 0.6080630203130206,
+      "time_seconds": 0.0015556812286376953
+    },
+    {
+      "generation": 4,
+      "best_fitness": 0.4733333333333333,
+      "avg_fitness": 0.31826666666666664,
+      "diversity": 0.5700462685462682,
+      "time_seconds": 0.0016908645629882812
+    },
+    {
+      "generation": 5,
+      "best_fitness": 0.475,
+      "avg_fitness": 0.3667333333333333,
+      "diversity": 0.38717815517815535,
+      "time_seconds": 0.0018401145935058594
+    },
+    {
+      "generation": 6,
+      "best_fitness": 0.475,
+      "avg_fitness": 0.37513333333333326,
+      "diversity": 0.21815338365338371,
+      "time_seconds": 0.0018601417541503906
+    },
+    {
+      "generation": 7,
+      "best_fitness": 0.475,
+      "avg_fitness": 0.38280000000000003,
+      "diversity": 0.18146070596070613,
+      "time_seconds": 0.0020618438720703125
+    },
+    {
+      "generation": 8,
+      "best_fitness": 0.475,
+      "avg_fitness": 0.35359999999999997,
+      "diversity": 0.28722174122174154,
+      "time_seconds": 0.001920938491821289
+    },
+    {
+      "generation": 9,
+      "best_fitness": 0.475,
+      "avg_fitness": 0.3643333333333333,
+      "diversity": 0.20954062604062607,
+      "time_seconds": 0.0018661022186279297
+    },
+    {
+      "generation": 10,
+      "best_fitness": 0.475,
+      "avg_fitness": 0.3290666666666667,
+      "diversity": 0.16211667961667964,
+      "time_seconds": 0.0018475055694580078
+    },
+    {
+      "generation": 11,
+      "best_fitness": 0.475,
+      "avg_fitness": 0.31299999999999994,
+      "diversity": 0.19136422836422842,
+      "time_seconds": 0.0019817352294921875
+    },
+    {
+      "generation": 12,
+      "best_fitness": 0.475,
+      "avg_fitness": 0.3599333333333333,
+      "diversity": 0.17578787878787888,
+      "time_seconds": 0.0018055438995361328
+    }
+  ],
+  "timestamp": 1755052289.4966254
+}

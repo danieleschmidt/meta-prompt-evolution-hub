@@ -1,10 +1,19 @@
 {
   "app": {
-    "name": "Meta Prompt Evolution Hub"
+    "name": "Meta Prompt Evolution Hub",
+    "description": "Evolutionary prompt optimization at scale"
   },
   "messages": {
     "welcome": "Welcome to Meta Prompt Evolution Hub",
+    "error": "An error occurred",
+    "success": "Operation completed successfully",
     "loading": "Loading...",
-    "error": "An error occurred"
+    "retry": "Retry"
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "evolution": "Evolution",
+    "prompts": "Prompts",
+    "settings": "Settings"
   }
 }

@@ -1,0 +1,31 @@
+{
+  "project_name": "meta-prompt-evolution-hub",
+  "version": "1.0.0",
+  "environment": "production",
+  "regions": [
+    "us-east-1",
+    "eu-west-1",
+    "ap-southeast-1"
+  ],
+  "primary_region": "us-east-1",
+  "min_replicas": 3,
+  "max_replicas": 50,
+  "target_cpu_utilization": 70,
+  "enable_https": true,
+  "ssl_cert_domain": "meta-prompt-hub.com",
+  "enable_rbac": true,
+  "enable_monitoring": true,
+  "enable_logging": true,
+  "log_level": "INFO",
+  "gdpr_compliant": true,
+  "ccpa_compliant": true,
+  "data_retention_days": 365,
+  "supported_languages": [
+    "en",
+    "es",
+    "fr",
+    "de",
+    "ja",
+    "zh"
+  ]
+}

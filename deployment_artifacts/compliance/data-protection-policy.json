@@ -1,0 +1,31 @@
+{
+  "data_protection": {
+    "encryption": {
+      "at_rest": "AES-256",
+      "in_transit": "TLS-1.3",
+      "key_management": "AWS-KMS"
+    },
+    "access_controls": {
+      "rbac_enabled": true,
+      "mfa_required": true,
+      "audit_logging": true
+    },
+    "data_classification": {
+      "public": "no_protection_required",
+      "internal": "basic_protection",
+      "confidential": "enhanced_protection",
+      "restricted": "maximum_protection"
+    },
+    "backup_retention": {
+      "daily_backups": 30,
+      "weekly_backups": 12,
+      "monthly_backups": 12,
+      "yearly_backups": 7
+    },
+    "incident_response": {
+      "detection_time_target": "15_minutes",
+      "response_time_target": "30_minutes",
+      "notification_time_target": "72_hours"
+    }
+  }
+}

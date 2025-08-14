@@ -1,0 +1,33 @@
+{
+  "region": "us-east-1",
+  "cluster_name": "terragon-us-east-1",
+  "node_groups": [
+    {
+      "name": "research-nodes-us-east-1",
+      "instance_type": "c5.2xlarge",
+      "min_size": 2,
+      "max_size": 20,
+      "desired_capacity": 4
+    }
+  ],
+  "networking": {
+    "vpc_cidr": "10.0.0.0/16",
+    "subnets": {
+      "private": [
+        "10.0.1.0/24",
+        "10.0.2.0/24",
+        "10.0.3.0/24"
+      ],
+      "public": [
+        "10.0.101.0/24",
+        "10.0.102.0/24",
+        "10.0.103.0/24"
+      ]
+    }
+  },
+  "security": {
+    "enable_pod_security_policy": true,
+    "enable_network_policy": true,
+    "enable_secrets_encryption": true
+  }
+}

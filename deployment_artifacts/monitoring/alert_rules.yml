@@ -1,47 +1,19 @@
 groups:
-  - name: meta-prompt-evolution-hub-alerts
-    rules:
-      - alert: HighErrorRate
-        expr: rate(meta-prompt-evolution-hub_http_requests_total{status=~"5.."}[5m]) > 0.1
-        for: 5m
-        labels:
-          severity: critical
-        annotations:
-          summary: "High error rate detected"
-          description: "Error rate is above 10% for 5 minutes"
-
-      - alert: HighResponseTime
-        expr: histogram_quantile(0.95, rate(meta-prompt-evolution-hub_http_request_duration_seconds_bucket[5m])) > 0.2
-        for: 5m
-        labels:
-          severity: warning
-        annotations:
-          summary: "High response time detected"
-          description: "95th percentile response time is above 200ms"
-
-      - alert: PodCrashLooping
-        expr: rate(kube_pod_container_status_restarts_total[15m]) > 0
-        for: 5m
-        labels:
-          severity: critical
-        annotations:
-          summary: "Pod is crash looping"
-          description: "Pod $labels.pod is restarting frequently"
-
-      - alert: HighMemoryUsage
-        expr: (container_memory_usage_bytes / container_spec_memory_limit_bytes) > 0.8
-        for: 5m
-        labels:
-          severity: warning
-        annotations:
-          summary: "High memory usage"
-          description: "Container memory usage is above 80%"
-
-      - alert: HighCPUUsage
-        expr: rate(container_cpu_usage_seconds_total[5m]) > 0.8
-        for: 5m
-        labels:
-          severity: warning
-        annotations:
-          summary: "High CPU usage"
-          description: "Container CPU usage is above 80%"
+- name: terragon.rules
+  rules:
+  - alert: HighErrorRate
+    annotations:
+      description: Error rate is above 10% for 5 minutes
+      summary: High error rate detected
+    expr: rate(http_requests_total{status=~'5..'}[5m]) > 0.1
+    for: 5m
+    labels:
+      severity: critical
+  - alert: HighCPUUsage
+    annotations:
+      description: CPU usage is above 80% for 10 minutes
+      summary: High CPU usage
+    expr: cpu_usage_percent > 80
+    for: 10m
+    labels:
+      severity: warning

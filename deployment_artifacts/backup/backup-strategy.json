@@ -1,7 +1,24 @@
 {
-  "version": "1.0",
-  "backup_frequency": "daily",
-  "retention": "30 days",
-  "rto": "1 hour",
-  "rpo": "24 hours"
+  "backup_schedule": {
+    "full_backup": "0 2 * * 0",
+    "incremental_backup": "0 2 * * 1-6",
+    "transaction_log_backup": "*/15 * * * *"
+  },
+  "retention_policy": {
+    "daily_backups": 7,
+    "weekly_backups": 4,
+    "monthly_backups": 12,
+    "yearly_backups": 5
+  },
+  "storage": {
+    "primary_location": "s3://terragon-backups-primary/",
+    "secondary_location": "s3://terragon-backups-secondary/",
+    "encryption": "AES-256",
+    "compression": true
+  },
+  "verification": {
+    "integrity_check": true,
+    "restore_test": "monthly",
+    "alert_on_failure": true
+  }
 }

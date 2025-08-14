@@ -1,29 +1,38 @@
-{
-  "apiVersion": "autoscaling/v2",
-  "kind": "HorizontalPodAutoscaler",
-  "metadata": {
-    "name": "meta-prompt-evolution-hub-hpa",
-    "namespace": "production"
-  },
-  "spec": {
-    "scaleTargetRef": {
-      "apiVersion": "apps/v1",
-      "kind": "Deployment",
-      "name": "meta-prompt-evolution-hub-deployment"
-    },
-    "minReplicas": 3,
-    "maxReplicas": 50,
-    "metrics": [
-      {
-        "type": "Resource",
-        "resource": {
-          "name": "cpu",
-          "target": {
-            "type": "Utilization",
-            "averageUtilization": 70
-          }
-        }
-      }
-    ]
-  }
-}
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: terragon-autonomous-research-hpa
+  namespace: terragon-system
+spec:
+  behavior:
+    scaleDown:
+      policies:
+      - periodSeconds: 60
+        type: Percent
+        value: 50
+      stabilizationWindowSeconds: 600
+    scaleUp:
+      policies:
+      - periodSeconds: 60
+        type: Percent
+        value: 100
+      stabilizationWindowSeconds: 300
+  maxReplicas: 50
+  metrics:
+  - resource:
+      name: cpu
+      target:
+        averageUtilization: 70
+        type: Utilization
+    type: Resource
+  - resource:
+      name: memory
+      target:
+        averageUtilization: 80
+        type: Utilization
+    type: Resource
+  minReplicas: 3
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: terragon-autonomous-research

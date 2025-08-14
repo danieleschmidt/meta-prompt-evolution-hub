@@ -1,24 +1,7 @@
 {
-  "ccpa_compliance": {
-    "enabled": true,
-    "do_not_sell_opt_out": true,
-    "consumer_rights": {
-      "know": true,
-      "delete": true,
-      "opt_out_sale": true,
-      "non_discrimination": true
-    },
-    "personal_information_categories": [
-      "identifiers",
-      "commercial_information",
-      "internet_activity",
-      "inferences"
-    ],
-    "business_purposes": [
-      "service_provision",
-      "security",
-      "debugging",
-      "quality_assurance"
-    ]
-  }
+  "privacy_notice_url": "/privacy-notice",
+  "data_deletion_endpoint": "/api/delete-data",
+  "opt_out_endpoint": "/api/opt-out",
+  "privacy_request_email": "privacy@terragon.ai",
+  "consumer_rights_enabled": true
 }

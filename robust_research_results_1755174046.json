@@ -1,0 +1,120 @@
+{
+  "cycle_id": "2a4e1fcb",
+  "research_question": "Can evolutionary algorithms discover superior prompt structures for multi-domain reasoning tasks?",
+  "status": "completed",
+  "start_time": 1755174046.8718965,
+  "phases_completed": [
+    "test_case_creation",
+    "population_initialization",
+    "evolution_execution",
+    "statistical_analysis",
+    "breakthrough_identification"
+  ],
+  "error_log": [],
+  "recovery_actions": [],
+  "execution_time": 0.002920866012573242,
+  "evolution_results": {
+    "history": [
+      {
+        "generation": 1,
+        "best_fitness": 0.987749,
+        "population_size": 25,
+        "execution_time": 0.0008776187896728516,
+        "retry_attempts": 0,
+        "best_prompt_preview": "I'll approach this {task}"
+      }
+    ],
+    "final_population": [
+      "Prompt(id='variant_6', text=\"I'll approach this systematically and {task}\", fitness_scores={'fitness': 0.96325, 'accuracy': 0.883701, 'coherence': 0.805704, 'efficiency': 0.939503, 'uniqueness': 0.1}, generation=1, parent_ids=['seed_base'], mutation_history=['initial_variant'], created_at=1755174046.8725145)",
+      "Prompt(id='seed_4', text='Using structured reasoning: {task}', fitness_scores={'fitness': 0.909737, 'accuracy': 0.865727, 'coherence': 0.880892, 'efficiency': 0.692402, 'uniqueness': 0.1}, generation=1, parent_ids=[], mutation_history=[], created_at=1755174046.8724823)",
+      "Prompt(id='seed_3', text='Analyzing this problem methodically: {task}', fitness_scores={'fitness': 0.824932, 'accuracy': 0.775516, 'coherence': 0.871284, 'efficiency': 0.933969, 'uniqueness': 0.1}, generation=1, parent_ids=[], mutation_history=[], created_at=1755174046.8724785)",
+      "Prompt(id='seed_0', text='Solve this step by step: {task}', fitness_scores={'fitness': 0.785059, 'accuracy': 0.778956, 'coherence': 0.686406, 'efficiency': 0.856256, 'uniqueness': 0.1}, generation=1, parent_ids=[], mutation_history=[], created_at=1755174046.8724535)",
+      "Prompt(id='variant_5', text='Systematically examining this, I will {task}', fitness_scores={'fitness': 0.74127, 'accuracy': 0.778239, 'coherence': 0.686954, 'efficiency': 0.642877, 'uniqueness': 0.1}, generation=1, parent_ids=['seed_base'], mutation_history=['initial_variant'], created_at=1755174046.8725038)",
+      "Prompt(id='variant_8', text='Carefully analyzing this problem, I will {task}', fitness_scores={'fitness': 0.718318, 'accuracy': 0.74404, 'coherence': 0.615684, 'efficiency': 0.683499, 'uniqueness': 0.1}, generation=1, parent_ids=['seed_base'], mutation_history=['initial_variant'], created_at=1755174046.872564)",
+      "Prompt(id='seed_2', text=\"I'll approach this systematically: {task}\", fitness_scores={'fitness': 0.670641, 'accuracy': 0.649194, 'coherence': 0.657543, 'efficiency': 0.655929, 'uniqueness': 0.1}, generation=1, parent_ids=[], mutation_history=[], created_at=1755174046.8724744)",
+      "Prompt(id='variant_11', text='Using structured reasoning, let me {task}', fitness_scores={'fitness': 0.60083, 'accuracy': 0.555254, 'coherence': 0.598955, 'efficiency': 0.795521, 'uniqueness': 0.1}, generation=1, parent_ids=['seed_base'], mutation_history=['initial_variant'], created_at=1755174046.8725913)",
+      "Prompt(id='variant_7', text='Through methodical analysis, let me {task}', fitness_scores={'fitness': 0.565904, 'accuracy': 0.528367, 'coherence': 0.564267, 'efficiency': 0.625291, 'uniqueness': 0.1}, generation=1, parent_ids=['seed_base'], mutation_history=['initial_variant'], created_at=1755174046.8725274)",
+      "Prompt(id='variant_10', text='Breaking this down methodically: {task}', fitness_scores={'fitness': 0.496837, 'accuracy': 0.44898, 'coherence': 0.468787, 'efficiency': 0.881609, 'uniqueness': 0.1}, generation=1, parent_ids=['seed_base'], mutation_history=['initial_variant'], created_at=1755174046.8725817)",
+      "Prompt(id='crossover_10', text='Analyzing approach this systematically and {task}', fitness_scores={'fitness': 0.623557, 'accuracy': 0.562863, 'coherence': 0.578006, 'efficiency': 0.661999, 'uniqueness': 0.1}, generation=1, parent_ids=['variant_6', 'seed_3'], mutation_history=['crossover'], created_at=1755174046.8737133)",
+      "Prompt(id='mutation_11', text=\"I'll approach this systematically and {task}\", fitness_scores={'fitness': 0.96325, 'accuracy': 0.883701, 'coherence': 0.805704, 'efficiency': 0.939503, 'uniqueness': 0.1}, generation=1, parent_ids=['variant_6'], mutation_history=['initial_variant', 'mutation'], created_at=1755174046.873736)",
+      "Prompt(id='crossover_12', text=\"I'll approach this {task}\", fitness_scores={'fitness': 0.987749, 'accuracy': 0.988983, 'coherence': 0.965644, 'efficiency': 0.878105, 'uniqueness': 0.1}, generation=1, parent_ids=['variant_6', 'seed_4'], mutation_history=['crossover'], created_at=1755174046.8737552)",
+      "Prompt(id='mutation_13', text='Analyzing this problem methodically: {task}', fitness_scores={'fitness': 0.824932, 'accuracy': 0.775516, 'coherence': 0.871284, 'efficiency': 0.933969, 'uniqueness': 0.1}, generation=1, parent_ids=['seed_3'], mutation_history=['mutation'], created_at=1755174046.8737705)",
+      "Prompt(id='crossover_14', text='Using structured reasoning, let and {task}', fitness_scores={'fitness': 0.871743, 'accuracy': 0.876345, 'coherence': 0.851406, 'efficiency': 0.822244, 'uniqueness': 0.1}, generation=1, parent_ids=['variant_6', 'variant_11'], mutation_history=['crossover'], created_at=1755174046.8737843)",
+      "Prompt(id='crossover_15', text='Using structured reasoning: by step: {task}', fitness_scores={'fitness': 0.871655, 'accuracy': 0.854786, 'coherence': 0.907841, 'efficiency': 0.668507, 'uniqueness': 0.1}, generation=1, parent_ids=['seed_4', 'seed_0'], mutation_history=['crossover'], created_at=1755174046.8737977)",
+      "Prompt(id='crossover_16', text=\"I'll approach this systematically: {task}\", fitness_scores={'fitness': 0.670641, 'accuracy': 0.649194, 'coherence': 0.657543, 'efficiency': 0.655929, 'uniqueness': 0.1}, generation=1, parent_ids=['seed_2', 'seed_2'], mutation_history=['crossover'], created_at=1755174046.8738098)",
+      "Prompt(id='crossover_17', text='Solve examining this, I will {task}', fitness_scores={'fitness': 0.581408, 'accuracy': 0.549888, 'coherence': 0.611596, 'efficiency': 0.541405, 'uniqueness': 0.1}, generation=1, parent_ids=['seed_0', 'variant_5'], mutation_history=['crossover'], created_at=1755174046.8738225)",
+      "Prompt(id='crossover_18', text='Analyzing this this systematically and {task}', fitness_scores={'fitness': 0.688261, 'accuracy': 0.676739, 'coherence': 0.586041, 'efficiency': 0.787472, 'uniqueness': 0.1}, generation=1, parent_ids=['variant_6', 'seed_3'], mutation_history=['crossover'], created_at=1755174046.8738346)",
+      "Prompt(id='crossover_19', text='Analyzing this reasoning, let me {task}', fitness_scores={'fitness': 0.682352, 'accuracy': 0.635356, 'coherence': 0.639689, 'efficiency': 0.922227, 'uniqueness': 0.1}, generation=1, parent_ids=['variant_11', 'seed_3'], mutation_history=['crossover'], created_at=1755174046.8738465)",
+      "Prompt(id='crossover_20', text=\"I'll approach this {task}\", fitness_scores={'fitness': 0.987749, 'accuracy': 0.988983, 'coherence': 0.965644, 'efficiency': 0.878105, 'uniqueness': 0.1}, generation=1, parent_ids=['seed_4', 'variant_6'], mutation_history=['crossover'], created_at=1755174046.8738577)",
+      "Prompt(id='crossover_21', text='Systematically examining this, systematically: {task}', fitness_scores={'fitness': 0.910756, 'accuracy': 0.881726, 'coherence': 0.96294, 'efficiency': 0.648511, 'uniqueness': 0.1}, generation=1, parent_ids=['seed_2', 'variant_5'], mutation_history=['crossover'], created_at=1755174046.8738694)",
+      "Prompt(id='crossover_22', text=\"I'll approach this systematically and {task}\", fitness_scores={'fitness': 0.96325, 'accuracy': 0.883701, 'coherence': 0.805704, 'efficiency': 0.939503, 'uniqueness': 0.1}, generation=1, parent_ids=['variant_6', 'variant_6'], mutation_history=['crossover'], created_at=1755174046.8738809)",
+      "Prompt(id='mutation_23', text=\"I'll approach this systematically and {task}\", fitness_scores={'fitness': 0.96325, 'accuracy': 0.883701, 'coherence': 0.805704, 'efficiency': 0.939503, 'uniqueness': 0.1}, generation=1, parent_ids=['variant_6'], mutation_history=['initial_variant', 'mutation'], created_at=1755174046.873893)",
+      "Prompt(id='mutation_24', text=\"I'll approach this systematically: {task}\", fitness_scores={'fitness': 0.670641, 'accuracy': 0.649194, 'coherence': 0.657543, 'efficiency': 0.655929, 'uniqueness': 0.1}, generation=1, parent_ids=['seed_2'], mutation_history=['mutation'], created_at=1755174046.873904)"
+    ],
+    "best_fitness_history": [
+      0.987749
+    ],
+    "total_generations": 1
+  },
+  "statistical_analysis": {
+    "status": "success",
+    "initial_fitness": 0.987749,
+    "final_fitness": 0.987749,
+    "max_fitness": 0.987749,
+    "min_fitness": 0.987749,
+    "improvement": 0.0,
+    "improvement_percentage": 0.0,
+    "total_generations": 1,
+    "convergence_rate": 0.0,
+    "generations_to_peak": 1,
+    "statistical_significance": false,
+    "effect_size": 0,
+    "stability_score": 0.5
+  },
+  "breakthrough_discoveries": [
+    {
+      "type": "high_performance",
+      "final_fitness": 0.987749,
+      "max_fitness": 0.987749,
+      "confidence": "high",
+      "discovery_timestamp": 1755174046.8746986
+    }
+  ],
+  "performance_metrics": {
+    "system_uptime_hours": 0.0,
+    "total_experiments": 0,
+    "successful_experiments": 0,
+    "failed_experiments": 0,
+    "experiments_per_hour": 0.0,
+    "success_rate": 0.0,
+    "failure_rate": 0.0,
+    "average_improvement_rate": 0.0,
+    "total_errors": 0,
+    "recovery_count": 0,
+    "error_rate": 0.0
+  },
+  "health_status": {
+    "status": "healthy",
+    "last_check": 1755174046.8715634,
+    "consecutive_failures": 0,
+    "warning_count": 0
+  },
+  "engine_statistics": {
+    "generation_count": 1,
+    "error_counts": {
+      "mutation_errors": 0,
+      "crossover_errors": 0,
+      "selection_errors": 0,
+      "validation_errors": 0
+    },
+    "population_history_size": 1,
+    "fitness_function_stats": {
+      "total_evaluations": 21,
+      "cache_size": 21,
+      "error_count": 0,
+      "error_rate": 0.0,
+      "cache_hit_rate": 0.0
+    }
+  },
+  "timestamp": 1755174046.8748388
+}

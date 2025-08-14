@@ -1,0 +1,149 @@
+{
+  "research_question": "Can evolutionary algorithms discover superior prompt structures for multi-domain reasoning tasks?",
+  "execution_time": 0.0010805130004882812,
+  "generations_completed": 1,
+  "evolution_history": [
+    {
+      "generation": 1,
+      "best_fitness": 1.0,
+      "population_size": 30,
+      "execution_time": 0.0006616115570068359,
+      "best_prompt_text": "I'll approach this systematically: {task}"
+    }
+  ],
+  "statistical_analysis": {
+    "initial_fitness": 1.0,
+    "final_fitness": 1.0,
+    "max_fitness": 1.0,
+    "improvement": 0.0,
+    "improvement_percentage": 0.0,
+    "convergence_rate": 0.0,
+    "generations_to_peak": 1,
+    "statistical_significance": false,
+    "effect_size": 0
+  },
+  "breakthrough_discoveries": [
+    {
+      "type": "high_performance",
+      "final_fitness": 1.0,
+      "max_fitness": 1.0,
+      "best_prompt": "I'll approach this systematically: {task}",
+      "discovery_timestamp": 1755173784.417149
+    },
+    {
+      "type": "rapid_convergence",
+      "generations_to_peak": 1,
+      "convergence_rate": 0.0,
+      "discovery_timestamp": 1755173784.417155
+    }
+  ],
+  "final_population_top_10": [
+    {
+      "id": "crossover_11",
+      "text": "I'll approach this systematically: {task}",
+      "fitness_scores": {
+        "fitness": 1.0,
+        "accuracy": 0.95,
+        "coherence": 1.02,
+        "efficiency": 0.6272967681959558
+      }
+    },
+    {
+      "id": "variant_7",
+      "text": "I'll approach this systematically and {task}",
+      "fitness_scores": {
+        "fitness": 0.9928142697775869,
+        "accuracy": 0.9431735562887075,
+        "coherence": 1.0126705551731388,
+        "efficiency": 0.7500323537667577
+      }
+    },
+    {
+      "id": "variant_10",
+      "text": "I'll approach this systematically and {task}",
+      "fitness_scores": {
+        "fitness": 0.9904158007039457,
+        "accuracy": 0.9408950106687484,
+        "coherence": 1.0102241167180246,
+        "efficiency": 0.6548215675502629
+      }
+    },
+    {
+      "id": "variant_13",
+      "text": "Let me think through this step by step: {task}",
+      "fitness_scores": {
+        "fitness": 0.980800180994914,
+        "accuracy": 0.9317601719451682,
+        "coherence": 1.0004161846148123,
+        "efficiency": 0.6405059005914937
+      }
+    },
+    {
+      "id": "variant_6",
+      "text": "Let me think through this step by step: {task}",
+      "fitness_scores": {
+        "fitness": 0.9741995979825805,
+        "accuracy": 0.9254896180834514,
+        "coherence": 0.9936835899422322,
+        "efficiency": 0.8784190034975194
+      }
+    },
+    {
+      "id": "variant_11",
+      "text": "Let me think through this step by step: {task}",
+      "fitness_scores": {
+        "fitness": 0.9524943304614283,
+        "accuracy": 0.9048696139383569,
+        "coherence": 0.9715442170706569,
+        "efficiency": 0.8345051753434494
+      }
+    },
+    {
+      "id": "mutation_29",
+      "text": "Let me think through this step by step: {task}",
+      "fitness_scores": {
+        "fitness": 0.9439828992800933,
+        "accuracy": 0.8967837543160886,
+        "coherence": 0.9628625572656951,
+        "efficiency": 0.8005487375721478
+      }
+    },
+    {
+      "id": "variant_8",
+      "text": "Carefully analyzing this problem, I will {task}",
+      "fitness_scores": {
+        "fitness": 0.9351543048925225,
+        "accuracy": 0.8883965896478964,
+        "coherence": 0.9538573909903729,
+        "efficiency": 0.8692082276144582
+      }
+    },
+    {
+      "id": "variant_21",
+      "text": "I'll approach this systematically and {task}",
+      "fitness_scores": {
+        "fitness": 0.9106644324215348,
+        "accuracy": 0.8651312108004581,
+        "coherence": 0.9288777210699656,
+        "efficiency": 0.7334031726190932
+      }
+    },
+    {
+      "id": "mutation_16",
+      "text": "Carefully analyzing this problem, I will {task}",
+      "fitness_scores": {
+        "fitness": 0.8931923523166562,
+        "accuracy": 0.8485327347008234,
+        "coherence": 0.9110561993629893,
+        "efficiency": 0.7913196216377959
+      }
+    }
+  ],
+  "performance_metrics": {
+    "system_uptime_hours": 3.7239657508002385e-07,
+    "experiments_per_hour": 0.0,
+    "discovery_rate": 0.0,
+    "average_improvement_rate": 0.0
+  },
+  "timestamp": 1755173784.417189
+}

@@ -1,87 +1,99 @@
-{
-  "apiVersion": "apps/v1",
-  "kind": "Deployment",
-  "metadata": {
-    "name": "meta-prompt-evolution-hub-deployment",
-    "namespace": "production",
-    "labels": {
-      "app": "meta-prompt-evolution-hub",
-      "version": "1.0.0",
-      "environment": "production"
-    }
-  },
-  "spec": {
-    "replicas": 3,
-    "selector": {
-      "matchLabels": {
-        "app": "meta-prompt-evolution-hub"
-      }
-    },
-    "template": {
-      "metadata": {
-        "labels": {
-          "app": "meta-prompt-evolution-hub",
-          "version": "1.0.0"
-        }
-      },
-      "spec": {
-        "containers": [
-          {
-            "name": "meta-prompt-evolution-hub",
-            "image": "meta-prompt-evolution-hub:1.0.0",
-            "ports": [
-              {
-                "containerPort": 8080
-              }
-            ],
-            "env": [
-              {
-                "name": "LOG_LEVEL",
-                "value": "INFO"
-              },
-              {
-                "name": "ENVIRONMENT",
-                "value": "production"
-              },
-              {
-                "name": "GDPR_COMPLIANT",
-                "value": "True"
-              }
-            ],
-            "resources": {
-              "requests": {
-                "cpu": "500m",
-                "memory": "1Gi"
-              },
-              "limits": {
-                "cpu": "2000m",
-                "memory": "4Gi"
-              }
-            },
-            "readinessProbe": {
-              "httpGet": {
-                "path": "/health/ready",
-                "port": 8080
-              },
-              "initialDelaySeconds": 10,
-              "periodSeconds": 5
-            },
-            "livenessProbe": {
-              "httpGet": {
-                "path": "/health/live",
-                "port": 8080
-              },
-              "initialDelaySeconds": 30,
-              "periodSeconds": 10
-            }
-          }
-        ],
-        "securityContext": {
-          "runAsNonRoot": true,
-          "runAsUser": 1001,
-          "fsGroup": 2001
-        }
-      }
-    }
-  }
-}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: terragon-autonomous-research
+    component: research-platform
+    version: v2.0
+  name: terragon-autonomous-research
+  namespace: terragon-system
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: terragon-autonomous-research
+  strategy:
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        prometheus.io/path: /metrics
+        prometheus.io/port: '9090'
+        prometheus.io/scrape: 'true'
+      labels:
+        app: terragon-autonomous-research
+        version: v2.0
+    spec:
+      containers:
+      - env:
+        - name: ENVIRONMENT
+          value: production
+        - name: LOG_LEVEL
+          value: INFO
+        - name: ENABLE_METRICS
+          value: 'true'
+        image: terragon/autonomous-research:latest
+        imagePullPolicy: Always
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
+        name: research-platform
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+        - containerPort: 9090
+          name: metrics
+          protocol: TCP
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /ready
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 5
+          timeoutSeconds: 3
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 1Gi
+          requests:
+            cpu: 250m
+            memory: 256Mi
+        volumeMounts:
+        - mountPath: /app/config
+          name: config-volume
+        - mountPath: /app/cache
+          name: cache-volume
+      - image: terragon/prometheus-exporter:latest
+        name: prometheus-exporter
+        ports:
+        - containerPort: 9091
+          name: exporter
+        resources:
+          limits:
+            cpu: 100m
+            memory: 128Mi
+          requests:
+            cpu: 50m
+            memory: 64Mi
+      securityContext:
+        fsGroup: 2000
+        runAsNonRoot: true
+        runAsUser: 1000
+      serviceAccountName: terragon-research-sa
+      volumes:
+      - configMap:
+          name: terragon-config
+        name: config-volume
+      - emptyDir:
+          sizeLimit: 1Gi
+        name: cache-volume

@@ -1,0 +1,18 @@
+apiVersion: v1
+data:
+  config.yaml: "\n# Terragon Autonomous Research Platform Configuration\nresearch_platform:\n\
+    \  population_size: 100\n  max_generations: 50\n  enable_caching: true\n  enable_parallel_processing:\
+    \ true\n  \nperformance:\n  max_worker_processes: 4\n  cache_size_limit: 10000\n\
+    \  memory_threshold_mb: 512\n  \nsecurity:\n  enable_audit_logging: true\n  enable_encryption:\
+    \ true\n  \nmonitoring:\n  metrics_interval: 30\n  health_check_timeout: 10\n\
+    \  \ncompliance:\n  gdpr_enabled: true\n  ccpa_enabled: true\n  data_retention_days:\
+    \ 365\n"
+  logging.yaml: "\nversion: 1\nformatters:\n  default:\n    format: '%(asctime)s -\
+    \ %(name)s - %(levelname)s - %(message)s'\nhandlers:\n  console:\n    class: logging.StreamHandler\n\
+    \    level: INFO\n    formatter: default\n  file:\n    class: logging.FileHandler\n\
+    \    filename: /app/logs/app.log\n    level: DEBUG\n    formatter: default\nloggers:\n\
+    \  root:\n    level: INFO\n    handlers: [console, file]\n"
+kind: ConfigMap
+metadata:
+  name: terragon-config
+  namespace: terragon-system

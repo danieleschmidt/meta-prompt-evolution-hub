@@ -1,6 +1,11 @@
 {
   "dashboard": {
-    "title": "Meta Prompt Evolution Hub",
+    "title": "Terragon Research Platform",
+    "tags": [
+      "terragon",
+      "research",
+      "ai"
+    ],
     "panels": [
       {
         "title": "Request Rate",
@@ -12,11 +17,11 @@
         ]
       },
       {
-        "title": "Response Time",
+        "title": "Error Rate",
         "type": "graph",
         "targets": [
           {
-            "expr": "histogram_quantile(0.95, http_request_duration_seconds_bucket)"
+            "expr": "rate(http_requests_total{status=~'5..'}[5m])"
           }
         ]
       }

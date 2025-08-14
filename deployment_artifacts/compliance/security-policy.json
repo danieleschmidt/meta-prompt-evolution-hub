@@ -1,10 +1,22 @@
 {
   "encryption": {
     "at_rest": "AES-256",
-    "in_transit": "TLS-1.3"
+    "in_transit": "TLS 1.3",
+    "key_management": "AWS KMS"
   },
-  "access_controls": {
-    "rbac_enabled": true,
-    "mfa_required": true
+  "access_control": {
+    "authentication": "OAuth 2.0",
+    "authorization": "RBAC",
+    "multi_factor": true
+  },
+  "monitoring": {
+    "intrusion_detection": true,
+    "log_retention_days": 90,
+    "anomaly_detection": true
+  },
+  "vulnerability_management": {
+    "scan_frequency": "daily",
+    "patch_management": "automated",
+    "penetration_testing": "quarterly"
   }
 }

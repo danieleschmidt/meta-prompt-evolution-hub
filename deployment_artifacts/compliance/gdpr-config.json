@@ -1,36 +1,8 @@
 {
-  "gdpr_compliance": {
-    "enabled": true,
-    "data_retention_days": 365,
-    "data_processing_purposes": [
-      "prompt_optimization",
-      "performance_analytics",
-      "service_improvement"
-    ],
-    "lawful_basis": "legitimate_interest",
-    "data_categories": [
-      "prompt_content",
-      "evaluation_results",
-      "usage_metrics"
-    ],
-    "user_rights": {
-      "access": true,
-      "rectification": true,
-      "erasure": true,
-      "portability": true,
-      "restrict_processing": true,
-      "object_processing": true
-    },
-    "consent_management": {
-      "required": true,
-      "granular": true,
-      "withdrawable": true
-    },
-    "privacy_by_design": {
-      "data_minimization": true,
-      "purpose_limitation": true,
-      "storage_limitation": true,
-      "integrity_confidentiality": true
-    }
-  }
+  "data_retention_days": 365,
+  "consent_required": true,
+  "anonymization_enabled": true,
+  "data_export_enabled": true,
+  "deletion_enabled": true,
+  "breach_detection": true
 }

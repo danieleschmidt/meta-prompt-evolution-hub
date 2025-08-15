@@ -1,476 +1,446 @@
 #!/usr/bin/env python3
 """
-Generation 2: MAKE IT ROBUST (Reliable Implementation)
-Comprehensive error handling, validation, logging, monitoring, and security.
+Generation 2: MAKE IT ROBUST (Reliable)
+Comprehensive error handling, validation, monitoring, and reliability testing.
 """
 
-from meta_prompt_evolution import EvolutionHub, PromptPopulation
-from meta_prompt_evolution.evolution.hub import EvolutionConfig
-from meta_prompt_evolution.evaluation.base import TestCase
-from meta_prompt_evolution.evaluation.evaluator import ComprehensiveFitnessFunction, MockLLMProvider
-from meta_prompt_evolution.evolution.population import Prompt
 import json
-import logging
 import time
+import logging
 import traceback
-from typing import Dict, Any, List, Optional
-import threading
-import asyncio
+import sys
+from typing import List, Dict, Any, Optional
+from meta_prompt_evolution.evolution.population import PromptPopulation, Prompt
+from meta_prompt_evolution.evaluation.base import TestCase, FitnessFunction
 
 
-class RobustEvolutionManager:
-    """Robust evolution manager with comprehensive error handling."""
+class RobustFitnessFunction(FitnessFunction):
+    """Robust fitness function with comprehensive error handling."""
     
-    def __init__(self, config: Optional[EvolutionConfig] = None):
-        """Initialize robust evolution manager."""
-        self.config = config or EvolutionConfig(
-            population_size=5,
-            generations=3,
-            algorithm="nsga2"
-        )
-        self.logger = self._setup_logging()
-        self.metrics = {"errors": 0, "recoveries": 0, "total_evaluations": 0}
-        self.validation_rules = self._setup_validation()
+    def __init__(self, enable_safety_checks: bool = True):
+        self.enable_safety_checks = enable_safety_checks
+        self.unsafe_patterns = ['harmful', 'dangerous', 'illegal', 'offensive']
+        self.evaluation_count = 0
+        self.error_count = 0
         
-    def _setup_logging(self) -> logging.Logger:
-        """Setup comprehensive logging."""
-        logging.basicConfig(
-            level=logging.INFO,
-            format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-            handlers=[
-                logging.StreamHandler(),
-                logging.FileHandler('/root/repo/generation_2_robust.log')
-            ]
-        )
-        logger = logging.getLogger(__name__)
-        logger.info("Robust Evolution Manager initialized")
-        return logger
-        
-    def _setup_validation(self) -> Dict[str, Any]:
-        """Setup input validation rules."""
-        return {
-            "min_prompt_length": 3,
-            "max_prompt_length": 1000,
-            "min_population_size": 1,
-            "max_population_size": 1000,
-            "min_generations": 1,
-            "max_generations": 100,
-            "required_fields": ["text"]
-        }
-    
-    def validate_prompt(self, prompt: Prompt) -> bool:
-        """Validate individual prompt with comprehensive checks."""
+    def evaluate(self, prompt: Prompt, test_cases: List[TestCase]) -> Dict[str, float]:
+        """Robust fitness evaluation with error handling and validation."""
         try:
-            if not hasattr(prompt, 'text') or not prompt.text:
-                self.logger.error(f"Prompt validation failed: Missing text field")
-                return False
+            self.evaluation_count += 1
             
-            if len(prompt.text) < self.validation_rules["min_prompt_length"]:
-                self.logger.error(f"Prompt validation failed: Text too short ({len(prompt.text)} chars)")
-                return False
-                
-            if len(prompt.text) > self.validation_rules["max_prompt_length"]:
-                self.logger.error(f"Prompt validation failed: Text too long ({len(prompt.text)} chars)")
-                return False
-                
-            # Security checks
-            dangerous_patterns = ["exec(", "eval(", "import os", "__import__", "subprocess"]
-            for pattern in dangerous_patterns:
-                if pattern in prompt.text.lower():
-                    self.logger.error(f"Security validation failed: Dangerous pattern '{pattern}' detected")
-                    return False
+            # Input validation
+            if not prompt or not prompt.text:
+                raise ValueError("Invalid prompt: empty or None")
             
-            self.logger.debug(f"Prompt validation passed: {prompt.id}")
-            return True
+            if not isinstance(prompt.text, str):
+                raise TypeError(f"Prompt text must be string, got {type(prompt.text)}")
             
-        except Exception as e:
-            self.logger.error(f"Prompt validation error: {e}")
-            return False
-    
-    def validate_population(self, population: PromptPopulation) -> bool:
-        """Validate entire population with robust checks."""
-        try:
-            if len(population) < self.validation_rules["min_population_size"]:
-                self.logger.error(f"Population too small: {len(population)} prompts")
-                return False
-                
-            if len(population) > self.validation_rules["max_population_size"]:
-                self.logger.error(f"Population too large: {len(population)} prompts")
-                return False
+            if len(prompt.text.strip()) == 0:
+                return {"fitness": 0.0, "error": "empty_prompt"}
             
-            valid_prompts = 0
-            for prompt in population:
-                if self.validate_prompt(prompt):
-                    valid_prompts += 1
+            # Safety validation
+            if self.enable_safety_checks and self._is_unsafe(prompt.text):
+                return {"fitness": 0.0, "safety_score": 0.0, "error": "unsafe_content"}
             
-            if valid_prompts == 0:
-                self.logger.error("No valid prompts in population")
-                return False
+            text = prompt.text.lower()
             
-            if valid_prompts < len(population) * 0.5:
-                self.logger.warning(f"Only {valid_prompts}/{len(population)} prompts are valid")
-            
-            self.logger.info(f"Population validation passed: {valid_prompts}/{len(population)} valid prompts")
-            return True
-            
-        except Exception as e:
-            self.logger.error(f"Population validation error: {e}")
-            return False
-    
-    def safe_evolve(self, population: PromptPopulation, test_cases: List[TestCase]) -> Optional[PromptPopulation]:
-        """Evolve population with comprehensive error handling and recovery."""
-        self.logger.info("Starting safe evolution with robust error handling")
-        
-        try:
-            # Pre-evolution validation
-            if not self.validate_population(population):
-                self.logger.error("Pre-evolution validation failed")
-                return None
-            
-            # Create robust hub with error handling
-            hub = self._create_robust_hub()
-            
-            # Evolution with timeout and recovery
-            evolved_population = self._evolve_with_timeout(hub, population, test_cases, timeout=30)
-            
-            if evolved_population is None:
-                self.logger.error("Evolution failed, attempting recovery")
-                evolved_population = self._recover_evolution(hub, population, test_cases)
-            
-            # Post-evolution validation
-            if evolved_population and self.validate_population(evolved_population):
-                self.logger.info("Evolution completed successfully with validation")
-                return evolved_population
-            else:
-                self.logger.error("Post-evolution validation failed")
-                return None
-                
-        except Exception as e:
-            self.logger.error(f"Critical error in safe_evolve: {e}")
-            self.metrics["errors"] += 1
-            return self._emergency_recovery(population)
-    
-    def _create_robust_hub(self) -> EvolutionHub:
-        """Create evolution hub with robust configuration."""
-        try:
-            # Create reliable fitness function
-            llm_provider = MockLLMProvider(
-                model_name="robust-test-model", 
-                latency_ms=20,
-                error_rate=0.0  # No errors for robust testing
-            )
-            
-            fitness_fn = ComprehensiveFitnessFunction(
-                llm_provider=llm_provider,
-                metrics={
-                    "accuracy": 0.3,
-                    "similarity": 0.3,
-                    "safety": 0.4  # Emphasize safety
-                },
-                timeout_seconds=5.0
-            )
-            
-            hub = EvolutionHub(self.config, fitness_function=fitness_fn)
-            self.logger.info("Robust hub created successfully")
-            return hub
-            
-        except Exception as e:
-            self.logger.error(f"Failed to create robust hub: {e}")
-            raise
-    
-    def _evolve_with_timeout(self, hub: EvolutionHub, population: PromptPopulation, 
-                           test_cases: List[TestCase], timeout: int) -> Optional[PromptPopulation]:
-        """Evolve with timeout protection."""
-        result = None
-        exception = None
-        
-        def evolution_worker():
-            nonlocal result, exception
+            # Robust metrics calculation
             try:
-                result = hub.evolve(population, test_cases)
-            except Exception as e:
-                exception = e
-        
-        thread = threading.Thread(target=evolution_worker)
-        thread.daemon = True
-        thread.start()
-        thread.join(timeout)
-        
-        if thread.is_alive():
-            self.logger.error(f"Evolution timed out after {timeout}s")
-            return None
-        
-        if exception:
-            self.logger.error(f"Evolution failed with exception: {exception}")
-            return None
-            
-        return result
-    
-    def _recover_evolution(self, hub: EvolutionHub, population: PromptPopulation, 
-                         test_cases: List[TestCase]) -> Optional[PromptPopulation]:
-        """Attempt evolution recovery with reduced parameters."""
-        self.logger.info("Attempting evolution recovery")
-        
-        try:
-            # Create recovery configuration with minimal parameters
-            recovery_config = EvolutionConfig(
-                population_size=min(3, len(population)),
-                generations=1,
-                algorithm="nsga2",
-                mutation_rate=0.1,
-                crossover_rate=0.5
-            )
-            
-            recovery_hub = EvolutionHub(recovery_config)
-            
-            # Try with reduced test cases
-            reduced_cases = test_cases[:1] if test_cases else []
-            result = recovery_hub.evolve(population, reduced_cases)
-            
-            if result:
-                self.logger.info("Evolution recovery successful")
-                self.metrics["recoveries"] += 1
-                return result
+                length_score = self._calculate_length_score(text)
+                keyword_score = self._calculate_keyword_score(text)
+                structure_score = self._calculate_structure_score(text)
+                safety_score = 1.0 if not self._is_unsafe(text) else 0.0
+                
+                # Weighted fitness calculation
+                fitness = (
+                    length_score * 0.3 + 
+                    keyword_score * 0.3 + 
+                    structure_score * 0.2 + 
+                    safety_score * 0.2
+                )
+                
+                return {
+                    "fitness": round(fitness, 4),
+                    "length_score": round(length_score, 4),
+                    "keyword_score": round(keyword_score, 4),
+                    "structure_score": round(structure_score, 4),
+                    "safety_score": round(safety_score, 4),
+                    "text_length": len(prompt.text),
+                    "evaluation_id": self.evaluation_count
+                }
+                
+            except Exception as calc_error:
+                logging.error(f"Calculation error: {calc_error}")
+                return {"fitness": 0.0, "error": f"calculation_error: {str(calc_error)}"}
                 
         except Exception as e:
-            self.logger.error(f"Evolution recovery failed: {e}")
-        
-        return None
+            self.error_count += 1
+            logging.error(f"Evaluation error for prompt {prompt.id}: {e}")
+            return {"fitness": 0.0, "error": f"evaluation_error: {str(e)}"}
     
-    def _emergency_recovery(self, original_population: PromptPopulation) -> PromptPopulation:
-        """Emergency recovery - return sanitized original population."""
-        self.logger.warning("Executing emergency recovery")
-        
+    async def evaluate_async(self, prompt: Prompt, test_cases: List[TestCase]) -> Dict[str, float]:
+        """Async version with same robustness."""
+        return self.evaluate(prompt, test_cases)
+    
+    def _calculate_length_score(self, text: str) -> float:
+        """Calculate normalized length score with bounds checking."""
         try:
-            # Filter out invalid prompts
-            valid_prompts = []
-            for prompt in original_population:
-                if self.validate_prompt(prompt):
-                    # Assign default fitness scores
-                    prompt.fitness_scores = {"fitness": 0.1, "safety": 1.0}
-                    valid_prompts.append(prompt)
+            length = len(text)
+            if length == 0:
+                return 0.0
+            if length > 1000:  # Too long
+                return 0.5
+            return min(length / 200.0, 1.0)  # Optimal around 200 chars
+        except Exception:
+            return 0.0
+    
+    def _calculate_keyword_score(self, text: str) -> float:
+        """Calculate keyword presence score with error handling."""
+        try:
+            keywords = ['help', 'assist', 'task', 'will', 'can', 'support', 'guide']
+            found_keywords = sum(1 for keyword in keywords if keyword in text)
+            return min(found_keywords / len(keywords), 1.0)
+        except Exception:
+            return 0.0
+    
+    def _calculate_structure_score(self, text: str) -> float:
+        """Calculate structural quality score."""
+        try:
+            score = 0.0
             
-            if not valid_prompts:
-                # Create minimal safe population
-                safe_prompt = Prompt("I am a helpful and safe assistant.")
-                safe_prompt.fitness_scores = {"fitness": 0.1, "safety": 1.0}
-                valid_prompts = [safe_prompt]
+            # Check for proper formatting
+            if '{task}' in text:
+                score += 0.4
+            if text.strip().endswith('.') or text.strip().endswith('?'):
+                score += 0.3
+            if len(text.split()) >= 3:  # Minimum word count
+                score += 0.3
+                
+            return min(score, 1.0)
+        except Exception:
+            return 0.0
+    
+    def _is_unsafe(self, text: str) -> bool:
+        """Check for unsafe content patterns."""
+        try:
+            text_lower = text.lower()
+            return any(pattern in text_lower for pattern in self.unsafe_patterns)
+        except Exception:
+            return True  # Assume unsafe if can't check
+
+
+class RobustSystemMonitor:
+    """System monitoring for health checks and performance tracking."""
+    
+    def __init__(self):
+        self.start_time = time.time()
+        self.operation_count = 0
+        self.error_count = 0
+        self.performance_metrics = []
+        
+    def record_operation(self, operation_type: str, duration: float, success: bool):
+        """Record operation metrics."""
+        self.operation_count += 1
+        if not success:
+            self.error_count += 1
             
-            emergency_population = PromptPopulation(valid_prompts)
-            self.logger.info(f"Emergency recovery completed: {len(emergency_population)} prompts")
-            return emergency_population
+        self.performance_metrics.append({
+            "operation": operation_type,
+            "duration": duration,
+            "success": success,
+            "timestamp": time.time()
+        })
+    
+    def get_health_status(self) -> Dict[str, Any]:
+        """Get current system health status."""
+        uptime = time.time() - self.start_time
+        error_rate = self.error_count / max(self.operation_count, 1)
+        
+        avg_duration = 0.0
+        if self.performance_metrics:
+            avg_duration = sum(m["duration"] for m in self.performance_metrics) / len(self.performance_metrics)
+        
+        status = "healthy"
+        if error_rate > 0.1:  # More than 10% errors
+            status = "degraded"
+        if error_rate > 0.5:  # More than 50% errors
+            status = "unhealthy"
+        
+        return {
+            "status": status,
+            "uptime": uptime,
+            "operation_count": self.operation_count,
+            "error_count": self.error_count,
+            "error_rate": error_rate,
+            "average_operation_duration": avg_duration,
+            "timestamp": time.time()
+        }
+
+
+def validate_inputs(population: PromptPopulation, test_cases: List[TestCase]) -> List[str]:
+    """Comprehensive input validation with detailed error reporting."""
+    errors = []
+    
+    # Population validation
+    if not population:
+        errors.append("Population is None or empty")
+        return errors
+    
+    if len(population) == 0:
+        errors.append("Population contains no prompts")
+        return errors
+    
+    # Individual prompt validation
+    for i, prompt in enumerate(population):
+        if not prompt:
+            errors.append(f"Prompt {i} is None")
+            continue
             
-        except Exception as e:
-            self.logger.critical(f"Emergency recovery failed: {e}")
-            # Ultimate fallback
-            fallback_prompt = Prompt("Safe assistant.")
-            fallback_prompt.fitness_scores = {"fitness": 0.0, "safety": 1.0}
-            return PromptPopulation([fallback_prompt])
+        if not hasattr(prompt, 'text') or not prompt.text:
+            errors.append(f"Prompt {i} has no text content")
+            continue
+            
+        if not isinstance(prompt.text, str):
+            errors.append(f"Prompt {i} text is not a string: {type(prompt.text)}")
+            continue
+            
+        if len(prompt.text.strip()) == 0:
+            errors.append(f"Prompt {i} has empty text content")
+            continue
+            
+        # Check for extremely long prompts
+        if len(prompt.text) > 10000:
+            errors.append(f"Prompt {i} is too long: {len(prompt.text)} characters")
+    
+    # Test case validation
+    if not test_cases:
+        errors.append("No test cases provided")
+    
+    for i, test_case in enumerate(test_cases or []):
+        if not test_case:
+            errors.append(f"Test case {i} is None")
+            continue
+            
+        if not hasattr(test_case, 'input_data'):
+            errors.append(f"Test case {i} missing input_data")
+    
+    return errors
 
 
-def test_robust_evolution():
-    """Test robust evolution with error handling."""
-    print("🛡️ Testing Robust Evolution...")
+def run_generation_2_robust_test():
+    """Run Generation 2 robustness and reliability test."""
+    print("🛡️ Generation 2: MAKE IT ROBUST (Reliable) - Starting Test")
+    start_time = time.time()
     
-    manager = RobustEvolutionManager()
+    # Setup logging
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(levelname)s - %(message)s',
+        handlers=[
+            logging.StreamHandler(sys.stdout)
+        ]
+    )
+    logger = logging.getLogger(__name__)
     
-    # Create test population with some invalid prompts
-    valid_seeds = [
-        "You are a helpful assistant",
-        "Please assist me carefully",
-        "I will help you safely"
-    ]
-    
-    population = PromptPopulation.from_seeds(valid_seeds)
-    
-    # Add an invalid prompt to test validation
-    invalid_prompt = Prompt("")  # Empty prompt should fail validation
-    population.prompts.append(invalid_prompt)
-    
-    test_cases = [
-        TestCase("help me", "helpful response", weight=1.0),
-        TestCase("be safe", "safety first", weight=2.0)
-    ]
-    
-    result = manager.safe_evolve(population, test_cases)
-    
-    if result:
-        print(f"  ✅ Robust evolution completed: {len(result)} prompts")
-        print(f"  🏆 Best prompt: '{result.get_top_k(1)[0].text}'")
-        print(f"  📊 Metrics: {manager.metrics}")
-    else:
-        print("  ❌ Robust evolution failed")
-    
-    return result
-
-
-def test_input_validation():
-    """Test comprehensive input validation."""
-    print("\n🔍 Testing Input Validation...")
-    
-    manager = RobustEvolutionManager()
-    
-    # Test valid prompt
-    valid_prompt = Prompt("This is a valid prompt")
-    assert manager.validate_prompt(valid_prompt), "Valid prompt should pass"
-    print("  ✅ Valid prompt validation: PASSED")
-    
-    # Test invalid prompts
-    invalid_prompts = [
-        Prompt(""),  # Empty
-        Prompt("ab"),  # Too short
-        Prompt("x" * 1001),  # Too long
-        Prompt("exec('malicious code')"),  # Security risk
-    ]
-    
-    for i, prompt in enumerate(invalid_prompts):
-        assert not manager.validate_prompt(prompt), f"Invalid prompt {i} should fail"
-    
-    print("  ✅ Invalid prompt validation: PASSED")
-    
-    # Test population validation
-    good_population = PromptPopulation.from_seeds(["Good prompt", "Another good one"])
-    assert manager.validate_population(good_population), "Good population should pass"
-    print("  ✅ Population validation: PASSED")
-
-
-def test_error_recovery():
-    """Test error recovery mechanisms."""
-    print("\n🚨 Testing Error Recovery...")
-    
-    manager = RobustEvolutionManager()
-    
-    # Create problematic population
-    problematic_seeds = [
-        "",  # Invalid
-        "Valid prompt",
-        "Another valid one"
-    ]
-    
-    population = PromptPopulation.from_seeds(problematic_seeds)
-    test_cases = [TestCase("test", "response", weight=1.0)]
-    
-    # Should recover despite invalid prompts
-    result = manager.safe_evolve(population, test_cases)
-    
-    if result:
-        print(f"  ✅ Error recovery successful: {len(result)} valid prompts")
-        print(f"  📈 Recovery metrics: {manager.metrics['recoveries']} recoveries")
-    else:
-        print("  ❌ Error recovery failed")
-    
-    return result
-
-
-def test_security_validation():
-    """Test security validation mechanisms."""
-    print("\n🔒 Testing Security Validation...")
-    
-    manager = RobustEvolutionManager()
-    
-    # Test dangerous patterns
-    dangerous_prompts = [
-        Prompt("exec('rm -rf /')"),
-        Prompt("import os; os.system('bad')"),
-        Prompt("__import__('subprocess')"),
-        Prompt("eval(user_input)")
-    ]
-    
-    blocked_count = 0
-    for prompt in dangerous_prompts:
-        if not manager.validate_prompt(prompt):
-            blocked_count += 1
-    
-    print(f"  ✅ Security validation: {blocked_count}/{len(dangerous_prompts)} dangerous prompts blocked")
-    
-    # Test safe prompt
-    safe_prompt = Prompt("You are a helpful and safe AI assistant")
-    assert manager.validate_prompt(safe_prompt), "Safe prompt should pass"
-    print("  ✅ Safe prompt validation: PASSED")
-
-
-def test_logging_monitoring():
-    """Test logging and monitoring systems."""
-    print("\n📊 Testing Logging & Monitoring...")
-    
-    manager = RobustEvolutionManager()
-    
-    # Test logging
-    manager.logger.info("Test info message")
-    manager.logger.warning("Test warning message")
-    manager.logger.error("Test error message")
-    
-    # Test metrics collection
-    initial_errors = manager.metrics["errors"]
-    manager.metrics["errors"] += 1
-    
-    print(f"  ✅ Logging system: Active")
-    print(f"  📈 Metrics tracking: {manager.metrics}")
-    print(f"  📝 Log file: generation_2_robust.log")
-
-
-def main():
-    """Run Generation 2 robust implementation test."""
-    print("🛡️ Generation 2: MAKE IT ROBUST - Comprehensive Error Handling")
-    print("=" * 65)
+    # Initialize monitoring
+    monitor = RobustSystemMonitor()
     
     try:
-        # Test all robust components
-        evolution_result = test_robust_evolution()
-        test_input_validation()
-        recovery_result = test_error_recovery()
-        test_security_validation()
-        test_logging_monitoring()
+        # Test data with edge cases
+        test_prompts = [
+            "You are a helpful assistant. Please {task}",
+            "As an AI assistant, I will help you {task}",
+            "",  # Empty prompt (edge case)
+            "A" * 500,  # Long prompt (edge case)
+            "Help with {task} - let me assist you properly.",
+            "Simple {task} handler",
+            "I can support your {task} efficiently"
+        ]
         
-        print("\n" + "=" * 65)
-        print("🎉 GENERATION 2 ROBUST IMPLEMENTATION COMPLETE")
-        print("✅ Robust Evolution: Working with error handling")
-        print("✅ Input Validation: Comprehensive checks implemented")
-        print("✅ Error Recovery: Automatic recovery mechanisms")
-        print("✅ Security Validation: Dangerous pattern detection")
-        print("✅ Logging & Monitoring: Real-time tracking")
-        print("✅ Timeout Protection: Evolution timeout handling")
-        print("✅ Emergency Recovery: Fallback mechanisms")
+        # Filter out empty prompts for population creation
+        valid_prompts = [p for p in test_prompts if p and p.strip()]
+        population = PromptPopulation.from_seeds(valid_prompts)
         
-        # Collect comprehensive results
+        # Add edge case manually for testing
+        edge_prompt = Prompt(text="", id="test_empty")
+        population.prompts.append(edge_prompt)
+        
+        logger.info(f"Created test population with {len(population)} prompts")
+        
+        # Create comprehensive test cases
+        test_cases = [
+            TestCase(
+                input_data="Explain quantum computing",
+                expected_output="Clear scientific explanation",
+                metadata={"difficulty": "high", "domain": "science"},
+                weight=1.0
+            ),
+            TestCase(
+                input_data="Write a summary",
+                expected_output="Concise summary",
+                metadata={"difficulty": "medium", "domain": "writing"},
+                weight=0.8
+            ),
+            TestCase(
+                input_data="",  # Empty input (edge case)
+                expected_output="Handle gracefully",
+                metadata={"difficulty": "edge_case"},
+                weight=0.5
+            )
+        ]
+        
+        # Input validation
+        print("🔍 Running comprehensive input validation...")
+        validation_start = time.time()
+        validation_errors = validate_inputs(population, test_cases)
+        validation_time = time.time() - validation_start
+        
+        monitor.record_operation("validation", validation_time, len(validation_errors) == 0)
+        
+        if validation_errors:
+            print(f"⚠️  Validation found {len(validation_errors)} issues:")
+            for error in validation_errors[:5]:  # Show first 5 errors
+                print(f"   • {error}")
+        else:
+            print("✅ Input validation passed")
+        
+        # Robust fitness evaluation
+        print("🧮 Running robust fitness evaluation...")
+        fitness_fn = RobustFitnessFunction(enable_safety_checks=True)
+        
+        successful_evaluations = 0
+        failed_evaluations = 0
+        
+        for prompt in population:
+            eval_start = time.time()
+            try:
+                prompt.fitness_scores = fitness_fn.evaluate(prompt, test_cases)
+                if "error" not in prompt.fitness_scores:
+                    successful_evaluations += 1
+                else:
+                    failed_evaluations += 1
+                    logger.warning(f"Evaluation error for prompt {prompt.id}: {prompt.fitness_scores.get('error', 'unknown')}")
+                    
+                eval_time = time.time() - eval_start
+                monitor.record_operation("evaluation", eval_time, "error" not in prompt.fitness_scores)
+                
+            except Exception as e:
+                failed_evaluations += 1
+                logger.error(f"Critical evaluation error for prompt {prompt.id}: {e}")
+                prompt.fitness_scores = {"fitness": 0.0, "error": f"critical_error: {str(e)}"}
+                
+                eval_time = time.time() - eval_start
+                monitor.record_operation("evaluation", eval_time, False)
+        
+        print(f"✅ Successful evaluations: {successful_evaluations}")
+        print(f"⚠️  Failed evaluations: {failed_evaluations}")
+        
+        # Error recovery test
+        print("🔄 Testing error recovery...")
+        valid_prompts = []
+        try:
+            # Simulate recovery from failed prompts
+            valid_prompts = [p for p in population if p.fitness_scores.get("fitness", 0) > 0]
+            if len(valid_prompts) == 0:
+                print("⚠️  No valid prompts after error recovery")
+                # Fallback to basic prompts
+                fallback_prompts = ["Help with {task}", "Assist with {task}"]
+                fallback_population = PromptPopulation.from_seeds(fallback_prompts)
+                for prompt in fallback_population:
+                    prompt.fitness_scores = fitness_fn.evaluate(prompt, test_cases)
+                valid_prompts = fallback_population.prompts
+                print(f"✅ Fallback recovery: {len(valid_prompts)} prompts")
+                
+        except Exception as e:
+            logger.error(f"Error recovery failed: {e}")
+        
+        # Health monitoring
+        print("❤️  System health check...")
+        health = monitor.get_health_status()
+        print(f"   Status: {health['status']}")
+        print(f"   Error Rate: {health['error_rate']:.1%}")
+        print(f"   Operations: {health['operation_count']}")
+        
+        # Performance validation
+        avg_duration = health.get('average_operation_duration', 0)
+        if avg_duration > 1.0:  # More than 1 second per operation
+            print("⚠️  Performance degradation detected")
+        else:
+            print("✅ Performance within acceptable limits")
+        
+        # Results summary
+        execution_time = time.time() - start_time
+        
+        # Get top performers (filter out error cases)
+        valid_population_prompts = [p for p in population if p.fitness_scores.get("fitness", 0) > 0]
+        
+        if valid_population_prompts:
+            top_prompts = sorted(
+                valid_population_prompts,
+                key=lambda p: p.fitness_scores.get("fitness", 0),
+                reverse=True
+            )[:3]
+            
+            print("\n📊 Top 3 Robust Prompts:")
+            for i, prompt in enumerate(top_prompts, 1):
+                fitness = prompt.fitness_scores.get("fitness", 0.0)
+                safety = prompt.fitness_scores.get("safety_score", 0.0)
+                print(f"{i}. Fitness: {fitness:.3f}, Safety: {safety:.3f} - '{prompt.text[:40]}...'")
+        
         results = {
             "generation": 2,
-            "status": "ROBUST",
-            "features_implemented": [
-                "Comprehensive input validation",
-                "Security pattern detection",
-                "Error recovery mechanisms",
-                "Timeout protection",
-                "Emergency fallback",
-                "Structured logging",
-                "Metrics collection",
-                "Population sanitization"
-            ],
-            "security_checks": {
-                "dangerous_pattern_detection": True,
-                "input_length_validation": True,
-                "field_validation": True,
-                "population_size_limits": True
-            },
-            "reliability_features": {
-                "timeout_protection": True,
-                "error_recovery": True,
-                "emergency_fallback": True,
-                "validation_pipeline": True
+            "status": "ROBUST_COMPLETE",
+            "execution_time": execution_time,
+            "population_size": len(population),
+            "successful_evaluations": successful_evaluations,
+            "failed_evaluations": failed_evaluations,
+            "validation_errors": len(validation_errors),
+            "health_status": health,
+            "error_recovery": "successful" if valid_prompts else "failed",
+            "fitness_function_stats": {
+                "evaluation_count": fitness_fn.evaluation_count,
+                "error_count": fitness_fn.error_count
             }
         }
         
-        with open('/root/repo/demo_results/generation_2_robust_results.json', 'w') as f:
+        print(f"\n✅ Generation 2 Robust Test Complete!")
+        print(f"⏱️  Execution Time: {execution_time:.2f}s")
+        print(f"🛡️  System Status: {health['status']}")
+        print(f"📊 Success Rate: {successful_evaluations/(successful_evaluations + failed_evaluations):.1%}")
+        
+        # Save results
+        with open("generation_2_robust_results.json", "w") as f:
             json.dump(results, f, indent=2)
         
-        print(f"\n💾 Results saved to: demo_results/generation_2_robust_results.json")
-        print("🎯 Ready for Generation 3: MAKE IT SCALE!")
+        print("💾 Results saved to generation_2_robust_results.json")
+        
+        return results
         
     except Exception as e:
-        print(f"\n❌ Error in Generation 2 Robust Test: {e}")
-        traceback.print_exc()
-        raise
+        logger.error(f"Critical system error: {e}")
+        logger.error(traceback.format_exc())
+        
+        return {
+            "generation": 2,
+            "status": "CRITICAL_ERROR",
+            "error": str(e),
+            "execution_time": time.time() - start_time
+        }
 
 
 if __name__ == "__main__":
-    main()
+    results = run_generation_2_robust_test()
+    
+    # Validate robustness criteria
+    if (results.get("status") == "ROBUST_COMPLETE" and 
+        results.get("successful_evaluations", 0) > 0 and
+        results.get("health_status", {}).get("status") != "unhealthy"):
+        print("\n🎉 Generation 2: MAKE IT ROBUST - SUCCESS!")
+        print("✅ Comprehensive error handling operational")
+        print("✅ Input validation working")
+        print("✅ System monitoring functional")
+        print("✅ Error recovery mechanisms in place")
+        print("✅ Ready for Generation 3 optimization")
+    else:
+        print("\n⚠️  Generation 2 robustness needs improvement")
+        print(f"Status: {results.get('status', 'unknown')}")

@@ -1,0 +1,79 @@
+{
+  "generation": 3,
+  "status": "SCALE_COMPLETE",
+  "execution_time": 0.03984212875366211,
+  "peak_throughput": 28345.637629249173,
+  "optimal_configuration": {
+    "population_size": 100,
+    "cache_size": 500,
+    "sequential_time": 0.0007371902465820312,
+    "parallel_time": 0.0035278797149658203,
+    "sequential_throughput": 135650.19404915912,
+    "parallel_throughput": 28345.637629249173,
+    "speedup": 0.20896127593431102,
+    "cache_hit_rate": 0.925,
+    "evaluations": 200,
+    "cache_hits": 185
+  },
+  "scalability_results": [
+    {
+      "population_size": 10,
+      "cache_size": 1000,
+      "sequential_time": 0.0002582073211669922,
+      "parallel_time": 0.0015652179718017578,
+      "sequential_throughput": 38728.56879039705,
+      "parallel_throughput": 6388.886519421173,
+      "speedup": 0.16496572734196496,
+      "cache_hit_rate": 0.5,
+      "evaluations": 20,
+      "cache_hits": 10
+    },
+    {
+      "population_size": 25,
+      "cache_size": 1000,
+      "sequential_time": 0.00043392181396484375,
+      "parallel_time": 0.0018947124481201172,
+      "sequential_throughput": 57614.06593406593,
+      "parallel_throughput": 13194.614319869133,
+      "speedup": 0.2290172392097647,
+      "cache_hit_rate": 0.7,
+      "evaluations": 50,
+      "cache_hits": 35
+    },
+    {
+      "population_size": 50,
+      "cache_size": 1000,
+      "sequential_time": 0.0004961490631103516,
+      "parallel_time": 0.0023398399353027344,
+      "sequential_throughput": 100776.16530514175,
+      "parallel_throughput": 21368.98308538822,
+      "speedup": 0.2120440187487263,
+      "cache_hit_rate": 0.85,
+      "evaluations": 100,
+      "cache_hits": 85
+    },
+    {
+      "population_size": 100,
+      "cache_size": 500,
+      "sequential_time": 0.0007371902465820312,
+      "parallel_time": 0.0035278797149658203,
+      "sequential_throughput": 135650.19404915912,
+      "parallel_throughput": 28345.637629249173,
+      "speedup": 0.20896127593431102,
+      "cache_hit_rate": 0.925,
+      "evaluations": 200,
+      "cache_hits": 185
+    }
+  ],
+  "async_throughput": 31488.76876876877,
+  "performance_stats": {
+    "uptime": 0.039754629135131836,
+    "total_operations": 24,
+    "average_duration": 0.0015645325183868408,
+    "success_rate": 1.0,
+    "max_concurrent_operations": 1,
+    "current_throughput": 27679.69379000858,
+    "peak_throughput": 28345.637629249173
+  },
+  "target_achieved": true
+}

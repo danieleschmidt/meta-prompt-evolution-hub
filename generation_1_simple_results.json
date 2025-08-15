@@ -1,0 +1,43 @@
+{
+  "generation": 1,
+  "status": "COMPLETE",
+  "execution_time": 0.0001201629638671875,
+  "population_size": 5,
+  "best_fitness": 0.71,
+  "average_fitness": 0.45899999999999996,
+  "top_prompts": [
+    {
+      "id": "prompt_287334",
+      "text": "As an AI assistant, I will help you {task}",
+      "fitness": 0.71,
+      "metrics": {
+        "fitness": 0.71,
+        "length": 42,
+        "keywords": 1.0,
+        "accuracy": 0.71
+      }
+    },
+    {
+      "id": "prompt_855940",
+      "text": "You are a helpful assistant. Please {task}",
+      "fitness": 0.585,
+      "metrics": {
+        "fitness": 0.585,
+        "length": 42,
+        "keywords": 0.75,
+        "accuracy": 0.585
+      }
+    },
+    {
+      "id": "prompt_165691",
+      "text": "Let me assist you with {task}",
+      "fitness": 0.395,
+      "metrics": {
+        "fitness": 0.395,
+        "length": 29,
+        "keywords": 0.5,
+        "accuracy": 0.395
+      }
+    }
+  ]
+}

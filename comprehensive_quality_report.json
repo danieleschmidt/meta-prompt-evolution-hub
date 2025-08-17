@@ -4,14 +4,14 @@
   "critical_tests_passed": true,
   "tests_passed": 7,
   "total_tests": 7,
-  "execution_time": 0.0027055740356445312,
+  "execution_time": 0.003571748733520508,
   "quality_results": [
     {
       "name": "Security Scan",
       "passed": true,
       "score": 1.0,
       "critical": true,
-      "execution_time": 3.695487976074219e-05,
+      "execution_time": 2.47955322265625e-05,
       "details": {
         "vulnerabilities_found": 0,
         "vulnerability_rate": 0.0,
@@ -24,7 +24,7 @@
       "passed": true,
       "score": 1.0,
       "critical": true,
-      "execution_time": 1.9311904907226562e-05,
+      "execution_time": 1.2159347534179688e-05,
       "details": {
         "sanitization_failures": [],
         "malicious_inputs_tested": 5,
@@ -36,11 +36,11 @@
       "passed": true,
       "score": 1.0,
       "critical": false,
-      "execution_time": 9.965896606445312e-05,
+      "execution_time": 2.5510787963867188e-05,
       "details": {
-        "average_response_time": 3.337860107421875e-06,
-        "p95_response_time": 8.106231689453125e-06,
-        "p99_response_time": 8.106231689453125e-06,
+        "average_response_time": 2.3365020751953127e-06,
+        "p95_response_time": 6.67572021484375e-06,
+        "p99_response_time": 6.67572021484375e-06,
         "failed_evaluations": 0,
         "evaluations_tested": 5,
         "target_avg_ms": 100,
@@ -52,13 +52,13 @@
       "passed": true,
       "score": 1.0,
       "critical": false,
-      "execution_time": 0.0019178390502929688,
+      "execution_time": 0.003014087677001953,
       "details": {
-        "throughput_prompts_per_sec": 2637.927044025157,
+        "throughput_prompts_per_sec": 1667.9805933349242,
         "successful_batches": 5,
         "total_batches": 5,
         "total_evaluations": 5,
-        "concurrent_execution_time": 0.0018954277038574219,
+        "concurrent_execution_time": 0.0029976367950439453,
         "target_throughput": 10.0
       }
     },
@@ -67,7 +67,7 @@
       "passed": true,
       "score": 0.8727272727272726,
       "critical": false,
-      "execution_time": 6.127357482910156e-05,
+      "execution_time": 4.9114227294921875e-05,
       "details": {
         "total_stress_tests": 11,
         "failures": 2,
@@ -95,7 +95,7 @@
       "passed": true,
       "score": 1.0,
       "critical": false,
-      "execution_time": 3.218650817871094e-05,
+      "execution_time": 6.628036499023438e-05,
       "details": {
         "fault_scenarios_tested": 4,
         "faults_handled": 4,
@@ -141,7 +141,7 @@
       "passed": true,
       "score": 0.875,
       "critical": false,
-      "execution_time": 0.00011038780212402344,
+      "execution_time": 7.462501525878906e-05,
       "details": {
         "components_tested": 7,
         "total_components": 8,

@@ -1,0 +1,27 @@
+{
+  "global_first_features": {
+    "internationalization": true,
+    "compliance_support": true,
+    "cross_platform_compatibility": true,
+    "data_rights_management": true
+  },
+  "localization_stats": {
+    "supported_locales": 8,
+    "translation_keys": 14,
+    "locale_configurations": 8
+  },
+  "compliance_stats": {
+    "supported_standards": 5,
+    "consent_records": 2,
+    "processing_records": 2,
+    "retention_policies": 6
+  },
+  "platform_stats": {
+    "supported_platforms": 4,
+    "browser_support": 4,
+    "mobile_platforms": 2
+  },
+  "test_sessions": 3,
+  "compliance_reports": 3,
+  "configuration_exported": true
+}

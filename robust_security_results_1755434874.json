@@ -1,0 +1,97 @@
+{
+  "status": "success",
+  "operation_id": "a36e2cdb-130c-45ef-a4ef-0c40cdf2bd9e",
+  "results": {
+    "best_prompts": [
+      {
+        "id": "ce7c602b-86b0-4f59-a93d-530dc264e8c6",
+        "text": "Explain the solution this this complex problem effective by step",
+        "fitness": 0.0,
+        "generation": 5,
+        "lineage": [
+          "1849aeb6-f5cb-4c62-b2c4-a58d0ee546d6",
+          "da3fe862-8462-419f-aaf6-1d39db81b535"
+        ],
+        "created_at": 1755434874.0257258
+      },
+      {
+        "id": "aef61ff1-9535-4170-bd44-d7f400e7c426",
+        "text": "Explain the solution this this complex problem step by step",
+        "fitness": 0.0,
+        "generation": 5,
+        "lineage": [
+          "da3fe862-8462-419f-aaf6-1d39db81b535",
+          "1849aeb6-f5cb-4c62-b2c4-a58d0ee546d6"
+        ],
+        "created_at": 1755434874.0257356
+      },
+      {
+        "id": "069d6cd9-b585-40ad-9423-d1a14fc96bec",
+        "text": "Explain the solution this this complex problem step by step",
+        "fitness": 0.0,
+        "generation": 5,
+        "lineage": [
+          "1849aeb6-f5cb-4c62-b2c4-a58d0ee546d6",
+          "da3fe862-8462-419f-aaf6-1d39db81b535"
+        ],
+        "created_at": 1755434874.0257432
+      },
+      {
+        "id": "234a8a88-ddce-45b1-8686-545351980e14",
+        "text": "Explain carefully the solution this this complex problem step by step",
+        "fitness": 0.0,
+        "generation": 5,
+        "lineage": [
+          "da3fe862-8462-419f-aaf6-1d39db81b535",
+          "1849aeb6-f5cb-4c62-b2c4-a58d0ee546d6"
+        ],
+        "created_at": 1755434874.025758
+      }
+    ],
+    "best_fitness": 0.0,
+    "fitness_history": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "generation_metrics": [
+      {
+        "generation": 1,
+        "best_fitness": 0.0,
+        "population_size": 4,
+        "duration": 0.004508018493652344
+      },
+      {
+        "generation": 2,
+        "best_fitness": 0.0,
+        "population_size": 4,
+        "duration": 0.0008709430694580078
+      },
+      {
+        "generation": 3,
+        "best_fitness": 0.0,
+        "population_size": 4,
+        "duration": 0.0009086132049560547
+      },
+      {
+        "generation": 4,
+        "best_fitness": 0.0,
+        "population_size": 4,
+        "duration": 0.0007543563842773438
+      },
+      {
+        "generation": 5,
+        "best_fitness": 0.0,
+        "population_size": 4,
+        "duration": 0.0008091926574707031
+      }
+    ],
+    "total_generations": 5,
+    "total_duration": 0.008756875991821289,
+    "final_population_size": 4
+  },
+  "security_classification": "internal",
+  "processing_time": 0.009391307830810547
+}

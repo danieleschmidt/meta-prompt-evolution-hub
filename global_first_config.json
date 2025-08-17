@@ -1,0 +1,133 @@
+{
+  "localization": {
+    "supported_locales": [
+      "en-US",
+      "en-GB",
+      "de-DE",
+      "fr-FR",
+      "es-ES",
+      "ja-JP",
+      "zh-CN",
+      "ar-SA"
+    ],
+    "default_locale": "en-US",
+    "fallback_locale": "en-US"
+  },
+  "compliance": {
+    "supported_standards": [
+      "gdpr",
+      "ccpa",
+      "pdpa",
+      "lgpd",
+      "pipeda"
+    ],
+    "retention_policies": {
+      "public": 3650,
+      "internal": 2555,
+      "confidential": 1825,
+      "restricted": 1095,
+      "personal_data": 730,
+      "sensitive_personal_data": 365
+    },
+    "encryption_required": true,
+    "audit_logging": true
+  },
+  "cross_platform": {
+    "supported_platforms": [
+      "windows",
+      "macos",
+      "linux",
+      "docker"
+    ],
+    "browser_support": {
+      "chrome": {
+        "min_version": "90",
+        "supported_features": [
+          "es6",
+          "webassembly",
+          "workers",
+          "modules"
+        ],
+        "testing_versions": [
+          "current",
+          "current-1",
+          "current-2"
+        ]
+      },
+      "firefox": {
+        "min_version": "88",
+        "supported_features": [
+          "es6",
+          "webassembly",
+          "workers",
+          "modules"
+        ],
+        "testing_versions": [
+          "current",
+          "current-1",
+          "current-2"
+        ]
+      },
+      "safari": {
+        "min_version": "14",
+        "supported_features": [
+          "es6",
+          "webassembly",
+          "workers",
+          "modules"
+        ],
+        "testing_versions": [
+          "current",
+          "current-1"
+        ]
+      },
+      "edge": {
+        "min_version": "90",
+        "supported_features": [
+          "es6",
+          "webassembly",
+          "workers",
+          "modules"
+        ],
+        "testing_versions": [
+          "current",
+          "current-1"
+        ]
+      }
+    },
+    "mobile_support": {
+      "ios": {
+        "min_version": "13.0",
+        "supported_browsers": [
+          "safari",
+          "chrome",
+          "firefox"
+        ],
+        "responsive_design": true,
+        "touch_optimized": true
+      },
+      "android": {
+        "min_version": "8.0",
+        "supported_browsers": [
+          "chrome",
+          "firefox",
+          "samsung"
+        ],
+        "responsive_design": true,
+        "touch_optimized": true
+      }
+    }
+  },
+  "deployment": {
+    "multi_region": true,
+    "data_residency": [
+      "EU",
+      "US",
+      "Asia-Pacific"
+    ],
+    "cdn_enabled": true,
+    "load_balancing": true
+  },
+  "export_timestamp": "2025-08-17T13:02:47.019379+00:00",
+  "configuration_version": "1.0.0"
+}

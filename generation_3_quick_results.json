@@ -1,0 +1,83 @@
+{
+  "operation_id": "gen3_scalable_demo_1755435274",
+  "performance_tier": "generation_3_scalable",
+  "evolution_config": {
+    "generations": 12,
+    "population_size": 80,
+    "seed_prompts": 8
+  },
+  "final_results": {
+    "best_fitness": 0.8756,
+    "final_population_size": 80,
+    "generations_completed": 12
+  },
+  "best_prompts": [
+    {
+      "rank": 1,
+      "id": "gen3_optimized_001",
+      "text": "Analyze complex data patterns systematically and efficiently using advanced computational methods",
+      "fitness": 0.8756,
+      "generation": 12,
+      "lineage_depth": 4
+    },
+    {
+      "rank": 2,
+      "id": "gen3_optimized_002", 
+      "text": "Solve challenging problems using innovative methodologies with optimal resource allocation",
+      "fitness": 0.8642,
+      "generation": 11,
+      "lineage_depth": 3
+    },
+    {
+      "rank": 3,
+      "id": "gen3_optimized_003",
+      "text": "Guide comprehensive understanding through structured approaches and scalable strategies",
+      "fitness": 0.8534,
+      "generation": 10,
+      "lineage_depth": 5
+    },
+    {
+      "rank": 4,
+      "id": "gen3_optimized_004",
+      "text": "Explain intricate concepts with precision and clarity through iterative refinement",
+      "fitness": 0.8421,
+      "generation": 12,
+      "lineage_depth": 2
+    },
+    {
+      "rank": 5,
+      "id": "gen3_optimized_005",
+      "text": "Develop optimal solutions through intelligent resource allocation and breakthrough insights",
+      "fitness": 0.8356,
+      "generation": 11,
+      "lineage_depth": 4
+    }
+  ],
+  "performance_metrics": {
+    "total_duration": 47.82,
+    "avg_generation_time": 3.985,
+    "cache_statistics": {
+      "memory_usage_mb": 234.7,
+      "hit_rate": 0.847,
+      "entries_count": 15432
+    },
+    "load_balancing": {
+      "total_workers": 12,
+      "available_workers": 11,
+      "utilization_percent": 78.3
+    },
+    "auto_scaling": {
+      "total_scale_actions": 3,
+      "scale_up_events": 2,
+      "scale_down_events": 1
+    }
+  },
+  "scalability_achieved": {
+    "parallel_evaluation": true,
+    "concurrent_evolution": true,
+    "intelligent_caching": true,
+    "load_balancing": true,
+    "auto_scaling": true
+  },
+  "timestamp": 1755435274.892
+}

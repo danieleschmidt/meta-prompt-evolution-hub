@@ -1,0 +1,37 @@
+# Global owners for the repository
+* @danieleschmidt
+
+# Core application code
+/meta_prompt_evolution/ @danieleschmidt
+
+# Infrastructure and deployment
+/deployment/ @danieleschmidt
+/docker-compose*.yml @danieleschmidt
+/Dockerfile* @danieleschmidt
+/.devcontainer/ @danieleschmidt
+
+# CI/CD and automation
+/.github/ @danieleschmidt
+/scripts/ @danieleschmidt
+
+# Documentation
+/docs/ @danieleschmidt
+README.md @danieleschmidt
+ARCHITECTURE.md @danieleschmidt
+PROJECT_CHARTER.md @danieleschmidt
+SECURITY.md @danieleschmidt
+CONTRIBUTING.md @danieleschmidt
+
+# Configuration files
+pyproject.toml @danieleschmidt
+requirements*.txt @danieleschmidt
+Makefile @danieleschmidt
+tox.ini @danieleschmidt
+pytest.ini @danieleschmidt
+.pre-commit-config.yaml @danieleschmidt
+
+# Testing
+/tests/ @danieleschmidt
+
+# Monitoring and observability
+/deployment/monitoring/ @danieleschmidt

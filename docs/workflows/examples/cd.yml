@@ -1,0 +1,396 @@
+name: Continuous Deployment
+
+on:
+  push:
+    branches: [ main ]
+    tags: [ 'v*' ]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+          - staging
+          - production
+      version:
+        description: 'Version to deploy'
+        required: false
+        type: string
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  build-and-push:
+    name: Build and Push Container Image
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      
+    outputs:
+      image: ${{ steps.image.outputs.image }}
+      digest: ${{ steps.build.outputs.digest }}
+      
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+      
+    - name: Log in to Container Registry
+      uses: docker/login-action@v3
+      with:
+        registry: ${{ env.REGISTRY }}
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Extract metadata
+      id: meta
+      uses: docker/metadata-action@v5
+      with:
+        images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+        tags: |
+          type=ref,event=branch
+          type=ref,event=pr
+          type=semver,pattern={{version}}
+          type=semver,pattern={{major}}.{{minor}}
+          type=raw,value=latest,enable={{is_default_branch}}
+          type=sha,prefix=sha-
+          
+    - name: Build and push image
+      id: build
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        file: ./Dockerfile.prod
+        push: true
+        tags: ${{ steps.meta.outputs.tags }}
+        labels: ${{ steps.meta.outputs.labels }}
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+        build-args: |
+          BUILD_DATE=${{ fromJSON(steps.meta.outputs.json).labels['org.opencontainers.image.created'] }}
+          VERSION=${{ fromJSON(steps.meta.outputs.json).labels['org.opencontainers.image.version'] }}
+          VCS_REF=${{ github.sha }}
+          
+    - name: Output image
+      id: image
+      run: |
+        echo "image=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}@${{ steps.build.outputs.digest }}" >> $GITHUB_OUTPUT
+
+  security-scan:
+    name: Container Security Scan
+    runs-on: ubuntu-latest
+    needs: build-and-push
+    permissions:
+      contents: read
+      security-events: write
+      
+    steps:
+    - name: Run Trivy vulnerability scanner
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: ${{ needs.build-and-push.outputs.image }}
+        format: 'sarif'
+        output: 'trivy-results.sarif'
+        
+    - name: Upload Trivy scan results to GitHub Security tab
+      uses: github/codeql-action/upload-sarif@v2
+      if: always()
+      with:
+        sarif_file: 'trivy-results.sarif'
+
+  deploy-staging:
+    name: Deploy to Staging
+    runs-on: ubuntu-latest
+    needs: [build-and-push, security-scan]
+    environment: staging
+    if: github.ref == 'refs/heads/main' || (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'staging')
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-west-2
+        
+    - name: Set up kubectl
+      uses: azure/setup-kubectl@v3
+      with:
+        version: 'v1.28.0'
+        
+    - name: Update kubeconfig
+      run: |
+        aws eks update-kubeconfig --region us-west-2 --name meta-prompt-hub-staging
+        
+    - name: Deploy to staging
+      run: |
+        # Replace image in Kubernetes manifests
+        sed -i "s|IMAGE_PLACEHOLDER|${{ needs.build-and-push.outputs.image }}|g" deployment/kubernetes/deployment.yaml
+        
+        # Apply Kubernetes manifests
+        kubectl apply -f deployment/kubernetes/ -n staging
+        
+        # Wait for rollout to complete
+        kubectl rollout status deployment/meta-prompt-hub -n staging --timeout=600s
+        
+    - name: Run smoke tests
+      run: |
+        # Wait for service to be ready
+        kubectl wait --for=condition=ready pod -l app=meta-prompt-hub -n staging --timeout=300s
+        
+        # Get service URL
+        SERVICE_URL=$(kubectl get service meta-prompt-hub -n staging -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
+        
+        # Run smoke tests
+        curl -f http://${SERVICE_URL}/health || exit 1
+        curl -f http://${SERVICE_URL}/metrics || exit 1
+        
+    - name: Notify deployment
+      uses: 8398a7/action-slack@v3
+      with:
+        status: ${{ job.status }}
+        channel: '#deployments'
+        text: 'Staging deployment completed'
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+  deploy-production:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    needs: [build-and-push, security-scan, deploy-staging]
+    environment: production
+    if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'production')
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-west-2
+        
+    - name: Set up kubectl
+      uses: azure/setup-kubectl@v3
+      with:
+        version: 'v1.28.0'
+        
+    - name: Update kubeconfig
+      run: |
+        aws eks update-kubeconfig --region us-west-2 --name meta-prompt-hub-production
+        
+    - name: Create backup
+      run: |
+        # Backup current deployment
+        kubectl get deployment meta-prompt-hub -n production -o yaml > deployment-backup.yaml
+        
+        # Backup database
+        kubectl exec deployment/postgres -n production -- pg_dump -U postgres meta_prompt_hub > db-backup.sql
+        
+        # Upload backups to S3
+        aws s3 cp deployment-backup.yaml s3://meta-prompt-hub-backups/$(date +%Y-%m-%d)/
+        aws s3 cp db-backup.sql s3://meta-prompt-hub-backups/$(date +%Y-%m-%d)/
+        
+    - name: Deploy to production
+      run: |
+        # Replace image in Kubernetes manifests
+        sed -i "s|IMAGE_PLACEHOLDER|${{ needs.build-and-push.outputs.image }}|g" deployment/kubernetes/deployment.yaml
+        
+        # Apply Kubernetes manifests with rolling update
+        kubectl apply -f deployment/kubernetes/ -n production
+        
+        # Wait for rollout to complete
+        kubectl rollout status deployment/meta-prompt-hub -n production --timeout=600s
+        
+    - name: Run health checks
+      run: |
+        # Wait for service to be ready
+        kubectl wait --for=condition=ready pod -l app=meta-prompt-hub -n production --timeout=300s
+        
+        # Get service URL
+        SERVICE_URL=$(kubectl get service meta-prompt-hub -n production -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
+        
+        # Run comprehensive health checks
+        curl -f http://${SERVICE_URL}/health || exit 1
+        curl -f http://${SERVICE_URL}/health/detailed || exit 1
+        curl -f http://${SERVICE_URL}/metrics || exit 1
+        
+        # Test key functionality
+        curl -f -X POST http://${SERVICE_URL}/api/v1/health-check || exit 1
+        
+    - name: Run integration tests
+      run: |
+        # Run critical integration tests against production
+        pytest tests/integration/ -k "critical" --production-url=$SERVICE_URL
+        
+    - name: Update monitoring
+      run: |
+        # Update Grafana dashboard annotations
+        curl -X POST \
+          "${{ secrets.GRAFANA_URL }}/api/annotations" \
+          -H "Authorization: Bearer ${{ secrets.GRAFANA_TOKEN }}" \
+          -H "Content-Type: application/json" \
+          -d '{
+            "text": "Production deployment: ${{ needs.build-and-push.outputs.image }}",
+            "tags": ["deployment", "production"],
+            "time": '$(date +%s000)',
+            "timeEnd": '$(date +%s000)'
+          }'
+          
+    - name: Notify deployment success
+      uses: 8398a7/action-slack@v3
+      with:
+        status: success
+        channel: '#deployments'
+        text: 'Production deployment successful! 🚀'
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        
+    - name: Notify deployment failure
+      if: failure()
+      uses: 8398a7/action-slack@v3
+      with:
+        status: failure
+        channel: '#deployments'
+        text: 'Production deployment failed! ❌ Rolling back...'
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+  rollback:
+    name: Rollback on Failure
+    runs-on: ubuntu-latest
+    needs: deploy-production
+    if: failure()
+    environment: production
+    
+    steps:
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-west-2
+        
+    - name: Set up kubectl
+      uses: azure/setup-kubectl@v3
+      with:
+        version: 'v1.28.0'
+        
+    - name: Update kubeconfig
+      run: |
+        aws eks update-kubeconfig --region us-west-2 --name meta-prompt-hub-production
+        
+    - name: Rollback deployment
+      run: |
+        # Rollback to previous version
+        kubectl rollout undo deployment/meta-prompt-hub -n production
+        
+        # Wait for rollback to complete
+        kubectl rollout status deployment/meta-prompt-hub -n production --timeout=600s
+        
+    - name: Verify rollback
+      run: |
+        # Verify service is healthy after rollback
+        kubectl wait --for=condition=ready pod -l app=meta-prompt-hub -n production --timeout=300s
+        
+        # Get service URL and test
+        SERVICE_URL=$(kubectl get service meta-prompt-hub -n production -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
+        curl -f http://${SERVICE_URL}/health || exit 1
+        
+    - name: Notify rollback
+      uses: 8398a7/action-slack@v3
+      with:
+        status: ${{ job.status }}
+        channel: '#deployments'
+        text: 'Production rollback completed'
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+  publish-release:
+    name: Publish Release
+    runs-on: ubuntu-latest
+    needs: deploy-production
+    if: startsWith(github.ref, 'refs/tags/v') && success()
+    permissions:
+      contents: write
+      packages: write
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: Install build dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install build twine
+        
+    - name: Build package
+      run: python -m build
+      
+    - name: Check package
+      run: twine check dist/*
+      
+    - name: Publish to PyPI
+      env:
+        TWINE_USERNAME: __token__
+        TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+      run: twine upload dist/*
+      
+    - name: Generate changelog
+      id: changelog
+      run: |
+        # Generate changelog since last tag
+        PREV_TAG=$(git describe --tags --abbrev=0 HEAD~1 2>/dev/null || echo "")
+        if [ -n "$PREV_TAG" ]; then
+          CHANGELOG=$(git log --pretty=format:"* %s (%h)" $PREV_TAG..HEAD)
+        else
+          CHANGELOG=$(git log --pretty=format:"* %s (%h)" HEAD)
+        fi
+        echo "CHANGELOG<<EOF" >> $GITHUB_OUTPUT
+        echo "$CHANGELOG" >> $GITHUB_OUTPUT
+        echo "EOF" >> $GITHUB_OUTPUT
+        
+    - name: Create GitHub Release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        body: |
+          ## Changes in this Release
+          
+          ${{ steps.changelog.outputs.CHANGELOG }}
+          
+          ## Container Image
+          
+          ```
+          docker pull ${{ needs.build-and-push.outputs.image }}
+          ```
+          
+          ## Deployment Information
+          
+          - **Build**: ${{ github.sha }}
+          - **Image**: ${{ needs.build-and-push.outputs.image }}
+          - **Deployed to Production**: ✅
+        draft: false
+        prerelease: ${{ contains(github.ref, 'alpha') || contains(github.ref, 'beta') || contains(github.ref, 'rc') }}

@@ -1,0 +1,160 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        USER_ID: ${UID:-1000}
+        GROUP_ID: ${GID:-1000}
+        USERNAME: ${USER:-devuser}
+    volumes:
+      - .:/workspace:cached
+      - app_cache:/workspace/.cache
+      - app_venv:/workspace/.venv
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/meta_prompt_hub
+      - REDIS_URL=redis://redis:6379/0
+      - RAY_ADDRESS=ray://ray-head:10001
+      - PYTHONPATH=/workspace
+    depends_on:
+      - postgres
+      - redis
+      - ray-head
+    ports:
+      - "8080:8080"
+    networks:
+      - app-network
+    command: python -m meta_prompt_evolution.cli.main
+
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: meta_prompt_hub
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./deployment/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d meta_prompt_hub"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  ray-head:
+    image: rayproject/ray:2.5.0-py311
+    command: >
+      bash -c "
+        ray start --head --dashboard-host=0.0.0.0 --dashboard-port=8265 --port=6379 --object-manager-port=8076 --block
+      "
+    ports:
+      - "8265:8265"
+      - "10001:10001"
+      - "8076:8076"
+    environment:
+      RAY_DISABLE_IMPORT_WARNING: 1
+    volumes:
+      - ray_data:/tmp/ray
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8265"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  ray-worker:
+    image: rayproject/ray:2.5.0-py311
+    command: >
+      bash -c "
+        ray start --address=ray-head:6379 --block
+      "
+    depends_on:
+      - ray-head
+    environment:
+      RAY_DISABLE_IMPORT_WARNING: 1
+    volumes:
+      - ray_data:/tmp/ray
+    networks:
+      - app-network
+    scale: 2
+
+  prometheus:
+    image: prom/prometheus:v2.40.0
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./deployment/monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=200h'
+      - '--web.enable-lifecycle'
+    networks:
+      - app-network
+
+  grafana:
+    image: grafana/grafana:9.5.0
+    ports:
+      - "3000:3000"
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: admin123
+      GF_USERS_ALLOW_SIGN_UP: false
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./deployment/monitoring/grafana:/etc/grafana/provisioning:ro
+    networks:
+      - app-network
+    depends_on:
+      - prometheus
+
+  nginx:
+    image: nginx:1.24-alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./deployment/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./deployment/nginx/ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - app
+    networks:
+      - app-network
+    profiles:
+      - production
+
+volumes:
+  postgres_data:
+  redis_data:
+  ray_data:
+  prometheus_data:
+  grafana_data:
+  app_cache:
+  app_venv:
+
+networks:
+  app-network:
+    driver: bridge

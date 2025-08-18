@@ -1,0 +1,204 @@
+{
+  "project": {
+    "name": "Meta-Prompt-Evolution-Hub",
+    "description": "Evolutionary prompt optimization platform at scale",
+    "version": "1.0.0",
+    "repository": "https://github.com/danieleschmidt/meta-prompt-evolution-hub",
+    "license": "MIT",
+    "created": "2025-01-01",
+    "last_updated": "2025-08-18"
+  },
+  "metrics": {
+    "code_quality": {
+      "test_coverage": {
+        "target": 95,
+        "current": 87,
+        "trend": "increasing",
+        "measurement_date": "2025-08-18"
+      },
+      "code_complexity": {
+        "cyclomatic_complexity": {
+          "average": 3.2,
+          "max_allowed": 10,
+          "files_exceeding": 2
+        },
+        "maintainability_index": {
+          "average": 78,
+          "threshold": 70
+        }
+      },
+      "technical_debt": {
+        "total_hours": 24,
+        "critical_issues": 3,
+        "major_issues": 12,
+        "minor_issues": 45
+      },
+      "code_duplication": {
+        "percentage": 2.1,
+        "threshold": 5.0
+      }
+    },
+    "security": {
+      "vulnerability_count": {
+        "critical": 0,
+        "high": 1,
+        "medium": 3,
+        "low": 7,
+        "last_scan": "2025-08-18"
+      },
+      "dependency_health": {
+        "total_dependencies": 89,
+        "outdated": 12,
+        "vulnerable": 4,
+        "last_audit": "2025-08-18"
+      },
+      "secret_exposure": {
+        "detected_secrets": 0,
+        "false_positives": 2,
+        "last_scan": "2025-08-18"
+      }
+    },
+    "performance": {
+      "build_time": {
+        "average_seconds": 156,
+        "target_seconds": 180,
+        "trend": "stable"
+      },
+      "test_execution": {
+        "unit_tests_seconds": 12,
+        "integration_tests_seconds": 45,
+        "total_seconds": 57
+      },
+      "deployment_time": {
+        "staging_seconds": 180,
+        "production_seconds": 300,
+        "rollback_seconds": 45
+      }
+    },
+    "reliability": {
+      "uptime": {
+        "current_month": 99.97,
+        "target": 99.9,
+        "last_incident": "2025-08-01"
+      },
+      "error_rate": {
+        "percentage": 0.12,
+        "threshold": 0.5,
+        "trend": "decreasing"
+      },
+      "mean_time_to_recovery": {
+        "minutes": 15,
+        "target": 30
+      }
+    },
+    "development": {
+      "commit_frequency": {
+        "daily_average": 8.2,
+        "weekly_total": 57,
+        "monthly_total": 245
+      },
+      "pull_request_metrics": {
+        "average_review_time_hours": 4.2,
+        "average_size_lines": 156,
+        "approval_rate": 98.5,
+        "merge_rate": 96.8
+      },
+      "issue_resolution": {
+        "average_time_days": 2.8,
+        "bug_fix_time_days": 1.2,
+        "feature_time_days": 5.6
+      },
+      "contributor_activity": {
+        "active_contributors": 3,
+        "total_contributors": 8,
+        "new_contributors_month": 1
+      }
+    },
+    "business": {
+      "user_engagement": {
+        "daily_active_users": 142,
+        "monthly_active_users": 1250,
+        "user_retention_rate": 78.5
+      },
+      "api_usage": {
+        "requests_per_day": 125000,
+        "average_response_time_ms": 180,
+        "success_rate": 99.85
+      },
+      "cost_efficiency": {
+        "cloud_costs_monthly": 2450,
+        "cost_per_user": 1.96,
+        "llm_api_costs_monthly": 1200
+      },
+      "feature_adoption": {
+        "evolution_algorithm_usage": 89.2,
+        "ab_testing_usage": 67.3,
+        "custom_operators_usage": 34.1
+      }
+    },
+    "evolution_specific": {
+      "prompt_optimization": {
+        "average_fitness_improvement": 0.23,
+        "convergence_rate": 87.3,
+        "diversity_maintenance": 0.68
+      },
+      "evaluation_performance": {
+        "evaluations_per_minute": 1250,
+        "evaluation_success_rate": 96.8,
+        "cache_hit_rate": 74.2
+      },
+      "algorithm_effectiveness": {
+        "nsga2_success_rate": 92.1,
+        "cma_es_success_rate": 89.7,
+        "map_elites_coverage": 76.4
+      }
+    }
+  },
+  "goals": {
+    "q1_2025": {
+      "test_coverage": 90,
+      "vulnerability_count": 0,
+      "uptime": 99.95,
+      "user_growth": 500
+    },
+    "q2_2025": {
+      "test_coverage": 95,
+      "build_time_reduction": 20,
+      "api_response_time": 150,
+      "cost_per_user": 1.50
+    }
+  },
+  "automation": {
+    "ci_cd": {
+      "automated_tests": true,
+      "automated_deployment": true,
+      "automated_rollback": true,
+      "automated_scaling": true
+    },
+    "monitoring": {
+      "health_checks": true,
+      "performance_monitoring": true,
+      "error_tracking": true,
+      "cost_tracking": true
+    },
+    "maintenance": {
+      "dependency_updates": true,
+      "security_patches": true,
+      "database_backups": true,
+      "log_rotation": true
+    }
+  },
+  "reporting": {
+    "frequency": "weekly",
+    "stakeholders": [
+      "development_team",
+      "product_management",
+      "engineering_leadership"
+    ],
+    "channels": [
+      "slack",
+      "email",
+      "dashboard"
+    ]
+  }
+}

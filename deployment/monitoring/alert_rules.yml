@@ -1,0 +1,180 @@
+groups:
+  - name: meta_prompt_evolution_hub_alerts
+    rules:
+      # Application Health Alerts
+      - alert: ApplicationDown
+        expr: up{job="meta-prompt-hub"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Meta-Prompt-Evolution-Hub application is down"
+          description: "Application {{ $labels.instance }} has been down for more than 1 minute"
+
+      - alert: HighErrorRate
+        expr: rate(http_requests_total{status=~"5.."}[5m]) / rate(http_requests_total[5m]) > 0.05
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High error rate detected"
+          description: "Error rate is {{ $value | humanizePercentage }} for {{ $labels.instance }}"
+
+      - alert: HighLatency
+        expr: histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m])) > 2
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High latency detected"
+          description: "95th percentile latency is {{ $value }}s for {{ $labels.instance }}"
+
+      # Evolution Performance Alerts
+      - alert: EvolutionStalled
+        expr: increase(evolution_generations_completed_total[10m]) == 0
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Evolution process appears stalled"
+          description: "No new generations completed in the last 10 minutes"
+
+      - alert: LowPopulationDiversity
+        expr: evolution_population_diversity < 0.3
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Population diversity is critically low"
+          description: "Population diversity is {{ $value }}, below threshold of 0.3"
+
+      - alert: HighEvaluationFailureRate
+        expr: rate(prompt_evaluations_failed_total[5m]) / rate(prompt_evaluations_total[5m]) > 0.1
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High evaluation failure rate"
+          description: "Evaluation failure rate is {{ $value | humanizePercentage }}"
+
+      # Infrastructure Alerts
+      - alert: HighMemoryUsage
+        expr: (node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes > 0.85
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High memory usage"
+          description: "Memory usage is {{ $value | humanizePercentage }} on {{ $labels.instance }}"
+
+      - alert: HighCPUUsage
+        expr: 100 - (avg by(instance) (rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) > 85
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High CPU usage"
+          description: "CPU usage is {{ $value }}% on {{ $labels.instance }}"
+
+      - alert: DiskSpaceLow
+        expr: (node_filesystem_avail_bytes{mountpoint="/"} / node_filesystem_size_bytes{mountpoint="/"}) * 100 < 15
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Low disk space"
+          description: "Disk space is {{ $value }}% full on {{ $labels.instance }}"
+
+      # Database Alerts
+      - alert: PostgresDown
+        expr: up{job="postgres-exporter"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "PostgreSQL is down"
+          description: "PostgreSQL database is not responding"
+
+      - alert: HighDatabaseConnections
+        expr: pg_stat_database_numbackends / pg_settings_max_connections > 0.8
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High database connection usage"
+          description: "Database connections are {{ $value | humanizePercentage }} of maximum"
+
+      - alert: SlowQueries
+        expr: rate(pg_stat_database_blk_read_time[5m]) / rate(pg_stat_database_blks_read[5m]) > 0.1
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Slow database queries detected"
+          description: "Average query time is {{ $value }}ms"
+
+      # Redis Alerts
+      - alert: RedisDown
+        expr: up{job="redis-exporter"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Redis is down"
+          description: "Redis cache is not responding"
+
+      - alert: HighRedisMemoryUsage
+        expr: redis_memory_used_bytes / redis_memory_max_bytes > 0.85
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High Redis memory usage"
+          description: "Redis memory usage is {{ $value | humanizePercentage }}"
+
+      # Ray Cluster Alerts
+      - alert: RayClusterDown
+        expr: up{job="ray-cluster"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Ray cluster is down"
+          description: "Ray distributed computing cluster is not responding"
+
+      - alert: LowRayWorkers
+        expr: ray_cluster_active_nodes < 2
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Low number of Ray workers"
+          description: "Only {{ $value }} Ray workers are active"
+
+      # Business Logic Alerts
+      - alert: LowPromptQuality
+        expr: avg(prompt_fitness_score) < 0.5
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Low average prompt quality"
+          description: "Average prompt fitness score is {{ $value }}, below threshold"
+
+      - alert: StagnantEvolution
+        expr: increase(evolution_best_fitness[1h]) < 0.01
+        for: 1h
+        labels:
+          severity: warning
+        annotations:
+          summary: "Evolution progress has stagnated"
+          description: "Best fitness has not improved significantly in the last hour"
+
+      - alert: HighAPIUsageCost
+        expr: increase(llm_api_cost_dollars[1h]) > 100
+        for: 1h
+        labels:
+          severity: warning
+        annotations:
+          summary: "High LLM API usage cost"
+          description: "API costs have reached ${{ $value }} in the last hour"

@@ -1,0 +1,414 @@
+name: Security Scanning
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '0 2 * * 1'  # Weekly on Monday at 2 AM
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write
+  actions: read
+
+jobs:
+  secret-scan:
+    name: Secret Detection
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Fetch full history for secret scanning
+        
+    - name: Run TruffleHog OSS
+      uses: trufflesecurity/trufflehog@main
+      with:
+        path: ./
+        base: main
+        head: HEAD
+        extra_args: --debug --only-verified
+        
+    - name: Run GitLeaks
+      uses: gitleaks/gitleaks-action@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE }}
+
+  dependency-check:
+    name: Dependency Vulnerability Scan
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install safety pip-audit bandit[toml]
+        
+    - name: Run Safety check
+      run: |
+        safety check --json --output safety-report.json --ignore 70612
+      continue-on-error: true
+      
+    - name: Run pip-audit
+      run: |
+        pip-audit --format=json --output=pip-audit-report.json --ignore-vuln PYSEC-2023-228
+      continue-on-error: true
+      
+    - name: Upload dependency scan results
+      uses: actions/upload-artifact@v3
+      with:
+        name: dependency-scan-results
+        path: |
+          safety-report.json
+          pip-audit-report.json
+
+  static-analysis:
+    name: Static Application Security Testing (SAST)
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -e ".[dev,test]"
+        pip install bandit[toml] semgrep
+        
+    - name: Run Bandit security linter
+      run: |
+        bandit -r meta_prompt_evolution/ \
+          -f json \
+          -o bandit-report.json \
+          --confidence-level medium \
+          --severity-level low \
+          --exclude tests/ \
+          || true
+          
+    - name: Convert Bandit to SARIF
+      run: |
+        python -c "
+        import json
+        with open('bandit-report.json', 'r') as f:
+            bandit_data = json.load(f)
+        
+        sarif_output = {
+            'version': '2.1.0',
+            'schema': 'https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json',
+            'runs': [{
+                'tool': {
+                    'driver': {
+                        'name': 'Bandit',
+                        'version': bandit_data.get('generated_at', ''),
+                        'informationUri': 'https://bandit.readthedocs.io/',
+                    }
+                },
+                'results': []
+            }]
+        }
+        
+        for result in bandit_data.get('results', []):
+            sarif_result = {
+                'ruleId': result['test_id'],
+                'level': 'warning' if result['issue_severity'] == 'MEDIUM' else 'error',
+                'message': {
+                    'text': result['issue_text']
+                },
+                'locations': [{
+                    'physicalLocation': {
+                        'artifactLocation': {
+                            'uri': result['filename']
+                        },
+                        'region': {
+                            'startLine': result['line_number']
+                        }
+                    }
+                }]
+            }
+            sarif_output['runs'][0]['results'].append(sarif_result)
+        
+        with open('bandit-results.sarif', 'w') as f:
+            json.dump(sarif_output, f, indent=2)
+        "
+        
+    - name: Upload Bandit SARIF results
+      uses: github/codeql-action/upload-sarif@v2
+      if: always()
+      with:
+        sarif_file: bandit-results.sarif
+        
+    - name: Run Semgrep
+      uses: semgrep/semgrep-action@v1
+      with:
+        config: >-
+          p/security-audit
+          p/secrets
+          p/owasp-top-ten
+          p/python
+        generateSarif: "1"
+        
+    - name: Upload Semgrep SARIF results  
+      uses: github/codeql-action/upload-sarif@v2
+      if: always()
+      with:
+        sarif_file: semgrep.sarif
+        
+    - name: Upload static analysis results
+      uses: actions/upload-artifact@v3
+      with:
+        name: static-analysis-results
+        path: |
+          bandit-report.json
+          bandit-results.sarif
+          semgrep.sarif
+
+  codeql-analysis:
+    name: CodeQL Analysis
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+      
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ python ]
+        
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v2
+      with:
+        languages: ${{ matrix.language }}
+        config-file: ./.github/codeql/codeql-config.yml
+        
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -e ".[dev,test]"
+        
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v2
+      with:
+        category: "/language:${{ matrix.language }}"
+
+  container-scan:
+    name: Container Image Vulnerability Scan
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+      
+    - name: Build container image
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        file: ./Dockerfile.prod
+        push: false
+        tags: meta-prompt-hub:scan
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+        
+    - name: Run Trivy vulnerability scanner
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: 'meta-prompt-hub:scan'
+        format: 'sarif'
+        output: 'trivy-results.sarif'
+        severity: 'CRITICAL,HIGH,MEDIUM'
+        
+    - name: Upload Trivy scan results
+      uses: github/codeql-action/upload-sarif@v2
+      if: always()
+      with:
+        sarif_file: 'trivy-results.sarif'
+        
+    - name: Run Grype vulnerability scanner
+      uses: anchore/scan-action@v3
+      with:
+        image: 'meta-prompt-hub:scan'
+        fail-build: false
+        output-format: sarif
+        
+    - name: Upload Grype scan results
+      uses: github/codeql-action/upload-sarif@v2
+      if: always()
+      with:
+        sarif_file: ${{ steps.scan.outputs.sarif }}
+
+  infrastructure-scan:
+    name: Infrastructure as Code Security Scan
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Run Checkov IaC scanner
+      uses: bridgecrewio/checkov-action@master
+      with:
+        directory: .
+        framework: dockerfile,kubernetes,terraform
+        output_format: sarif
+        output_file_path: checkov-results.sarif
+        quiet: true
+        
+    - name: Upload Checkov scan results
+      uses: github/codeql-action/upload-sarif@v2
+      if: always()
+      with:
+        sarif_file: checkov-results.sarif
+        
+    - name: Run Terrascan
+      uses: accurics/terrascan-action@main
+      with:
+        iac_type: 'docker'
+        iac_version: 'v1'
+        policy_type: 'docker'
+        only_warn: true
+        sarif_upload: true
+        
+    - name: Run Hadolint Dockerfile linter
+      uses: hadolint/hadolint-action@v3.1.0
+      with:
+        dockerfile: Dockerfile.prod
+        format: sarif
+        output-file: hadolint-results.sarif
+        no-fail: true
+        
+    - name: Upload Hadolint scan results
+      uses: github/codeql-action/upload-sarif@v2
+      if: always()
+      with:
+        sarif_file: hadolint-results.sarif
+
+  license-check:
+    name: License Compliance Check
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -e ".[dev,test]"
+        pip install pip-licenses licensecheck
+        
+    - name: Check licenses with pip-licenses
+      run: |
+        pip-licenses --format=json --output-file=licenses.json
+        pip-licenses --format=csv --output-file=licenses.csv
+        
+    - name: Run licensecheck
+      run: |
+        licensecheck --format=json > licensecheck-results.json
+      continue-on-error: true
+      
+    - name: Check for GPL licenses
+      run: |
+        if pip-licenses --format=json | jq -r '.[] | select(.License | test("GPL")) | .Name' | grep -q .; then
+          echo "::warning::GPL licensed dependencies found"
+          pip-licenses --format=json | jq -r '.[] | select(.License | test("GPL")) | .Name'
+        fi
+        
+    - name: Upload license scan results
+      uses: actions/upload-artifact@v3
+      with:
+        name: license-scan-results
+        path: |
+          licenses.json
+          licenses.csv
+          licensecheck-results.json
+
+  security-report:
+    name: Generate Security Report
+    runs-on: ubuntu-latest
+    needs: [secret-scan, dependency-check, static-analysis, codeql-analysis]
+    if: always()
+    
+    steps:
+    - name: Download all artifacts
+      uses: actions/download-artifact@v3
+      
+    - name: Generate security summary
+      run: |
+        echo "# Security Scan Summary" > security-summary.md
+        echo "## Scan Results" >> security-summary.md
+        
+        # Check for high/critical vulnerabilities
+        if [ -f dependency-scan-results/safety-report.json ]; then
+          VULN_COUNT=$(jq '.vulnerabilities | length' dependency-scan-results/safety-report.json 2>/dev/null || echo "0")
+          echo "- **Dependency Vulnerabilities**: $VULN_COUNT found" >> security-summary.md
+        fi
+        
+        if [ -f static-analysis-results/bandit-report.json ]; then
+          BANDIT_ISSUES=$(jq '.results | length' static-analysis-results/bandit-report.json 2>/dev/null || echo "0")
+          echo "- **Static Analysis Issues**: $BANDIT_ISSUES found" >> security-summary.md
+        fi
+        
+        echo "" >> security-summary.md
+        echo "## Recommendations" >> security-summary.md
+        echo "- Review all high and critical severity findings" >> security-summary.md
+        echo "- Update vulnerable dependencies" >> security-summary.md
+        echo "- Address static analysis warnings" >> security-summary.md
+        echo "- Consider implementing additional security controls" >> security-summary.md
+        
+    - name: Upload security report
+      uses: actions/upload-artifact@v3
+      with:
+        name: security-report
+        path: security-summary.md
+        
+    - name: Comment PR with security summary
+      if: github.event_name == 'pull_request'
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const fs = require('fs');
+          const summary = fs.readFileSync('security-summary.md', 'utf8');
+          
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: summary
+          });

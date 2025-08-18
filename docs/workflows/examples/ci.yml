@@ -1,0 +1,336 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  PYTHON_VERSION: '3.11'
+  POETRY_VERSION: '1.6.1'
+
+jobs:
+  lint-and-format:
+    name: Lint and Format Check
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+        
+    - name: Cache Python dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/pyproject.toml') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -e ".[dev,test]"
+        
+    - name: Run pre-commit hooks
+      run: pre-commit run --all-files
+      
+    - name: Check imports with isort
+      run: isort --check-only --diff .
+      
+    - name: Check formatting with black
+      run: black --check --diff .
+      
+    - name: Lint with ruff
+      run: ruff check .
+      
+    - name: Type check with mypy
+      run: mypy meta_prompt_evolution/
+
+  test:
+    name: Test Suite
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python-version: ['3.9', '3.10', '3.11', '3.12']
+        exclude:
+          # Exclude some combinations to reduce CI time
+          - os: macos-latest
+            python-version: '3.9'
+          - os: windows-latest
+            python-version: '3.9'
+    
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: test_meta_prompt_hub
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+          
+      redis:
+        image: redis:7-alpine
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 6379:6379
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+        
+    - name: Cache Python dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-${{ matrix.python-version }}-pip-${{ hashFiles('**/pyproject.toml') }}
+        restore-keys: |
+          ${{ runner.os }}-${{ matrix.python-version }}-pip-
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -e ".[dev,test]"
+        
+    - name: Run unit tests
+      run: |
+        pytest tests/unit/ \
+          --cov=meta_prompt_evolution \
+          --cov-report=xml \
+          --cov-report=html \
+          --junit-xml=test-results.xml \
+          -v
+      env:
+        DATABASE_URL: postgresql://postgres:postgres@localhost:5432/test_meta_prompt_hub
+        REDIS_URL: redis://localhost:6379/0
+        TESTING: true
+        
+    - name: Run integration tests
+      run: |
+        pytest tests/integration/ \
+          --junit-xml=integration-results.xml \
+          -v
+      env:
+        DATABASE_URL: postgresql://postgres:postgres@localhost:5432/test_meta_prompt_hub
+        REDIS_URL: redis://localhost:6379/0
+        TESTING: true
+        
+    - name: Upload test results
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: test-results-${{ matrix.os }}-${{ matrix.python-version }}
+        path: |
+          test-results.xml
+          integration-results.xml
+          htmlcov/
+          
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
+      if: matrix.os == 'ubuntu-latest' && matrix.python-version == env.PYTHON_VERSION
+      with:
+        file: ./coverage.xml
+        flags: unittests
+        name: codecov-umbrella
+        fail_ci_if_error: false
+
+  security-scan:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+        
+    - name: Install security tools
+      run: |
+        python -m pip install --upgrade pip
+        pip install bandit[toml] safety semgrep
+        
+    - name: Run Bandit security linter
+      run: |
+        bandit -r meta_prompt_evolution/ \
+          -f json \
+          -o bandit-report.json \
+          --confidence-level medium \
+          --severity-level medium
+      continue-on-error: true
+      
+    - name: Run Safety vulnerability check
+      run: |
+        safety check \
+          --json \
+          --output safety-report.json \
+          --ignore 70612  # Known false positive
+      continue-on-error: true
+      
+    - name: Run Semgrep static analysis
+      run: |
+        semgrep --config=auto \
+          --json \
+          --output=semgrep-report.json \
+          meta_prompt_evolution/
+      continue-on-error: true
+      
+    - name: Upload security reports
+      uses: actions/upload-artifact@v3
+      with:
+        name: security-reports
+        path: |
+          bandit-report.json
+          safety-report.json
+          semgrep-report.json
+
+  docker-build:
+    name: Docker Build Test
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+      
+    - name: Build development image
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        file: ./Dockerfile
+        push: false
+        tags: meta-prompt-hub:dev
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+        
+    - name: Build production image
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        file: ./Dockerfile.prod
+        push: false
+        tags: meta-prompt-hub:prod
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+        
+    - name: Test Docker Compose
+      run: |
+        docker-compose -f docker-compose.yml config
+        docker-compose -f docker-compose.yml -f docker-compose.override.yml config
+
+  documentation:
+    name: Documentation Build
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+        
+    - name: Install documentation dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -e ".[dev]"
+        pip install mkdocs mkdocs-material mkdocs-mermaid2-plugin
+        
+    - name: Build documentation
+      run: |
+        mkdocs build --strict
+        
+    - name: Upload documentation
+      uses: actions/upload-artifact@v3
+      with:
+        name: documentation
+        path: site/
+
+  performance-test:
+    name: Performance Benchmarks
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: test_meta_prompt_hub
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+          
+      redis:
+        image: redis:7-alpine
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 6379:6379
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Fetch full history for comparison
+        
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -e ".[dev,test]"
+        pip install pytest-benchmark
+        
+    - name: Run performance benchmarks
+      run: |
+        pytest tests/performance/ \
+          --benchmark-json=benchmark.json \
+          --benchmark-compare-fail=mean:10% \
+          --benchmark-compare-fail=min:10% \
+          --benchmark-compare-fail=max:10%
+      env:
+        DATABASE_URL: postgresql://postgres:postgres@localhost:5432/test_meta_prompt_hub
+        REDIS_URL: redis://localhost:6379/0
+        TESTING: true
+        
+    - name: Upload benchmark results
+      uses: actions/upload-artifact@v3
+      with:
+        name: benchmark-results
+        path: benchmark.json

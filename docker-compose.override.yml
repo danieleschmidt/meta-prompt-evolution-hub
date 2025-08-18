@@ -1,0 +1,79 @@
+# Development overrides for docker-compose.yml
+version: '3.8'
+
+services:
+  app:
+    build:
+      target: development
+    volumes:
+      - .:/workspace:cached
+      - /workspace/.venv
+      - /workspace/.mypy_cache
+      - /workspace/.pytest_cache
+      - /workspace/.ruff_cache
+    environment:
+      - DEBUG=true
+      - TESTING=true
+      - LOG_LEVEL=DEBUG
+    command: >
+      bash -c "
+        pip install -e '.[dev,test]' &&
+        pre-commit install &&
+        python -m meta_prompt_evolution.cli.main --debug
+      "
+    ports:
+      - "8080:8080"
+      - "8000:8000"  # Alternative dev port
+
+  postgres:
+    environment:
+      POSTGRES_DB: meta_prompt_hub_dev
+    ports:
+      - "5433:5432"  # Different port for dev
+
+  redis:
+    ports:
+      - "6380:6379"  # Different port for dev
+
+  # Development-only services
+  jupyter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: >
+      bash -c "
+        pip install jupyter jupyterlab &&
+        jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token=''
+      "
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/workspace:cached
+      - jupyter_data:/root/.jupyter
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    networks:
+      - app-network
+    profiles:
+      - jupyter
+
+  docs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: >
+      bash -c "
+        pip install -e '.[dev]' &&
+        mkdocs serve --dev-addr=0.0.0.0:8080
+      "
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/workspace:cached
+    networks:
+      - app-network
+    profiles:
+      - docs
+
+volumes:
+  jupyter_data:

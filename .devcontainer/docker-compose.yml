@@ -1,0 +1,90 @@
+version: '3.8'
+
+services:
+  dev:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../..:/workspaces:cached
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - PYTHONPATH=/workspaces/meta-prompt-evolution-hub
+    command: sleep infinity
+    networks:
+      - dev-network
+    depends_on:
+      - postgres
+      - redis
+      - ray-head
+
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: meta_prompt_hub
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - dev-network
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - dev-network
+
+  ray-head:
+    image: rayproject/ray:2.5.0-py311
+    command: >
+      bash -c "
+        ray start --head --dashboard-host=0.0.0.0 --dashboard-port=8265 --port=6379 --object-manager-port=8076
+        && sleep infinity
+      "
+    ports:
+      - "8265:8265"
+      - "10001:10001"
+      - "8076:8076"
+    environment:
+      RAY_DISABLE_IMPORT_WARNING: 1
+    networks:
+      - dev-network
+
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    networks:
+      - dev-network
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: admin
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning
+    networks:
+      - dev-network
+
+volumes:
+  postgres_data:
+  redis_data:
+  prometheus_data:
+  grafana_data:
+
+networks:
+  dev-network:
+    driver: bridge

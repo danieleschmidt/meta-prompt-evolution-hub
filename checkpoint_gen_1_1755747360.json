@@ -1,0 +1,160 @@
+{
+  "timestamp": "2025-08-21T03:36:00.781184+00:00",
+  "generation": 1,
+  "population_size": 12,
+  "algorithm": "nsga2",
+  "best_fitness": 0.5903358479587455,
+  "avg_security": 1.0,
+  "top_prompts": [
+    {
+      "id": "98d5243a-e48b-45e9-a670-ccda7aad9143",
+      "text": "You are a and secure assistant. Please help are a helpful and secure assistant. Please help with: {task}",
+      "fitness_scores": {
+        "accuracy": 0.43076633571045675,
+        "similarity": 0.0199198032621095,
+        "latency": 0.6246987970249904,
+        "safety": 0.9325939242991587,
+        "clarity": 0.31372462237892546,
+        "completeness": 0.9944911911018636,
+        "security": 1.0,
+        "fitness": 0.5903358479587455
+      },
+      "security_score": 1.0
+    },
+    {
+      "id": "98d5243a-e48b-45e9-a670-ccda7aad9143",
+      "text": "You are a and secure assistant. Please help are a helpful and secure assistant. Please help with: {task}",
+      "fitness_scores": {
+        "accuracy": 0.43076633571045675,
+        "similarity": 0.0199198032621095,
+        "latency": 0.6246987970249904,
+        "safety": 0.9325939242991587,
+        "clarity": 0.31372462237892546,
+        "completeness": 0.9944911911018636,
+        "security": 1.0,
+        "fitness": 0.5903358479587455
+      },
+      "security_score": 1.0
+    },
+    {
+      "id": "58b22bbe-30b4-46f9-ba84-6db7bc6c172f",
+      "text": "You are a helpful and secure assistant. Please help a helpful and secure assistant. Please help with: {task}",
+      "fitness_scores": {
+        "accuracy": 0.42345900848699286,
+        "similarity": 0.040248901450145376,
+        "latency": 0.6332238095452384,
+        "safety": 0.9129238147065559,
+        "clarity": 0.3224221284661043,
+        "completeness": 0.980359064004525,
+        "security": 1.0,
+        "fitness": 0.5865322666862772
+      },
+      "security_score": 1.0
+    },
+    {
+      "id": "1fa8c929-bbba-46ea-9063-c6fbc5e22a34",
+      "text": "You are a and secure assistant. Please help secure assistant. Please help with: {task}",
+      "fitness_scores": {
+        "accuracy": 0.4456415451068982,
+        "similarity": 0.0386045807198325,
+        "latency": 0.732603008749079,
+        "safety": 0.9148327254519656,
+        "clarity": 0.3096995406722697,
+        "completeness": 0.9123573273868016,
+        "security": 1.0,
+        "fitness": 0.5835999185872115
+      },
+      "security_score": 1.0
+    },
+    {
+      "id": "d58ae324-52b9-4108-8e70-53ca0ade5622",
+      "text": "You a a and secure assistant. Please help are are helpful and secure assistant. Please help with: {task}",
+      "fitness_scores": {
+        "accuracy": 0.433493855597171,
+        "similarity": 0.036582974104162315,
+        "latency": 0.6116964341260868,
+        "safety": 0.920073594837989,
+        "clarity": 0.2722403784926363,
+        "completeness": 0.9779542796468943,
+        "security": 1.0,
+        "fitness": 0.5825107934629993
+      },
+      "security_score": 1.0
+    },
+    {
+      "id": "84644bf7-1355-4a63-afbd-03d933c6c677",
+      "text": "You are a helpful and secure assistant. Please help with: secure assistant. Please help with: {task}",
+      "fitness_scores": {
+        "accuracy": 0.4072902880142282,
+        "similarity": 0.06241350189122585,
+        "latency": 0.646075010987112,
+        "safety": 0.9376628678075479,
+        "clarity": 0.2661905474006729,
+        "completeness": 0.9678219348207272,
+        "security": 1.0,
+        "fitness": 0.5823110898313015
+      },
+      "security_score": 1.0
+    },
+    {
+      "id": "afac08ee-ccc3-40c6-a6f1-16e33b6cc18f",
+      "text": "You are a helpful and secure assistant. help Please with: {task}",
+      "fitness_scores": {
+        "accuracy": 0.4512603959369281,
+        "similarity": 0.03059455247960654,
+        "latency": 0.763093743153228,
+        "safety": 0.9420253167079402,
+        "clarity": 0.2933346736645459,
+        "completeness": 0.7320673129960951,
+        "security": 1.0,
+        "fitness": 0.5701175433824495
+      },
+      "security_score": 1.0
+    },
+    {
+      "id": "bdf3cb0d-1202-46da-9fd8-9f419b31269b",
+      "text": "You are a and secure and secure assistant. Please help with: {task}",
+      "fitness_scores": {
+        "accuracy": 0.415523371880766,
+        "similarity": 0.025578194719331714,
+        "latency": 0.7729382517254758,
+        "safety": 0.9375482965269694,
+        "clarity": 0.2869663115735577,
+        "completeness": 0.7802207009795378,
+        "security": 1.0,
+        "fitness": 0.563171663143821
+      },
+      "security_score": 1.0
+    },
+    {
+      "id": "seed_0",
+      "text": "You are a helpful and secure assistant. Please help with: {task}",
+      "fitness_scores": {
+        "accuracy": 0.45857962556091625,
+        "similarity": 0.03722007313137003,
+        "latency": 0.7632232693742222,
+        "safety": 0.9003867484774809,
+        "clarity": 0.28355279300091024,
+        "completeness": 0.7527263130096574,
+        "security": 1.0,
+        "fitness": 0.5631301547304071
+      },
+      "security_score": 1.0
+    },
+    {
+      "id": "seed_0",
+      "text": "You are a helpful and secure assistant. Please help with: {task}",
+      "fitness_scores": {
+        "accuracy": 0.45857962556091625,
+        "similarity": 0.03722007313137003,
+        "latency": 0.7632232693742222,
+        "safety": 0.9003867484774809,
+        "clarity": 0.28355279300091024,
+        "completeness": 0.7527263130096574,
+        "security": 1.0,
+        "fitness": 0.5631301547304071
+      },
+      "security_score": 1.0
+    }
+  ]
+}

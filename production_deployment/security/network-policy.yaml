@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: meta-prompt-evolution-hub-network-policy
+  namespace: production
+spec:
+  podSelector:
+    matchLabels:
+      app: meta-prompt-evolution-hub
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          name: ingress-nginx
+    ports:
+    - protocol: TCP
+      port: 8080
+  egress:
+  - to: []
+    ports:
+    - protocol: TCP
+      port: 443
+    - protocol: TCP  
+      port: 53
+    - protocol: UDP
+      port: 53

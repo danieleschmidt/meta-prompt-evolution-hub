@@ -1,0 +1,160 @@
+{
+  "timestamp": "2025-08-23T06:19:28.473343+00:00",
+  "generation": 1,
+  "population_size": 12,
+  "algorithm": "nsga2",
+  "best_fitness": 0.6292124314551598,
+  "avg_security": 1.0,
+  "top_prompts": [
+    {
+      "id": "0895e264-535d-4b90-a79f-b6b20b0c705b",
+      "text": "As a safe AI, {task} will carefully assist with: secure assistant. Please help with: {task}",
+      "fitness_scores": {
+        "accuracy": 0.5785719850069516,
+        "similarity": 0.03868421739682942,
+        "latency": 0.7090732139426165,
+        "safety": 0.9143369800001908,
+        "clarity": 0.33491701955335096,
+        "completeness": 0.9994500466084723,
+        "security": 1.0,
+        "fitness": 0.6292124314551598
+      },
+      "security_score": 1.0
+    },
+    {
+      "id": "4485611d-f321-4225-a626-9438cf6c7715",
+      "text": "are thoroughly a helpful and secure a safe AI, {task} will carefully assist with: secure assistant. Please help with: {task}",
+      "fitness_scores": {
+        "accuracy": 0.5745907806798727,
+        "similarity": 0.015882316311614016,
+        "latency": 0.5954582550522846,
+        "safety": 0.9369859571311067,
+        "clarity": 0.32505544171213935,
+        "completeness": 0.9821481067238096,
+        "security": 1.0,
+        "fitness": 0.6272496588286888
+      },
+      "security_score": 1.0
+    },
+    {
+      "id": "d90d203a-07ec-4728-b85a-dd200a07cee2",
+      "text": "are a helpful and secure assistant. Please help with: {task} secure assistant. assistant. Please help with: {task}",
+      "fitness_scores": {
+        "accuracy": 0.4465992669394164,
+        "similarity": 0.02387930855842819,
+        "latency": 0.6676023688890099,
+        "safety": 0.9419989734114753,
+        "clarity": 0.28571014356331087,
+        "completeness": 0.9929850613748916,
+        "security": 1.0,
+        "fitness": 0.5928864840434729
+      },
+      "security_score": 1.0
+    },
+    {
+      "id": "58814add-e6ea-46c5-a59d-2185a48b959c",
+      "text": "As a safe AI, I a helpful and secure assistant. and secure assistant. Please help with: {task} secure assistant. Please help with: {task}",
+      "fitness_scores": {
+        "accuracy": 0.43497951247738,
+        "similarity": 0.05439405895658257,
+        "latency": 0.5291594827747348,
+        "safety": 0.9042568487173854,
+        "clarity": 0.3038003432734695,
+        "completeness": 0.9970766987703651,
+        "security": 1.0,
+        "fitness": 0.5882459205102356
+      },
+      "security_score": 1.0
+    },
+    {
+      "id": "7c162e7a-fcab-459e-ad54-ab45c7e821c4",
+      "text": "are a helpful and secure assistant. Please help with: {task} secure assistant. Please help with: {task}",
+      "fitness_scores": {
+        "accuracy": 0.4363433268912555,
+        "similarity": 0.055513936693374046,
+        "latency": 0.6942622419776077,
+        "safety": 0.8938261661856645,
+        "clarity": 0.32871190718761223,
+        "completeness": 0.9777136117558044,
+        "security": 1.0,
+        "fitness": 0.5879476110269584
+      },
+      "security_score": 1.0
+    },
+    {
+      "id": "47e5eaf1-6c86-487f-b161-dace4d063f06",
+      "text": "As a safe AI, I a helpful and secure assistant. Please help with: secure assistant. Please help with: {task}",
+      "fitness_scores": {
+        "accuracy": 0.42547456379066606,
+        "similarity": 0.024184599104146776,
+        "latency": 0.6144471536081402,
+        "safety": 0.9323114975711256,
+        "clarity": 0.2932923032773294,
+        "completeness": 0.9821499016298726,
+        "security": 1.0,
+        "fitness": 0.5852830408606566
+      },
+      "security_score": 1.0
+    },
+    {
+      "id": "aa9cd0cf-c49f-45f4-97d6-26b662c1c55e",
+      "text": "As a safe AI, I a helpful and secure assistant. Please help with: {task}",
+      "fitness_scores": {
+        "accuracy": 0.4424233848391539,
+        "similarity": 0.04930257699189538,
+        "latency": 0.6816571880254846,
+        "safety": 0.9172906163858686,
+        "clarity": 0.3135774365644548,
+        "completeness": 0.9075670590149088,
+        "security": 1.0,
+        "fitness": 0.5851172082411991
+      },
+      "security_score": 1.0
+    },
+    {
+      "id": "aa9cd0cf-c49f-45f4-97d6-26b662c1c55e",
+      "text": "As a safe AI, I a helpful and secure assistant. Please help with: {task}",
+      "fitness_scores": {
+        "accuracy": 0.4424233848391539,
+        "similarity": 0.04930257699189538,
+        "latency": 0.6816571880254846,
+        "safety": 0.9172906163858686,
+        "clarity": 0.3135774365644548,
+        "completeness": 0.9075670590149088,
+        "security": 1.0,
+        "fitness": 0.5851172082411991
+      },
+      "security_score": 1.0
+    },
+    {
+      "id": "aa9cd0cf-c49f-45f4-97d6-26b662c1c55e",
+      "text": "As a safe AI, I a helpful and secure assistant. Please help with: {task}",
+      "fitness_scores": {
+        "accuracy": 0.4424233848391539,
+        "similarity": 0.04930257699189538,
+        "latency": 0.6816571880254846,
+        "safety": 0.9172906163858686,
+        "clarity": 0.3135774365644548,
+        "completeness": 0.9075670590149088,
+        "security": 1.0,
+        "fitness": 0.5851172082411991
+      },
+      "security_score": 1.0
+    },
+    {
+      "id": "bb92cf94-b7c8-4685-ab04-8eff4fa43979",
+      "text": "As a safe AI, I helpful and secure assistant. Please help with: {task}",
+      "fitness_scores": {
+        "accuracy": 0.44136589097359924,
+        "similarity": 0.028819791382161754,
+        "latency": 0.7538677810402038,
+        "safety": 0.8978623356784419,
+        "clarity": 0.2908849656463778,
+        "completeness": 0.8906766860772981,
+        "security": 1.0,
+        "fitness": 0.571830438825021
+      },
+      "security_score": 1.0
+    }
+  ]
+}

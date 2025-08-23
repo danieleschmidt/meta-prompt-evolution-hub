@@ -1,7 +1,7 @@
 {
   "generation": 3,
   "status": "SCALABLE - HIGH PERFORMANCE",
-  "execution_time": 0.2723100185394287,
+  "execution_time": 0.3183150291442871,
   "scalability_features": {
     "async_evaluation": "\u2705 HIGH THROUGHPUT",
     "intelligent_caching": "\u2705 LRU OPTIMIZED",
@@ -14,28 +14,28 @@
     "resource_monitoring": "\u2705 INTEGRATED"
   },
   "performance_metrics": {
-    "peak_throughput_eval_per_sec": 3307.8818729969817,
-    "cache_hit_rate": 0.09090909090909091,
+    "peak_throughput_eval_per_sec": 2686.3255214875885,
+    "cache_hit_rate": 0.10497237569060773,
     "max_population_processed": 120,
     "max_workers_utilized": 12,
-    "total_evaluations": 550,
-    "average_evaluation_time": 6.427027962424538e-05
+    "total_evaluations": 543,
+    "average_evaluation_time": 7.541667031978375e-05
   },
   "algorithms": {
     "scalable_nsga2": {
       "status": "\u2705 OPERATIONAL",
       "high_performance": true,
       "async_evaluation": true,
-      "best_fitness": 0.6510714285714285,
-      "throughput": 2856.5624258418775,
-      "cache_efficiency": 0.09375
+      "best_fitness": 0.6730714285714285,
+      "throughput": 2764.4448365043404,
+      "cache_efficiency": 0.06463878326996197
     },
     "massive_scale": {
       "status": "\u2705 OPERATIONAL",
       "population_size": 120,
       "async_processing": true,
       "peak_performance": true,
-      "best_fitness": 0.614448051948052
+      "best_fitness": 0.6122321428571429
     }
   },
   "scalability_verified": [

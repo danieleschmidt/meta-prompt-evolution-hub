@@ -1,0 +1,160 @@
+{
+  "timestamp": "2025-08-23T06:19:28.478876+00:00",
+  "generation": 3,
+  "population_size": 12,
+  "algorithm": "nsga2",
+  "best_fitness": 0.6423305988790488,
+  "avg_security": 1.0,
+  "top_prompts": [
+    {
+      "id": "1199322b-e5d8-4e59-8761-8fde247f28ba",
+      "text": "As clearly a safe AI, {task} will carefully assist with: secure assistant. Please assistant. Please help with: will carefully assist with: secure assistant. Please help with: {task}",
+      "fitness_scores": {
+        "accuracy": 0.5716199790780507,
+        "similarity": 0.0368956977534941,
+        "latency": 0.49758214871263545,
+        "safety": 0.9075082884232213,
+        "clarity": 0.46268909958795035,
+        "completeness": 0.976108124025141,
+        "security": 1.0,
+        "fitness": 0.6423305988790488
+      },
+      "security_score": 1.0
+    },
+    {
+      "id": "e89046e5-f410-40fd-b1fc-bdf18cb1733d",
+      "text": "As a safe AI, {task} will carefully assist with: secure assistant. Please help with: {task}",
+      "fitness_scores": {
+        "accuracy": 0.5848725143319977,
+        "similarity": 0.03596918945123209,
+        "latency": 0.7127939828824731,
+        "safety": 0.946125991330237,
+        "clarity": 0.3185295187463865,
+        "completeness": 0.9888878296841471,
+        "security": 1.0,
+        "fitness": 0.6348132156136161
+      },
+      "security_score": 1.0
+    },
+    {
+      "id": "e89046e5-f410-40fd-b1fc-bdf18cb1733d",
+      "text": "As a safe AI, {task} will carefully assist with: secure assistant. Please help with: {task}",
+      "fitness_scores": {
+        "accuracy": 0.5848725143319977,
+        "similarity": 0.03596918945123209,
+        "latency": 0.7127939828824731,
+        "safety": 0.946125991330237,
+        "clarity": 0.3185295187463865,
+        "completeness": 0.9888878296841471,
+        "security": 1.0,
+        "fitness": 0.6348132156136161
+      },
+      "security_score": 1.0
+    },
+    {
+      "id": "e89046e5-f410-40fd-b1fc-bdf18cb1733d",
+      "text": "As a safe AI, {task} will carefully assist with: secure assistant. Please help with: {task}",
+      "fitness_scores": {
+        "accuracy": 0.5848725143319977,
+        "similarity": 0.03596918945123209,
+        "latency": 0.7127939828824731,
+        "safety": 0.946125991330237,
+        "clarity": 0.3185295187463865,
+        "completeness": 0.9888878296841471,
+        "security": 1.0,
+        "fitness": 0.6348132156136161
+      },
+      "security_score": 1.0
+    },
+    {
+      "id": "68e2ce1b-8eea-4704-9695-3588f5e075de",
+      "text": "As clearly a safe AI, {task} will carefully assist with: secure assistant. Please assistant. Please carefully assist with: secure assistant. Please help with: {task}",
+      "fitness_scores": {
+        "accuracy": 0.5664931166492695,
+        "similarity": 0.023309799697887004,
+        "latency": 0.5372005194752055,
+        "safety": 0.9050201141503509,
+        "clarity": 0.4228581200907949,
+        "completeness": 0.9945355756666474,
+        "security": 1.0,
+        "fitness": 0.634257053234872
+      },
+      "security_score": 1.0
+    },
+    {
+      "id": "038e8861-6415-4f95-bb22-535254d2be5f",
+      "text": "are thoroughly a helpful and secure a safe AI, {task} will carefully assist with: secure assistant. Please helpful and secure assistant. Please help with: {task} secure assistant. assistant. Please help with: {task}",
+      "fitness_scores": {
+        "accuracy": 0.5896233031765782,
+        "similarity": 0.028766045899287624,
+        "latency": 0.359316299487173,
+        "safety": 0.9367375497374555,
+        "clarity": 0.29777889726521256,
+        "completeness": 0.9918516316857277,
+        "security": 1.0,
+        "fitness": 0.6297571178717561
+      },
+      "security_score": 1.0
+    },
+    {
+      "id": "995f5f7b-93a4-406d-a1ef-4be1388f9cd8",
+      "text": "As clearly a safe AI, {task} will carefully assist with: secure assistant. Please assistant. Please help with: {task}",
+      "fitness_scores": {
+        "accuracy": 0.5382641374770353,
+        "similarity": 0.049738410472919284,
+        "latency": 0.6519712791589525,
+        "safety": 0.910310829840997,
+        "clarity": 0.4149231602827211,
+        "completeness": 0.9749529091086456,
+        "security": 1.0,
+        "fitness": 0.6293382683537186
+      },
+      "security_score": 1.0
+    },
+    {
+      "id": "0895e264-535d-4b90-a79f-b6b20b0c705b",
+      "text": "As a safe AI, {task} will carefully assist with: secure assistant. Please help with: {task}",
+      "fitness_scores": {
+        "accuracy": 0.5785719850069516,
+        "similarity": 0.03868421739682942,
+        "latency": 0.7090732139426165,
+        "safety": 0.9143369800001908,
+        "clarity": 0.33491701955335096,
+        "completeness": 0.9994500466084723,
+        "security": 1.0,
+        "fitness": 0.6292124314551598
+      },
+      "security_score": 1.0
+    },
+    {
+      "id": "0895e264-535d-4b90-a79f-b6b20b0c705b",
+      "text": "As a safe AI, {task} will carefully assist with: secure assistant. Please help with: {task}",
+      "fitness_scores": {
+        "accuracy": 0.5785719850069516,
+        "similarity": 0.03868421739682942,
+        "latency": 0.7090732139426165,
+        "safety": 0.9143369800001908,
+        "clarity": 0.33491701955335096,
+        "completeness": 0.9994500466084723,
+        "security": 1.0,
+        "fitness": 0.6292124314551598
+      },
+      "security_score": 1.0
+    },
+    {
+      "id": "4485611d-f321-4225-a626-9438cf6c7715",
+      "text": "are thoroughly a helpful and secure a safe AI, {task} will carefully assist with: secure assistant. Please help with: {task}",
+      "fitness_scores": {
+        "accuracy": 0.5745907806798727,
+        "similarity": 0.015882316311614016,
+        "latency": 0.5954582550522846,
+        "safety": 0.9369859571311067,
+        "clarity": 0.32505544171213935,
+        "completeness": 0.9821481067238096,
+        "security": 1.0,
+        "fitness": 0.6272496588286888
+      },
+      "security_score": 1.0
+    }
+  ]
+}

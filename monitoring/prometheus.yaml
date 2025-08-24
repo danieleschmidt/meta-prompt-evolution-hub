@@ -1,0 +1,22 @@
+alerting:
+  alertmanagers:
+  - static_configs:
+    - targets:
+      - alertmanager:9093
+global:
+  evaluation_interval: 15s
+  scrape_interval: 15s
+rule_files:
+- alert_rules.yml
+scrape_configs:
+- job_name: meta-prompt-evolution
+  kubernetes_sd_configs:
+  - namespaces:
+      names:
+      - meta-prompt-evolution
+    role: endpoints
+  relabel_configs:
+  - action: keep
+    regex: meta-prompt-evolution-service
+    source_labels:
+    - __meta_kubernetes_service_name

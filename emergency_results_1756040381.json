@@ -1,0 +1,304 @@
+{
+  "metadata": {
+    "algorithm": "robust_quantum_evolution",
+    "version": "2.0",
+    "total_generations": 5,
+    "population_size": 25,
+    "export_timestamp": 1756040381.8383532
+  },
+  "system_health": {
+    "monitor_status": {
+      "status": "healthy",
+      "success_rate": 95.94594594594594,
+      "total_operations": 74,
+      "avg_response_time_ms": 0.6408369218980944,
+      "active_threads": 2,
+      "uptime_seconds": 0.11895942687988281
+    },
+    "population_health": {
+      "size": 20,
+      "generation": 5,
+      "validated_prompts": 20
+    },
+    "circuit_breaker": {
+      "state": "closed",
+      "failure_count": 3
+    },
+    "database_status": "connected",
+    "errors_count": 3,
+    "timestamp": 1756040381.838377
+  },
+  "evolution_history": {
+    "generations": [
+      {
+        "generation": 1,
+        "start_time": 1756040381.7763479,
+        "errors": [],
+        "warnings": [],
+        "population_size": 16,
+        "best_fitness": 0.9030583333333334,
+        "avg_fitness": 0.6351165277777778,
+        "elite_count": 12,
+        "success": true,
+        "duration": 0.011072397232055664,
+        "end_time": 1756040381.7874215
+      },
+      {
+        "generation": 2,
+        "start_time": 1756040381.7877676,
+        "errors": [],
+        "warnings": [],
+        "population_size": 12,
+        "best_fitness": 1.177434583333333,
+        "avg_fitness": 0.7593727395833334,
+        "elite_count": 8,
+        "success": true,
+        "duration": 0.011492013931274414,
+        "end_time": 1756040381.7992606
+      },
+      {
+        "generation": 3,
+        "start_time": 1756040381.799716,
+        "errors": [],
+        "warnings": [],
+        "population_size": 9,
+        "best_fitness": 1.177434583333333,
+        "avg_fitness": 0.8460341833333335,
+        "elite_count": 5,
+        "success": true,
+        "duration": 0.010442018508911133,
+        "end_time": 1756040381.8101587
+      },
+      {
+        "generation": 4,
+        "start_time": 1756040381.8104625,
+        "errors": [],
+        "warnings": [],
+        "population_size": 9,
+        "best_fitness": 1.177434583333333,
+        "avg_fitness": 0.9206941758333335,
+        "elite_count": 5,
+        "success": true,
+        "duration": 0.009497642517089844,
+        "end_time": 1756040381.819961
+      },
+      {
+        "generation": 5,
+        "start_time": 1756040381.820819,
+        "errors": [],
+        "warnings": [],
+        "population_size": 8,
+        "best_fitness": 1.177434583333333,
+        "avg_fitness": 0.9759374826833334,
+        "elite_count": 5,
+        "success": true,
+        "duration": 0.008871793746948242,
+        "end_time": 1756040381.8296914
+      }
+    ],
+    "breakthrough_moments": [],
+    "quantum_measurements": [],
+    "errors": [
+      {
+        "error": "No prompts survived quantum measurement",
+        "traceback": "Traceback (most recent call last):\n  File \"/root/repo/generation_2_robust_quantum_system.py\", line 787, in evolve_generation_robust\n    step_results = self.circuit_breaker.call(evolution_step)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/repo/generation_2_robust_quantum_system.py\", line 423, in call\n    raise e\n  File \"/root/repo/generation_2_robust_quantum_system.py\", line 404, in call\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/repo/generation_2_robust_quantum_system.py\", line 785, in evolution_step\n    return self._execute_evolution_step()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/repo/generation_2_robust_quantum_system.py\", line 834, in _execute_evolution_step\n    raise PopulationError(\"No prompts survived quantum measurement\")\nPopulationError: No prompts survived quantum measurement\n",
+        "generation": 6,
+        "timestamp": 1756040381.8311038,
+        "duration": 0.00015091896057128906
+      },
+      {
+        "error": "No prompts survived quantum measurement",
+        "traceback": "Traceback (most recent call last):\n  File \"/root/repo/generation_2_robust_quantum_system.py\", line 787, in evolve_generation_robust\n    step_results = self.circuit_breaker.call(evolution_step)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/repo/generation_2_robust_quantum_system.py\", line 423, in call\n    raise e\n  File \"/root/repo/generation_2_robust_quantum_system.py\", line 404, in call\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/repo/generation_2_robust_quantum_system.py\", line 785, in evolution_step\n    return self._execute_evolution_step()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/repo/generation_2_robust_quantum_system.py\", line 834, in _execute_evolution_step\n    raise PopulationError(\"No prompts survived quantum measurement\")\nPopulationError: No prompts survived quantum measurement\n",
+        "generation": 6,
+        "timestamp": 1756040381.833521,
+        "duration": 0.0003113746643066406
+      },
+      {
+        "error": "No prompts survived quantum measurement",
+        "traceback": "Traceback (most recent call last):\n  File \"/root/repo/generation_2_robust_quantum_system.py\", line 787, in evolve_generation_robust\n    step_results = self.circuit_breaker.call(evolution_step)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/repo/generation_2_robust_quantum_system.py\", line 423, in call\n    raise e\n  File \"/root/repo/generation_2_robust_quantum_system.py\", line 404, in call\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/repo/generation_2_robust_quantum_system.py\", line 785, in evolution_step\n    return self._execute_evolution_step()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/repo/generation_2_robust_quantum_system.py\", line 834, in _execute_evolution_step\n    raise PopulationError(\"No prompts survived quantum measurement\")\nPopulationError: No prompts survived quantum measurement\n",
+        "generation": 6,
+        "timestamp": 1756040381.8354676,
+        "duration": 0.0002923011779785156
+      }
+    ]
+  },
+  "top_database_prompts": [
+    {
+      "id": "c32c3769cbd0dbfe",
+      "content": "Explain the concept clearly and thoroughly",
+      "fitness": 0.0,
+      "generation": 0,
+      "created_at": 1756040381.7300193,
+      "security_hash": "c32c3769cbd0dbfe",
+      "validation_status": "validated"
+    },
+    {
+      "id": "59755f63c7530c9c",
+      "content": "Provide a comprehensive detailed analysis of the topic",
+      "fitness": 0.0,
+      "generation": 0,
+      "created_at": 1756040381.732101,
+      "security_hash": "59755f63c7530c9c",
+      "validation_status": "validated"
+    },
+    {
+      "id": "0e2f61d81fe14a3a",
+      "content": "Describe the process systematically step by step",
+      "fitness": 0.0,
+      "generation": 0,
+      "created_at": 1756040381.734289,
+      "security_hash": "0e2f61d81fe14a3a",
+      "validation_status": "validated"
+    },
+    {
+      "id": "c9cc60e749de6bcd",
+      "content": "Give complete comprehensive information about the subject",
+      "fitness": 0.0,
+      "generation": 0,
+      "created_at": 1756040381.7367275,
+      "security_hash": "c9cc60e749de6bcd",
+      "validation_status": "validated"
+    },
+    {
+      "id": "8ed161417570f957",
+      "content": "Analyze and carefully interpret the available data",
+      "fitness": 0.0,
+      "generation": 0,
+      "created_at": 1756040381.7386103,
+      "security_hash": "8ed161417570f957",
+      "validation_status": "validated"
+    },
+    {
+      "id": "8cb6b791d22a52e9",
+      "content": "Break down the complex problem systematically and methodically",
+      "fitness": 0.0,
+      "generation": 0,
+      "created_at": 1756040381.7406645,
+      "security_hash": "8cb6b791d22a52e9",
+      "validation_status": "validated"
+    },
+    {
+      "id": "eaa17270aa52b756",
+      "content": "Make sure to analyze and carefully interpret the available data",
+      "fitness": 0.0,
+      "generation": 1,
+      "created_at": 1756040381.7426877,
+      "security_hash": "eaa17270aa52b756",
+      "validation_status": "validated"
+    },
+    {
+      "id": "9070cd1534e020bf",
+      "content": "Break down the complex problem systematically and methodically",
+      "fitness": 0.0,
+      "generation": 1,
+      "created_at": 1756040381.7444134,
+      "security_hash": "9070cd1534e020bf",
+      "validation_status": "validated"
+    },
+    {
+      "id": "16d9f8aae9d8952e",
+      "content": "Make sure to analyze and carefully interpret the data",
+      "fitness": 0.0,
+      "generation": 2,
+      "created_at": 1756040381.746137,
+      "security_hash": "16d9f8aae9d8952e",
+      "validation_status": "validated"
+    },
+    {
+      "id": "50f6293b38b419dd",
+      "content": "Analyze and carefully interpret the available data",
+      "fitness": 0.0,
+      "generation": 1,
+      "created_at": 1756040381.7477891,
+      "security_hash": "50f6293b38b419dd",
+      "validation_status": "validated"
+    }
+  ],
+  "current_population": [
+    {
+      "content": "Explain the concept clearly and thoroughly",
+      "fitness": 0.0,
+      "generation": 0,
+      "security_hash": "7a831f044198f2f5",
+      "validation_status": "validated",
+      "mutation_history": []
+    },
+    {
+      "content": "Provide a comprehensive detailed analysis of the topic",
+      "fitness": 0.0,
+      "generation": 0,
+      "security_hash": "4d12970b37854a7d",
+      "validation_status": "validated",
+      "mutation_history": []
+    },
+    {
+      "content": "Describe the process systematically step by step",
+      "fitness": 0.0,
+      "generation": 0,
+      "security_hash": "10f37adb3c60c1e5",
+      "validation_status": "validated",
+      "mutation_history": []
+    },
+    {
+      "content": "Give complete comprehensive information about the subject",
+      "fitness": 0.0,
+      "generation": 0,
+      "security_hash": "eac4ab91a4a58b6a",
+      "validation_status": "validated",
+      "mutation_history": []
+    },
+    {
+      "content": "Analyze and carefully interpret the available data",
+      "fitness": 0.0,
+      "generation": 0,
+      "security_hash": "50f49b7e66f15570",
+      "validation_status": "validated",
+      "mutation_history": []
+    },
+    {
+      "content": "Break down the complex problem systematically and methodically",
+      "fitness": 0.0,
+      "generation": 0,
+      "security_hash": "e4c840aeeded7d38",
+      "validation_status": "validated",
+      "mutation_history": []
+    },
+    {
+      "content": "Make sure to analyze and carefully interpret the available data",
+      "fitness": 0.0,
+      "generation": 1,
+      "security_hash": "6e5a584de0dacb3a",
+      "validation_status": "validated",
+      "mutation_history": []
+    },
+    {
+      "content": "Break down the complex problem systematically and methodically",
+      "fitness": 0.0,
+      "generation": 1,
+      "security_hash": "9c6113474db016a7",
+      "validation_status": "validated",
+      "mutation_history": []
+    },
+    {
+      "content": "Make sure to analyze and carefully interpret the data",
+      "fitness": 0.0,
+      "generation": 2,
+      "security_hash": "4ecfd79c9dccdf59",
+      "validation_status": "validated",
+      "mutation_history": []
+    },
+    {
+      "content": "Analyze and carefully interpret the available data",
+      "fitness": 0.0,
+      "generation": 1,
+      "security_hash": "d175f03193117f37",
+      "validation_status": "validated",
+      "mutation_history": []
+    }
+  ],
+  "performance_metrics": {
+    "total_operations": 74,
+    "success_rate": 95.94594594594594,
+    "avg_response_time_ms": 0.6408369218980944
+  }
+}

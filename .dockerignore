@@ -1,129 +1,26 @@
-# Git and version control
+# Dockerignore for production builds
 .git
 .gitignore
-.gitattributes
-
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
-
-# Virtual environments
+README.md
+Dockerfile*
+.dockerignore
+node_modules
+npm-debug.log
+.coverage
+.pytest_cache
+__pycache__
+*.pyc
+*.pyo
+*.pyd
 .env
 .venv
-env/
 venv/
-ENV/
-env.bak/
-venv.bak/
-
-# IDEs
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# OS
+.mypy_cache
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-
-# Testing and coverage
-.coverage
-.pytest_cache/
-.tox/
-.nox/
-htmlcov/
-.nyc_output
-
-# Linting and formatting
-.mypy_cache/
-.ruff_cache/
-.bandit/
-
-# Documentation
-docs/_build/
-site/
-
-# Logs
-*.log
-logs/
-
-# Database
-*.db
-*.sqlite
-*.sqlite3
-
-# Cache directories
-cache/
+tests/
+docs/
+examples/
+*.md
+!README.md
 cache_storage/
-.cache/
-
-# Temporary files
-tmp/
-temp/
-*.tmp
-
-# Secrets and environment files
-.env*
-!.env.example
-secrets/
-*.key
-*.pem
-*.crt
-
-# Build artifacts
-*.tar.gz
-*.zip
-*.deb
-*.rpm
-
-# Backup files
-*.bak
-*.backup
-backups/
-
-# Large data files
-*.csv
-*.json
-!requirements*.txt
-!pyproject.toml
-!**/test_*.json
-
-# Development artifacts
-.pre-commit-config.yaml
-tox.ini
-.coveragerc
-
-# Container-specific
-Dockerfile*
-docker-compose*.yml
-.dockerignore
-
-# CI/CD
-.github/
-.gitlab-ci.yml
-Jenkinsfile
+*.log

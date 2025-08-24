@@ -1,0 +1,119 @@
+{
+  "generation": 4,
+  "population": [
+    {
+      "content": "Break down the complex problem systematically and methodically",
+      "fitness": 1.177434583333333,
+      "generation": 4,
+      "security_hash": "628fd11ba516f22c"
+    },
+    {
+      "content": "Break down break complex the systematically problem methodically and methodically",
+      "fitness": 0.9173672958333333,
+      "generation": 5,
+      "security_hash": "85fc02b58a5708a7"
+    },
+    {
+      "content": "Break down the complex problem systematically and methodically",
+      "fitness": 0.9030583333333334,
+      "generation": 3,
+      "security_hash": "3bdcee4721638cd4"
+    },
+    {
+      "content": "Please down break down problem complex problem methodically and methodically",
+      "fitness": 0.8028053333333334,
+      "generation": 4,
+      "security_hash": "ae8874d74877eb8f"
+    },
+    {
+      "content": "Break down break complex problem complex and methodically and methodically",
+      "fitness": 0.8028053333333334,
+      "generation": 4,
+      "security_hash": "94e46b95da718323"
+    },
+    {
+      "content": "Please down break down problem complex methodically and methodically",
+      "fitness": 0.0,
+      "generation": 5,
+      "security_hash": "3935fd31d065a3d2"
+    },
+    {
+      "content": "simple and understandable: Break down break complex the systematically problem methodically and methodically",
+      "fitness": 0.0,
+      "generation": 6,
+      "security_hash": "b96da8efc6c74ad3"
+    },
+    {
+      "content": "Break down break complex the complex problem methodically and methodically",
+      "fitness": 0.0,
+      "generation": 6,
+      "security_hash": "0e3bcaacca71f4c7"
+    },
+    {
+      "content": "Break down break complex problem complex problem methodically and methodically",
+      "fitness": 0.0,
+      "generation": 5,
+      "security_hash": "e09aa4c4fd0988a7"
+    }
+  ],
+  "history": {
+    "generations": [
+      {
+        "generation": 1,
+        "start_time": 1756040381.7763479,
+        "errors": [],
+        "warnings": [],
+        "population_size": 16,
+        "best_fitness": 0.9030583333333334,
+        "avg_fitness": 0.6351165277777778,
+        "elite_count": 12,
+        "success": true,
+        "duration": 0.011072397232055664,
+        "end_time": 1756040381.7874215
+      },
+      {
+        "generation": 2,
+        "start_time": 1756040381.7877676,
+        "errors": [],
+        "warnings": [],
+        "population_size": 12,
+        "best_fitness": 1.177434583333333,
+        "avg_fitness": 0.7593727395833334,
+        "elite_count": 8,
+        "success": true,
+        "duration": 0.011492013931274414,
+        "end_time": 1756040381.7992606
+      },
+      {
+        "generation": 3,
+        "start_time": 1756040381.799716,
+        "errors": [],
+        "warnings": [],
+        "population_size": 9,
+        "best_fitness": 1.177434583333333,
+        "avg_fitness": 0.8460341833333335,
+        "elite_count": 5,
+        "success": true,
+        "duration": 0.010442018508911133,
+        "end_time": 1756040381.8101587
+      },
+      {
+        "generation": 4,
+        "start_time": 1756040381.8104625,
+        "errors": [],
+        "warnings": [],
+        "population_size": 9,
+        "best_fitness": 1.177434583333333,
+        "avg_fitness": 0.9206941758333335,
+        "elite_count": 5,
+        "success": true,
+        "duration": 0.009497642517089844,
+        "end_time": 1756040381.819961
+      }
+    ],
+    "breakthrough_moments": [],
+    "quantum_measurements": [],
+    "errors": []
+  },
+  "timestamp": 1756040381.8199751
+}

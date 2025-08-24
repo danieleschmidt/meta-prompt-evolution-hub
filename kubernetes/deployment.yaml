@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: meta-prompt-evolution
+    environment: production
+    version: 3.0.0
+  name: meta-prompt-evolution
+  namespace: meta-prompt-evolution
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: meta-prompt-evolution
+  template:
+    metadata:
+      labels:
+        app: meta-prompt-evolution
+        version: 3.0.0
+    spec:
+      containers:
+      - env:
+        - name: ENVIRONMENT
+          value: production
+        - name: VERSION
+          value: 3.0.0
+        image: meta-prompt-evolution:3.0.0
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
+        name: meta-prompt-evolution
+        ports:
+        - containerPort: 8080
+          name: http
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /ready
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 5
+          timeoutSeconds: 5
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 2Gi
+          requests:
+            cpu: 500m
+            memory: 1Gi
+      securityContext:
+        fsGroup: 1000
+        runAsNonRoot: true
+        runAsUser: 1000

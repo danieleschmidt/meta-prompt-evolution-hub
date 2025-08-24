@@ -1,0 +1,146 @@
+{
+  "metadata": {
+    "report_type": "comprehensive_quality_gates",
+    "version": "1.0",
+    "timestamp": 1756040733.2383645,
+    "execution_date": "2025-08-24 13:05:33"
+  },
+  "quality_metrics": {
+    "overall_score": 83.89536486353194,
+    "test_coverage_percent": 85.71428571428571,
+    "performance_score": 100.0,
+    "security_score": 50.0,
+    "reliability_score": 100.0,
+    "maintainability_score": 99.66793434960502
+  },
+  "test_summary": {
+    "total_tests": 7,
+    "passed_tests": 6,
+    "failed_tests": 1,
+    "skipped_tests": 0,
+    "execution_time": 0.23244595527648926
+  },
+  "detailed_results": [
+    {
+      "test_name": "basic_evolution",
+      "status": "pass",
+      "execution_time": 0.011249542236328125,
+      "error_message": "",
+      "details": {
+        "population_size": 10,
+        "generations_tested": 1,
+        "fitness_range": [
+          0.0,
+          0.46000000000000013
+        ]
+      }
+    },
+    {
+      "test_name": "robust_system",
+      "status": "pass",
+      "execution_time": 0.11039352416992188,
+      "error_message": "",
+      "details": {
+        "health_status": "healthy",
+        "population_health": 11
+      }
+    },
+    {
+      "test_name": "scalable_system",
+      "status": "pass",
+      "execution_time": 0.051653385162353516,
+      "error_message": "",
+      "details": {
+        "best_fitness": 0.520118295435241,
+        "throughput": 100000.0,
+        "population_size": 20
+      }
+    },
+    {
+      "test_name": "input_sanitization",
+      "status": "fail",
+      "execution_time": 0.0007314682006835938,
+      "error_message": "Vulnerabilities: [\"Dangerous content not sanitized: <script>alert('xss')</script>...\", \"Dangerous content not sanitized: '; DROP TABLE prompts; --...\", \"Dangerous content not sanitized: javascript:alert('xss')...\"]",
+      "details": {
+        "vulnerabilities_found": [
+          "Dangerous content not sanitized: <script>alert('xss')</script>...",
+          "Dangerous content not sanitized: '; DROP TABLE prompts; --...",
+          "Dangerous content not sanitized: javascript:alert('xss')..."
+        ]
+      }
+    },
+    {
+      "test_name": "data_integrity",
+      "status": "pass",
+      "execution_time": 9.679794311523438e-05,
+      "error_message": "",
+      "details": {
+        "integrity_tests_passed": 10
+      }
+    },
+    {
+      "test_name": "performance_benchmark",
+      "status": "pass",
+      "execution_time": 0.0035991668701171875,
+      "error_message": "",
+      "details": {
+        "total_time": 0.0035991668701171875,
+        "init_time": 0.0003101825714111328,
+        "avg_generation_time": 0.0006540775299072266,
+        "throughput_ops_per_second": 69460.51934287229,
+        "memory_efficient": true,
+        "status": "pass"
+      }
+    },
+    {
+      "test_name": "scalability_benchmark",
+      "status": "pass",
+      "execution_time": 5.0,
+      "error_message": "",
+      "details": {
+        "results": [
+          {
+            "population_size": 10,
+            "execution_time": 0.002484560012817383,
+            "ops_per_second": 8049.714998560598,
+            "status": "pass"
+          },
+          {
+            "population_size": 25,
+            "execution_time": 0.01208806037902832,
+            "ops_per_second": 4136.31289323682,
+            "status": "pass"
+          },
+          {
+            "population_size": 50,
+            "execution_time": 0.009298324584960938,
+            "ops_per_second": 10754.625641025641,
+            "status": "pass"
+          },
+          {
+            "population_size": 100,
+            "execution_time": 0.008427143096923828,
+            "ops_per_second": 23732.83539863068,
+            "status": "pass"
+          },
+          {
+            "population_size": 200,
+            "execution_time": 0.016447067260742188,
+            "ops_per_second": 24320.445320654064,
+            "status": "pass"
+          }
+        ],
+        "scales_well": true,
+        "scaling_factor": 20.0,
+        "time_factor": 6.619710200556568,
+        "status": "pass"
+      }
+    }
+  ],
+  "recommendations": [
+    "Improve input validation and security measures",
+    "Increase test coverage for better quality assurance",
+    "Fix failing tests before production deployment",
+    "Address failing tests: ['input_sanitization']"
+  ]
+}

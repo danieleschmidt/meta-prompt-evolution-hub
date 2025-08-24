@@ -1,0 +1,29 @@
+groups:
+- name: meta-prompt-evolution.rules
+  rules:
+  - alert: HighErrorRate
+    annotations:
+      description: Error rate is {{ $value }} errors per second
+      summary: High error rate detected
+    expr: rate(http_requests_total{status=~"5.."}[5m]) > 0.1
+    for: 5m
+    labels:
+      severity: critical
+  - alert: HighMemoryUsage
+    annotations:
+      description: Memory usage is {{ $value }}% of limit
+      summary: High memory usage
+    expr: container_memory_usage_bytes{pod=~"meta-prompt-evolution-.*"} / container_spec_memory_limit_bytes
+      > 0.8
+    for: 2m
+    labels:
+      severity: warning
+  - alert: PodRestartFrequency
+    annotations:
+      description: Pod {{ $labels.pod }} has restarted {{ $value }} times in the last
+        hour
+      summary: Pod restarting frequently
+    expr: increase(kube_pod_container_status_restarts_total[1h]) > 5
+    for: 0m
+    labels:
+      severity: warning

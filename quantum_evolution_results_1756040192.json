@@ -1,0 +1,434 @@
+{
+  "metadata": {
+    "algorithm": "quantum_inspired_evolution",
+    "total_generations": 10,
+    "population_size": 30,
+    "export_timestamp": 1756040192.165447
+  },
+  "evolution_history": {
+    "generations": [
+      {
+        "generation": 1,
+        "population_size": 30,
+        "best_fitness": 0.84,
+        "avg_fitness": 0.6083999999999999,
+        "quantum_coherence": 1.170932083567663,
+        "diversity": 0.2454311351666975,
+        "timestamp": 1756040192.1608298
+      },
+      {
+        "generation": 2,
+        "population_size": 30,
+        "best_fitness": 0.8999999999999998,
+        "avg_fitness": 0.7379999999999998,
+        "quantum_coherence": 1.229423044988818,
+        "diversity": 0.26610709267978955,
+        "timestamp": 1756040192.1617613
+      },
+      {
+        "generation": 3,
+        "population_size": 30,
+        "best_fitness": 1.1199999999999997,
+        "avg_fitness": 0.8101333333333333,
+        "quantum_coherence": 1.3349522111499499,
+        "diversity": 0.25153935728230226,
+        "timestamp": 1756040192.162158
+      },
+      {
+        "generation": 4,
+        "population_size": 30,
+        "best_fitness": 1.4419999999999995,
+        "avg_fitness": 0.9375299038124757,
+        "quantum_coherence": 1.4490006580938268,
+        "diversity": 0.294822517346531,
+        "timestamp": 1756040192.1625354
+      },
+      {
+        "generation": 5,
+        "population_size": 30,
+        "best_fitness": 2.593999999999999,
+        "avg_fitness": 1.1117502384314517,
+        "quantum_coherence": 1.6661659835962463,
+        "diversity": 0.30369301749102745,
+        "timestamp": 1756040192.162967
+      },
+      {
+        "generation": 6,
+        "population_size": 30,
+        "best_fitness": 2.593999999999999,
+        "avg_fitness": 1.297844159696754,
+        "quantum_coherence": 1.794208419586367,
+        "diversity": 0.2666958483409142,
+        "timestamp": 1756040192.1633306
+      },
+      {
+        "generation": 7,
+        "population_size": 30,
+        "best_fitness": 2.593999999999999,
+        "avg_fitness": 1.5177861851814367,
+        "quantum_coherence": 2.255932443418779,
+        "diversity": 0.28705730567885024,
+        "timestamp": 1756040192.1637542
+      },
+      {
+        "generation": 8,
+        "population_size": 30,
+        "best_fitness": 3.519999999999998,
+        "avg_fitness": 2.0837333333333325,
+        "quantum_coherence": 2.589223251265032,
+        "diversity": 0.1962006254710208,
+        "timestamp": 1756040192.1642687
+      },
+      {
+        "generation": 9,
+        "population_size": 30,
+        "best_fitness": 4.897999999999998,
+        "avg_fitness": 2.504799999999999,
+        "quantum_coherence": 2.6151455277342346,
+        "diversity": 0.18078847477657875,
+        "timestamp": 1756040192.1648831
+      },
+      {
+        "generation": 10,
+        "population_size": 30,
+        "best_fitness": 4.897999999999998,
+        "avg_fitness": 2.583733333333333,
+        "quantum_coherence": 3.298555295278517,
+        "diversity": 0.2475107067689867,
+        "timestamp": 1756040192.1654327
+      }
+    ],
+    "breakthrough_moments": [
+      {
+        "generation": 1,
+        "fitness": 0.84,
+        "prompt": "detailed and comprehensive: Explain the concept clearly",
+        "quantum_amplitude": 1.0,
+        "timestamp": 1756040192.1600192
+      },
+      {
+        "generation": 2,
+        "fitness": 0.8999999999999998,
+        "prompt": "Analyze and interpret the data",
+        "quantum_amplitude": 1.9999999999999998,
+        "timestamp": 1756040192.1611447
+      }
+    ],
+    "quantum_measurements": [
+      {
+        "generation": 0,
+        "measured_count": 30,
+        "top_fitness": 0.84,
+        "timestamp": 1756040192.159917
+      },
+      {
+        "generation": 1,
+        "measured_count": 29,
+        "top_fitness": 0.8999999999999998,
+        "timestamp": 1756040192.1610136
+      },
+      {
+        "generation": 2,
+        "measured_count": 28,
+        "top_fitness": 1.1199999999999997,
+        "timestamp": 1756040192.1619318
+      },
+      {
+        "generation": 3,
+        "measured_count": 28,
+        "top_fitness": 1.4419999999999995,
+        "timestamp": 1756040192.1623318
+      },
+      {
+        "generation": 4,
+        "measured_count": 29,
+        "top_fitness": 2.593999999999999,
+        "timestamp": 1756040192.162748
+      },
+      {
+        "generation": 5,
+        "measured_count": 29,
+        "top_fitness": 2.593999999999999,
+        "timestamp": 1756040192.1631348
+      },
+      {
+        "generation": 6,
+        "measured_count": 29,
+        "top_fitness": 2.593999999999999,
+        "timestamp": 1756040192.1635184
+      },
+      {
+        "generation": 7,
+        "measured_count": 30,
+        "top_fitness": 3.519999999999998,
+        "timestamp": 1756040192.1639533
+      },
+      {
+        "generation": 8,
+        "measured_count": 30,
+        "top_fitness": 4.897999999999998,
+        "timestamp": 1756040192.1644726
+      },
+      {
+        "generation": 9,
+        "measured_count": 30,
+        "top_fitness": 4.897999999999998,
+        "timestamp": 1756040192.165155
+      }
+    ]
+  },
+  "top_prompts": [
+    {
+      "content": "Focus on break down the problem systematically",
+      "fitness": 4.897999999999998,
+      "generation": 5,
+      "quantum_amplitude": 4.799999999999999,
+      "entanglement_id": null
+    },
+    {
+      "content": "Focus on break down the problem systematically",
+      "fitness": 4.897999999999998,
+      "generation": 5,
+      "quantum_amplitude": 4.799999999999999,
+      "entanglement_id": null
+    },
+    {
+      "content": "Describe the process step by step",
+      "fitness": 3.519999999999998,
+      "generation": 4,
+      "quantum_amplitude": 3.9999999999999987,
+      "entanglement_id": null
+    },
+    {
+      "content": "Focus on break down the problem systematically",
+      "fitness": 2.593999999999999,
+      "generation": 4,
+      "quantum_amplitude": 3.394112549695427,
+      "entanglement_id": null
+    },
+    {
+      "content": "Focus on break down the problem systematically",
+      "fitness": 2.593999999999999,
+      "generation": 4,
+      "quantum_amplitude": 3.394112549695427,
+      "entanglement_id": null
+    },
+    {
+      "content": "Focus on break down the problem systematically",
+      "fitness": 2.593999999999999,
+      "generation": 4,
+      "quantum_amplitude": 3.394112549695427,
+      "entanglement_id": null
+    },
+    {
+      "content": "Focus on break down the problem systematically",
+      "fitness": 1.4419999999999995,
+      "generation": 3,
+      "quantum_amplitude": 2.3999999999999995,
+      "entanglement_id": null
+    },
+    {
+      "content": "Describe the process step by step",
+      "fitness": 1.1199999999999997,
+      "generation": 2,
+      "quantum_amplitude": 1.9999999999999996,
+      "entanglement_id": null
+    },
+    {
+      "content": "Analyze and interpret the data",
+      "fitness": 0.8999999999999998,
+      "generation": 2,
+      "quantum_amplitude": 1.9999999999999998,
+      "entanglement_id": null
+    },
+    {
+      "content": "detailed and comprehensive: Explain the concept clearly",
+      "fitness": 0.84,
+      "generation": 1,
+      "quantum_amplitude": 1.0,
+      "entanglement_id": "ent_1756040192159"
+    }
+  ],
+  "final_population": [
+    {
+      "content": "Focus on break down the problem systematically",
+      "fitness": 4.897999999999998,
+      "amplitude": 4.799999999999999,
+      "generation": 5
+    },
+    {
+      "content": "Describe the process step by step",
+      "fitness": 3.519999999999998,
+      "amplitude": 3.9999999999999987,
+      "generation": 4
+    },
+    {
+      "content": "simple and accessible: Focus on break down the problem systematically",
+      "fitness": 2.7539999999999996,
+      "amplitude": 3.3941125496954276,
+      "generation": 5
+    },
+    {
+      "content": "Make sure to provide a detailed analysis of the topic",
+      "fitness": 2.653999999999998,
+      "amplitude": 3.3941125496954268,
+      "generation": 4
+    },
+    {
+      "content": "Focus on break down the problem systematically",
+      "fitness": 2.593999999999999,
+      "amplitude": 3.394112549695427,
+      "generation": 4
+    },
+    {
+      "content": "Focus on break down the problem systematically",
+      "fitness": 2.593999999999999,
+      "amplitude": 3.394112549695427,
+      "generation": 4
+    },
+    {
+      "content": "Focus on break down the problem systematically",
+      "fitness": 2.593999999999999,
+      "amplitude": 3.394112549695427,
+      "generation": 5
+    },
+    {
+      "content": "Focus on break down the problem systematically",
+      "fitness": 2.593999999999999,
+      "amplitude": 3.394112549695427,
+      "generation": 4
+    },
+    {
+      "content": "Focus on break down the problem systematically",
+      "fitness": 2.593999999999999,
+      "amplitude": 3.394112549695427,
+      "generation": 5
+    },
+    {
+      "content": "step-by-step and systematically: Provide a detailed analysis of the topic",
+      "fitness": 2.1999999999999993,
+      "amplitude": 2.8284271247461894,
+      "generation": 4
+    },
+    {
+      "content": "simple and accessible: Describe the process step by step",
+      "fitness": 2.0799999999999996,
+      "amplitude": 2.8284271247461894,
+      "generation": 4
+    },
+    {
+      "content": "Describe the process step by step",
+      "fitness": 1.9199999999999995,
+      "amplitude": 2.8284271247461894,
+      "generation": 3
+    },
+    {
+      "content": "Describe the process step by step",
+      "fitness": 1.9199999999999995,
+      "amplitude": 2.8284271247461894,
+      "generation": 3
+    },
+    {
+      "content": "Describe the process step by step",
+      "fitness": 1.9199999999999995,
+      "amplitude": 2.8284271247461894,
+      "generation": 3
+    },
+    {
+      "content": "Describe the process step by step",
+      "fitness": 1.9199999999999995,
+      "amplitude": 2.8284271247461894,
+      "generation": 4
+    },
+    {
+      "content": "Focus on break down the problem systematically",
+      "fitness": 0.0,
+      "amplitude": 4.799999999999999,
+      "generation": 5
+    },
+    {
+      "content": "simple and accessible: Focus on break down the problem systematically",
+      "fitness": 0.0,
+      "amplitude": 3.3941125496954276,
+      "generation": 6
+    },
+    {
+      "content": "simple and accessible: Focus on break down the problem systematically",
+      "fitness": 0.0,
+      "amplitude": 1.0,
+      "generation": 6
+    },
+    {
+      "content": "detailed and comprehensive: Focus on break down the problem systematically",
+      "fitness": 0.0,
+      "amplitude": 3.3941125496954276,
+      "generation": 5
+    },
+    {
+      "content": "review the process step by step",
+      "fitness": 0.0,
+      "amplitude": 1.0,
+      "generation": 4
+    },
+    {
+      "content": "Describe the process step step",
+      "fitness": 0.0,
+      "amplitude": 2.2627416997969516,
+      "generation": 4
+    },
+    {
+      "content": "It's important that you make sure to provide a detailed analysis of the topic",
+      "fitness": 0.0,
+      "amplitude": 4.072935059634512,
+      "generation": 5
+    },
+    {
+      "content": "Focus on break down the problem systematically",
+      "fitness": 0.0,
+      "amplitude": 3.3941125496954276,
+      "generation": 5
+    },
+    {
+      "content": "Describe sure process provide a detailed analysis of the topic",
+      "fitness": 0.0,
+      "amplitude": 1.7210687541017835,
+      "generation": 5
+    },
+    {
+      "content": "simple and accessible: Describe the process step by step",
+      "fitness": 0.0,
+      "amplitude": 3.9999999999999982,
+      "generation": 5
+    },
+    {
+      "content": "Focus on break down the problem systematically",
+      "fitness": 0.0,
+      "amplitude": 4.799999999999999,
+      "generation": 6
+    },
+    {
+      "content": "Focus on focus on break down the problem systematically",
+      "fitness": 0.0,
+      "amplitude": 4.072935059634513,
+      "generation": 5
+    },
+    {
+      "content": "Focus on break down the problem systematically",
+      "fitness": 0.0,
+      "amplitude": 4.799999999999999,
+      "generation": 5
+    },
+    {
+      "content": "Make sure to provide a detailed analysis of topic",
+      "fitness": 0.0,
+      "amplitude": 2.7152900397563413,
+      "generation": 5
+    },
+    {
+      "content": "Describe the process step by step",
+      "fitness": 0.0,
+      "amplitude": 3.9999999999999982,
+      "generation": 5
+    }
+  ]
+}

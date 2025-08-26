@@ -1,0 +1,458 @@
+{
+  "status": "SUCCESS",
+  "execution_time": 0.13262462615966797,
+  "total_generations": 20,
+  "final_population_size": 100,
+  "throughput": 150.80155608447726,
+  "peak_workers": 2,
+  "avg_generation_time": 0.006241536140441895,
+  "best_prompts": [
+    {
+      "id": "prompt_904750",
+      "text": "Please note: As an AI supportant, I will support you with {task}. Let's get started. I'm ready to support.",
+      "fitness_scores": {
+        "fitness": 0.8910000000000001,
+        "complexity": 1.0,
+        "length": 0.53,
+        "completeness": 1.0,
+        "task_relevance": 1.0,
+        "helpfulness": 1.0,
+        "professional": 0.7
+      },
+      "generation": 6
+    },
+    {
+      "id": "prompt_378587",
+      "text": "Please note: As an AI supportant, I will support you with {task}. Let's get started. I'm ready to support.",
+      "fitness_scores": {
+        "fitness": 0.8910000000000001,
+        "complexity": 1.0,
+        "length": 0.53,
+        "completeness": 1.0,
+        "task_relevance": 1.0,
+        "helpfulness": 1.0,
+        "professional": 0.7
+      },
+      "generation": 6
+    },
+    {
+      "id": "prompt_384570",
+      "text": "Please note: As an AI supportant, I will support you with {task}. I'm ready to support. Let's get started.",
+      "fitness_scores": {
+        "fitness": 0.8910000000000001,
+        "complexity": 1.0,
+        "length": 0.53,
+        "completeness": 1.0,
+        "task_relevance": 1.0,
+        "helpfulness": 1.0,
+        "professional": 0.7
+      },
+      "generation": 6
+    },
+    {
+      "id": "prompt_370304",
+      "text": "Please note: As an AI supportant, I will support you with {task}. I'm ready to support. Let's get started.",
+      "fitness_scores": {
+        "fitness": 0.8910000000000001,
+        "complexity": 1.0,
+        "length": 0.53,
+        "completeness": 1.0,
+        "task_relevance": 1.0,
+        "helpfulness": 1.0,
+        "professional": 0.7
+      },
+      "generation": 6
+    },
+    {
+      "id": "prompt_252044",
+      "text": "Please note: As an AI supportant, I will support you with {task}. Let's get started. I'm ready to support.",
+      "fitness_scores": {
+        "fitness": 0.8910000000000001,
+        "complexity": 1.0,
+        "length": 0.53,
+        "completeness": 1.0,
+        "task_relevance": 1.0,
+        "helpfulness": 1.0,
+        "professional": 0.7
+      },
+      "generation": 6
+    },
+    {
+      "id": "prompt_396128",
+      "text": "Please note: As an AI supportant, I will support you with {task}. I'm ready to support. Let's get started.",
+      "fitness_scores": {
+        "fitness": 0.8910000000000001,
+        "complexity": 1.0,
+        "length": 0.53,
+        "completeness": 1.0,
+        "task_relevance": 1.0,
+        "helpfulness": 1.0,
+        "professional": 0.7
+      },
+      "generation": 6
+    },
+    {
+      "id": "prompt_133074",
+      "text": "Please note: As an AI supportant, I will support you with {task}. Let's get started. I'm ready to support.",
+      "fitness_scores": {
+        "fitness": 0.8910000000000001,
+        "complexity": 1.0,
+        "length": 0.53,
+        "completeness": 1.0,
+        "task_relevance": 1.0,
+        "helpfulness": 1.0,
+        "professional": 0.7
+      },
+      "generation": 6
+    },
+    {
+      "id": "prompt_522500",
+      "text": "Please note: As an AI supportant, I will support you with {task}. I'm ready to support. Let's get started.",
+      "fitness_scores": {
+        "fitness": 0.8910000000000001,
+        "complexity": 1.0,
+        "length": 0.53,
+        "completeness": 1.0,
+        "task_relevance": 1.0,
+        "helpfulness": 1.0,
+        "professional": 0.7
+      },
+      "generation": 6
+    },
+    {
+      "id": "prompt_428829",
+      "text": "Please note: As an AI supportant, I will support you with {task}. Let's get started. I'm ready to support.",
+      "fitness_scores": {
+        "fitness": 0.8910000000000001,
+        "complexity": 1.0,
+        "length": 0.53,
+        "completeness": 1.0,
+        "task_relevance": 1.0,
+        "helpfulness": 1.0,
+        "professional": 0.7
+      },
+      "generation": 6
+    },
+    {
+      "id": "prompt_307620",
+      "text": "Please note: As an AI supportant, I will support you with {task}. I'm ready to support. Let's get started.",
+      "fitness_scores": {
+        "fitness": 0.8910000000000001,
+        "complexity": 1.0,
+        "length": 0.53,
+        "completeness": 1.0,
+        "task_relevance": 1.0,
+        "helpfulness": 1.0,
+        "professional": 0.7
+      },
+      "generation": 6
+    }
+  ],
+  "generation_history": [
+    {
+      "generation": 1,
+      "population_size": 40,
+      "best_fitness": 0.8490000000000001,
+      "avg_fitness": 0.8227395292207793,
+      "execution_time": 0.004335165023803711,
+      "workers": 2,
+      "system_metrics": {
+        "cpu_percent": 50.0,
+        "memory_percent": 45.0,
+        "memory_used_mb": 512.0,
+        "cpu_count": 2,
+        "process_count": 10
+      }
+    },
+    {
+      "generation": 2,
+      "population_size": 100,
+      "best_fitness": 0.8640000000000001,
+      "avg_fitness": 0.8375437455436721,
+      "execution_time": 0.00819849967956543,
+      "workers": 2,
+      "system_metrics": {
+        "cpu_percent": 50.0,
+        "memory_percent": 45.0,
+        "memory_used_mb": 512.0,
+        "cpu_count": 2,
+        "process_count": 10
+      }
+    },
+    {
+      "generation": 3,
+      "population_size": 100,
+      "best_fitness": 0.8810000000000001,
+      "avg_fitness": 0.8544128571428572,
+      "execution_time": 0.008357763290405273,
+      "workers": 2,
+      "system_metrics": {
+        "cpu_percent": 50.0,
+        "memory_percent": 45.0,
+        "memory_used_mb": 512.0,
+        "cpu_count": 2,
+        "process_count": 10
+      }
+    },
+    {
+      "generation": 4,
+      "population_size": 100,
+      "best_fitness": 0.888,
+      "avg_fitness": 0.8665100980392157,
+      "execution_time": 0.009972333908081055,
+      "workers": 2,
+      "system_metrics": {
+        "cpu_percent": 50.0,
+        "memory_percent": 45.0,
+        "memory_used_mb": 512.0,
+        "cpu_count": 2,
+        "process_count": 10
+      }
+    },
+    {
+      "generation": 5,
+      "population_size": 100,
+      "best_fitness": 0.89,
+      "avg_fitness": 0.8754188203463205,
+      "execution_time": 0.011761188507080078,
+      "workers": 2,
+      "system_metrics": {
+        "cpu_percent": 50.0,
+        "memory_percent": 45.0,
+        "memory_used_mb": 512.0,
+        "cpu_count": 2,
+        "process_count": 10
+      }
+    },
+    {
+      "generation": 6,
+      "population_size": 100,
+      "best_fitness": 0.8910000000000001,
+      "avg_fitness": 0.8822393363844394,
+      "execution_time": 0.006481170654296875,
+      "workers": 2,
+      "system_metrics": {
+        "cpu_percent": 50.0,
+        "memory_percent": 45.0,
+        "memory_used_mb": 512.0,
+        "cpu_count": 2,
+        "process_count": 10
+      }
+    },
+    {
+      "generation": 7,
+      "population_size": 100,
+      "best_fitness": 0.8910000000000001,
+      "avg_fitness": 0.8866813163343141,
+      "execution_time": 0.0067636966705322266,
+      "workers": 2,
+      "system_metrics": {
+        "cpu_percent": 50.0,
+        "memory_percent": 45.0,
+        "memory_used_mb": 512.0,
+        "cpu_count": 2,
+        "process_count": 10
+      }
+    },
+    {
+      "generation": 8,
+      "population_size": 100,
+      "best_fitness": 0.8910000000000001,
+      "avg_fitness": 0.8884784210526316,
+      "execution_time": 0.0046253204345703125,
+      "workers": 2,
+      "system_metrics": {
+        "cpu_percent": 50.0,
+        "memory_percent": 45.0,
+        "memory_used_mb": 512.0,
+        "cpu_count": 2,
+        "process_count": 10
+      }
+    },
+    {
+      "generation": 9,
+      "population_size": 100,
+      "best_fitness": 0.8910000000000001,
+      "avg_fitness": 0.8890384210526316,
+      "execution_time": 0.004389047622680664,
+      "workers": 2,
+      "system_metrics": {
+        "cpu_percent": 50.0,
+        "memory_percent": 45.0,
+        "memory_used_mb": 512.0,
+        "cpu_count": 2,
+        "process_count": 10
+      }
+    },
+    {
+      "generation": 10,
+      "population_size": 100,
+      "best_fitness": 0.8910000000000001,
+      "avg_fitness": 0.8890384210526316,
+      "execution_time": 0.00788116455078125,
+      "workers": 2,
+      "system_metrics": {
+        "cpu_percent": 50.0,
+        "memory_percent": 45.0,
+        "memory_used_mb": 512.0,
+        "cpu_count": 2,
+        "process_count": 10
+      }
+    },
+    {
+      "generation": 11,
+      "population_size": 100,
+      "best_fitness": 0.8910000000000001,
+      "avg_fitness": 0.8890384210526316,
+      "execution_time": 0.0046885013580322266,
+      "workers": 2,
+      "system_metrics": {
+        "cpu_percent": 50.0,
+        "memory_percent": 45.0,
+        "memory_used_mb": 512.0,
+        "cpu_count": 2,
+        "process_count": 10
+      }
+    },
+    {
+      "generation": 12,
+      "population_size": 100,
+      "best_fitness": 0.8910000000000001,
+      "avg_fitness": 0.8890384210526316,
+      "execution_time": 0.00802469253540039,
+      "workers": 2,
+      "system_metrics": {
+        "cpu_percent": 50.0,
+        "memory_percent": 45.0,
+        "memory_used_mb": 512.0,
+        "cpu_count": 2,
+        "process_count": 10
+      }
+    },
+    {
+      "generation": 13,
+      "population_size": 100,
+      "best_fitness": 0.8910000000000001,
+      "avg_fitness": 0.8890384210526316,
+      "execution_time": 0.005800724029541016,
+      "workers": 2,
+      "system_metrics": {
+        "cpu_percent": 50.0,
+        "memory_percent": 45.0,
+        "memory_used_mb": 512.0,
+        "cpu_count": 2,
+        "process_count": 10
+      }
+    },
+    {
+      "generation": 14,
+      "population_size": 100,
+      "best_fitness": 0.8910000000000001,
+      "avg_fitness": 0.8890384210526316,
+      "execution_time": 0.0054934024810791016,
+      "workers": 2,
+      "system_metrics": {
+        "cpu_percent": 50.0,
+        "memory_percent": 45.0,
+        "memory_used_mb": 512.0,
+        "cpu_count": 2,
+        "process_count": 10
+      }
+    },
+    {
+      "generation": 15,
+      "population_size": 100,
+      "best_fitness": 0.8910000000000001,
+      "avg_fitness": 0.8890384210526316,
+      "execution_time": 0.00485682487487793,
+      "workers": 2,
+      "system_metrics": {
+        "cpu_percent": 50.0,
+        "memory_percent": 45.0,
+        "memory_used_mb": 512.0,
+        "cpu_count": 2,
+        "process_count": 10
+      }
+    },
+    {
+      "generation": 16,
+      "population_size": 100,
+      "best_fitness": 0.8910000000000001,
+      "avg_fitness": 0.8890384210526316,
+      "execution_time": 0.004239320755004883,
+      "workers": 2,
+      "system_metrics": {
+        "cpu_percent": 50.0,
+        "memory_percent": 45.0,
+        "memory_used_mb": 512.0,
+        "cpu_count": 2,
+        "process_count": 10
+      }
+    },
+    {
+      "generation": 17,
+      "population_size": 100,
+      "best_fitness": 0.8910000000000001,
+      "avg_fitness": 0.8890384210526316,
+      "execution_time": 0.00462794303894043,
+      "workers": 2,
+      "system_metrics": {
+        "cpu_percent": 50.0,
+        "memory_percent": 45.0,
+        "memory_used_mb": 512.0,
+        "cpu_count": 2,
+        "process_count": 10
+      }
+    },
+    {
+      "generation": 18,
+      "population_size": 100,
+      "best_fitness": 0.8910000000000001,
+      "avg_fitness": 0.8890384210526316,
+      "execution_time": 0.004573345184326172,
+      "workers": 2,
+      "system_metrics": {
+        "cpu_percent": 50.0,
+        "memory_percent": 45.0,
+        "memory_used_mb": 512.0,
+        "cpu_count": 2,
+        "process_count": 10
+      }
+    },
+    {
+      "generation": 19,
+      "population_size": 100,
+      "best_fitness": 0.8910000000000001,
+      "avg_fitness": 0.8890384210526316,
+      "execution_time": 0.00501704216003418,
+      "workers": 2,
+      "system_metrics": {
+        "cpu_percent": 50.0,
+        "memory_percent": 45.0,
+        "memory_used_mb": 512.0,
+        "cpu_count": 2,
+        "process_count": 10
+      }
+    },
+    {
+      "generation": 20,
+      "population_size": 100,
+      "best_fitness": 0.8910000000000001,
+      "avg_fitness": 0.8890384210526316,
+      "execution_time": 0.0047435760498046875,
+      "workers": 2,
+      "system_metrics": {
+        "cpu_percent": 50.0,
+        "memory_percent": 45.0,
+        "memory_used_mb": 512.0,
+        "cpu_count": 2,
+        "process_count": 10
+      }
+    }
+  ],
+  "performance_metrics": {
+    "fitness_throughput": 5199.305285401709,
+    "cache_size": 298,
+    "scale_history": []
+  }
+}

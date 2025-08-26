@@ -1,0 +1,111 @@
+{
+  "generation": 0,
+  "population_size": 8,
+  "prompts": [
+    {
+      "id": "prompt_987447",
+      "text": "You are a helpful AI assistant. Please help with {task}.",
+      "fitness_scores": {
+        "fitness": 0.887,
+        "clarity": 1.0,
+        "completeness": 0.56,
+        "helpfulness": 0.8999999999999999,
+        "safety": 1.0,
+        "coherence": 1.0
+      },
+      "generation": 0
+    },
+    {
+      "id": "prompt_398559",
+      "text": "As an AI assistant, I will assist you with {task}.",
+      "fitness_scores": {
+        "fitness": 0.825,
+        "clarity": 1.0,
+        "completeness": 0.5,
+        "helpfulness": 0.7,
+        "safety": 1.0,
+        "coherence": 1.0
+      },
+      "generation": 0
+    },
+    {
+      "id": "prompt_390726",
+      "text": "Let me help you solve {task} step by step.",
+      "fitness_scores": {
+        "fitness": 0.8089999999999999,
+        "clarity": 1.0,
+        "completeness": 0.42,
+        "helpfulness": 0.7,
+        "safety": 1.0,
+        "coherence": 1.0
+      },
+      "generation": 0
+    },
+    {
+      "id": "prompt_577366",
+      "text": "I'm here to help with {task}. What do you need?",
+      "fitness_scores": {
+        "fitness": 0.819,
+        "clarity": 1.0,
+        "completeness": 0.47,
+        "helpfulness": 0.7,
+        "safety": 1.0,
+        "coherence": 1.0
+      },
+      "generation": 0
+    },
+    {
+      "id": "prompt_359778",
+      "text": "To complete {task}, I'll provide clear guidance.",
+      "fitness_scores": {
+        "fitness": 0.821,
+        "clarity": 1.0,
+        "completeness": 0.48,
+        "helpfulness": 0.7,
+        "safety": 1.0,
+        "coherence": 1.0
+      },
+      "generation": 0
+    },
+    {
+      "id": "prompt_957272",
+      "text": "I can assist you with {task}. Let's begin.",
+      "fitness_scores": {
+        "fitness": 0.8089999999999999,
+        "clarity": 1.0,
+        "completeness": 0.42,
+        "helpfulness": 0.7,
+        "safety": 1.0,
+        "coherence": 1.0
+      },
+      "generation": 0
+    },
+    {
+      "id": "prompt_740984",
+      "text": "For {task}, I'll offer comprehensive support.",
+      "fitness_scores": {
+        "fitness": 0.815,
+        "clarity": 1.0,
+        "completeness": 0.45,
+        "helpfulness": 0.7,
+        "safety": 1.0,
+        "coherence": 1.0
+      },
+      "generation": 0
+    },
+    {
+      "id": "prompt_865412",
+      "text": "Let's work together on {task}.",
+      "fitness_scores": {
+        "fitness": 0.7849999999999999,
+        "clarity": 1.0,
+        "completeness": 0.3,
+        "helpfulness": 0.7,
+        "safety": 1.0,
+        "coherence": 1.0
+      },
+      "generation": 0
+    }
+  ],
+  "timestamp": 1756219964.5397966
+}

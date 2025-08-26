@@ -1,24 +1,35 @@
 {
   "version": "1.0",
-  "security_controls": {
-    "authentication": {
-      "required": true
-    },
-    "authorization": {
-      "rbac_enabled": true
-    },
-    "encryption": {
-      "data_at_rest": true,
-      "data_in_transit": true
-    },
-    "input_validation": {
-      "enabled": true
-    },
-    "rate_limiting": {
-      "enabled": true
-    },
-    "audit_logging": {
-      "enabled": true
+  "encryption": {
+    "data_at_rest": true,
+    "data_in_transit": true,
+    "key_rotation_days": 90
+  },
+  "authentication": {
+    "multi_factor_required": true,
+    "session_timeout_minutes": 30,
+    "password_policy": {
+      "min_length": 12,
+      "require_special_chars": true,
+      "require_numbers": true,
+      "require_uppercase": true
     }
+  },
+  "authorization": {
+    "rbac_enabled": true,
+    "principle_of_least_privilege": true
+  },
+  "audit": {
+    "logging_enabled": true,
+    "log_retention_days": 365,
+    "real_time_monitoring": true
+  },
+  "network": {
+    "tls_version_min": "1.2",
+    "allowed_protocols": [
+      "HTTPS",
+      "TLS"
+    ],
+    "firewall_enabled": true
   }
 }

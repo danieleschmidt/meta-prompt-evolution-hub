@@ -1,0 +1,566 @@
+{
+  "status": "FAILED",
+  "overall_score": 46.87546744823043,
+  "gate_results": {
+    "security": {
+      "passed": false,
+      "score": 78.44827586206897,
+      "message": "Security scan: 66 violations found in 116 files",
+      "execution_time": 1.3953449726104736,
+      "details": {
+        "violations": [
+          {
+            "file": "./autonomous_production_deployment.py",
+            "line": 151,
+            "pattern": "rm\\s+-rf",
+            "description": "Dangerous file deletion",
+            "code": "&& rm -rf /var/lib/apt/lists/*"
+          },
+          {
+            "file": "./autonomous_production_deployment.py",
+            "line": 167,
+            "pattern": "rm\\s+-rf",
+            "description": "Dangerous file deletion",
+            "code": "&& rm -rf /var/lib/apt/lists/*"
+          },
+          {
+            "file": "./comprehensive_quality_gates.py",
+            "line": 35,
+            "pattern": "eval\\s*\\(",
+            "description": "Code injection: eval() usage",
+            "code": "'injection': ['eval(', 'exec(', '__import__', 'subprocess', 'os.system'],"
+          },
+          {
+            "file": "./comprehensive_quality_gates.py",
+            "line": 35,
+            "pattern": "exec\\s*\\(",
+            "description": "Code injection: exec() usage",
+            "code": "'injection': ['eval(', 'exec(', '__import__', 'subprocess', 'os.system'],"
+          },
+          {
+            "file": "./comprehensive_quality_gates.py",
+            "line": 38,
+            "pattern": "rm\\s+-rf",
+            "description": "Dangerous file deletion",
+            "code": "'unsafe_patterns': ['rm -rf', 'DROP TABLE', 'DELETE FROM', 'shutdown'],"
+          },
+          {
+            "file": "./comprehensive_quality_gates.py",
+            "line": 89,
+            "pattern": "eval\\s*\\(",
+            "description": "Code injection: eval() usage",
+            "code": "\"eval(__import__('os').system('ls'))\","
+          },
+          {
+            "file": "./comprehensive_quality_gates.py",
+            "line": 89,
+            "pattern": "__import__\\s*\\(",
+            "description": "Dynamic import vulnerability",
+            "code": "\"eval(__import__('os').system('ls'))\","
+          },
+          {
+            "file": "./generation_1_enhanced_working.py",
+            "line": 255,
+            "pattern": "SELECT.*\\+.*",
+            "description": "Potential SQL injection",
+            "code": "return selected + offspring"
+          },
+          {
+            "file": "./generation_2_robust_enhanced.py",
+            "line": 66,
+            "pattern": "eval\\s*\\(",
+            "description": "Code injection: eval() usage",
+            "code": "\"rm -rf\", \"del /\", \"format c:\", \"import os\", \"eval(\", \"exec(\","
+          },
+          {
+            "file": "./generation_2_robust_enhanced.py",
+            "line": 66,
+            "pattern": "exec\\s*\\(",
+            "description": "Code injection: exec() usage",
+            "code": "\"rm -rf\", \"del /\", \"format c:\", \"import os\", \"eval(\", \"exec(\","
+          },
+          {
+            "file": "./generation_2_robust_enhanced.py",
+            "line": 66,
+            "pattern": "rm\\s+-rf",
+            "description": "Dangerous file deletion",
+            "code": "\"rm -rf\", \"del /\", \"format c:\", \"import os\", \"eval(\", \"exec(\","
+          },
+          {
+            "file": "./generation_2_robust_enhanced.py",
+            "line": 66,
+            "pattern": "del\\s+/.*",
+            "description": "Dangerous file deletion",
+            "code": "\"rm -rf\", \"del /\", \"format c:\", \"import os\", \"eval(\", \"exec(\","
+          },
+          {
+            "file": "./generation_3_scale_test.py",
+            "line": 384,
+            "pattern": "SELECT.*\\+.*",
+            "description": "Potential SQL injection",
+            "code": "selected_prompts = (test_prompts * ((pop_size // len(test_prompts)) + 1))[:pop_size]"
+          },
+          {
+            "file": "./generation_4_quality_gates.py",
+            "line": 68,
+            "pattern": "exec\\s*\\(",
+            "description": "Code injection: exec() usage",
+            "code": "exec(\"\"\""
+          },
+          {
+            "file": "./generation_4_quality_gates.py",
+            "line": 105,
+            "pattern": "exec\\s*\\(",
+            "description": "Code injection: exec() usage",
+            "code": "exec(\"\"\""
+          },
+          {
+            "file": "./generation_4_quality_gates.py",
+            "line": 156,
+            "pattern": "exec\\s*\\(",
+            "description": "Code injection: exec() usage",
+            "code": "exec(\"\"\""
+          },
+          {
+            "file": "./generation_4_quality_gates.py",
+            "line": 202,
+            "pattern": "exec\\s*\\(",
+            "description": "Code injection: exec() usage",
+            "code": "exec(\"\"\""
+          },
+          {
+            "file": "./generation_4_quality_gates.py",
+            "line": 287,
+            "pattern": "exec\\s*\\(",
+            "description": "Code injection: exec() usage",
+            "code": "exec(\"\"\""
+          },
+          {
+            "file": "./generation_4_quality_gates.py",
+            "line": 334,
+            "pattern": "exec\\s*\\(",
+            "description": "Code injection: exec() usage",
+            "code": "exec(\"\"\""
+          },
+          {
+            "file": "./generation_4_quality_gates.py",
+            "line": 411,
+            "pattern": "exec\\s*\\(",
+            "description": "Code injection: exec() usage",
+            "code": "exec(\"\"\""
+          },
+          {
+            "file": "./production_deploy_simple.py",
+            "line": 254,
+            "pattern": "password\\s*=\\s*[\"\\'][^\"\\']*[\"\\']",
+            "description": "Hardcoded password",
+            "code": "password = \"changeme\""
+          },
+          {
+            "file": "./production_deployment.py",
+            "line": 214,
+            "pattern": "rm\\s+-rf",
+            "description": "Dangerous file deletion",
+            "code": "&& rm -rf /var/lib/apt/lists/*"
+          },
+          {
+            "file": "./production_deployment.py",
+            "line": 234,
+            "pattern": "rm\\s+-rf",
+            "description": "Dangerous file deletion",
+            "code": "&& rm -rf /var/lib/apt/lists/*"
+          },
+          {
+            "file": "./production_deployment_complete.py",
+            "line": 275,
+            "pattern": "rm\\s+-rf",
+            "description": "Dangerous file deletion",
+            "code": "&& rm -rf /var/lib/apt/lists/*"
+          },
+          {
+            "file": "./production_deployment_complete.py",
+            "line": 293,
+            "pattern": "rm\\s+-rf",
+            "description": "Dangerous file deletion",
+            "code": "&& rm -rf /var/lib/apt/lists/*"
+          },
+          {
+            "file": "./production_deployment_complete.py",
+            "line": 623,
+            "pattern": "password\\s*=\\s*[\"\\'][^\"\\']*[\"\\']",
+            "description": "Hardcoded password",
+            "code": "password = \"changeme\"  # Use AWS Secrets Manager in production"
+          },
+          {
+            "file": "./production_deployment_orchestrator.py",
+            "line": 150,
+            "pattern": "rm\\s+-rf",
+            "description": "Dangerous file deletion",
+            "code": "&& rm -rf /var/lib/apt/lists/*"
+          },
+          {
+            "file": "./production_deployment_orchestrator.py",
+            "line": 187,
+            "pattern": "rm\\s+-rf",
+            "description": "Dangerous file deletion",
+            "code": "&& rm -rf /var/lib/apt/lists/*"
+          },
+          {
+            "file": "./production_deployment_orchestrator_final.py",
+            "line": 108,
+            "pattern": "rm\\s+-rf",
+            "description": "Dangerous file deletion",
+            "code": "&& rm -rf /var/lib/apt/lists/*"
+          },
+          {
+            "file": "./quality_gates.py",
+            "line": 1151,
+            "pattern": "subprocess\\.(call|run|Popen)",
+            "description": "Subprocess execution risk",
+            "code": "result = subprocess.run("
+          },
+          {
+            "file": "./quality_gates.py",
+            "line": 1184,
+            "pattern": "subprocess\\.(call|run|Popen)",
+            "description": "Subprocess execution risk",
+            "code": "result = subprocess.run("
+          },
+          {
+            "file": "./quality_gates_comprehensive.py",
+            "line": 241,
+            "pattern": "eval\\s*\\(",
+            "description": "Code injection: eval() usage",
+            "code": "\"exec(\", \"eval(\", \"import os\", \"__import__\","
+          },
+          {
+            "file": "./quality_gates_comprehensive.py",
+            "line": 241,
+            "pattern": "exec\\s*\\(",
+            "description": "Code injection: exec() usage",
+            "code": "\"exec(\", \"eval(\", \"import os\", \"__import__\","
+          },
+          {
+            "file": "./robust_autonomous_research.py",
+            "line": 556,
+            "pattern": "SELECT.*\\+.*",
+            "description": "Potential SQL injection",
+            "code": "self.error_counts[\"selection_errors\"] += 1"
+          },
+          {
+            "file": "./robust_generation_2_system.py",
+            "line": 48,
+            "pattern": "rm\\s+-rf",
+            "description": "Dangerous file deletion",
+            "code": "\"rm -rf\", \"sudo passwd\", \"wget http\", \"curl http\","
+          },
+          {
+            "file": "./robust_generation_2_system.py",
+            "line": 49,
+            "pattern": "eval\\s*\\(",
+            "description": "Code injection: eval() usage",
+            "code": "\"exec(\", \"eval(\", \"system(\", \"shell_exec\", \"__import__(\","
+          },
+          {
+            "file": "./robust_generation_2_system.py",
+            "line": 49,
+            "pattern": "exec\\s*\\(",
+            "description": "Code injection: exec() usage",
+            "code": "\"exec(\", \"eval(\", \"system(\", \"shell_exec\", \"__import__(\","
+          },
+          {
+            "file": "./robust_generation_2_system.py",
+            "line": 49,
+            "pattern": "__import__\\s*\\(",
+            "description": "Dynamic import vulnerability",
+            "code": "\"exec(\", \"eval(\", \"system(\", \"shell_exec\", \"__import__(\","
+          },
+          {
+            "file": "./robust_generation_2_system.py",
+            "line": 126,
+            "pattern": "eval\\s*\\(",
+            "description": "Code injection: eval() usage",
+            "code": "\"eval(\", \"alert(\", \"confirm(\", \"prompt(\","
+          },
+          {
+            "file": "./robust_security_monitor.py",
+            "line": 278,
+            "pattern": "eval\\s*\\(",
+            "description": "Code injection: eval() usage",
+            "code": "\"blocked_patterns\": [\"<script>\", \"javascript:\", \"eval(\"],"
+          },
+          {
+            "file": "./robust_security_monitor.py",
+            "line": 922,
+            "pattern": "SELECT.*\\+.*",
+            "description": "Potential SQL injection",
+            "code": "offspring = await self.safe_reproduction(selected, generation + 1)"
+          },
+          {
+            "file": "./robust_security_monitor.py",
+            "line": 1032,
+            "pattern": "SELECT.*\\+.*",
+            "description": "Potential SQL injection",
+            "code": "parent2 = selected[(len(offspring) + 1) % len(selected)]"
+          },
+          {
+            "file": "./scalable_performance_engine.py",
+            "line": 175,
+            "pattern": "INSERT.*\\+.*",
+            "description": "Potential SQL injection",
+            "code": "self.stats['inserts'] += 1"
+          },
+          {
+            "file": "./scalable_performance_engine.py",
+            "line": 761,
+            "pattern": "SELECT.*\\+.*",
+            "description": "Potential SQL injection",
+            "code": "parent2 = selected[(len(reproduction_tasks) + 1) % len(selected)]"
+          },
+          {
+            "file": "./generation_2_robust_comprehensive_system.py",
+            "line": 105,
+            "pattern": "eval\\s*\\(",
+            "description": "Code injection: eval() usage",
+            "code": "\"rm -rf\", \"del /\", \"DROP TABLE\", \"eval(\", \"exec(\","
+          },
+          {
+            "file": "./generation_2_robust_comprehensive_system.py",
+            "line": 105,
+            "pattern": "exec\\s*\\(",
+            "description": "Code injection: exec() usage",
+            "code": "\"rm -rf\", \"del /\", \"DROP TABLE\", \"eval(\", \"exec(\","
+          },
+          {
+            "file": "./generation_2_robust_comprehensive_system.py",
+            "line": 105,
+            "pattern": "rm\\s+-rf",
+            "description": "Dangerous file deletion",
+            "code": "\"rm -rf\", \"del /\", \"DROP TABLE\", \"eval(\", \"exec(\","
+          },
+          {
+            "file": "./generation_2_robust_comprehensive_system.py",
+            "line": 105,
+            "pattern": "del\\s+/.*",
+            "description": "Dangerous file deletion",
+            "code": "\"rm -rf\", \"del /\", \"DROP TABLE\", \"eval(\", \"exec(\","
+          },
+          {
+            "file": "./comprehensive_quality_gates_autonomous.py",
+            "line": 50,
+            "pattern": "eval\\s*\\(",
+            "description": "Code injection: eval() usage",
+            "code": "(r'eval\\s*\\(', \"Code injection: eval() usage\"),"
+          },
+          {
+            "file": "./comprehensive_quality_gates_autonomous.py",
+            "line": 51,
+            "pattern": "exec\\s*\\(",
+            "description": "Code injection: exec() usage",
+            "code": "(r'exec\\s*\\(', \"Code injection: exec() usage\"),"
+          },
+          {
+            "file": "./comprehensive_quality_gates_autonomous.py",
+            "line": 57,
+            "pattern": "SELECT.*\\+.*",
+            "description": "Potential SQL injection",
+            "code": "(r'SELECT.*\\+.*', \"Potential SQL injection\"),"
+          },
+          {
+            "file": "./comprehensive_quality_gates_autonomous.py",
+            "line": 58,
+            "pattern": "INSERT.*\\+.*",
+            "description": "Potential SQL injection",
+            "code": "(r'INSERT.*\\+.*', \"Potential SQL injection\"),"
+          },
+          {
+            "file": "./comprehensive_quality_gates_autonomous.py",
+            "line": 59,
+            "pattern": "UPDATE.*\\+.*",
+            "description": "Potential SQL injection",
+            "code": "(r'UPDATE.*\\+.*', \"Potential SQL injection\"),"
+          },
+          {
+            "file": "./comprehensive_quality_gates_autonomous.py",
+            "line": 60,
+            "pattern": "DELETE.*\\+.*",
+            "description": "Potential SQL injection",
+            "code": "(r'DELETE.*\\+.*', \"Potential SQL injection\"),"
+          },
+          {
+            "file": "./comprehensive_quality_gates_autonomous.py",
+            "line": 190,
+            "pattern": "subprocess\\.(call|run|Popen)",
+            "description": "Subprocess execution risk",
+            "code": "result = subprocess.run("
+          },
+          {
+            "file": "./comprehensive_quality_gates_autonomous.py",
+            "line": 280,
+            "pattern": "exec\\s*\\(",
+            "description": "Code injection: exec() usage",
+            "code": "exec(open('generation_1_simple_working_demo.py').read(), {'__name__': '__test__'})"
+          },
+          {
+            "file": "./comprehensive_quality_gates_autonomous.py",
+            "line": 284,
+            "pattern": "exec\\s*\\(",
+            "description": "Code injection: exec() usage",
+            "code": "exec(open('generation_2_robust_comprehensive_system.py').read(), {'__name__': '__test__'})"
+          },
+          {
+            "file": "./comprehensive_quality_gates_autonomous.py",
+            "line": 288,
+            "pattern": "exec\\s*\\(",
+            "description": "Code injection: exec() usage",
+            "code": "exec(open('generation_3_scalable_performance_optimized.py').read(), {'__name__': '__test__'})"
+          },
+          {
+            "file": "./comprehensive_quality_gates_autonomous.py",
+            "line": 322,
+            "pattern": "subprocess\\.(call|run|Popen)",
+            "description": "Subprocess execution risk",
+            "code": "result = subprocess.run("
+          },
+          {
+            "file": "./meta_prompt_evolution/monitoring/adaptive_monitor.py",
+            "line": 263,
+            "pattern": "os\\.system\\s*\\(",
+            "description": "OS command execution risk",
+            "code": "os.system('clear' if os.name == 'posix' else 'cls')  # Clear screen"
+          },
+          {
+            "file": "./meta_prompt_evolution/storage/repositories/prompt_repository.py",
+            "line": 222,
+            "pattern": "DELETE.*\\+.*",
+            "description": "Potential SQL injection",
+            "code": "deleted_count += 1"
+          },
+          {
+            "file": "./scripts/automation-scheduler.py",
+            "line": 137,
+            "pattern": "subprocess\\.(call|run|Popen)",
+            "description": "Subprocess execution risk",
+            "code": "result = subprocess.run("
+          },
+          {
+            "file": "./scripts/collect-metrics.py",
+            "line": 38,
+            "pattern": "subprocess\\.(call|run|Popen)",
+            "description": "Subprocess execution risk",
+            "code": "result = subprocess.run("
+          },
+          {
+            "file": "./scripts/health-monitor.py",
+            "line": 109,
+            "pattern": "subprocess\\.(call|run|Popen)",
+            "description": "Subprocess execution risk",
+            "code": "result = subprocess.run("
+          },
+          {
+            "file": "./scripts/update-dependencies.py",
+            "line": 34,
+            "pattern": "subprocess\\.(call|run|Popen)",
+            "description": "Subprocess execution risk",
+            "code": "result = subprocess.run("
+          },
+          {
+            "file": "./scripts/update-dependencies.py",
+            "line": 324,
+            "pattern": "__import__\\s*\\(",
+            "description": "Dynamic import vulnerability",
+            "code": "report.append(f\"Generated: {__import__('datetime').datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\")"
+          }
+        ],
+        "total_files_scanned": 116,
+        "violated_files": 25,
+        "security_score": 78.44827586206897
+      }
+    },
+    "tests": {
+      "passed": true,
+      "score": 0.0,
+      "message": "Tests: 0 passed, 0 failed. Coverage: 0.0%",
+      "execution_time": 0.06114077568054199,
+      "details": {
+        "passed": 0,
+        "failed": 0,
+        "coverage": 0.0,
+        "stdout": "",
+        "stderr": "/usr/bin/python3: No module named pytest\n",
+        "return_code": 1
+      }
+    },
+    "performance": {
+      "passed": true,
+      "score": 100.0,
+      "message": "Performance: 100.0% average across 4 benchmarks",
+      "execution_time": 0.06615543365478516,
+      "details": {
+        "benchmarks": {
+          "Core Performance": 100.0,
+          "Generation 1": 100.0,
+          "Generation 2": 100.0,
+          "Generation 3": 100.0
+        },
+        "average_performance": 100.0
+      }
+    },
+    "code_quality": {
+      "passed": true,
+      "score": 9.05359393085275,
+      "message": "Code quality: 9.1/10 average across 30 files",
+      "execution_time": 0.38338685035705566,
+      "details": {
+        "file_analyses": {
+          "generation_1_simple_working_demo.py": 9.54054054054054,
+          "generation_2_robust_comprehensive_system.py": 7.965827364608714,
+          "generation_3_scalable_performance_optimized.py": 8.41193478652495,
+          "meta_prompt_evolution/__init__.py": 9.244572158365262,
+          "meta_prompt_evolution/cli/__init__.py": 9.0,
+          "meta_prompt_evolution/cli/main.py": 9.220556977106265,
+          "meta_prompt_evolution/core/lightweight_engine.py": 8.86643249022415,
+          "meta_prompt_evolution/deployment/__init__.py": 9.0,
+          "meta_prompt_evolution/deployment/ab_testing.py": 9.203389830508474,
+          "meta_prompt_evolution/evaluation/__init__.py": 9.0,
+          "meta_prompt_evolution/evaluation/base.py": 8.799050006597177,
+          "meta_prompt_evolution/evaluation/evaluator.py": 8.982378732378733,
+          "meta_prompt_evolution/evolution/__init__.py": 9.705882352941178,
+          "meta_prompt_evolution/evolution/hub.py": 9.22584614587516,
+          "meta_prompt_evolution/evolution/population.py": 8.783333333333333,
+          "meta_prompt_evolution/evolution/algorithms/__init__.py": 9.0,
+          "meta_prompt_evolution/evolution/algorithms/base.py": 9.235416666666666,
+          "meta_prompt_evolution/evolution/algorithms/cma_es.py": 9.378666234152407,
+          "meta_prompt_evolution/evolution/algorithms/map_elites.py": 9.090538397644039,
+          "meta_prompt_evolution/evolution/algorithms/nsga2.py": 9.150259129516773,
+          "meta_prompt_evolution/evolution/algorithms/quantum_inspired.py": 9.090047690763052,
+          "meta_prompt_evolution/monitoring/adaptive_monitor.py": 8.941449319126981,
+          "meta_prompt_evolution/research/analytics_platform.py": 9.052667886175175,
+          "meta_prompt_evolution/storage/__init__.py": 9.0,
+          "meta_prompt_evolution/storage/database/__init__.py": 9.0,
+          "meta_prompt_evolution/storage/database/connection.py": 9.117276840806252,
+          "meta_prompt_evolution/storage/repositories/__init__.py": 9.0,
+          "meta_prompt_evolution/storage/repositories/base_repository.py": 9.179747111401788,
+          "meta_prompt_evolution/storage/repositories/population_repository.py": 9.306330837304289,
+          "meta_prompt_evolution/storage/repositories/prompt_repository.py": 9.11567309302116
+        },
+        "average_quality": 9.05359393085275,
+        "files_analyzed": 30
+      }
+    }
+  },
+  "requirements_met": {
+    "security": false,
+    "tests": false,
+    "performance": true,
+    "code_quality": true
+  },
+  "summary": {
+    "total_gates": 4,
+    "passed_gates": 3,
+    "security_violations": 66,
+    "test_coverage": 0.0,
+    "performance_score": 100.0,
+    "code_quality_score": 9.05359393085275
+  }
+}

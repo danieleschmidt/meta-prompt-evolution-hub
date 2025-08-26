@@ -1,24 +1,29 @@
 {
-  "backup_schedule": {
-    "full_backup": "0 2 * * 0",
-    "incremental_backup": "0 2 * * 1-6",
-    "transaction_log_backup": "*/15 * * * *"
+  "backup_frequency": {
+    "incremental": "daily",
+    "full": "weekly",
+    "archive": "monthly"
   },
   "retention_policy": {
-    "daily_backups": 7,
-    "weekly_backups": 4,
+    "daily_backups": 30,
+    "weekly_backups": 12,
     "monthly_backups": 12,
-    "yearly_backups": 5
+    "yearly_backups": 7
   },
-  "storage": {
-    "primary_location": "s3://terragon-backups-primary/",
-    "secondary_location": "s3://terragon-backups-secondary/",
-    "encryption": "AES-256",
-    "compression": true
-  },
-  "verification": {
-    "integrity_check": true,
-    "restore_test": "monthly",
-    "alert_on_failure": true
+  "backup_targets": [
+    "application_data",
+    "database",
+    "configuration",
+    "logs"
+  ],
+  "storage_locations": [
+    "primary_region_s3",
+    "secondary_region_s3",
+    "offsite_backup"
+  ],
+  "encryption": {
+    "enabled": true,
+    "key_management": "aws_kms",
+    "algorithm": "AES-256"
   }
 }

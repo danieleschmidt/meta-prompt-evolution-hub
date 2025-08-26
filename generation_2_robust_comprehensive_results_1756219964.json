@@ -1,0 +1,226 @@
+{
+  "status": "SUCCESS",
+  "execution_time": 0.3437352180480957,
+  "total_generations": 10,
+  "final_population_size": 20,
+  "total_errors": 0,
+  "best_prompts": [
+    {
+      "id": "prompt_333771",
+      "text": "Please note: You are a assistful AI assistant. Please assist with {task}. I'm ready to assist.",
+      "fitness_scores": {
+        "fitness": 0.94425,
+        "clarity": 0.9375,
+        "completeness": 0.94,
+        "helpfulness": 0.8999999999999999,
+        "safety": 1.0,
+        "coherence": 1.0
+      },
+      "generation": 3
+    },
+    {
+      "id": "prompt_523029",
+      "text": "Please note: You are a assistful AI assistant. Please assist with {task}. I'm ready to assist.",
+      "fitness_scores": {
+        "fitness": 0.94425,
+        "clarity": 0.9375,
+        "completeness": 0.94,
+        "helpfulness": 0.8999999999999999,
+        "safety": 1.0,
+        "coherence": 1.0
+      },
+      "generation": 3
+    },
+    {
+      "id": "prompt_294266",
+      "text": "Please note: You are a assistful AI assistant. Please assist with {task}. I'm ready to assist.",
+      "fitness_scores": {
+        "fitness": 0.94425,
+        "clarity": 0.9375,
+        "completeness": 0.94,
+        "helpfulness": 0.8999999999999999,
+        "safety": 1.0,
+        "coherence": 1.0
+      },
+      "generation": 4
+    },
+    {
+      "id": "prompt_870524",
+      "text": "Please note: You are a assistful AI assistant. Please assist with {task}. I'm ready to assist.",
+      "fitness_scores": {
+        "fitness": 0.94425,
+        "clarity": 0.9375,
+        "completeness": 0.94,
+        "helpfulness": 0.8999999999999999,
+        "safety": 1.0,
+        "coherence": 1.0
+      },
+      "generation": 4
+    },
+    {
+      "id": "prompt_420932",
+      "text": "Please note: You are a assistful AI assistant. Please assist with {task}. I'm ready to assist.",
+      "fitness_scores": {
+        "fitness": 0.94425,
+        "clarity": 0.9375,
+        "completeness": 0.94,
+        "helpfulness": 0.8999999999999999,
+        "safety": 1.0,
+        "coherence": 1.0
+      },
+      "generation": 4
+    },
+    {
+      "id": "prompt_910433",
+      "text": "Please note: You are a assistful AI assistant. Please assist with {task}. I'm ready to assist.",
+      "fitness_scores": {
+        "fitness": 0.94425,
+        "clarity": 0.9375,
+        "completeness": 0.94,
+        "helpfulness": 0.8999999999999999,
+        "safety": 1.0,
+        "coherence": 1.0
+      },
+      "generation": 4
+    },
+    {
+      "id": "prompt_775914",
+      "text": "Please note: You are a assistful AI assistant. Please assist with {task}. I'm ready to assist.",
+      "fitness_scores": {
+        "fitness": 0.94425,
+        "clarity": 0.9375,
+        "completeness": 0.94,
+        "helpfulness": 0.8999999999999999,
+        "safety": 1.0,
+        "coherence": 1.0
+      },
+      "generation": 4
+    },
+    {
+      "id": "prompt_540245",
+      "text": "Please note: You are a assistful AI assistant. Please assist with {task}. I'm ready to assist.",
+      "fitness_scores": {
+        "fitness": 0.94425,
+        "clarity": 0.9375,
+        "completeness": 0.94,
+        "helpfulness": 0.8999999999999999,
+        "safety": 1.0,
+        "coherence": 1.0
+      },
+      "generation": 4
+    },
+    {
+      "id": "prompt_498362",
+      "text": "Please note: You are a assistful AI assistant. Please assist with {task}. I'm ready to assist.",
+      "fitness_scores": {
+        "fitness": 0.94425,
+        "clarity": 0.9375,
+        "completeness": 0.94,
+        "helpfulness": 0.8999999999999999,
+        "safety": 1.0,
+        "coherence": 1.0
+      },
+      "generation": 4
+    },
+    {
+      "id": "prompt_893656",
+      "text": "Please note: You are a assistful AI assistant. Please assist with {task}. I'm ready to assist.",
+      "fitness_scores": {
+        "fitness": 0.94425,
+        "clarity": 0.9375,
+        "completeness": 0.94,
+        "helpfulness": 0.8999999999999999,
+        "safety": 1.0,
+        "coherence": 1.0
+      },
+      "generation": 4
+    }
+  ],
+  "evolution_history": [
+    {
+      "generation": 1,
+      "population_size": 14,
+      "best_fitness": 0.925,
+      "average_fitness": 0.8486428571428571,
+      "execution_time": 0.013700723648071289,
+      "error_count": 0
+    },
+    {
+      "generation": 2,
+      "population_size": 20,
+      "best_fitness": 0.937,
+      "average_fitness": 0.8947577380952382,
+      "execution_time": 0.0280148983001709,
+      "error_count": 0
+    },
+    {
+      "generation": 3,
+      "population_size": 20,
+      "best_fitness": 0.94425,
+      "average_fitness": 0.9300375000000001,
+      "execution_time": 0.03850865364074707,
+      "error_count": 0
+    },
+    {
+      "generation": 4,
+      "population_size": 20,
+      "best_fitness": 0.94425,
+      "average_fitness": 0.9393125000000001,
+      "execution_time": 0.038109540939331055,
+      "error_count": 0
+    },
+    {
+      "generation": 5,
+      "population_size": 20,
+      "best_fitness": 0.94425,
+      "average_fitness": 0.94285,
+      "execution_time": 0.0356907844543457,
+      "error_count": 0
+    },
+    {
+      "generation": 6,
+      "population_size": 20,
+      "best_fitness": 0.94425,
+      "average_fitness": 0.9440500000000001,
+      "execution_time": 0.03116440773010254,
+      "error_count": 0
+    },
+    {
+      "generation": 7,
+      "population_size": 20,
+      "best_fitness": 0.94425,
+      "average_fitness": 0.94425,
+      "execution_time": 0.034097909927368164,
+      "error_count": 0
+    },
+    {
+      "generation": 8,
+      "population_size": 20,
+      "best_fitness": 0.94425,
+      "average_fitness": 0.94425,
+      "execution_time": 0.03742671012878418,
+      "error_count": 0
+    },
+    {
+      "generation": 9,
+      "population_size": 20,
+      "best_fitness": 0.94425,
+      "average_fitness": 0.94425,
+      "execution_time": 0.03563189506530762,
+      "error_count": 0
+    },
+    {
+      "generation": 10,
+      "population_size": 20,
+      "best_fitness": 0.94425,
+      "average_fitness": 0.94425,
+      "execution_time": 0.03168296813964844,
+      "error_count": 0
+    }
+  ],
+  "config": {
+    "population_size": 20,
+    "generations": 10,
+    "mutation_rate": 0.15
+  }
+}

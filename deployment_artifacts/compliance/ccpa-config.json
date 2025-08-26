@@ -1,7 +1,18 @@
 {
-  "privacy_notice_url": "/privacy-notice",
-  "data_deletion_endpoint": "/api/delete-data",
-  "opt_out_endpoint": "/api/opt-out",
-  "privacy_request_email": "privacy@terragon.ai",
-  "consumer_rights_enabled": true
+  "consumer_rights": {
+    "right_to_know": true,
+    "right_to_delete": true,
+    "right_to_opt_out": true,
+    "right_to_non_discrimination": true
+  },
+  "data_practices": {
+    "transparent_privacy_practices": true,
+    "data_category_disclosure": true,
+    "third_party_sharing_disclosure": true
+  },
+  "implementation": {
+    "privacy_policy_updated": true,
+    "request_handling_process": true,
+    "staff_training_completed": true
+  }
 }

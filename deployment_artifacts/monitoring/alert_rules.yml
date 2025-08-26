@@ -1,19 +1,29 @@
 groups:
-- name: terragon.rules
+- name: meta-prompt-evolution
   rules:
   - alert: HighErrorRate
-    annotations:
-      description: Error rate is above 10% for 5 minutes
-      summary: High error rate detected
-    expr: rate(http_requests_total{status=~'5..'}[5m]) > 0.1
+    expr: rate(http_requests_total{status=~"5.."}[5m]) > 0.1
     for: 5m
     labels:
       severity: critical
-  - alert: HighCPUUsage
     annotations:
-      description: CPU usage is above 80% for 10 minutes
-      summary: High CPU usage
-    expr: cpu_usage_percent > 80
-    for: 10m
+      summary: High error rate detected
+      description: "Error rate is {{ $value }} for {{ $labels.instance }}"
+
+  - alert: HighLatency
+    expr: histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m])) > 0.5
+    for: 5m
     labels:
       severity: warning
+    annotations:
+      summary: High latency detected
+      description: "95th percentile latency is {{ $value }}s for {{ $labels.instance }}"
+
+  - alert: PodCrashLooping
+    expr: rate(kube_pod_container_status_restarts_total[15m]) > 0
+    for: 5m
+    labels:
+      severity: critical
+    annotations:
+      summary: Pod is crash looping
+      description: "Pod {{ $labels.pod }} in namespace {{ $labels.namespace }} is crash looping"

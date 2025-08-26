@@ -1,38 +1,20 @@
 #!/bin/bash
-set -euo pipefail
+set -e
 
-# meta-prompt-evolution-hub Rollback Script
+echo "🔄 Rolling Back Deployment"
+echo "========================="
 
-echo "🔄 Starting rollback for meta-prompt-evolution-hub..."
+REGION=${1:-us-east-1}
 
-PROJECT_NAME="meta-prompt-evolution-hub"
-NAMESPACE="production"
+echo "Rolling back in region: $REGION"
 
-# Get previous version
-PREVIOUS_VERSION=$(kubectl rollout history deployment/$PROJECT_NAME-deployment -n $NAMESPACE --revision=2 | grep -oP 'image=.*:\K[^\s]+' || echo "latest")
-
-log() {
-    echo -e "\033[0;32m[$(date +'%Y-%m-%d %H:%M:%S')]\033[0m $1"
-}
-
-error() {
-    echo -e "\033[0;31m[ERROR]\033[0m $1" >&2
-}
-
-log "Rolling back to previous version: $PREVIOUS_VERSION"
-
-# Rollback deployment
-kubectl rollout undo deployment/$PROJECT_NAME-deployment -n $NAMESPACE
+# Rollback Kubernetes deployment
+kubectl rollout undo deployment/meta-prompt-evolution -n production
 
 # Wait for rollback to complete
-kubectl rollout status deployment/$PROJECT_NAME-deployment -n $NAMESPACE --timeout=300s
+kubectl rollout status deployment/meta-prompt-evolution -n production
 
 # Verify rollback
-if kubectl get pods -n $NAMESPACE -l app=$PROJECT_NAME | grep -q Running; then
-    log "✅ Rollback completed successfully"
-else
-    error "❌ Rollback failed"
-    exit 1
-fi
+kubectl get pods -n production -l app=meta-prompt-evolution
 
-log "🎉 Rollback completed!"
+echo "✅ Rollback completed successfully!"

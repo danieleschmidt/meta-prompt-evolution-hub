@@ -1,46 +1,44 @@
 {
-  "incident_response": {
-    "detection": "automated_monitoring",
-    "escalation_matrix": [
-      {
-        "level": 1,
-        "response_time": "5_minutes",
-        "contact": "on_call_engineer"
-      },
-      {
-        "level": 2,
-        "response_time": "15_minutes",
-        "contact": "engineering_manager"
-      },
-      {
-        "level": 3,
-        "response_time": "30_minutes",
-        "contact": "cto"
-      }
-    ]
+  "recovery_objectives": {
+    "RTO": "4 hours",
+    "RPO": "1 hour"
   },
-  "recovery_procedures": {
-    "data_recovery": {
-      "source": "latest_backup",
-      "target_rpo": "5_minutes",
-      "verification_steps": [
-        "data_integrity_check",
-        "application_health_check"
-      ]
+  "recovery_tiers": {
+    "tier_1_critical": {
+      "services": [
+        "core_api",
+        "authentication"
+      ],
+      "recovery_time": "1 hour",
+      "priority": 1
     },
-    "service_recovery": {
-      "failover_region": "automatic",
-      "target_rto": "15_minutes",
-      "health_validation": "end_to_end_test"
+    "tier_2_important": {
+      "services": [
+        "monitoring",
+        "logging"
+      ],
+      "recovery_time": "2 hours",
+      "priority": 2
+    },
+    "tier_3_standard": {
+      "services": [
+        "documentation",
+        "analytics"
+      ],
+      "recovery_time": "4 hours",
+      "priority": 3
     }
   },
-  "communication": {
-    "status_page": "https://status.terragon.ai",
-    "notification_channels": [
-      "email",
-      "slack",
-      "pagerduty"
-    ],
-    "stakeholder_updates": "hourly_during_incident"
+  "failover_procedures": [
+    "Activate disaster recovery site",
+    "Restore from latest backup",
+    "Update DNS routing",
+    "Validate system functionality",
+    "Notify stakeholders"
+  ],
+  "testing_schedule": {
+    "recovery_drills": "quarterly",
+    "backup_validation": "monthly",
+    "plan_review": "semi-annually"
   }
 }

@@ -1,0 +1,29 @@
+{
+  "deployment_summary": {
+    "timestamp": "2025-08-27T23:30:48.745736",
+    "environments_deployed": 3,
+    "successful_deployments": 0,
+    "deployment_artifacts": 10,
+    "artifacts_directory": "deployment_artifacts_progressive_quality_gates"
+  },
+  "deployment_results": [
+    {
+      "environment": "development",
+      "success": false,
+      "deployment_id": "pqg-development-1756337445",
+      "error": null
+    },
+    {
+      "environment": "staging",
+      "success": false,
+      "deployment_id": "pqg-staging-1756337446",
+      "error": null
+    },
+    {
+      "environment": "production",
+      "success": false,
+      "deployment_id": "pqg-production-1756337447",
+      "error": null
+    }
+  ]
+}

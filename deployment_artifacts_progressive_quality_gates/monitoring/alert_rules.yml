@@ -1,0 +1,29 @@
+groups:
+- name: progressive_quality_gates
+  rules:
+  - alert: HighErrorRate
+    expr: rate(quality_gates_errors_total[5m]) > 0.05
+    for: 5m
+    labels:
+      severity: critical
+    annotations:
+      summary: "High error rate in quality gates processing"
+      description: "Error rate is {{ $value }} which is above the threshold of 0.05"
+      
+  - alert: SlowResponseTime
+    expr: histogram_quantile(0.95, rate(quality_gates_duration_seconds_bucket[5m])) > 0.5
+    for: 10m
+    labels:
+      severity: warning
+    annotations:
+      summary: "Slow quality gates processing"
+      description: "95th percentile response time is {{ $value }}s"
+      
+  - alert: HighMemoryUsage
+    expr: container_memory_usage_bytes / container_spec_memory_limit_bytes > 0.9
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: "High memory usage"
+      description: "Memory usage is at {{ $value | humanizePercentage }}"

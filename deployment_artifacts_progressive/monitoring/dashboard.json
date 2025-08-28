@@ -1,0 +1,55 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "Progressive Quality Gates",
+    "tags": ["quality", "gates", "monitoring"],
+    "timezone": "browser",
+    "panels": [
+      {
+        "id": 1,
+        "title": "Overall Quality Score",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "quality_gates_overall_score",
+            "refId": "A"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "min": 0,
+            "max": 100,
+            "unit": "percent"
+          }
+        }
+      },
+      {
+        "id": 2,
+        "title": "Quality Gates Status",
+        "type": "table",
+        "targets": [
+          {
+            "expr": "quality_gates_status",
+            "refId": "A"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Execution Time",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "quality_gates_execution_time_seconds",
+            "refId": "A"
+          }
+        ]
+      }
+    ],
+    "time": {
+      "from": "now-1h",
+      "to": "now"
+    },
+    "refresh": "30s"
+  }
+}

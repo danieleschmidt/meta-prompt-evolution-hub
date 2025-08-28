@@ -1,0 +1,45 @@
+{
+  "deployment_id": "5ae48c26-d85d-49ad-b276-75928f65ba2c",
+  "status": "failed",
+  "start_time": 1756340629.4265134,
+  "stages": {
+    "validation": {
+      "passed": false,
+      "message": "3/4 validation checks passed",
+      "checks": [
+        {
+          "name": "Quality Gates",
+          "passed": true,
+          "message": "Overall score: 94.0%",
+          "score": 94.0
+        },
+        {
+          "name": "Security Compliance",
+          "passed": false,
+          "message": "Security issues: 1, Score: 75%",
+          "issues": [
+            "Potential secrets found in 2 files"
+          ],
+          "score": 75
+        },
+        {
+          "name": "Performance Requirements",
+          "passed": true,
+          "message": "Performance test: 0.000s",
+          "execution_time": 0.0004563331604003906,
+          "threshold": 1.0
+        },
+        {
+          "name": "Dependencies",
+          "passed": true,
+          "message": "Dependencies check: 0 issues found",
+          "missing_dependencies": []
+        }
+      ],
+      "score": 75.0
+    }
+  },
+  "error": "Pre-deployment validation failed: 3/4 validation checks passed",
+  "end_time": 1756340629.4439037,
+  "total_time": 0.01739025115966797
+}

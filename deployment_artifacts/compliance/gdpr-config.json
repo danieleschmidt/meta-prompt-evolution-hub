@@ -1,8 +1,0 @@
-{
-  "data_retention_days": 365,
-  "consent_required": true,
-  "anonymization_enabled": true,
-  "data_export_enabled": true,
-  "deletion_enabled": true,
-  "breach_detection": true
-}
